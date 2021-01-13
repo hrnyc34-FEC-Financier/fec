@@ -3,17 +3,19 @@
   1. npm install to start
 
 
-## Check things below
+## Check out
   **Upgrading from Enzyme 2.x or React < 16**
     - To get started with enzyme, you can simply install it via npm. You will need to install enzyme along with an Adapter corresponding to the version of react
-    **We are going to use "react": "^17.0.1"_**
-    _________________________________________________________
+
+**We are going to use "react": "^17.0.1"**
+
     import Enzyme from 'enzyme';
     import Adapter from 'enzyme-adapter-react-16';
 
     Enzyme.configure({ adapter: new Adapter() });
-    _________________________________________________________
-    more info about it : https://www.npmjs.com/package/enzyme
+
+
+    *** more info: https://www.npmjs.com/package/enzyme
 
   **babel compiler**
   Instruction says you should install it globally.
