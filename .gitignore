@@ -5,6 +5,7 @@ client/dist/*
 node_modules/
 *.log
 env/config.js
+package-lock.json
 
 # OS generated files
 .DS_Store
