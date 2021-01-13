@@ -1,0 +1,8 @@
+.eslint*
+.eslintrc.*
+**/node_modules
+package.json
+client/dist/*
+!client/dist/index.html
+!client/dist/style.css
+!client/dist/style.sass
