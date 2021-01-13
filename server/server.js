@@ -7,10 +7,10 @@ const app = express();
 
 app.use( express.json() );
 app.use( express.urlencoded( { extended: true } ))
-app.use( express.static( path.join( __dirname, './../react-client/dist' )))
+app.use( express.static( path.join( __dirname, './../client/dist' )))
 
 app.get('/',(req, res)=>{
-  res.json('Hello awesome team Financier')
+  res.json( 'Hello awesome team Financier' )
 })
 
 module.exports = app;

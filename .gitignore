@@ -1,17 +1,24 @@
-.cache/
+## NPM ##
+node_modules/
+
+## Compiled files ##
 client/dist/*
+
+## API keys ##
+env/config.js
+
+## ETC ##
 !client/dist/index.html
 !client/dist/style.css
-node_modules/
+!client/dist/style.scss
+.cache/
 *.log
-env/config.js
 package-lock.json
 
 # OS generated files
 .DS_Store
 .DS_Store?
 ._*
-.Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
