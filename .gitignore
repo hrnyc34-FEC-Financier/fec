@@ -1,0 +1,16 @@
+.cache/
+client/dist/*
+!client/dist/index.html
+!client/dist/style.css
+node_modules/
+*.log
+env/config.js
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
