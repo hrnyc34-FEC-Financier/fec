@@ -1,5 +1,5 @@
 module.exports = {
-  TOKEN : 'Generate Token and Insert HERE',
+  API_TOKEN : 'Generate Token and Insert HERE',
 };
 
 /*
