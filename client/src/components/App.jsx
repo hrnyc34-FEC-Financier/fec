@@ -4,9 +4,14 @@ import React from "react";
 let App = ({ teamName }) => {
 
   return (
-    <div>
+    <div class="container">
       <h1> Hello Team { teamName} ! </h1>
-      {/* <ProductDetailContainer /> */}
+    <div class="ProductDetail">
+    {/* <ProductDetailContainer /> */}
+    ProductDetail</div>
+    <div class="RelatedItems">RelatedItems </div>
+    <div class="QuestionsAnswers"> QuestionsAnswers</div>
+    <div class="RatingsReviews"> RatingsReviews</div>
     </div>
   );
 }
