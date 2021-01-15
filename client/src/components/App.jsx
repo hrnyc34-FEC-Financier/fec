@@ -1,21 +1,14 @@
 import React from "react";
+// import ProductDetailContainer from '../containers/ProductDetailContainer.jsx';
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
+let App = ({ teamName }) => {
 
-  render() {
-    const { teamName } = this.props;
-    return (
-      <div>
-        <h1>
-          Hello Team {teamName}!
-        </h1>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1> Hello Team { teamName} ! </h1>
+      {/* <ProductDetailContainer /> */}
+    </div>
+  );
 }
 
 export default App;
