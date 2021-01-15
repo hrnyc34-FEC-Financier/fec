@@ -27,11 +27,40 @@ let searchEngine = {
       .catch(err => console.error(err));
   },
 
-  post: () => {
+  postReview: (productId, rating, recommendation, summary, body, photos, user, email) => {
+    axios({
+      method: 'POST',
+      url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews',
+      data: {product_id: productId, rating, recommendation, summary, body, }
+    })
+      .then(result => {
+        return result.data;
+      })
+      .catch(err => console.error(err));
   },
 
-  put: () =>{
+  putReviewHelpful: (reviewId, helpfulness) => {
+    axios({
+      method: 'PUT',
+      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${reviewId}/helpful`,
+      data: {helpfulness}
+    })
+      .then(result => {
+        return result.data;
+      })
+      .catch(err => console.error(err));
+  },
 
+  putReviewReport: (reviewId, reported) => {
+    axios({
+      method: 'PUT',
+      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${reviewId}/report`,
+      data: {reported}
+    })
+      .then(result => {
+        return result.data;
+      })
+      .catch(err => console.error(err));
   }
 };
 
