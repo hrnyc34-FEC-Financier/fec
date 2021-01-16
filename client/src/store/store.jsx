@@ -3,12 +3,15 @@ import thunk from 'redux-thunk';
 import rootReducer from './../reducers/rootReducer.jsx';
 
 const states = {
-}
-
+  relatedProductList: [],
+  // relatedProductCarouselList: [],
+  // relatedProductStarModal: false,
+  // yourOutfitList:[]
+};
 
 const store = createStore(
   rootReducer,
-  states ,
+  states,
   applyMiddleware( thunk )
 );
 export default store;

@@ -1,15 +1,46 @@
 html {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 * {
   box-sizing: border-box;
 }
 
-body {
+/* body {
 
 }
 
 div {
 
+} */
+.container {
+  display: grid;
+  /* grid-template-columns: ; */
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 2px;
+}
+
+.ProductDetail{
+  background-color: rgb(96, 125, 255);
+}
+.RelatedItems{
+  background-color: rgb(244,244,244)
+}
+.QuestionsAnswers{
+  background-color: rgb(255, 225, 52);
+}
+.RatingsReviews{
+  background-color: rgb(133, 131, 132);
+}
+
+.RP_container{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 2px;
+}
+
+.Carousel1{
+  background-color:rgb(227, 227, 228);
 }

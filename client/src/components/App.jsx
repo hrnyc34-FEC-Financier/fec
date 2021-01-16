@@ -1,21 +1,19 @@
-import React from "react";
+import React from 'react';
+import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
+let App = ({ teamName }) => {
 
-  render() {
-    const { teamName } = this.props;
-    return (
-      <div>
-        <h1>
-          Hello Team {teamName}!
-        </h1>
+  return (
+    <div className = "container">
+      <h1> Hello Team { teamName} ! </h1>
+      <div className = "ProductDetail">ProductDetail</div>
+      <div className = "RelatedItems"><b>RelatedItems</b>
+        <RelatedItemsContainer />
       </div>
-    );
-  }
-}
+      <div className= "QuestionsAnswers"> QuestionsAnswers</div>
+      <div className= "RatingsReviews"> RatingsReviews</div>
+    </div>
+  );
+};
 
 export default App;
