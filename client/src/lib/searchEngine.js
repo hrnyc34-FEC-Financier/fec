@@ -7,17 +7,11 @@ const searchEngine = {
   //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
   //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
-    axios
+    return axios
       .get(`${url}/${endPoint}`, {
         headers: { Authorization },
         params: params,
       })
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
   },
 
   //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}

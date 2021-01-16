@@ -1,6 +1,6 @@
 import React from "react";
 import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
-import RelatedItemsContainer from '../containers/RelatedItems.jsx';
+
 
 
 let App = ({ teamName }) => {

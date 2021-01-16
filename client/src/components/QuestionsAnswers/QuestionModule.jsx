@@ -12,7 +12,7 @@ class QuestionModule extends React.Component {
   }
 
   componentDidMount() {
-    searchEngine.getQuestions(11001)
+    searchEngine.get(`qa/questions`, {product_id: 11001})
     .then(response => this.setState({questions: response.data.results}, console.log('questions:', response.data.results)))
   }
 
