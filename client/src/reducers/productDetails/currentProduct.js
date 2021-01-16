@@ -1,4 +1,4 @@
-export default changeProductReducer = (state = {}, action) => {
+const changeProductReducer = (state = {}, action) => {
   switch (action.type) {
     case 'CHANGE_PRODUCT':
       return action.currentProduct;
@@ -6,3 +6,5 @@ export default changeProductReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default changeProductReducer;

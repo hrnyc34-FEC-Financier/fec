@@ -1,4 +1,4 @@
-export default changeViewReducer = (state = null, action) => {
+const changeViewReducer = (state = null, action) => {
   switch (action.type) {
     case 'CHANGE_VIEW':
       return action.view;
@@ -6,3 +6,4 @@ export default changeViewReducer = (state = null, action) => {
       return state;
   }
 };
+export default changeViewReducer;

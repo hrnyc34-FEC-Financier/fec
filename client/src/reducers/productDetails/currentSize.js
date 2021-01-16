@@ -1,4 +1,4 @@
-export default changeSizeReducer = (state = '', action) => {
+const changeSizeReducer = (state = '', action) => {
   switch (action.type) {
     case 'CHANGE_SIZE':
       return action.currentSize;
@@ -6,3 +6,4 @@ export default changeSizeReducer = (state = '', action) => {
       return state;
   }
 };
+export default changeSizeReducer;

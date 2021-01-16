@@ -1,4 +1,4 @@
-export default changeZoomReducer = (state = null, action) => {
+const changeZoomReducer = (state = null, action) => {
   switch (action.type) {
     case 'CHANGE_ZOOM':
       return action.zoom;
@@ -6,3 +6,4 @@ export default changeZoomReducer = (state = null, action) => {
       return state;
   }
 };
+export default changeZoomReducer;

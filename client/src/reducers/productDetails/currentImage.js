@@ -1,4 +1,4 @@
-export default changeImageReducer = (state = null, action) => {
+const changeImageReducer = (state = null, action) => {
   switch (action.type) {
     case 'CHANGE_IMAGE':
       return action.currentImage;
@@ -6,3 +6,4 @@ export default changeImageReducer = (state = null, action) => {
       return state;
   }
 };
+export default changeImageReducer;
