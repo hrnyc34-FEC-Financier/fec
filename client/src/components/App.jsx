@@ -1,19 +1,19 @@
-import React from "react";
-// import ProductDetailContainer from '../containers/ProductDetailContainer.jsx';
+import React from 'react';
+// import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 
 let App = ({ teamName }) => {
 
   return (
-    <div class="container">
+    <div className = "container">
       <h1> Hello Team { teamName} ! </h1>
-    <div class="ProductDetail">
-    {/* <ProductDetailContainer /> */}
-    ProductDetail</div>
-    <div class="RelatedItems">RelatedItems </div>
-    <div class="QuestionsAnswers"> QuestionsAnswers</div>
-    <div class="RatingsReviews"> RatingsReviews</div>
+      <div className = "ProductDetail">ProductDetail</div>
+      <div className = "RelatedItems">RelatedItems
+        {/* <RelatedItemsContainer /> */}
+      </div>
+      <div className= "QuestionsAnswers"> QuestionsAnswers</div>
+      <div className= "RatingsReviews"> RatingsReviews</div>
     </div>
   );
-}
+};
 
 export default App;
