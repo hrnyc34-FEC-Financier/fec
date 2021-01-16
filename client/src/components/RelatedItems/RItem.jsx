@@ -1,6 +1,6 @@
 import React from 'react';
 
-let relatedItems = ({ relatedProductList, handleRelatedItemClick })=>{
+let RelatedItems = ({ relatedProductList, handleRelatedItemClick })=>{
   console.log( 'relatedProductList', relatedProductList );
   let rItemNumbers = relatedProductList.map( (item, i)=>( <li key={i}> {item} </li> ) );
   return (
@@ -18,4 +18,4 @@ let relatedItems = ({ relatedProductList, handleRelatedItemClick })=>{
   );
 };
 
-export default relatedItems;
+export default RelatedItems;

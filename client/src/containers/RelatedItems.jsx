@@ -7,7 +7,6 @@ let mapStateToProps = ( state ) => ({
 });
 let mapDispatchToProps = ( dispatch ) => ({
   handleRelatedItemClick: ( productId ) => dispatch( relatedItemsSearch( productId ) ),
-  // handleRelatedItemClick: ( productId ) => console.log('handleRelatedItemClick : ', productId),
 });
 
 let RelatedItemsContainer = connect(
