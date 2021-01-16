@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default searchEngine = {
+let searchEngine = {
   get: ( options )=>{
     return axios( options )
       .then((res) => {
@@ -38,3 +38,5 @@ export default searchEngine = {
     // PUT /qa/questions/:question_id/report
   }
 };
+
+export default searchEngine;
