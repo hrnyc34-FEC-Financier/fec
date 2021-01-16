@@ -1,7 +1,9 @@
 # Guidelines
   **Installation**
-  1. npm install to start
-
+  1. npm install
+  2. npm run build-prod
+  3. npm run build-dev
+  4. npm start
 
 ## Check out
   **Upgrading from Enzyme 2.x or React < 16**
