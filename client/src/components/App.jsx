@@ -19,6 +19,4 @@ let App = ({ teamName }) => {
   )
 }
 
->>>>>>> cody-dev
-
 export default App;
