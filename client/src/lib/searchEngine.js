@@ -7,50 +7,28 @@ const searchEngine = {
   //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
   //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
-    axios
-      .get(`${url}/${endPoint}`, {
-        headers: { Authorization },
-        params: params,
-      })
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    return axios.get(`${url}/${endPoint}`, {
+      headers: { Authorization },
+      params: params,
+    });
   },
 
   //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
   post: (endPoint, data) => {
-    axios
-      .post(`${url}/${endPoint}`, {
-        headers: { Authorization },
-        data: data,
-      })
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    return axios.post(`${url}/${endPoint}`, {
+      headers: { Authorization },
+      data: data,
+    });
   },
 
   // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
   // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
   put: (endPoint, data) => {
-    axios
-      .put(`${url}/{endPoint}`, {
-        headers: { Authorization },
-        data: data,
-      })
-      .then(({ data }) => {
-        console.log(data);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    return axios.put(`${url}/${endPoint}`, {
+      headers: { Authorization },
+      data: data,
+    });
   },
 };
 
 export default searchEngine;
-

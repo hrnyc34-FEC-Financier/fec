@@ -1,4 +1,5 @@
-export default changeZoom = (zoom) => ({
+const changeZoom = (zoom) => ({
   type: 'CHANGE_ZOOM',
   zoom: zoom,
 });
+export default changeZoom;
