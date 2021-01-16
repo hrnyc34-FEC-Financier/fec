@@ -7,7 +7,6 @@ const setSelectedStyle = (product_id) => {
     return searchAPI
       .get(`products/${product_id}`)
       .then(({ data }) => {
-        // console.log(typeof data.id);
         dispatch(changeProduct(data));
         dispatch(changeProductId(data.id));
       })

@@ -1,19 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/rootReducer.js';
-// import searchEngine from './lib/searchEngine.js';
-
-// let productList = [];
-// let currentProduct = {};
-// let currentStyleList = [];
-
-// let relatedProductList = [];
-
-// let reviewsList = [];
-// let productMetaData = {};
-
-// let questionsList = [];
-// let answersList = [];
 
 // searchEngine.get('products')
 //   .then(({ data }) => {
@@ -49,21 +36,6 @@ import rootReducer from '../reducers/rootReducer.js';
 //   })
 //   .catch(err => console.error(err));
 
-// const states = {
-//   productList,
-//   currentProduct,
-//   currentStyleList,
-//   relatedProductList,
-//   reviewsList,
-//   productMetaData,
-//   questionsList,
-//   answersList,
-// };
-
-const store = createStore(
-  rootReducer,
-  // states,
-  applyMiddleware(thunk)
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
