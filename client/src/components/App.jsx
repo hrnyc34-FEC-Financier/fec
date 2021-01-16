@@ -1,4 +1,7 @@
 import React from "react";
+import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
+import searchEngine from "../lib/searchEngine.js";
+
 
 class App extends React.Component {
   constructor(props){
@@ -7,12 +10,13 @@ class App extends React.Component {
   }
 
   render() {
-    const { teamName } = this.props;
+
     return (
-      <div>
-        <h1>
-          Hello Team {teamName}!
+      <div id="container">
+        <h1 id="hello">
+          Hello Team!
         </h1>
+        <QuestionModule />
       </div>
     );
   }
