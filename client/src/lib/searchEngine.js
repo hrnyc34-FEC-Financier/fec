@@ -3,7 +3,7 @@ import axios from "axios";
 
 let searchEngine = {
 
-  getReviews: (productId, page, count, sort) => {
+  getProductReviews: (productId, page, count, sort) => {
     axios({
       method: 'GET',
       url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews',
@@ -15,7 +15,7 @@ let searchEngine = {
       .catch(err => console.error(err));
   },
 
-  getProductReviewData: (productId) => {
+  getProductReviewMetaData: (productId) => {
     axios({
       method: 'GET',
       url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/meta',
