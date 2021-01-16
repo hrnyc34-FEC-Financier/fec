@@ -3,8 +3,7 @@ const { API_TOKEN } = require('../../../env/config.js');
 const Authorization = API_TOKEN;
 const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc';
 
-let searchEngine = {
-
+const searchEngine = {
   //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
   //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
@@ -31,7 +30,7 @@ let searchEngine = {
       .then(({ data }) => {
         console.log(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
   },
@@ -47,8 +46,8 @@ let searchEngine = {
       .then(({ data }) => {
         console.log(data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
-  }
+  },
 };
