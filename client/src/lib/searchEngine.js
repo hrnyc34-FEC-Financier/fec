@@ -51,3 +51,6 @@ const searchEngine = {
       });
   },
 };
+
+export default searchEngine;
+

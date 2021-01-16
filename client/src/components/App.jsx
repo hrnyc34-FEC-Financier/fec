@@ -1,21 +1,22 @@
-import React from 'react';
-import ProductDetailMain from './ProductDetail/ProductDetailMain.jsx';
+import React from "react";
+import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
+import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
-  render() {
-    const { teamName } = this.props;
-    return (
-      <div className='main-grid-container'>
-        <ProductDetailMain />
-        {/* <h1>Hello Team {teamName}!</h1> */}
+let App = ({ teamName }) => {
+
+  return (
+    <div className = "container">
+      <h1> Hello Team { teamName} ! </h1>
+      <div className = "ProductDetail">ProductDetail</div>
+      <div className = "RelatedItems">RelatedItems
       </div>
-    );
-  }
+      <div className= "QuestionsAnswers">
+      <QuestionModule />
+      </div>
+      <div className= "RatingsReviews"> RatingsReviews</div>
+    </div>
+  )
 }
 
 export default App;
