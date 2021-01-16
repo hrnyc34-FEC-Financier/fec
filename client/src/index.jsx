@@ -9,4 +9,4 @@ ReactDOM.render(
     <App teamName="Financier" />
   </Provider>,
   document.getElementById('app')
-);
+)
