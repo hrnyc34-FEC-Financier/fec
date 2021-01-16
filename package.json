@@ -23,8 +23,6 @@
     "webpack-cli": "^4.3.1"
   },
   "dependencies": {
-    "@material-ui/core": "^4.11.2",
-    "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.1",
     "create-babelrc": "^1.0.0",
     "css-loader": "^5.0.1",
