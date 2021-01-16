@@ -1,7 +1,10 @@
 import React from 'react';
 
-const ProductDetailMain = ({ productList }) => {
-  console.log('prl', productList);
+const ProductDetailMain = ({
+  productList,
+  currentProduct,
+  currentProductId,
+}) => {
   return (
     <div className='product-display-container'>
       {/* <pre className='product-info'>1.1.1 Product Information</pre>
@@ -13,6 +16,8 @@ const ProductDetailMain = ({ productList }) => {
       items. If it is available it should be displayed.
     </pre> */}
       <pre>{JSON.stringify(productList, null, 2)}</pre>
+      <pre>{JSON.stringify(currentProduct, null, 2)}</pre>
+      <pre>{currentProductId}</pre>
     </div>
   );
 };

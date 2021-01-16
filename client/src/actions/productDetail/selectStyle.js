@@ -4,11 +4,12 @@ import changeProductId from './currentProductId.js';
 
 const setSelectedStyle = (product_id) => {
   return (dispatch) => {
-    searchAPI
+    return searchAPI
       .get(`products/${product_id}`)
-      .then((currentProduct) => {
-        dispatch(changeProduct(currentProduct));
-        dispatch(changeProductId(currentProduct.id));
+      .then(({ data }) => {
+        // console.log(typeof data.id);
+        dispatch(changeProduct(data));
+        dispatch(changeProductId(data.id));
       })
       .catch((err) => {
         console.log(err);
