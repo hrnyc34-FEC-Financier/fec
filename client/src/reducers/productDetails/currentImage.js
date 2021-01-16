@@ -1,4 +1,4 @@
-const changeImageReducer = (state = null, action) => {
+const changeImageReducer = (state = '', action) => {
   switch (action.type) {
     case 'CHANGE_IMAGE':
       return action.currentImage;
