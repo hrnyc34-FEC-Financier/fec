@@ -1,67 +1,54 @@
-import React from "react";
-import axios from "axios";
+const axios = require('axios');
+const { API_TOKEN } = require('../../../env/config.js');
+const Authorization = API_TOKEN;
+const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc';
 
 let searchEngine = {
 
-  getProductReviews: (productId, page, count, sort) => {
-    axios({
-      method: 'GET',
-      url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews',
-      params: {product_id: productId, page, count, sort}
-    })
-      .then(result => {
-        return result.data;
+  //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
+  //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
+  get: (endPoint, params = {}) => {
+    axios
+      .get(`${url}/${endPoint}`, {
+        headers: { Authorization },
+        params: params,
       })
-      .catch(err => console.error(err));
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
 
-  getProductReviewMetaData: (productId) => {
-    axios({
-      method: 'GET',
-      url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/meta',
-      params: {product_id: productId}
-    })
-      .then(result => {
-        return result.data;
+  //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
+  post: (endPoint, data) => {
+    axios
+      .post(`${url}/${endPoint}`, {
+        headers: { Authorization },
+        data: data,
       })
-      .catch(err => console.error(err));
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   },
 
-  postReview: (productId, rating, recommendation, summary, body, photos, user, email) => {
-    axios({
-      method: 'POST',
-      url: 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews',
-      data: {product_id: productId, rating, recommendation, summary, body, }
-    })
-      .then(result => {
-        return result.data;
+  // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
+  // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
+  put: (endPoint, data) => {
+    axios
+      .put(`${url}/{endPoint}`, {
+        headers: { Authorization },
+        data: data,
       })
-      .catch(err => console.error(err));
-  },
-
-  putReviewHelpful: (reviewId, helpfulness) => {
-    axios({
-      method: 'PUT',
-      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${reviewId}/helpful`,
-      data: {helpfulness}
-    })
-      .then(result => {
-        return result.data;
+      .then(({ data }) => {
+        console.log(data);
       })
-      .catch(err => console.error(err));
-  },
-
-  putReviewReport: (reviewId, reported) => {
-    axios({
-      method: 'PUT',
-      url: `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${reviewId}/report`,
-      data: {reported}
-    })
-      .then(result => {
-        return result.data;
-      })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err);
+      });
   }
 };
-
-export default searchEngine;
