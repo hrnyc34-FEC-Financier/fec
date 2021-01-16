@@ -4,6 +4,8 @@ const Authorization = API_TOKEN;
 const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc';
 
 const searchEngine = {
+  //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
+  //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
     axios
       .get(`${url}/${endPoint}`, {
@@ -11,30 +13,41 @@ const searchEngine = {
         params: params,
       })
       .then(({ data }) => {
-        return data;
+        console.log(data);
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
   },
-  post: () => {
-    // POST /reviews
-    //   body: product_id + 8 parameters
-    // POST /qa/questions
-    //   body: product_id + 3 parameters
-    // POST /qa/questions/:question_id/answers
+
+  //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
+  post: (endPoint, data) => {
+    axios
+      .post(`${url}/${endPoint}`, {
+        headers: { Authorization },
+        data: data,
+      })
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
-  put: () => {
-    // PUT /reviews/:review_id/helpful
-    // PUT /reviews/:review_id/report
-    // PUT /qa/answers/:answer_id/helpful
-    // PUT /qa/answers/:answer_id/report
-    // PUT /qa/questions/:question_id/helpful
-    // PUT /qa/questions/:question_id/report
+
+  // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
+  // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
+  put: (endPoint, data) => {
+    axios
+      .put(`${url}/{endPoint}`, {
+        headers: { Authorization },
+        data: data,
+      })
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   },
 };
-const id = 11001;
-let endPoint = '';
-searchEngine.get(`products/`, { page: 1, count: 10 });
-
-// export default searchEngine;
