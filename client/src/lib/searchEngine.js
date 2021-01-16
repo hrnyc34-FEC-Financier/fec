@@ -62,3 +62,6 @@ export default searchEngine = {
       });
   },
 };
+
+export default searchEngine;
+
