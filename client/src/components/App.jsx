@@ -1,25 +1,23 @@
 import React from "react";
 import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
-import searchEngine from "../lib/searchEngine.js";
+import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 
 
-class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
+let App = ({ teamName }) => {
 
-  render() {
-
-    return (
-      <div id="container">
-        <h1 id="hello">
-          Hello Team!
-        </h1>
-        <QuestionModule />
+  return (
+    <div className = "container">
+      <h1> Hello Team { teamName} ! </h1>
+      <div className = "ProductDetail">ProductDetail</div>
+      <div className = "RelatedItems">RelatedItems
       </div>
-    );
-  }
+      <div className= "QuestionsAnswers">
+      <QuestionModule />
+      </div>
+      <div className= "RatingsReviews"> RatingsReviews</div>
+    </div>
+  )
 }
+
 
 export default App;
