@@ -1,8 +1,14 @@
-import React from "react";
-import axios from "axios";
+import React from 'react';
+import axios from 'axios';
 
-let searchEngine = {
-  get : ()=>{
+export default searchEngine = {
+  get: ( options )=>{
+    return axios( options )
+      .then((res) => {
+        console.log('axios is working!! :', res.data);
+        return res.data;
+      })
+      .catch(err => console.log(err));
     // GET /products
     //   query: page, count
     // GET /products/:product_id
@@ -15,16 +21,15 @@ let searchEngine = {
     //   query: product_id, page, count
     //  GET /qa/questions/:question_id/answers
     //   query: page, count
-    //  GET /products/:product_id/related
   },
-  post : ()=>{
+  post: ( options )=>{
     // POST /reviews
     //   body: product_id + 8 parameters
     // POST /qa/questions
     //   body: product_id + 3 parameters
     // POST /qa/questions/:question_id/answers
   },
-  put :() =>{
+  put: ( options ) =>{
     // PUT /reviews/:review_id/helpful
     // PUT /reviews/:review_id/report
     // PUT /qa/answers/:answer_id/helpful
@@ -32,6 +37,4 @@ let searchEngine = {
     // PUT /qa/questions/:question_id/helpful
     // PUT /qa/questions/:question_id/report
   }
-}
-
-export default searchEngine;
+};

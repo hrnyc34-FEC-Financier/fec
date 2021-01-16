@@ -1,5 +1,5 @@
 import React from 'react';
-// import RelatedItemsContainer from '../containers/RelatedItems.jsx';
+import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 
 let App = ({ teamName }) => {
 
@@ -8,7 +8,7 @@ let App = ({ teamName }) => {
       <h1> Hello Team { teamName} ! </h1>
       <div className = "ProductDetail">ProductDetail</div>
       <div className = "RelatedItems">RelatedItems
-        {/* <RelatedItemsContainer /> */}
+        <RelatedItemsContainer />
       </div>
       <div className= "QuestionsAnswers"> QuestionsAnswers</div>
       <div className= "RatingsReviews"> RatingsReviews</div>
