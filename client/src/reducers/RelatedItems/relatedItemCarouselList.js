@@ -1,6 +1,6 @@
 import Redux from 'redux';
 
-let relatedItemCarouselListReducer = (state = [], action) => {
+const relatedItemCarouselListReducer = (state = [], action) => {
   switch ( action.type ) {
   case 'GET_RELATED_PRODUCT_CAROUSEL_LIST':
     return action.relatedProductCarouselList;

@@ -18,7 +18,6 @@ html {
   grid-column-end: 3;
 }
 
-
 #searchBar {
   width: 100%;
   height: 40px;
@@ -81,6 +80,13 @@ button {
   grid-column-gap: 0px;
   grid-row-gap: 2px;
 }
+
+.RItemsList_container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 2px;
+}
+
 .Carousel2{
   background-color:rgb(227, 227, 228);
 }
