@@ -11,6 +11,7 @@ env/config.js
 !client/dist/index.html
 !client/dist/style.css
 !client/dist/style.scss
+!client/dist/productDetailsStyle.css
 .cache/
 *.log
 package-lock.json

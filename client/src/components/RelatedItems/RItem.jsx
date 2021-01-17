@@ -1,10 +1,10 @@
 import React from 'react';
 
-let RelatedItems = ({ relatedProductList, handleRelatedItemClick })=>{
-  console.log( 'relatedProductList', relatedProductList );
-  let rItemNumbers = relatedProductList.map( (item, i)=>( <li key={i}> {item} </li> ) );
+let RelatedItems = ({ relatedProductList, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick })=>{
+  console.log( 'relatedProductCarouselList', relatedProductCarouselList );
+  let rItemNumbers = relatedProductList.map( (item, i)=> { return (<li key={i}>{item}</li>); } );
   return (
-    <div className ='RP_container'>
+    <div className ='RP_container RelatedItems'>
       <div className ='Carousel1'>
         Carousel #1 <br />
         <button value='11003' onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
