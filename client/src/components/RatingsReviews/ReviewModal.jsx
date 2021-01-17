@@ -5,9 +5,9 @@ const ReviewModal = (reviewModal, reviewRating, reviewSummary, reviewBody, revie
   //if reviewModal is false don't show anything;
   //if reviewModal is true, show form
   return (
-    <div>
-      <pre>{JSON.stringify(reviewsList, null, 2)}</pre>
-    </div>
+    <form>
+
+    </form>
   );
 };
 
