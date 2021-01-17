@@ -9,3 +9,5 @@ const reviewScrollReducer = (state = false, action) => {
     return state;
   }
 };
+
+export default reviewScrollReducer;

@@ -9,3 +9,5 @@ const ratingsFilterReducer = (state = {}, action) => {
     return state;
   }
 };
+
+export default ratingsFilterReducer;

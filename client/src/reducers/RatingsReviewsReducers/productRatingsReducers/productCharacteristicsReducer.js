@@ -9,3 +9,5 @@ const productCharacteristicsReducer = (state = {}, action) => {
     return state;
   }
 };
+
+export default productCharacteristicsReducer;

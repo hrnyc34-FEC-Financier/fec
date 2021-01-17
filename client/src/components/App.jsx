@@ -2,6 +2,8 @@ import React from 'react';
 // import RelatedItemsContainer from '../containers/RelatedItems.jsx';
 // import QuestionModule from './QuestionsAnswers/QuestionModule.jsx';
 import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
+import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
+
 const App = ({ teamName }) => {
   return (
     <div className='container'>
@@ -17,6 +19,7 @@ const App = ({ teamName }) => {
         <QuestionModule />
       </div>
       <div className='RatingsReviews'> RatingsReviews</div> */}
+      < RatingsReviewsMain />
     </div>
   );
 };

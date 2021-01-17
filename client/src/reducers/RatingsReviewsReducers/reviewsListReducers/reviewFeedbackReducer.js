@@ -9,3 +9,5 @@ const reviewFeedbackReducer = (state = {}, action) => {
     return state;
   }
 };
+
+export default reviewFeedbackReducer;

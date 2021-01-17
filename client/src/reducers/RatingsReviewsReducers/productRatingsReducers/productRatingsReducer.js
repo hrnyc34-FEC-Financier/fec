@@ -9,3 +9,5 @@ const productRatingsReducer = (state = {}, action) => {
     return state;
   }
 };
+
+export default productRatingsReducer;

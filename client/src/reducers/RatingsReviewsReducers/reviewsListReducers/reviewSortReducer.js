@@ -9,3 +9,5 @@ const reviewSortReducer = (state = '', action) => {
     return state;
   }
 };
+
+export default reviewSortReducer;

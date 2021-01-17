@@ -9,3 +9,5 @@ const reviewHelpfulReducer = (state = {}, action) => {
     return state;
   }
 };
+
+export default reviewHelpfulReducer;

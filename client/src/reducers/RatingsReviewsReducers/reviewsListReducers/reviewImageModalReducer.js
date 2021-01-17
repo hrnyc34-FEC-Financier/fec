@@ -9,3 +9,5 @@ const reviewImageModalReducer = (state = false, action) => {
     return state;
   }
 };
+
+export default reviewImageModalReducer;
