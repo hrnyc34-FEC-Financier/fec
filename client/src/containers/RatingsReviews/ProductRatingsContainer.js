@@ -3,6 +3,7 @@ import ProductRatings from '../../components/RatingsReviews/ProductRatings.jsx';
 import setRatings from '../../actions/RatingsReviews/setRatings.js';
 
 const mapStateToProps = (state) => ({
+  currentProductId: state.currentProductId,
   productRatings: state.productRatings,
   productRecommended: state.productRecommended,
   productCharacteristics: state.productCharacteristics,

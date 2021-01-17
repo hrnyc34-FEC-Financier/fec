@@ -54,6 +54,7 @@ const rootReducer = combineReducers({
   productAvgRating: productAvgRatingReducer,
   ratingsFilter: ratingsFilterReducer,
   //RatingsReviews: postReview
+  reviewModal: reviewModalReducer,
   reviewRating: reviewRatingReducer,
   reviewSummary: reviewSummaryReducer,
   reviewBody: reviewBodyReducer,

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-const ReviewsList = ({currentProductId, reviewsList, handleReviewsListChange}) => {
-  useEffect(() => {
-    handleReviewsListChange(currentProductId);
-  }, [currentProductId]);
+const ReviewsList = ({currentProductId, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewHelpful, reviewImageModal, reviewReported, reviewScroll, reviewSort, handleReviewsListChange}) => {
+
+  if (currentProductId !== '') {
+    useEffect(() => {
+      handleReviewsListChange(currentProductId);
+    }, [currentProductId]);
+  }
 
   return (
     <div>
