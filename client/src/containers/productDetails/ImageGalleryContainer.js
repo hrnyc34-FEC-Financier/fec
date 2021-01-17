@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProductDetailMain from '../../components/ProductDetail/ProductDetailMain.jsx';
+import ImageGallery from '../../components/ProductDetail/ImageGallery.jsx';
 
 const mapStateToProps = (state) => ({
   productList: state.productList,
@@ -11,6 +11,6 @@ const mapStateToProps = (state) => ({
   thumbGallery: state.thumbGallery,
 });
 
-const ProductDetailContainer = connect(mapStateToProps)(ProductDetailMain);
+const ImageGalleryContainer = connect(mapStateToProps)(ImageGallery);
 
-export default ProductDetailContainer;
+export default ImageGalleryContainer;

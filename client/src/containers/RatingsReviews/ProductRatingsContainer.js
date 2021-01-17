@@ -18,9 +18,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleProductRatingsChange: (product_id) => {
-      dispatch(setRatings(product_id));
-    },
     changeProductAvgRating: (productAvgRating) => {
       dispatch(changeProductAvgRating(productAvgRating));
     }
