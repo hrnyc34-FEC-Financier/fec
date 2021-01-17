@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 import RelatedItemReducer from './RelatedItems.jsx';
+
+// product info
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -7,6 +9,7 @@ import changeStyleReducer from './productDetails/currentStyle.js';
 import changeStyleListReducer from './productDetails/currentStyleList.js';
 import changeImageReducer from './productDetails/currentImage.js';
 import changeGalleryReducer from './productDetails/thumbGallery.js';
+import changeSizeReducer from './productDetails/currentSize.js';
 
 const rootReducer = combineReducers({
   // relatedProductList: RelatedItemReducer,
@@ -17,6 +20,7 @@ const rootReducer = combineReducers({
   currentStyleList: changeStyleListReducer,
   currentImage: changeImageReducer,
   thumbGallery: changeGalleryReducer,
+  currentSize: changeSizeReducer,
 });
 
 export default rootReducer;

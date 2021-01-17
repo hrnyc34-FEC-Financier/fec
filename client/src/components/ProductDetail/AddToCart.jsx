@@ -1,16 +1,55 @@
-import { Divider } from '@material-ui/core';
+/* eslint-disable camelcase */
+/* eslint-disable indent */
+
+import { current } from 'immer';
 import React from 'react';
 
-const AddToCart = ({ currentStyle }) => {
+const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
+  const skus = (() =>
+    currentStyle.hasOwnProperty('skus')
+      ? Object.entries(currentStyle.skus)
+      : [])();
+
+  const quantities = (() => {
+    if (currentSku !== '') {
+      const range = Math.min(skus[parseInt(currentSku, 10)][1].quantity, 15);
+      const quantities = [];
+      for (let amount = 1; amount <= range; amount++) {
+        quantities.push(amount);
+      }
+      return quantities;
+    }
+  })();
+
   return (
     <div className='add-cart'>
       <form action=''>
-        <select name='size' id=''>
+        <select name='size' onChange={sizeChange}>
           <option value=''>SELECT SIZE</option>
-          {''}
+          {currentStyle.hasOwnProperty('skus')
+            ? skus.map((sku, i) =>
+                sku[1].quantity > 0 ? (
+                  <option key={sku[0]} value={i}>
+                    {sku[1].size}
+                  </option>
+                ) : null
+              )
+            : null}
         </select>
-        <select name='quantity' id=''></select>
-        <input type='submit' value='ADD To BAG' />
+        {currentSku === '' ? (
+          <select className='quantity disabled' name='quantity' id=''>
+            <option value=''>-</option>
+          </select>
+        ) : (
+          <select className='quantity disabled' name='quantity' id=''>
+            {quantities.map((amount) => (
+              <option key={amount} value={amount}>
+                {amount}
+              </option>
+            ))}
+          </select>
+        )}
+        <input type='submit' value='ADD TO BAG' />
         <input type='submit' value='*' />
       </form>
     </div>
@@ -18,23 +57,6 @@ const AddToCart = ({ currentStyle }) => {
 };
 
 export default AddToCart;
-
-const product = {
-  id: 11001,
-  campus: 'hrnyc',
-  name: 'Camo Onesie',
-  slogan: 'Blend in to your crowd',
-  description:
-    'The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.',
-  category: 'Jackets',
-  default_price: '140.00',
-  created_at: '2021-01-12T21:17:59.200Z',
-  updated_at: '2021-01-12T21:17:59.200Z',
-  features: [
-    { feature: 'Fabric', value: 'Canvas' },
-    { feature: 'Buttons', value: 'Brass' },
-  ],
-};
 
 const style = {
   style_id: 51158,
@@ -87,5 +109,22 @@ const style = {
       url:
         'https://images.unsplash.com/photo-1532543491484-63e29b3c1f5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
     },
+  ],
+};
+
+const product = {
+  id: 11001,
+  campus: 'hrnyc',
+  name: 'Camo Onesie',
+  slogan: 'Blend in to your crowd',
+  description:
+    'The So Fatigues will wake you up and fit you in. This high energy camo will have you blending in to even the wildest surroundings.',
+  category: 'Jackets',
+  default_price: '140.00',
+  created_at: '2021-01-12T21:17:59.200Z',
+  updated_at: '2021-01-12T21:17:59.200Z',
+  features: [
+    { feature: 'Fabric', value: 'Canvas' },
+    { feature: 'Buttons', value: 'Brass' },
   ],
 };
