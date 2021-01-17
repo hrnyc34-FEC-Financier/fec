@@ -8,6 +8,7 @@ const ReviewsList = ({currentProductId, reviewsList, reviewDisplayLimiter, revie
     }, [currentProductId]);
   }
 
+  console.log(reviewsList);
   return (
     <div>
       <pre>{JSON.stringify(reviewsList, null, 2)}</pre>
