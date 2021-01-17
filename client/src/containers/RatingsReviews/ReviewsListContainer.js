@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleReviewsListChange: (product_id) => {
       dispatch(setReviewsList(product_id));
-    }
+    },
   };
 };
 
