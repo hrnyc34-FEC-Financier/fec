@@ -23,7 +23,7 @@ const ProductDetailMain = ({
         1.1.1.5 Product Overview - This free form text field may exist on some
         items. If it is available it should be displayed.
       </pre> */}
-      <pre>{JSON.stringify(currentImage, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(currentImage, null, 2)}</pre> */}
     </div>
   );
 };

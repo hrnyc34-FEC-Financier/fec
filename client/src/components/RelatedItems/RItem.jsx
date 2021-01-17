@@ -1,21 +1,28 @@
 import React from 'react';
+import RItemList from './RItemList.jsx';
+import YourOutFitList from './YourOutFitList.jsx';
 
-let relatedItems = ({ relatedProductList, handleRelatedItemClick })=>{
-  console.log( 'relatedProductList', relatedProductList );
-  let rItemNumbers = relatedProductList.map( (item, i)=>( <li key={i}> {item} </li> ) );
+let RelatedItems = ({ relatedProductList, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick })=>{
+  console.log( 'relatedProductCarouselList', relatedProductCarouselList);
+  console.log( 'relatedProductImg', relatedProductCarouselList[0]);
+
+  const relatedItems = relatedProductCarouselList.map( item => <RItemList key={item.style_id} product={item} />);
+
   return (
-    <div className ='RP_container'>
-      <div className ='Carousel1'>
-        Carousel #1 <br />
-        <button value='11003' onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
-        <br />
-        <ol>
-          {rItemNumbers}
-        </ol>
+    <div className ='RItems_container'>
+
+      <div className ='Carousel1'>Carousel #1
+        <div className='RItemsList_container' >
+          {relatedItems}
+        </div>
       </div>
-      <div className ='Carousel2'>Carousel #2</div>
+
+      <div className ='Carousel2'>Carousel #2
+        <button value='11003' onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
+      </div>
+
     </div>
   );
 };
 
-export default relatedItems;
+export default RelatedItems;
