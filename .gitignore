@@ -10,6 +10,7 @@ env/config.js
 ## ETC ##
 !client/dist/index.html
 !client/dist/style.css
+!client/dist/productDetailsstyle.css
 !client/dist/style.scss
 .cache/
 *.log
