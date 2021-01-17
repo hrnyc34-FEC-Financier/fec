@@ -6,8 +6,8 @@ const ProductRatings = ({currentProductId, productRatings, productRecommended, p
   // ( Number(productRatings['1']) + (Number(productRatings['2'] * 2)) + (Number(productRatings['3']) * 3) + (Number(productRatings['4']) * 4) + (Number(productRatings['5']) * 5) );
 
   if (currentProductId !== '') {
-    useEffect(() => {
-      handleProductRatingsChange(currentProductId);
+    useEffect(async () => {
+      await handleProductRatingsChange(currentProductId);
       productAvgRating = 10;
       changeProductAvgRating(productAvgRating);
     }, [currentProductId]);
