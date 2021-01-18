@@ -3,7 +3,6 @@ import React from 'react';
 // import QuestionModule from './QuestionsAnswers/QuestionModule.jsx';
 import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
 import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
-import './RatingsReviews/will-style.css';
 
 const App = ({ teamName }) => {
   return (
