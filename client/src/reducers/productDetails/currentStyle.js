@@ -1,4 +1,4 @@
-export default changeStyleReducer = (state = null, action) => {
+const changeStyleReducer = (state = {}, action) => {
   switch (action.type) {
     case 'CHANGE_STYLE':
       return action.currentStyle;
@@ -6,3 +6,4 @@ export default changeStyleReducer = (state = null, action) => {
       return state;
   }
 };
+export default changeStyleReducer;

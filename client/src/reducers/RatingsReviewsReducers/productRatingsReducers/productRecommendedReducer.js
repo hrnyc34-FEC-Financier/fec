@@ -1,5 +1,5 @@
 import Redux from 'redux';
-import * as actions from '../../../actionTypes/RatingsReview/actionTypes';
+import * as actions from '../../../actionTypes/RatingsReviews/actionTypes';
 
 const productRecommendedReducer = (state = 0, action) => {
   switch (action.type) {
@@ -9,3 +9,5 @@ const productRecommendedReducer = (state = 0, action) => {
     return state;
   }
 };
+
+export default productRecommendedReducer;

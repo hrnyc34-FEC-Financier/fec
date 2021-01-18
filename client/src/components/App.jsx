@@ -1,20 +1,23 @@
-import React from "react";
+import React from 'react';
 import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
+import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
+import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
+import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js'
 
-
-
-let App = ({ teamName }) => {
-
+const App = ({ teamName }) => {
   return (
     <div id = "container">
-      <h1> Hello Team { teamName} ! </h1>
-      <div className = "ProductDetail">ProductDetail</div>
+      <ProductDetailContainer />
       <div className = "RelatedItems">RelatedItems
       </div>
-      <QuestionModule />
-      <div className= "RatingsReviews"> RatingsReviews</div>
+      <QAModuleContainer />
+      <RatingsReviewsMain />
+
+
+
+
     </div>
-  )
-}
+  );
+};
 
 export default App;

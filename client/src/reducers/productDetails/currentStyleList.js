@@ -1,4 +1,4 @@
-export default currentStyleListReducer = (state = [], action) => {
+const currentStyleListReducer = (state = [], action) => {
   switch (action.type) {
     case 'CHANGE_STYLE_LIST':
       return action.currentStyleList;
@@ -6,3 +6,4 @@ export default currentStyleListReducer = (state = [], action) => {
       return state;
   }
 };
+export default currentStyleListReducer;
