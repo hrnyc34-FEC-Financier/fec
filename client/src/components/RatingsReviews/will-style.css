@@ -20,16 +20,10 @@
   width: 100%;
 }
 
-.starContainer {
-  display: inline-flex
+.starBarContainer {
+  display: flex;
 }
 
-/* hides radio button behind stars */
-input[type="radio"] {
-  display: none;
-}
-
-.star {
-  cursor: pointer;
-  transition: color 200ms;
+.starRatingBar {
+  flex-grow: 1;
 }

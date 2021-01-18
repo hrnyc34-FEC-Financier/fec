@@ -1,11 +1,12 @@
 import React from 'react';
+import StarRatingList from './StarRatingList.jsx';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import StarRatingPost from './StarRatingPost.jsx';
 
 const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter }) => {
   return (
     <div>
-      {productAvgStarRating}
+      <StarRatingList productRatings={productRatings} />
       <StarRatingReadOnly productAvgStarRating={productAvgStarRating} />
     </div>
   );

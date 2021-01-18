@@ -17,7 +17,7 @@ const calculateProductAvgRating = (productRatings) => {
 };
 
 const calculateProductAvgStarRating = (productAvgRating) => {
-  return Number((Math.round(productAvgRating * 4) / 4).toFixed(2))
+  return Number((Math.round(productAvgRating * 4) / 4).toFixed(2));
 };
 
 const setRatings = (product_id) => {
@@ -25,7 +25,6 @@ const setRatings = (product_id) => {
     return searchAPI.get('reviews/meta', {product_id})
       .then(({ data }) => {
         const productAvgRating = calculateProductAvgRating(data.ratings);
-        console.log(productAvgRating);
         dispatch(changeProductRatings(data.ratings));
         dispatch(changeProductRecommended(data.recommended));
         dispatch(changeProductCharacteristics(data.characteristics));
