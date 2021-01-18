@@ -1,6 +1,6 @@
 import Redux from 'redux';
 
-let RelatedItemReducer = (state = [], action) => {
+const relatedItemListReducer = (state = [], action) => {
   switch ( action.type ) {
   case 'GET_RELATED_PRODUCT_LIST':
     return action.relatedProductList;
@@ -8,4 +8,4 @@ let RelatedItemReducer = (state = [], action) => {
   }
 };
 
-export default RelatedItemReducer;
+export default relatedItemListReducer;

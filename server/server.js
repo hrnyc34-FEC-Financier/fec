@@ -13,14 +13,4 @@ app.get('/', (req, res)=>{
   res.json( 'Hello awesome team Financier' );
 });
 
-app.get('/products/:productId/related', (req, res)=>{
-  console.log('get :', req.params);
-  // readAll()
-  //   .then( result => res.json( result ) )
-  //   .catch( err =>{
-  //     res.sendStatus(404);
-  //     console.log(err);
-  //   });
-});
-
 module.exports = app;

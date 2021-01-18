@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux';
-import RelatedItemReducer from './RelatedItems.jsx';
-//productDetails
+
+import relatedItemListReducer from './relatedItems/relatedItemList.js';
+import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
+import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
+import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js';
+import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
+
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -8,6 +13,8 @@ import changeStyleReducer from './productDetails/currentStyle.js';
 import changeStyleListReducer from './productDetails/currentStyleList.js';
 import changeImageReducer from './productDetails/currentImage.js';
 import changeGalleryReducer from './productDetails/thumbGallery.js';
+import changeSizeReducer from './productDetails/currentSize.js';
+import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 //productDetails: End
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
@@ -39,7 +46,12 @@ import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/
 //RatingsReviews: End
 
 const rootReducer = combineReducers({
-  //productDetails
+  relatedProductList: relatedItemListReducer,
+  relatedProductCarouselList: relatedItemCarouselListReducer,
+  relatedProductStarModal: relatedItemStarModalReducer,
+  relatedItemsListDetail: relatedItemsListDetailReducer,
+  yourOutfitList: yourOutfitListReducer,
+
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
@@ -47,6 +59,8 @@ const rootReducer = combineReducers({
   currentStyleList: changeStyleListReducer,
   currentImage: changeImageReducer,
   thumbGallery: changeGalleryReducer,
+  currentSize: changeSizeReducer,
+  currentImageIndex: changeImageIndexReducer,
   //productDetails: End
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,

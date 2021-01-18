@@ -7,7 +7,7 @@ const ProductInfo = ({ currentProduct, currentStyle }) => (
     <div className='name'>{currentProduct.name}</div>
     {currentStyle.sale_price ? (
       <div>
-        <div className='sales-price'>currentStyle.sale_price</div>
+        <div className='sales-price'>{currentStyle.sale_price}</div>
         <div className='reg-price on-sale'>{currentStyle.original_price}</div>
       </div>
     ) : (
