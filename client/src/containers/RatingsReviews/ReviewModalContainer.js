@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import ReviewModal from '../../components/RatingsReviews/ReviewModal.jsx';
 
 const mapStateToProps = (state) => ({
   reviewModal: state.reviewModal,
   reviewRating: state.reviewRating,
+  reviewCharacteristics: state.reviewCharacteristics,
   reviewSummary: state.reviewSummary,
   reviewBody: state.reviewBody,
   reviewPhotos: state.reviewPhotos,

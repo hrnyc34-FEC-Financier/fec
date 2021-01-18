@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   productRecommended: state.productRecommended,
   productCharacteristics: state.productCharacteristics,
   productAvgRating: state.productAvgRating,
+  productAvgStarRating: state.productAvgStarRating,
   ratingsFilter: state.ratingsFilter
 });
 

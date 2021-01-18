@@ -3,6 +3,7 @@ import changeProductCharacteristics from './productRatings/productCharacteristic
 import changeProductRatings from './productRatings/productRatings.js';
 import changeProductRecommended from './productRatings/productRecommended.js';
 import changeProductAvgRating from './productRatings/productAvgRating.js';
+import changeProductAvgStarRating from './productRatings/productAvgStarRating.js';
 
 const calculateProductAvgRating = (productRatings) => {
   let totalRating = 0;
@@ -15,14 +16,21 @@ const calculateProductAvgRating = (productRatings) => {
   return Number((totalRating / totalReviews).toFixed(1));
 };
 
+const calculateProductAvgStarRating = (productAvgRating) => {
+  return Number((Math.round(productAvgRating * 4) / 4).toFixed(2))
+};
+
 const setRatings = (product_id) => {
   return (dispatch) => {
     return searchAPI.get('reviews/meta', {product_id})
       .then(({ data }) => {
+        const productAvgRating = calculateProductAvgRating(data.ratings);
+        console.log(productAvgRating);
         dispatch(changeProductRatings(data.ratings));
         dispatch(changeProductRecommended(data.recommended));
         dispatch(changeProductCharacteristics(data.characteristics));
-        dispatch(changeProductAvgRating(calculateProductAvgRating(data.ratings)));
+        dispatch(changeProductAvgRating(productAvgRating));
+        dispatch(changeProductAvgStarRating(calculateProductAvgStarRating(productAvgRating)));
       })
       .catch((err) => console.error('Unable to get Product Rating Data:', err));
   };

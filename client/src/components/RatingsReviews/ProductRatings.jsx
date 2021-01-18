@@ -2,11 +2,11 @@ import React from 'react';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import StarRatingPost from './StarRatingPost.jsx';
 
-const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, ratingsFilter }) => {
+const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter }) => {
   return (
     <div>
-      <StarRatingReadOnly productAvgRating={productAvgRating} />
-      <StarRatingPost />
+      {productAvgStarRating}
+      <StarRatingReadOnly productAvgStarRating={productAvgStarRating} />
     </div>
   );
 };
