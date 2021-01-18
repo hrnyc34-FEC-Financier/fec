@@ -8,16 +8,18 @@ const ImageGallery = ({ currentImage, thumbGallery }) => (
         backgroundImage: `url(${currentImage.url})`,
       }}
     >
-      {' '}
-      {thumbGallery.map((pic, i) => (
-        <div
-          className='thumbnail'
-          key={i}
-          style={{
-            backgroundImage: `url(${pic.thumbnail_url})`,
-          }}
-        ></div>
-      ))}
+      {/* <img className='main-image' src={currentImage.url} alt='' /> */}
+      <div>
+        {thumbGallery.map((pic, i) => (
+          <div
+            className='thumbnail'
+            key={i}
+            style={{
+              backgroundImage: `url(${pic.thumbnail_url})`,
+            }}
+          ></div>
+        ))}
+      </div>
     </div>
   </div>
 );
