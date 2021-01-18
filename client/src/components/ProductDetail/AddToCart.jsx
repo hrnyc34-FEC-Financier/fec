@@ -37,7 +37,7 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
             : null}
         </select>
         {currentSku === '' ? (
-          <select className='quantity' disabled='true' name='quantity' id=''>
+          <select className='quantity' disabled name='quantity' id=''>
             <option value=''>-</option>
           </select>
         ) : (
