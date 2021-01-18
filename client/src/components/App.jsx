@@ -1,17 +1,15 @@
 import React from 'react';
-// import RelatedItemsContainer from '../containers/RelatedItems.jsx';
-// import QuestionModule from './QuestionsAnswers/QuestionModule.jsx';
 import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
+import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
+// import QuestionModule from './QuestionsAnswers/QuestionModule.jsx';
+
 const App = ({ teamName }) => {
   return (
-    <div className='container'>
-      {/* <h1> Hello Team {teamName} ! </h1> */}
+    <div>
+    {/* <div className='container'> */}
       <ProductDetailContainer />
-      {/* <div className='RelatedItems'>
-        RelatedItems
-        <RelatedItemsContainer />
-      </div>
-      <div className='QuestionsAnswers'>
+      <RelatedItemsContainer />
+      {/* <div className='QuestionsAnswers'>
         {' '}
         QuestionsAnswers
         <QuestionModule />
