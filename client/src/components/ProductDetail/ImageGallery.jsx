@@ -15,9 +15,6 @@ const ImageGallery = ({
     ></div>
     <div className='thumb-gallery'>
       {thumbGallery.map((pic, i) => {
-        // if (pic.url === currentImage) {
-        //   imageIndex = i;
-        // }
         return (
           <button
             onClick={(e) => {
