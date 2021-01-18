@@ -5,7 +5,8 @@ import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
 
 const App = ({ teamName }) => {
   return (
-    <div className='container'>
+    <div>
+    {/* <div className='container'> */}
       <ProductDetailContainer />
       <RelatedItemsContainer />
       {/* <div className='QuestionsAnswers'>

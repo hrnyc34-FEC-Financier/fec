@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import relatedItemListReducer from './relatedItems/relatedItemList.js';
+import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
 import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
 import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js';
 import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   relatedProductList: relatedItemListReducer,
   relatedProductCarouselList: relatedItemCarouselListReducer,
   relatedProductStarModal: relatedItemStarModalReducer,
+  relatedItemsListDetail: relatedItemsListDetailReducer,
   yourOutfitList: yourOutfitListReducer,
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,

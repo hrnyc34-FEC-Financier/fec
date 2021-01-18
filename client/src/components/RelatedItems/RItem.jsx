@@ -2,23 +2,36 @@ import React from 'react';
 import RItemList from './RItemList.jsx';
 import YourOutFitList from './YourOutFitList.jsx';
 
-let RelatedItems = ({ relatedProductList, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick })=>{
-  console.log( 'relatedProductCarouselList', relatedProductCarouselList);
-  console.log( 'relatedProductImg', relatedProductCarouselList[0]);
+let RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick, handleYourOutfitClick})=>{
+  console.log( 'currentProduct', currentProduct);
+  // console.log( 'relatedProductCarouselList', relatedProductCarouselList);
 
-  const relatedItems = relatedProductCarouselList.map( item => <RItemList key={item.style_id} product={item} />);
+  const relatedItems = relatedProductCarouselList.map( item => {
+    let imageURL = item.styles[0].photos[0].thumbnail_url;
+    if (imageURL !== null) {
+      return <RItemList key={item.id} product={item} />;
+    }
+  });
 
+  const yourOutfitItems = yourOutfitList.map( item => {
+    let imageURL = item.styles[0].photos[0].thumbnail_url;
+    if (imageURL !== null) {
+      return <YourOutFitList key={item.id} product={item} />;
+    }
+  });
   return (
-    <div className ='RItems_container'>
-
+    <div>
       <div className ='Carousel1'>Carousel #1
         <div className='RItemsList_container' >
-          {relatedItems}
+          {relatedItems}<br />
         </div>
+        <button value={currentProduct.id} onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
       </div>
-
       <div className ='Carousel2'>Carousel #2
-        <button value='11003' onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
+        <div className ='RItems_container'>
+          {yourOutfitItems}
+        </div>
+        <button value={currentProduct.id} onClick={(e)=>handleYourOutfitClick(e.target.value)}>Add</button>
       </div>
 
     </div>
