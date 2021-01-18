@@ -7,6 +7,8 @@ import setSelectedStyle from './selectStyle.js';
 import changeStyleList from './currentStyleList.js';
 import setReviewsList from '../RatingsReviews/setReviewsList.js';
 import setRatings from '../RatingsReviews/setRatings.js';
+import setQuestionList from '../QA/setQuestionList';
+import changeQuestionList from '../QA/questionList.js';
 
 const setSelectedProduct = (product_id) => {
   return (dispatch) => {
@@ -24,6 +26,12 @@ const setSelectedProduct = (product_id) => {
       .then(({ data }) => {
         dispatch(changeStyleList(data.results));
         dispatch(setSelectedStyle(data.results[0]));
+      })
+      .then(() => {
+        return searchAPI.get(`qa/questions`, { product_id });
+      })
+      .then(({data}) => {
+        dispatch(changeQuestionList(data.results));
       })
       .catch((err) => {
         console.log(err);

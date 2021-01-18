@@ -1,7 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable indent */
-
-import { current } from 'immer';
 import React from 'react';
 
 const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {

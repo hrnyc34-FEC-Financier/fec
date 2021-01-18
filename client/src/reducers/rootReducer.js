@@ -44,6 +44,8 @@ import reviewUserReducer from './RatingsReviewsReducers/postReviewReducers/revie
 import reviewEmailReducer from './RatingsReviewsReducers/postReviewReducers/reviewEmailReducer.js';
 import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/reviewWordCountReducer.js';
 //RatingsReviews: End
+//QA
+import changeQuestionListReducer from './QA/questionListReducer.js';
 
 const rootReducer = combineReducers({
   relatedProductList: relatedItemListReducer,
@@ -90,6 +92,7 @@ const rootReducer = combineReducers({
   reviewEmail: reviewEmailReducer,
   reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
+  questionList: changeQuestionListReducer
 });
 
 export default rootReducer;
