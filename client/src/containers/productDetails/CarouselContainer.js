@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import setSelectedImage from '../../actions/productDetail/selectImage';
 import Carousel from '../../components/ProductDetail/Carousel.jsx';
-
+import changeImageIndex from '../../actions/productDetail/currentImageIndex.js';
 const mapDispatchToProps = (dispatch) => ({
-  selectImage: (image, i) => dispatch(setSelectedImage(image, i)),
+  selectImage: (i) => dispatch(changeImageIndex(i)),
 });
 
 const mapStateToProps = (state) => ({

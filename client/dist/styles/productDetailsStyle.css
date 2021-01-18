@@ -4,7 +4,17 @@
   height: 100%;
   grid-area: 1 / 1 / 4 / 3;
   position: relative;
+  overflow: hidden;
 }
+
+.main-image {
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+
 .product-info {
   overflow-wrap: break-word;
   border: 1px black solid;
@@ -53,13 +63,6 @@
   margin: 0 0 1em 1em;
 }
 
-.main-image {
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  height: 100%;
-  background-position: center;
-}
-
 .check {
   background-color: white;
   width: 16px;
@@ -92,4 +95,38 @@
 
 .right-btn {
   right: 0;
+}
+
+/* main image carousel */
+.image-card {
+  /* width: 500px; */
+  height: 100%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-color: white;
+  /* display: inline-block; */
+}
+
+.view-port {
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  width: 500px;
+  height: 100%;
+  background-color: red;
+  overflow: hidden;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+
+  width: fit-content;
+  height: 100%;
+  /* display: inline-block; */
 }
