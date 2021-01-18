@@ -11,6 +11,8 @@ import changeStyleReducer from './productDetails/currentStyle.js';
 import changeStyleListReducer from './productDetails/currentStyleList.js';
 import changeImageReducer from './productDetails/currentImage.js';
 import changeGalleryReducer from './productDetails/thumbGallery.js';
+import changeSizeReducer from './productDetails/currentSize.js';
+import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 
 const rootReducer = combineReducers({
   relatedProductList: relatedItemListReducer,
@@ -25,6 +27,8 @@ const rootReducer = combineReducers({
   currentStyleList: changeStyleListReducer,
   currentImage: changeImageReducer,
   thumbGallery: changeGalleryReducer,
+  currentSize: changeSizeReducer,
+  currentImageIndex: changeImageIndexReducer,
 });
 
 export default rootReducer;
