@@ -8,8 +8,6 @@ const StyleSelector = ({ currentStyleList, currentStyle, styleChange }) => (
         onClick={styleChange}
         className='thumbnail thumb-round'
         key={style.style_id}
-        width='50px'
-        height='50px'
         value={JSON.stringify(style)}
         style={{
           backgroundImage: `url(${style.photos[0].thumbnail_url})`,
