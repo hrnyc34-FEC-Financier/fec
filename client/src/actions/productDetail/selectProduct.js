@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { current } from 'immer';
 import searchAPI from '../../lib/searchEngine.js';
 import changeProduct from './currentProduct.js';

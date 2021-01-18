@@ -42,7 +42,6 @@ h2 {
   color: #666;
   font-weight: normal;
   font-size: 12px;
-
 }
 
 #searchBar {
@@ -144,9 +143,6 @@ button {
 .ProductDetail{
   background-color: rgb(96, 125, 255);
 }
-.RelatedItems{
-  background-color: rgb(244,244,244)
-}
 .QuestionsAnswers{
   background-color: rgb(255, 225, 52);
 }
@@ -154,14 +150,38 @@ button {
   background-color: rgb(133, 131, 132);
 }
 
-.RP_container{
+
+.RItems_container{
+  background-color: rgb(244,244,244);
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 2px;
 }
 
-.Carousel1{
+.RItemsList_container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 2px;
+}
+
+.Carousel2{
   background-color:rgb(227, 227, 228);
 }
 
+
+.RP_container{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-column-gap: 0px;
+  grid-row-gap: 2px;
+}
+
+
+.product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}

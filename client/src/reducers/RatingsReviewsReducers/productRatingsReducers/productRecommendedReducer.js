@@ -1,7 +1,7 @@
 import Redux from 'redux';
 import * as actions from '../../../actionTypes/RatingsReviews/actionTypes';
 
-const productRecommendedReducer = (state = 0, action) => {
+const productRecommendedReducer = (state = {}, action) => {
   switch (action.type) {
   case actions.CHANGE_PRODUCT_RECOMMENDED:
     return action.payload.productRecommended;

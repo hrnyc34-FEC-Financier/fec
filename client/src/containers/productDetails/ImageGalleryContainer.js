@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
+import setSelectedImage from '../../actions/productDetail/selectImage';
 import ImageGallery from '../../components/ProductDetail/ImageGallery.jsx';
 
-const mapStateToProps = (state) => ({
-  productList: state.productList,
-  currentProduct: state.currentProduct,
-  currentProductId: state.currentProductId,
-  currentStyle: state.currentStyle,
-  currentStyleList: state.currentStyleList,
-  currentImage: state.currentImage,
-  thumbGallery: state.thumbGallery,
+const mapDispatchToProps = (dispatch) => ({
+  selectImage: (image, i) => dispatch(setSelectedImage(image, i)),
 });
 
-const ImageGalleryContainer = connect(mapStateToProps)(ImageGallery);
+const mapStateToProps = (state) => ({
+  currentImage: state.currentImage,
+  thumbGallery: state.thumbGallery,
+  currentImageIndex: state.currentImageIndex,
+});
+
+const ImageGalleryContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ImageGallery);
 
 export default ImageGalleryContainer;

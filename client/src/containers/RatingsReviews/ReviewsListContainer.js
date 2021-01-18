@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ReviewsList from '../../components/RatingsReviews/ReviewsList.jsx';
+import ReviewsList from '../../components/RatingsReviews/ReviewsList/ReviewsList.jsx';
 import setReviewsList from '../../actions/RatingsReviews/setReviewsList.js';
 
 const mapStateToProps = (state) => ({
@@ -14,14 +14,6 @@ const mapStateToProps = (state) => ({
   reviewSort: state.reviewSort
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleReviewsListChange: (product_id) => {
-      dispatch(setReviewsList(product_id));
-    },
-  };
-};
-
-const ReviewsListContainer = connect(mapStateToProps, mapDispatchToProps)(ReviewsList);
+const ReviewsListContainer = connect(mapStateToProps)(ReviewsList);
 
 export default ReviewsListContainer;

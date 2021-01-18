@@ -1,21 +1,20 @@
 import React from 'react';
-import QuestionModule from "./QuestionsAnswers/QuestionModule.jsx";
 import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
 import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
-import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js'
+import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
+import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
+
 
 const App = ({ teamName }) => {
   return (
-    <div id = "container">
+    <div>
+    {/* <div className='container'> */}
       <ProductDetailContainer />
-      <div className = "RelatedItems">RelatedItems
-      </div>
+      <RelatedItemsContainer />
       <QAModuleContainer />
-      <RatingsReviewsMain />
-
-
-
-
+      <div className='reviewsWidgetContainer'>
+        < RatingsReviewsMain />
+      </div>
     </div>
   );
 };

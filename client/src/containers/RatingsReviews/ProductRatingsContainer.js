@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProductRatings from '../../components/RatingsReviews/ProductRatings.jsx';
+import ProductRatings from '../../components/RatingsReviews/ProductRatings/ProductRatings.jsx';
 import setRatings from '../../actions/RatingsReviews/setRatings.js';
 import changeProductRating from '../../actions/RatingsReviews/productRatings/productRatings.js';
 import changeProductRecommended from '../../actions/RatingsReviews/productRatings/productRecommended.js';
@@ -13,17 +13,10 @@ const mapStateToProps = (state) => ({
   productRecommended: state.productRecommended,
   productCharacteristics: state.productCharacteristics,
   productAvgRating: state.productAvgRating,
+  productAvgStarRating: state.productAvgStarRating,
   ratingsFilter: state.ratingsFilter
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeProductAvgRating: (productAvgRating) => {
-      dispatch(changeProductAvgRating(productAvgRating));
-    }
-  };
-};
-
-const ProductRatingsContainer = connect(mapStateToProps, mapDispatchToProps)(ProductRatings);
+const ProductRatingsContainer = connect(mapStateToProps)(ProductRatings);
 
 export default ProductRatingsContainer;

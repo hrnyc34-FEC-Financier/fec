@@ -1,12 +1,13 @@
 import React from 'react';
 import ProductRatingsContainer from '../../containers/RatingsReviews/ProductRatingsContainer.js';
 import ReviewsListContainer from '../../containers/RatingsReviews/ReviewsListContainer.js';
+import './will-style.css';
 
 const RatingsReviewsMain = () => {
   return (
-    <div id ="ratingsContainer">
+    <div className='ratingsReviewMain ratingsReviewContainer'>
       < ProductRatingsContainer />
-      < ReviewsListContainer />
+      {/* < ReviewsListContainer /> */}
     </div>
   );
 };
