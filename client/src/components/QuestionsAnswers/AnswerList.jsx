@@ -5,7 +5,7 @@ const AnswerList = (props) => {
 
   console.log("answers:", props.answers)
   if (props.answers.length === 0) {
-    return (<div className="answerList"><span>No answers yet.</span></div>)
+    return (<div className="answerList"><span className="noAnswers">No answers yet.</span></div>)
   } else {
   return (
     <div className="answerList">

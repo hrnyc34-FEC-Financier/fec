@@ -81,7 +81,17 @@ h2 {
 .right {
   float: right;
   font-family: Arial;
-  font-size: 8px;
+  color: #666;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.noAnswers {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 0 0 0 27px;
 }
 
 .answer {
@@ -97,6 +107,9 @@ h2 {
   color: #666;
   font-weight: normal;
   font-size: 14px;
+}
+
+.bodyIndent {
   padding: 0 0 0px 10px;
 }
 
@@ -106,6 +119,13 @@ h2 {
 
 .divider {
   padding: 0 10px 0 10px
+}
+
+.answerInfoStyle {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 10px;
 }
 
 button {

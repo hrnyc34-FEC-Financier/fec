@@ -7,13 +7,13 @@ const Answer = (props) => {
 
   return (
     <div className="answer">
-      <span className="questionBody">A:</span> <span className="answerBody">{props.answer[1].body}</span>
+      <span className="questionBody">A:</span> <span className="answerBody bodyIndent">{props.answer[1].body}</span>
       <br/><br/>
-      <span className="answerInfo">By {props.answer[1].answerer_name}, {dateString}</span>
-      <span className="divider">|</span>
-      <span>Helpful? Yes ({props.answer[1].helpfulness})</span>
-      <span className="divider">|</span>
-      <span className="reportLink">Report</span>
+      <span className="answerInfo answerInfoStyle">By {props.answer[1].answerer_name}, {dateString}</span>
+      <span className="divider answerInfoStyle">|</span>
+      <span className="answerInfoStyle">Helpful? Yes ({props.answer[1].helpfulness})</span>
+      <span className="divider answerInfoStyle">|</span>
+      <span className="reportLink answerInfoStyle">Report</span>
     </div>
   )
 };
