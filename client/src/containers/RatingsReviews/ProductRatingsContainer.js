@@ -16,14 +16,6 @@ const mapStateToProps = (state) => ({
   ratingsFilter: state.ratingsFilter
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeProductAvgRating: (productAvgRating) => {
-      dispatch(changeProductAvgRating(productAvgRating));
-    }
-  };
-};
-
-const ProductRatingsContainer = connect(mapStateToProps, mapDispatchToProps)(ProductRatings);
+const ProductRatingsContainer = connect(mapStateToProps)(ProductRatings);
 
 export default ProductRatingsContainer;

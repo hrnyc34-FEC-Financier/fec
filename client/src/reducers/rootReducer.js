@@ -23,10 +23,12 @@ import productRatingsReducer from './RatingsReviewsReducers/productRatingsReduce
 import productRecommendedReducer from './RatingsReviewsReducers/productRatingsReducers/productRecommendedReducer.js';
 import productCharacteristicsReducer from './RatingsReviewsReducers/productRatingsReducers/productCharacteristicsReducer.js';
 import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgRatingReducer.js';
+import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
 //RatingsReviews: postReview
 import reviewModalReducer from './RatingsReviewsReducers/postReviewReducers/reviewModalReducer.js';
 import reviewRatingReducer from './RatingsReviewsReducers/postReviewReducers/reviewRatingReducer.js';
+import reviewCharacteristicsReducer from './RatingsReviewsReducers/postReviewReducers/reviewCharacteristicsReducer.js';
 import reviewSummaryReducer from './RatingsReviewsReducers/postReviewReducers/reviewSummaryReducer.js';
 import reviewBodyReducer from './RatingsReviewsReducers/postReviewReducers/reviewBodyReducer.js';
 import reviewPhotosReducer from './RatingsReviewsReducers/postReviewReducers/reviewPhotosReducer.js';
@@ -60,10 +62,12 @@ const rootReducer = combineReducers({
   productRecommended: productRecommendedReducer,
   productCharacteristics: productCharacteristicsReducer,
   productAvgRating: productAvgRatingReducer,
+  productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
   //RatingsReviews: postReview
   reviewModal: reviewModalReducer,
   reviewRating: reviewRatingReducer,
+  reviewCharacteristics: reviewCharacteristicsReducer,
   reviewSummary: reviewSummaryReducer,
   reviewBody: reviewBodyReducer,
   reviewPhotos: reviewPhotosReducer,

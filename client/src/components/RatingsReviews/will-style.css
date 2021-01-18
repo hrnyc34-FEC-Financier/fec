@@ -1,0 +1,35 @@
+.reviewsWidgetContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+}
+
+.ratingsReviewMain {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.ratingsReviewContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+}
+
+.starContainer {
+  display: inline-flex
+}
+
+/* hides radio button behind stars */
+input[type="radio"] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}

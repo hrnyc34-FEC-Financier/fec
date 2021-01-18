@@ -4,7 +4,7 @@ import ReviewsListContainer from '../../containers/RatingsReviews/ReviewsListCon
 
 const RatingsReviewsMain = () => {
   return (
-    <div>
+    <div className='ratingsReviewMain ratingsReviewContainer'>
       < ProductRatingsContainer />
       < ReviewsListContainer />
     </div>
