@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ProductRating from '../../components/RatingsReviews/ProductRating.jsx';
+import ProductRatings from '../../components/RatingsReviews/ProductRatings/ProductRatings.jsx';
 import setRatings from '../../actions/RatingsReviews/setRatings.js';
 import changeProductRating from '../../actions/RatingsReviews/productRatings/productRatings.js';
 import changeProductRecommended from '../../actions/RatingsReviews/productRatings/productRecommended.js';
@@ -17,6 +17,6 @@ const mapStateToProps = (state) => ({
   ratingsFilter: state.ratingsFilter
 });
 
-const ProductRatingContainer = connect(mapStateToProps)(ProductRating);
+const ProductRatingsContainer = connect(mapStateToProps)(ProductRatings);
 
-export default ProductRatingContainer;
+export default ProductRatingsContainer;

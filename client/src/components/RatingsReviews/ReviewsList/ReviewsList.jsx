@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const ReviewsList = ({currentProductId, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewHelpful, reviewImageModal, reviewReported, reviewScroll, reviewSort, handleReviewsListChange}) => {
 

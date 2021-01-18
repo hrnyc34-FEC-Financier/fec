@@ -1,11 +1,11 @@
 import React from 'react';
-import ProductRatingContainer from '../../containers/RatingsReviews/ProductRatingContainer.js';
+import ProductRatingsContainer from '../../containers/RatingsReviews/ProductRatingsContainer.js';
 import ReviewsListContainer from '../../containers/RatingsReviews/ReviewsListContainer.js';
 
 const RatingsReviewsMain = () => {
   return (
     <div className='ratingsReviewMain ratingsReviewContainer'>
-      < ProductRatingContainer />
+      < ProductRatingsContainer />
       {/* < ReviewsListContainer /> */}
     </div>
   );
