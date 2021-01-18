@@ -1,5 +1,5 @@
 import Redux from 'redux';
-import * as actions from '../../../actionTypes/RatingsReview/actionTypes';
+import * as actions from '../../../actionTypes/RatingsReviews/actionTypes.js';
 
 const reviewDisplayLimiterReducer = (state = 2, action) => {
   switch (action.type) {
@@ -9,3 +9,5 @@ const reviewDisplayLimiterReducer = (state = 2, action) => {
     return state;
   }
 };
+
+export default reviewDisplayLimiterReducer;
