@@ -37,11 +37,11 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
             : null}
         </select>
         {currentSku === '' ? (
-          <select className='quantity disabled' name='quantity' id=''>
+          <select className='quantity' disabled='true' name='quantity' id=''>
             <option value=''>-</option>
           </select>
         ) : (
-          <select className='quantity disabled' name='quantity' id=''>
+          <select className='quantity' name='quantity' id=''>
             {quantities.map((amount) => (
               <option key={amount} value={amount}>
                 {amount}

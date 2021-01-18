@@ -10,28 +10,26 @@ const ImageGallery = ({ currentImage, thumbGallery, selectImage }) => {
         style={{
           backgroundImage: `url(${currentImage})`,
         }}
-      >
-        <div>
-          {thumbGallery.map((pic, i) => {
-            if (pic.url === currentImage) {
-              imageIndex = i;
-              console.log(imageIndex);
-            }
-            return (
-              <button
-                onClick={(e) => {
-                  selectImage(e.target.value);
-                }}
-                value={pic.url}
-                className='thumbnail'
-                key={i}
-                style={{
-                  backgroundImage: `url(${pic.thumbnail_url})`,
-                }}
-              ></button>
-            );
-          })}
-        </div>
+      ></div>
+      <div className='thumb-gallery'>
+        {thumbGallery.map((pic, i) => {
+          if (pic.url === currentImage) {
+            imageIndex = i;
+          }
+          return (
+            <button
+              onClick={(e) => {
+                selectImage(e.target.value);
+              }}
+              value={pic.url}
+              className='thumbnail thumb-square'
+              key={i}
+              style={{
+                backgroundImage: `url(${pic.thumbnail_url})`,
+              }}
+            ></button>
+          );
+        })}
       </div>
       <button className='expand-btn btn'>
         <svg

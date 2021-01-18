@@ -41,6 +41,18 @@
   position: relative;
 }
 
+.thumb-gallery {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  left: 2em;
+}
+
+.thumb-square {
+  display: block;
+  margin: 0 0 1em 1em;
+}
+
 .main-image {
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -75,7 +87,7 @@
   transform: translate(0%, -50%);
 }
 .left-btn {
-  left: 0;
+  left: 6em;
 }
 
 .right-btn {
