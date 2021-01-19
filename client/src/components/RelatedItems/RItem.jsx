@@ -3,7 +3,7 @@ import RItemList from './RItemList.jsx';
 import YourOutFitList from './YourOutFitList.jsx';
 
 let RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick, handleYourOutfitClick})=>{
-  console.log( 'currentProduct', currentProduct);
+  // console.log( 'currentProduct', currentProduct);
   // console.log( 'relatedProductCarouselList', relatedProductCarouselList);
 
   const relatedItems = relatedProductCarouselList.map( item => {

@@ -7,7 +7,7 @@ const RatingsReviewsMain = () => {
   return (
     <div className='ratingsReviewMain ratingsReviewContainer'>
       < ProductRatingsContainer />
-      {/* < ReviewsListContainer /> */}
+      < ReviewsListContainer />
     </div>
   );
 };

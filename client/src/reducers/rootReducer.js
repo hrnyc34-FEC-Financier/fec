@@ -20,9 +20,7 @@ import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewsDisplayLimiterReducer from './RatingsReviewsReducers/reviewsListReducers/reviewDisplayLimiterReducer.js';
 import reviewFeedbackReducer from './RatingsReviewsReducers/reviewsListReducers/reviewFeedbackReducer.js';
-import reviewHelpfulReducer from './RatingsReviewsReducers/reviewsListReducers/reviewHelpfulReducer.js';
 import reviewImageModalReducer from './RatingsReviewsReducers/reviewsListReducers/reviewImageModalReducer.js';
-import reviewReportedReducer from './RatingsReviewsReducers/reviewsListReducers/reviewReportedReducer.js';
 import reviewScrollReducer from './RatingsReviewsReducers/reviewsListReducers/reviewScrollReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
 //RatingsReviews: productRatings
@@ -68,9 +66,7 @@ const rootReducer = combineReducers({
   reviewsList: reviewsListReducer,
   reviewsDisplayLimiter: reviewsDisplayLimiterReducer,
   reviewFeedback: reviewFeedbackReducer,
-  reviewHelpful: reviewHelpfulReducer,
   reviewImageModal: reviewImageModalReducer,
-  reviewReported: reviewReportedReducer,
   reviewScroll: reviewScrollReducer,
   reviewSort: reviewSortReducer,
   //RatingsReviews: productRatings

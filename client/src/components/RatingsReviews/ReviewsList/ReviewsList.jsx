@@ -1,11 +1,14 @@
 import React from 'react';
+import ReviewTile from './ReviewTile.jsx';
 
-const ReviewsList = ({currentProductId, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewHelpful, reviewImageModal, reviewReported, reviewScroll, reviewSort, handleReviewsListChange}) => {
-
+const ReviewsList = ({ currentProductId, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewImageModal, reviewScroll, reviewSort, handleHelpfulReview, handleReportingReview}) => {
   return (
-    <div>
-      <pre>{JSON.stringify(reviewsList, null, 2)}</pre>
+    <div className='reviewsList'>
+      {reviewsList.map(reviewInfo => {
+        return <ReviewTile key={reviewInfo.review_id} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportingReview={handleReportingReview}/>;
+      })}
     </div>
+
   );
 };
 
