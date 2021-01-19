@@ -2,32 +2,42 @@ import React, { useState } from 'react';
 import InnerImageZoom from 'react-inner-image-zoom';
 import ThumbGallery from '../../containers/productDetails/ThumbGalleryContainer.js';
 import { CSSTransition } from 'react-transition-group';
+import { Zoom } from '@material-ui/core';
 const ImageGallery = ({
   currentImage,
   thumbGallery,
   selectImage,
   currentImageIndex,
+  view,
+  toggleView,
 }) => {
-  let viewImage = null;
   const scroll = (direction) => {
     const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
   };
   return (
     <div className='image-gallery'>
-      <InnerImageZoom src={currentImage} />
-      {/* <div
-        ref={(element) => {
-          viewImage = element;
-        }}
-        className='main-image'
-        style={{
-          backgroundImage: `url(${currentImage})`,
-        }}
-      ></div> */}
-
+      {view ? (
+        <div>
+          <InnerImageZoom src={currentImage} />
+        </div>
+      ) : (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <div
+            className='main-image'
+            style={{
+              backgroundImage: `url(${currentImage})`,
+            }}
+          ></div>
+        </div>
+      )}
       <ThumbGallery />
-      <button className='expand-btn btn'>
+      <button className='expand-btn btn' onClick={() => toggleView(view)}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='10'
