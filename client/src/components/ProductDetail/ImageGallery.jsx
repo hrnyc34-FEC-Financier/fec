@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import InnerImageZoom from 'react-inner-image-zoom';
-// import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
+import ThumbGallery from '../../containers/productDetails/ThumbGalleryContainer.js';
 import { CSSTransition } from 'react-transition-group';
 const ImageGallery = ({
   currentImage,
@@ -26,23 +26,7 @@ const ImageGallery = ({
         }}
       ></div> */}
 
-      <div className='thumb-gallery'>
-        {thumbGallery.map((pic, i) => {
-          return (
-            <button
-              onClick={(e) => {
-                selectImage(e.target.value, i);
-              }}
-              value={pic.url}
-              className='thumbnail thumb-square'
-              key={i}
-              style={{
-                backgroundImage: `url(${pic.thumbnail_url})`,
-              }}
-            ></button>
-          );
-        })}
-      </div>
+      <ThumbGallery />
       <button className='expand-btn btn'>
         <svg
           xmlns='http://www.w3.org/2000/svg'

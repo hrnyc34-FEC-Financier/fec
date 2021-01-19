@@ -15,6 +15,7 @@ import changeImageReducer from './productDetails/currentImage.js';
 import changeGalleryReducer from './productDetails/thumbGallery.js';
 import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
+import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
 //productDetails: End
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
@@ -63,6 +64,8 @@ const rootReducer = combineReducers({
   thumbGallery: changeGalleryReducer,
   currentSize: changeSizeReducer,
   currentImageIndex: changeImageIndexReducer,
+  currentQuantityRange: changeQuantityRangeReducer,
+
   //productDetails: End
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
@@ -92,7 +95,7 @@ const rootReducer = combineReducers({
   reviewEmail: reviewEmailReducer,
   reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
-  questionList: changeQuestionListReducer
+  questionList: changeQuestionListReducer,
 });
 
 export default rootReducer;
