@@ -1,11 +1,10 @@
 import React from 'react';
 
-let YourOutFitList = ({ product })=>{
+let YourOutFitList = ({ product, image, handleAddYourOutfitClick, handleDeleteYourOutfitClick })=>{
   // console.log('product : ', product.styles[0].photos[0].thumbnail_url);
-  let imageUrl = product.styles[0].photos[0].thumbnail_url;
   let productDetail =
    <div>
-     <img src={imageUrl} alt='PRODUCT defaultIMG' width="80" /><br />
+     <img src={image} alt='PRODUCT defaultIMG' width="80" /><br />
      CATEGORY : {product.category} <br />
      PRODUCT NAME : {product.name} <br />
      PRICE : {product.default_price} <br />
@@ -14,6 +13,7 @@ let YourOutFitList = ({ product })=>{
   return (
     <div className ='RP_YrOutfit_container'>
       {productDetail}
+      <button value={product.id} onClick={(e)=>handleDeleteYourOutfitClick(e.target.value)}>Delete</button>
     </div>
   );
 };

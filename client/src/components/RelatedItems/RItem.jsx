@@ -13,17 +13,24 @@ const RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProdu
         product={item}
         handleItemToCurrentItemClick={handleItemToCurrentItemClick}
         handleStarModalClick={handleStarModalClick}
-        relatedProductStarModal={relatedProductStarModal}/>;
+        relatedProductStarModal={relatedProductStarModal}
+        image={imageURL}/>;
     }
   });
 
   const yourOutfitItems = Array.isArray(yourOutfitList) &&
   yourOutfitList.map( item => {
+    // let id = Number.parseInt(Object.keys(item));
+    // let imageURL = item[id].styles[0].photos[0].thumbnail_url;
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if (imageURL !== null) {
       return <YourOutFitList
         key={item.id}
-        product={item} />;
+        product={item}
+        currentProduct={currentProduct}
+        image={imageURL}
+        handleAddYourOutfitClick={handleAddYourOutfitClick}
+        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
     }
   });
   return (
@@ -40,7 +47,6 @@ const RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProdu
           {yourOutfitItems}
         </div>
         <button value={currentProduct.id} onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
-        <button value={currentProduct.id} onClick={(e)=>handleDeleteYourOutfitClick(e.target.value)}>Delete</button>
       </div>
 
     </>

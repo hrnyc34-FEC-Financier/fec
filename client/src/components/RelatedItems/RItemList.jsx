@@ -1,8 +1,7 @@
 import React from 'react';
 
-const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemClick, handleStarModalClick })=>{
+const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemClick, handleStarModalClick, image })=>{
   // console.log('product id: ', product);
-  let imageUrl = product.styles[0].photos[0].thumbnail_url;
 
   let modalRender = relatedProductStarModal && <div className='Modal'>
     <div>
@@ -16,7 +15,7 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
   return (
     <div className='RP_RItems_container'>
       <div>
-        <img src={ imageUrl } alt='PRODUCT defaultIMG' width="130" /><br />
+        <img src={ image } alt='PRODUCT defaultIMG' width="130" /><br />
         CATEGORY : {product.category} <br />
         PRODUCT NAME : {product.name} <br />
         PRICE : {product.default_price} <br />
