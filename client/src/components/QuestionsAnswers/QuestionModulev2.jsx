@@ -8,7 +8,7 @@ import Fade from '@material-ui/core/Fade';
 const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, currentProduct}) => {
 
   const [open, setOpen] = useState(false);
-  const [questionsQuantity, setQuestionQuant] = useState(2);
+  const [questionsQuantity, setQsQuant] = useState(2);
 
   const handleOpen = () => {
     setOpen(true);
@@ -18,13 +18,29 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
     setOpen(false);
   };
 
+  const handleMoreQs = () => {
+    if (questionList.length > questionsQuantity) {
+      setQsQuant(questionsQuantity +2);
+    }
+  }
+
+  let showMoreQsButton = <button onClick={handleMoreQs}>MORE ANSWERED QUESTIONS</button>;
+
+  if (questionList.length < 2 || questionList.length <= questionsQuantity) {
+    showMoreQsButton = null ;
+  }
+
+
+
+
   console.log('current product', currentProduct);
   return (
     <div id="questionModule">
       <h2>QUESTIONS & ANSWERS</h2>
       <SearchBar />
       <QuestionList questions={questionList} quantity={questionsQuantity}/>
-      <button>MORE ANSWERED QUESTIONS</button><button onClick={handleOpen}>ADD A QUESTION +</button>
+      {showMoreQsButton}
+      <button onClick={handleOpen}>ADD A QUESTION +</button>
       <Modal open={open} onClose={handleClose}>
         <Fade in={open}>
           <AddQuestionForm productName={currentProduct.name} close={handleClose}/>

@@ -2,7 +2,6 @@ html {
   font-size: 12px;
 }
 
-
 .product-display-container {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -66,6 +65,8 @@ h2 {
 #searchIcon {
     padding-top: 12px;
   }
+
+
 
 .question {
   padding: 10px 0 10px 0;
