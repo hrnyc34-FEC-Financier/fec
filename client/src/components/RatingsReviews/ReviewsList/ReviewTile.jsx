@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import StarRatingReadOnly from '../ProductRatings/StarRatingReadOnly.jsx';
 
-const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleReportingReview }) => {
-  console.log(reviewInfo);
+const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleReportReview }) => {
+  // console.log(reviewInfo);
 
   const [reviewHelpful, setReviewHelpful] = useState({helpfulness: reviewInfo.helpfulness, helpfulStatus: false});
   const [reviewReported, setReviewReported] = useState(false);
@@ -72,7 +72,7 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
           onClick={() => {
             if (reviewReported === false) {
               setReviewReported(true);
-              handleReportingReview(currentProductId, reviewInfo.review_id);
+              handleReportReview(currentProductId, reviewInfo.review_id);
             }
           }}
         >
