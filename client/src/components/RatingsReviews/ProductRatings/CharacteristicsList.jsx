@@ -21,7 +21,7 @@ const CharacteristicsList = ({ productCharacteristics }) => {
     }
   }
   //Sample characteristicArray: [{Comfort: 3.5, characteristicInfo: {1: 'Uncomfortable, 2: 'Slightly uncomfortable, ...}}, {Quality: 4, ...} ]
-  console.log(characteristicsArray);
+ // console.log(characteristicsArray);
   //condiftional: if Size, Width, Length, Fit use CenterCharacteristic, else Comfort, Quality use RightCharacteristic
   return (
     // characteristicsArray

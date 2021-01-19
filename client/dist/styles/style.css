@@ -10,15 +10,18 @@ html {
   grid-template-rows: repeat(4, 1fr);
 }
 
+.product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
 #ratingsContainer {
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
-.RelatedItems {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
 /*Question Component Test CSS Start*/
 
 #container {
@@ -140,48 +143,57 @@ button {
 
 /*Question Component Test CSS END*/
 
-.ProductDetail{
-  background-color: rgb(96, 125, 255);
-}
-.QuestionsAnswers{
-  background-color: rgb(255, 225, 52);
-}
-.RatingsReviews{
-  background-color: rgb(133, 131, 132);
-}
 
-
-.RItems_container{
-  background-color: rgb(244,244,244);
+/*Related Items Component CSS START*/
+.RP_main_container{
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 2px;
+  grid-column-gap: 10px;
+  grid-row-gap: 6px;
+}
+.Carousel1{
+  background-color:rgb(227, 227, 228);
+}
+.RItems_container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
 }
 
-.RItemsList_container{
+.Carousel2{
+  background-color:rgba(227, 227, 228, 0.726);
+}
+
+.YrOutfit_container{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 2px;
 }
 
-.Carousel2{
-  background-color:rgb(227, 227, 228);
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
 }
-
-
-.RP_container{
+.TestBlue{
+  color:blue;
+  text-decoration: underline;
+}
+/* .Modal_grid {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-column-gap: 0px;
-  grid-row-gap: 2px;
-}
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 50px) auto;
+  grid-row-gap: 5px;
+} */
 
-
-.product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
+/*Related Items Component CSS END*/

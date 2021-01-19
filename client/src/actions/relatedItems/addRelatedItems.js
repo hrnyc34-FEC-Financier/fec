@@ -3,13 +3,12 @@ import relatedItemList from './relatedItemList.js';
 import relatedItemsListDetail from './relatedItemsListDetail.js';
 import relatedItemCarouselList from './relatedItemCarouselList.js';
 
-const searchRelatedItems = (productId) => {
+const addRelatedItems = (productId) => {
   return (dispatch) => {
 
     return searchEngine.get(`products/${productId}/related`)
       //relatedItemList from '/products/:product_id/related'
       .then(res=> {
-        console.log( res.data );
         return dispatch(relatedItemList( res.data ));
       })
 
@@ -52,4 +51,4 @@ const searchRelatedItems = (productId) => {
   };
 };
 
-export default searchRelatedItems;
+export default addRelatedItems;

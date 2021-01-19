@@ -12,7 +12,7 @@ let YourOutFitList = ({ product })=>{
      RATING :
    </div>;
   return (
-    <div>
+    <div className ='RP_YrOutfit_container'>
       {productDetail}
     </div>
   );
