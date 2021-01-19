@@ -1,5 +1,7 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import InnerImageZoom from 'react-inner-image-zoom';
+// import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
+import { CSSTransition } from 'react-transition-group';
 const ImageGallery = ({
   currentImage,
   thumbGallery,
@@ -8,18 +10,13 @@ const ImageGallery = ({
 }) => {
   let viewImage = null;
   const scroll = (direction) => {
-    const newIndex = currentImageIndex + 1;
-    viewImage.style.transitionDuration = '0.5s';
-    viewImage.style.transform = `translate(-${90}%)`;
-    // viewImage.style.transform = `translate(${90}%)`;
-    // setTimeout(() => selectImage(thumbGallery[newIndex].url, newIndex), 501);
+    const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
-    viewImage.style.transitionDuration = '0.5s';
-    viewImage.style.transform = `translate(${90}%)`;
   };
   return (
     <div className='image-gallery'>
-      <div
+      <InnerImageZoom src={currentImage} />
+      {/* <div
         ref={(element) => {
           viewImage = element;
         }}
@@ -27,7 +24,8 @@ const ImageGallery = ({
         style={{
           backgroundImage: `url(${currentImage})`,
         }}
-      ></div>
+      ></div> */}
+
       <div className='thumb-gallery'>
         {thumbGallery.map((pic, i) => {
           return (
@@ -82,7 +80,9 @@ const ImageGallery = ({
       <button
         disabled={currentImageIndex === thumbGallery.length - 1 ? true : false}
         className='right-btn carousel-btn btn'
-        onClick={scroll}
+        onClick={() => {
+          scroll(1);
+        }}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
