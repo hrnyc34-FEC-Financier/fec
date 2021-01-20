@@ -17,25 +17,27 @@ const ImageGallery = ({
   };
   return (
     <div className='image-gallery'>
-      {view ? (
-        <div>
-          <InnerImageZoom src={currentImage} />
-        </div>
-      ) : (
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-          }}
-        >
+      <div className='current-image-container'>
+        {view ? (
+          <div className='expanded-view'>
+            <InnerImageZoom src={currentImage} zoomScale={2.5} sizes='60vh' />
+          </div>
+        ) : (
           <div
-            className='main-image'
             style={{
-              backgroundImage: `url(${currentImage})`,
+              width: '100%',
+              height: '100%',
             }}
-          ></div>
-        </div>
-      )}
+          >
+            <div
+              className='main-image'
+              style={{
+                backgroundImage: `url(${currentImage})`,
+              }}
+            ></div>
+          </div>
+        )}
+      </div>
       <ThumbGallery />
       <button className='expand-btn btn' onClick={() => toggleView(view)}>
         <svg

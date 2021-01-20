@@ -17,14 +17,22 @@
 }
 
 .image-gallery {
-  border: 1px black solid;
+  /* border: 1px black solid; */
+  box-shadow: 3px 2px 20px 0px #d2d2d269;
   width: 100%;
   height: 100%;
-  grid-area: 1 / 2 / 2 / 3;
+  /* grid-area: 1 / 2 / 2 / 3; */
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 5fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  box-shadow: ;
 }
 
+.current-image-container {
+  grid-area: 1 / 2 / 4 / 5;
+}
 .main-image {
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -44,11 +52,13 @@
   color: black;
 }
 .left-btn {
-  left: 6em;
+  left: 1em;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 .right-btn {
   right: 0;
+  grid-area: 2 / 4 / 3 / 5;
 }
 
 /* main image carousel */
@@ -67,13 +77,14 @@
 }
 
 .thumbnail {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .thumb-gallery {
+  grid-area: 1 / 1 / 4 / 2;
   position: absolute;
   top: 50%;
   transform: translate(0%, -50%);
@@ -137,12 +148,13 @@
 /*style selector*/
 .style-selector {
   /* border: 1px black solid; */
+
   width: 100%;
   height: 100%;
   grid-area: 2 / 1 / 3 / 2;
 }
 .thumb-round {
-  border-radius: 25px;
+  border-radius: 37.5px;
   position: relative;
 }
 .check {
@@ -155,28 +167,35 @@
   right: 0px;
 }
 .checkout-form-item {
-  margin: 0 15px 0 0;
+  margin: 0 15px 15px 0;
   border: 1px solid #ccc;
   background-color: white;
-  padding: 10px;
+  padding: 1em;
   font-weight: bold;
   font-size: 14px;
   font-family: Arial;
   color: #666;
 }
 
+.quantity {
+  padding-right: 3em;
+}
 /* checkout */
 .add-cart {
   /* border: 1px black solid; */
+  padding-top: 3em;
   width: 100%;
   height: 100%;
   grid-area: 3 / 1 / 4 / 2;
 }
-
+.size-select {
+  padding-right: 3em;
+}
 /*************/
 /* overview  */
 .overview-container {
   /* border: 1px black solid; */
+  padding: 3em;
   width: 100%;
   height: 100%;
   grid-area: 2 / 2 / 3 / 4;
@@ -187,6 +206,7 @@
 
 .description {
   grid-area: 1 / 1 / 2 / 2;
+  border-right: 1px black solid;
 }
 .features {
   grid-area: 1 / 2 / 2 / 3;

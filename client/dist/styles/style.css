@@ -19,20 +19,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
-.product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 50px) auto;
-  grid-row-gap: 5px;
-}
-
-/* .product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-} */
 
 #ratingsContainer {
   grid-column-start: 2;
