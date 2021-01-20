@@ -20,10 +20,12 @@ const mapStateToProps = ( state ) => ({
 const mapDispatchToProps = ( dispatch ) => ({
   handleRelatedItemClick: ( productId ) => dispatch( addRelatedItems( productId ) ),
   handleItemToCurrentItemClick: ( currentProductId ) => dispatch( currentProduct( currentProductId ) ),
-  handleStarModalClick: ( value ) => dispatch( comparingModal( value === 'false' ) ),
+  handleStarModalClick: ( productId, value ) => {
+    dispatch( comparingModal( value === false ) );
+  },
   handleAddYourOutfitClick: ( productId ) => dispatch( addYourOutfitList( productId ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
-  // handleDeleteYourOutfitClick: ( productId ) => console.log('DeleteYourOutfit_container',productId ),
+  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container',productId, value ),
 });
 
 const RelatedItemsContainer = connect(

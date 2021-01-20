@@ -1,0 +1,217 @@
+.relatedItems_box{
+  border: 2px solid tomato;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.RP_main_container {
+  border: 2px solid tomato;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.YrOutfit_main_container {
+  border: 2px solid tomato;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  height:"280px" ;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.RItems_container{
+  border: 2px solid tomato;
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  align-content: center;
+  padding-bottom: 30px;
+
+}
+
+/* .paddingOrButton{
+  width: 5%
+} */
+
+.YrOutfit_container{
+  border: 2px solid tomato;
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-content: end;
+}
+
+.carousel_item {
+  border: 2px solid tomato;
+  display: inline-block;
+  flex: 0 1 auto;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width:"160px" ;
+  height:"280px" ;
+  margin: 10px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+  background-color: white;
+  position: relative;
+}
+.carousel_item_image{
+  border: 2px solid tomato;
+  padding: none;
+}
+.carousel_item_body{
+  border: 2px solid tomato;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.modalButton{
+  border: 2px solid tomato;
+  position: absolute;
+  top: 0px;  right: 0px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  color: white;
+}
+
+.addButton{
+  border: 2px solid tomato;
+  position: absolute;
+  top: 90px;  right: 0px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  color:black
+}
+
+.deleteButton{
+  border: 2px solid tomato;
+  position: absolute;
+  top: 0px;  right: 0px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  color: white;
+}
+
+.carousel_prev{
+  border: 2px solid tomato;
+  z-index: 2;
+  right: 0px;
+  border : none;
+  background-color: transparent;
+}
+
+.carousel_next{
+  border: 2px solid tomato;
+  z-index: 2;
+  left: 0px;
+  border : none;
+  background-color: transparent;
+}
+
+/****** all text files  start here ******/
+
+
+.relatedItems_title{
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75)
+}
+
+.carousel_item_title{
+  /* border: 2px solid tomato; */
+  padding-bottom: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carousel_item_smallText{
+  /* border: 2px solid tomato; */
+  padding-top: 0.1rem;
+  font-size: 1.0 rem;
+  text-transform: uppercase;
+}
+
+.carousel_item_oriPrice{
+  /* border: 2px solid tomato; */
+  font-size: 12px;
+  font-weight: bold;
+  color:rgb(2, 2, 124);
+}
+
+.carousel_item_disCountPrice_1{
+  font-size: 12px;
+  text-decoration: line-through;
+  color:rgb(8, 8, 8);
+}
+.carousel_item_disCountPrice_2{
+  font-size: 12px;
+  font-weight: bold;
+  color:rgb(209, 0, 0);
+}
+/****** all text files end here ******/
+
+
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.TestBlue{
+  color:blue;
+  text-decoration: underline;
+}
+
+/*
+padding: 15px 0px 10px 6px;
+margin: 15px 0px 10px 6px;   // t,r,b,l
+overflow-x: hidden;
+border: 1px solid rgba(0,0,0,0.75);
+cursor: pointer;
+display: inline-block;
+
+
+.button:hover {
+  background-color: rgba(0,0,0,0.85);
+} */
+
+
+/*Related Items Component CSS END*/
