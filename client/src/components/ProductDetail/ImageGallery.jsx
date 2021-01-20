@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import InnerImageZoom from 'react-inner-image-zoom';
 import ThumbGallery from '../../containers/productDetails/ThumbGalleryContainer.js';
-import { CSSTransition } from 'react-transition-group';
-import { Zoom } from '@material-ui/core';
+import ImageCard from './ImageCard.jsx';
 const ImageGallery = ({
   currentImage,
   thumbGallery,
@@ -11,9 +10,12 @@ const ImageGallery = ({
   view,
   toggleView,
 }) => {
+  let cardContainer = null;
   const scroll = (direction) => {
     const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
+    cardContainer.style.transitionDuration = '0.5s';
+    cardContainer.style.transform = `translate(-${43.75 * newIndex}vw)`;
   };
   return (
     <div className='image-gallery'>
@@ -31,10 +33,25 @@ const ImageGallery = ({
           >
             <div
               className='main-image'
-              style={{
-                backgroundImage: `url(${currentImage})`,
-              }}
-            ></div>
+              // style={{
+              //   backgroundImage: `url(${currentImage})`,
+              // }}
+            >
+              <div
+                ref={(element) => {
+                  cardContainer = element;
+                }}
+                className='card-container'
+              >
+                {thumbGallery.map((pic, i) => (
+                  <ImageCard
+                    key={pic.thumbnail_url}
+                    number={i}
+                    image={pic.url}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -54,9 +71,8 @@ const ImageGallery = ({
       <button
         disabled={currentImageIndex === 0 ? true : false}
         className='left-btn carousel-btn btn'
-        onClick={(e) => {
-          const newIndex = currentImageIndex - 1;
-          selectImage(thumbGallery[newIndex].url, newIndex);
+        onClick={() => {
+          scroll(-1);
         }}
       >
         <svg

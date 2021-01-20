@@ -8,12 +8,12 @@ import './RatingsReviews/will-style.css';
 const App = ({ teamName }) => {
   return (
     <div>
-      <div id="pdcontainer">
+      <div id='pdcontainer'>
         <ProductDetailContainer />
       </div>
       <RelatedItemsContainer />
-      <div id="container">
-        <QAModuleContainer/>
+      <div id='container'>
+        <QAModuleContainer />
       </div>
       <div id='rContainer'>
         <RatingsReviewsMain />
