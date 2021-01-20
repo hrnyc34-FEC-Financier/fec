@@ -84,7 +84,9 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
       <button onClick={handleOpen}>ADD A QUESTION +</button>
       <Modal open={open} onClose={handleClose}>
         <Fade in={open}>
+          <div>
         <AddQuestionForm productName={currentProduct.name} close={handleClose} ref={null}/>
+        </div>
         </Fade>
       </Modal>
     </div>
