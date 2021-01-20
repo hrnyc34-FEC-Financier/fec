@@ -2,38 +2,72 @@ import React from 'react';
 import RItemList from './RItemList.jsx';
 import YourOutFitList from './YourOutFitList.jsx';
 
-let RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick, handleYourOutfitClick})=>{
-  // console.log( 'currentProduct', currentProduct);
-  // console.log( 'relatedProductCarouselList', relatedProductCarouselList);
+const RelatedItems = ({
+  currentProduct,
+  relatedProductCarouselList,
+  relatedProductStarModal,
+  yourOutfitList,
+  handleRelatedItemClick,
+  handleAddYourOutfitClick,
+  handleDeleteYourOutfitClick,
+  handleItemToCurrentItemClick,
+  handleStarModalClick})=>{
 
-  const relatedItems = relatedProductCarouselList.map( item => {
+  const relatedItems = Array.isArray(relatedProductCarouselList) &&
+  relatedProductCarouselList.map((item) => {
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if (imageURL !== null) {
-      return <RItemList key={item.id} product={item} />;
+      return <RItemList
+        key={item.id}
+        product={item}
+        handleItemToCurrentItemClick={handleItemToCurrentItemClick}
+        handleStarModalClick={handleStarModalClick}
+        relatedProductStarModal={relatedProductStarModal}
+        image={imageURL}/>;
     }
   });
 
-  const yourOutfitItems = yourOutfitList.map( item => {
-    let imageURL = item.styles[0].photos[0].thumbnail_url;
-    if (imageURL !== null) {
-      return <YourOutFitList key={item.id} product={item} />;
-    }
-  });
+  const yourOutfitItems = !yourOutfitList.length ? null /*something replace add button*/ :
+    yourOutfitList.map( item => {
+      let imageURL = item.styles[0].photos[0].thumbnail_url;
+      if (imageURL !== null) {
+        return <YourOutFitList
+          key={item.styles[0].style_id}
+          product={item}
+          currentProduct={currentProduct}
+          image={imageURL}
+          handleAddYourOutfitClick={handleAddYourOutfitClick}
+          handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
+      }
+    });
+
   return (
-    <div className='relatedContainer'>
-      <div className ='Carousel1'>Carousel #1
-        <div className='RItemsList_container' >
-          {relatedItems}<br />
+    <div className='relatedItems'>
+      <span className='relatedItems_title'>RELATED PRODUCTS</span>
+      <div className ='RP_main_container'>
+        <button className='carousel_prev'>&lt;</button>
+
+        <div className='RItems_container' >
+          {relatedItems}
         </div>
-        <button value={currentProduct.id} onClick={(e)=>handleRelatedItemClick(e.target.value)}>test</button>
+
+        <button className='carousel_next'>&gt;</button>
+
       </div>
-      <div className ='Carousel2'>Carousel #2
-        <div className ='RItems_container'>
+
+      <span className='relatedItems_title'>YOUR OUTFIT</span>
+
+      <div className ='YrOutfit_main_container'>
+        <button className='carousel_prev'>&lt;</button>
+        <button
+          value={currentProduct.id}
+          onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
+
+        <div className ='YrOutfit_container'>
           {yourOutfitItems}
         </div>
-        <button value={currentProduct.id} onClick={(e)=>handleYourOutfitClick(e.target.value)}>Add</button>
+        <button className='carousel_next'>&gt;</button>
       </div>
-
     </div>
   );
 };

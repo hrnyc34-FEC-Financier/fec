@@ -62,8 +62,8 @@ h2 {
 }
 
 #searchIcon {
-    padding-top: 12px;
-  }
+  padding-top: 12px;
+}
 
 
 
@@ -107,7 +107,7 @@ h2 {
 }
 
 .answerList {
-  padding: 10px 0 0 0 ;
+  padding: 10px 0 0 0;
 }
 
 .answerBody {
@@ -142,7 +142,7 @@ h2 {
 }
 
 .divider {
-  padding: 0 10px 0 10px
+  padding: 0 10px 0 10px;
 }
 
 .answerInfoStyle {
@@ -171,16 +171,17 @@ button {
 
 /*Question Component Test CSS END*/
 
-.ProductDetail{
+.ProductDetail {
   background-color: rgb(96, 125, 255);
 }
-.QuestionsAnswers{
+.QuestionsAnswers {
   background-color: rgb(255, 225, 52);
 }
-.RatingsReviews{
+.RatingsReviews {
   background-color: rgb(133, 131, 132);
 }
 
+<<<<<<< HEAD
 .reviewsWidgetContainer {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -194,31 +195,33 @@ button {
 
 .RItems_container{
   background-color: rgb(244,244,244);
+=======
+.RItems_container {
+  background-color: rgb(244, 244, 244);
+>>>>>>> 20975582993a09bc8943261291c7560be2650e5b
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 2px;
 }
 
-.RItemsList_container{
+.RItemsList_container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 2px;
 }
 
-.Carousel2{
-  background-color:rgb(227, 227, 228);
+.Carousel2 {
+  background-color: rgb(227, 227, 228);
 }
 
-
-.RP_container{
+.RP_container {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   /* grid-template-columns: repeat(4, 1fr); */
   grid-column-gap: 0px;
   grid-row-gap: 2px;
 }
-
 
 .product-display-container {
   grid-area: 1 / 2 / 2 / 10;
@@ -227,6 +230,7 @@ button {
   grid-template-rows: repeat(4, 1fr);
 }
 
+<<<<<<< HEAD
 /*Will CSS*/
 
 .ratingsReviewContainer {
@@ -311,3 +315,8 @@ label {
   font-family: Arial;
   color: #666;
 }
+=======
+body {
+  font-family: Arial;
+}
+>>>>>>> 20975582993a09bc8943261291c7560be2650e5b

@@ -4,6 +4,7 @@ import StyleSelector from '../../containers/productDetails/StyleSelectorContaine
 import AddToCart from '../../containers/productDetails/AddToCartContainer.js';
 import ImageGallery from '../../containers/productDetails/ImageGalleryContainer.js';
 import Carousel from '../../containers/productDetails/CarouselContainer.js';
+import ProductOverview from '../../containers/productDetails/productOverviewContainer.js';
 const ProductDetailMain = ({
   productList,
   currentProduct,
@@ -19,10 +20,7 @@ const ProductDetailMain = ({
     <AddToCart />
     {/* <Carousel /> */}
     <ImageGallery />
-    <pre className='overview'>
-      1.1.1.5 Product Overview - This free form text field may exist on some
-      items. If it is available it should be displayed.
-    </pre>
+    <ProductOverview />
   </div>
 );
 

@@ -76,7 +76,7 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
 
   // console.log('current product', currentProduct);
   return (
-    <div id="questionModule">
+    <div id='questionModule'>
       <h2>QUESTIONS & ANSWERS</h2>
       <SearchBar handleSearch={handleChangeSearch}/>
       <QuestionList questions={questionList} quantity={questionsQuantity} productName={currentProduct.name}/>
@@ -91,6 +91,6 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
       </Modal>
     </div>
   );
-}
+};
 
 export default QuestionModule2;
