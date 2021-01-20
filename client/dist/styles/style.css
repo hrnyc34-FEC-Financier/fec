@@ -2,14 +2,6 @@ html {
   font-size: 12px;
 }
 
-.product-display-container {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-
 #ratingsContainer {
   grid-column-start: 2;
   grid-column-end: 3;
