@@ -1,4 +1,5 @@
 import React from 'react';
+import Characteristic from './Characteristic.jsx';
 
 const CharacteristicsList = ({ productCharacteristics }) => {
   const characteristicsMap = [
@@ -69,26 +70,17 @@ const CharacteristicsList = ({ productCharacteristics }) => {
     const characteristic = characteristicsMap[i][0];
     const characteristicInfo = characteristicsMap[i][1];
     //will handle cases where a product's characteristic property is set to null
-    if (
-      productCharacteristics.hasOwnProperty(characteristic) &&
-      productCharacteristics[characteristic].value !== null
-    ) {
-      const characteristicValue = Number(
-        productCharacteristics[characteristic].value.slice(0, 3)
-      );
-      characteristicsArray.push({
-        [characteristic]: characteristicValue,
-        characteristicInfo,
-      });
+    if (productCharacteristics.hasOwnProperty(characteristic) && productCharacteristics[characteristic].value !== null) {
+      const characteristicValue = Number(productCharacteristics[characteristic].value.slice(0, 3));
+      characteristicsArray.push({ characteristic: [characteristic, characteristicValue], characteristicInfo });
     }
   }
-  //Sample characteristicArray: [{Comfort: 3.5, characteristicInfo: {1: 'Uncomfortable, 2: 'Slightly uncomfortable, ...}}, {Quality: 4, ...} ]
-
-  // console.log(characteristicsArray);
-  // condiftional: if Size, Width, Length, Fit use CenterCharacteristic, else Comfort, Quality use RightCharacteristic
+  
+  //characteristicArray: [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
   return (
-    // characteristicsArray
-    <div></div>
+    characteristicsArray.map((characteristicData, i) => {
+      return <Characteristic key={`characteristic${i}`} characteristicData={characteristicData} />;
+    })
   );
 };
 

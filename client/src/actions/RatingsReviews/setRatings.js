@@ -35,4 +35,8 @@ const setRatings = (product_id) => {
   };
 };
 
-export default setRatings;
+export {
+  calculateProductAvgRating,
+  calculateProductAvgStarRating,
+  setRatings
+};
