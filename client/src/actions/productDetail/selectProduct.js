@@ -6,7 +6,7 @@ import changeProductId from './currentProductId.js';
 import setSelectedStyle from './selectStyle.js';
 import changeStyleList from './currentStyleList.js';
 import setReviewsList from '../RatingsReviews/setReviewsList.js';
-import setRatings from '../RatingsReviews/setRatings.js';
+import { setRatings } from '../RatingsReviews/setRatings.js';
 import setQuestionList from '../QA/setQuestionList';
 import changeQuestionList from '../QA/questionList.js';
 import addRelatedItems from '../relatedItems/addRelatedItems.js';

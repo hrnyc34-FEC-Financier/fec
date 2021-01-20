@@ -1,0 +1,81 @@
+.charContainer {
+  width: 300px;
+  border: 1px solid black;
+  font-family: Arial;
+  font-size: 14px;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.charBarTitle {
+  height: 18px;
+}
+
+.charBarContainer {
+  width: 100%;
+  height: 7px;
+  position: relative;
+}
+
+.charBar {
+  width: 100%;
+  height: 100%;
+}
+
+.charBarIntervalContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.charBar3Interval {
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+  width: 32.5%;
+}
+
+.charBar5Interval {
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+  width: 24%
+}
+
+.charBarPointerContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: -6.5px;
+}
+.charBarPointer {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 11.3px 6.5px 0 6.5px;
+  border-color: black transparent transparent transparent;
+}
+
+.charBarDescriptionContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.charBarDescription {
+  width: 33.3%;
+}
+
+.charBarDescription.dFirst {
+  text-align: left;
+}
+
+.charBarDescription.dMiddle {
+  text-align: center;
+}
+
+.charBarDescription.dLast {
+  text-align: right;
+}
