@@ -76,7 +76,7 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
 
   console.log('current product', currentProduct);
   return (
-    <div id="questionModule">
+    <div id='questionModule'>
       <h2>QUESTIONS & ANSWERS</h2>
       <SearchBar handleSearch={handleChangeSearch}/>
       <QuestionList questions={questionList} quantity={questionsQuantity} productName={currentProduct.name}/>
@@ -84,11 +84,11 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
       <button onClick={handleOpen}>ADD A QUESTION +</button>
       <Modal open={open} onClose={handleClose}>
         <Fade in={open}>
-        <AddQuestionForm productName={currentProduct.name} close={handleClose} ref={null}/>
+          <AddQuestionForm productName={currentProduct.name} close={handleClose} ref={null}/>
         </Fade>
       </Modal>
     </div>
   );
-}
+};
 
 export default QuestionModule2;

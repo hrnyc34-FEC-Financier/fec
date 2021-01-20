@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import setSelectedImage from '../../actions/productDetail/selectImage';
-import Carousel from '../../components/ProductDetail/Carousel.jsx';
-import changeImageIndex from '../../actions/productDetail/currentImageIndex.js';
+import thumbGallery from '../../components/ProductDetail/ThumbGallery.jsx';
+
 const mapDispatchToProps = (dispatch) => ({
-  selectImage: (i) => dispatch(changeImageIndex(i)),
+  selectImage: (image, i) => dispatch(setSelectedImage(image, i)),
 });
 
 const mapStateToProps = (state) => ({
@@ -12,9 +12,9 @@ const mapStateToProps = (state) => ({
   currentImageIndex: state.currentImageIndex,
 });
 
-const CarouselContainer = connect(
+const thumbGalleryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Carousel);
+)(thumbGallery);
 
-export default CarouselContainer;
+export default thumbGalleryContainer;

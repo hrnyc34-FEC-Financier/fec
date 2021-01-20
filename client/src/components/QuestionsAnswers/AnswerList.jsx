@@ -1,5 +1,5 @@
-import React from "react";
-import Answer from "./Answer.jsx"
+import React from 'react';
+import Answer from './Answer.jsx';
 
 const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
