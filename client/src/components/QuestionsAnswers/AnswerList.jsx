@@ -1,6 +1,6 @@
 import React from "react";
 import Answer from "./Answer.jsx";
-import { CSSTransitionGroup } from 'react-transition-group';
+//import ReactCSSTransitionGroup from 'react-transition-group';
 
 const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
@@ -29,15 +29,15 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
   } else {
   return (
     <div className="answerList">
-        <CSSTransitionGroup
+        {/* <ReactCSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+          transitionLeaveTimeout={300}> */}
       {renderedAnswers.map((answer) => {
         return (<Answer answer={answer} key={answer[0]} fullLength={answers.length}/>)
       })}
       {showHideButton}
-      </CSSTransitionGroup>
+      {/* </ReactCSSTransitionGroup> */}
     </div>
   )}
 

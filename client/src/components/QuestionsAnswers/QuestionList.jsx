@@ -1,6 +1,6 @@
 import React from "react";
 import Question from "./Question.jsx";
-import { CSSTransitionGroup } from 'react-transition-group';
+//import { CSSTransitionGroup } from 'react-transition-group';
 
 const QuestionList = ({ questions, quantity, productName}) => {
   // console.log("questions", questions);
@@ -18,14 +18,14 @@ const QuestionList = ({ questions, quantity, productName}) => {
   // console.log("rendered q", renderedQuestions);
     return (
       <div id="questionList">
-        <CSSTransitionGroup
+        {/* <CSSTransitionGroup
           transitionName="example"
           transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
+          transitionLeaveTimeout={300}> */}
         {renderedQuestions.map((question) => (
           <Question question={question} key={question.question_id} productName={productName}/>
         ))}
-        </CSSTransitionGroup>
+        {/* </CSSTransitionGroup> */}
       </div>
     )
 };
