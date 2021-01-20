@@ -1,16 +1,44 @@
 html {
-  font-size: 12px;
+  font-size: 10px;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(244, 244, 244);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Overview Component Test CSS Start*/
+
+.product-display-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+.product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 50px) auto;
+  grid-row-gap: 5px;
+}
+
+/* .product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+} */
 
 #ratingsContainer {
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
-.RelatedItems {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
 /*Question Component Test CSS Start*/
 
 #container {
@@ -132,49 +160,165 @@ button {
 
 /*Question Component Test CSS END*/
 
-.ProductDetail {
-  background-color: rgb(96, 125, 255);
+/*Related Items Component CSS START*/
+.relatedItems {
+  /* border: 2px solid tomato; */
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
-.QuestionsAnswers {
-  background-color: rgb(255, 225, 52);
+.RP_main_container {
+  /* border: 2px solid tomato; */
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.RatingsReviews {
-  background-color: rgb(133, 131, 132);
+
+.YrOutfit_main_container {
+  /* border: 2px solid tomato; */
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .RItems_container {
-  background-color: rgb(244, 244, 244);
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 2px;
+  /* border: 2px solid tomato; */
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  align-content: center;
+  padding-bottom: 30px;
 }
 
-.RItemsList_container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 2px;
+/* .paddingOrButton{
+  width: 5%
+} */
+
+.YrOutfit_container {
+  /* border: 2px solid tomato; */
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  align-content: center;
 }
 
-.Carousel2 {
-  background-color: rgb(227, 227, 228);
+.carousel_item {
+  /* border: 2px solid tomato; */
+  flex: 0 1 auto;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 10px;
+  padding: 0rem 1rem 1rem 1rem;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  background-color: white;
 }
 
-.RP_container {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  /* grid-template-columns: repeat(4, 1fr); */
-  grid-column-gap: 0px;
-  grid-row-gap: 2px;
+.relatedItems_title {
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: rgb(75, 75, 75);
 }
 
-.product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+.carousel_item_title {
+  /* border: 2px solid tomato; */
+  padding-bottom: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-body {
-  font-family: Arial;
+.carousel_item_smallText {
+  /* border: 2px solid tomato; */
+  padding-top: 0.1rem;
+  font-size: 1 rem;
+  text-transform: uppercase;
 }
+
+.carousel_item_oriPrice {
+  /* border: 2px solid tomato; */
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(2, 2, 124);
+}
+
+.carousel_item_disCountPrice_1 {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: rgb(8, 8, 8);
+}
+.carousel_item_disCountPrice_2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(209, 0, 0);
+}
+
+/*
+button .carousel_prev {
+
+}
+button .carousel_next {
+
+} */
+
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.TestBlue {
+  color: blue;
+  text-decoration: underline;
+}
+
+/*
+padding: 15px 0px 10px 6px;
+margin: 15px 0px 10px 6px;   // t,r,b,l
+overflow-x: hidden;
+border: 1px solid rgba(0,0,0,0.75);
+cursor: pointer;
+display: inline-block;
+
+
+.button:hover {
+  background-color: rgba(0,0,0,0.85);
+} */
+
+/*Related Items Component CSS END*/
