@@ -4,11 +4,23 @@ import Answer from "./Answer.jsx";
 
 const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
+  // let sortedAnswers = answers.sort(function(a, b){return b[1].helpfulness-a[1].helpfulness});
+
+  answers.sort(function(a, b){return b[1].helpfulness-a[1].helpfulness})
+
+  let sortedAnswers = answers.reduce((acc, element) => {
+    if (element[1].answerer_name === "Seller") {
+      return [element, ...acc];
+    }
+    return [...acc, element];
+  }, []);
+
+
   let renderedAnswers = [];
 
   for (var i =0; i < quantity; i++) {
-    if (answers[i]) {
-      renderedAnswers.push(answers[i])
+    if (sortedAnswers[i]) {
+      renderedAnswers.push(sortedAnswers[i])
     }
   };
 
@@ -23,7 +35,7 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
   // console.log("rendered answers", renderedAnswers);
 
-  // console.log("answers:", answers);
+  console.log("answers:", answers);
   if (answers.length === 0) {
     return (<div className="answerList"><span className="noAnswers">No answers yet.</span></div>)
   } else {

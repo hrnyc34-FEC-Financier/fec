@@ -99,6 +99,10 @@ h2 {
   font-size: 10px;
 }
 
+.addBold {
+  font-weight: bold;
+}
+
 .addAnswer, .yesHelpfulQ {
   text-decoration: underline;
 }

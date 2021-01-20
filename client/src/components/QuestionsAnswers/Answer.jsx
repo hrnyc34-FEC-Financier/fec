@@ -12,6 +12,12 @@ const Answer = ({answer, handleQuant, fullLength}) => {
   var date = new Date(answer[1].date);
   var dateString = date.toLocaleDateString({}, {timeZone:"UTC",month:"long", day:"numeric", year:"numeric"})
 
+  let addBold = '';
+  if (answer[1].answerer_name === "Seller") {
+    addBold = 'addBold'
+  }
+
+
   let reportStatus = "Report";
   let reportClass = "reportLink";
   if (answerReported === true){
@@ -26,7 +32,7 @@ const Answer = ({answer, handleQuant, fullLength}) => {
       <span className="questionBody">A:</span> <span className="answerBody bodyIndent">{answer[1].body}</span>
       <br/><br/>
       <span className="answerInfoStyle">
-      <span className="answerInfo">By {answer[1].answerer_name}, {dateString}</span>
+      <span className="answerInfo">By <span className={addBold}>{answer[1].answerer_name}</span>, {dateString}</span>
       <span className="divider">|</span>
       <span>Helpful?&nbsp;</span>
       <span onClick={() => {if (answerHelpful.helpfulStatus === false) {
