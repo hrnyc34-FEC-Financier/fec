@@ -30,12 +30,13 @@ const Answer = ({answer, handleQuant, fullLength}) => {
       <span className="divider">|</span>
       <span>Helpful?&nbsp;</span>
       <span onClick={() => {if (answerHelpful.helpfulStatus === false) {
-        setAnswerHelpful({helpfulness: answerHelpful.helpfulness + 1, helpfulStatus: true})}}} className="yesHelpfulA">Yes</span>
+        setAnswerHelpful({helpfulness: answerHelpful.helpfulness + 1, helpfulStatus: true}); handleHelpfulAnswer(answer[0])}}} className="yesHelpfulA">Yes</span>
       <span>&nbsp;({answerHelpful.helpfulness})</span>
       <span className="divider">|</span>
       <span className={reportClass}  onClick={() => {
         if (answerReported === false) {
           setAnswerReported(true);
+          handleReportAnswer(answer[0])
           }}}>{reportStatus}</span>
       </span>
     </div>
