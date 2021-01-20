@@ -46,7 +46,9 @@ const Question = ({question, productName}) => {
       <AnswerList answers={answers} quantity={answersQuantity} handleMore={handleMoreAs} handleLess={handleLessAs} />
       <Modal open={openA} onClose={handleCloseA}>
         <Fade in={openA}>
-        <AddAnswerForm close={handleCloseA} productName={productName} qBody={question.question_body}/>
+          <div>
+            <AddAnswerForm close={handleCloseA} productName={productName} qBody={question.question_body}/>
+          </div>
         </Fade>
       </Modal>
     </div>

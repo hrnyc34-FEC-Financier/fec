@@ -9,16 +9,17 @@ const AddAnswerForm = ({ productName, close, qBody }) => {
       <div id="addQuestionFormContainer">
       <form id="addQuestionForm">
         <label htmlFor="answerInput">Your Answer</label>
-        <br/>
         <input type="text" id="answerInput" maxLength="1000"></input>
         <br/><br/>
         <label htmlFor="aNicknameInput">What is your nickname?</label>
+        <input type="text" id="aNicknameInput" maxLength="60" placeholder="Example: jack543!"></input>
         <br/>
-        <input type="text" id="aNicknameInput" maxLength="60"></input>
+        <span className="formWarning">For privacy reasons, do not use your full name or email address</span>
         <br/><br/>
         <label htmlFor="aEmailInput">What is your email?</label>
+        <input type="text" id="aEmailInput" maxLength="60" placeholder="Example: jack@email.com"></input>
         <br/>
-        <input type="text" id="aEmailInput" maxLength="60"></input>
+        <span className="formWarning">For authentication reasons, you will not be emailed</span>
         <br/><br/>
       </form>
       </div>

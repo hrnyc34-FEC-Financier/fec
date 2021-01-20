@@ -254,7 +254,7 @@ button {
     top: 25%;
     text-align: center;
     padding: 15px;
-    border: 10px solid #666;
+    border: none;
     justify-content: center;
 }
 
@@ -272,20 +272,50 @@ button {
   padding-right: 0.4em;
   width: 100%;
   height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#answerInput {
+  text-align: left;
+  padding-left:0;
+  padding-top:0;
+  padding-bottom:0.4em;
+  padding-right: 0.4em;
+  width: 100%;
+  height: 100px;
+}
+
+#answerInput, #aNicknameInput, #aEmailInput {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#aNicknameInput, #aEmailInput {
+  width: 50%
 }
 
 #qNicknameInput {
   width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
 }
 
 #qEmailInput {
   width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
 }
 
 label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   color: #666;
+  font-weight: bold;
   text-align: left;
 }
 
@@ -298,6 +328,12 @@ label {
     font-size: 14px;
     font-family: Arial;
     color: #666;
+}
+
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999;
 }
 
 #closeX {
@@ -314,6 +350,12 @@ label {
   cursor: pointer;
 }
 
+.formWarning {
+  font-size: 8px;
+  font-family: Arial;
+  color: #ccc;
+}
+
 /*Test Animation CSS*/
 .example-enter {
   opacity: 0.01;
@@ -321,7 +363,7 @@ label {
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 300ms ease-in;
 }
 
 .example-leave {
@@ -330,5 +372,5 @@ label {
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: opacity 100ms ease-out;
 }
