@@ -44,6 +44,7 @@ import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/
 //RatingsReviews: End
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
+import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js'
 
 const rootReducer = combineReducers({
   relatedProductList: relatedItemListReducer,
@@ -88,7 +89,8 @@ const rootReducer = combineReducers({
   reviewEmail: reviewEmailReducer,
   reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
-  questionList: changeQuestionListReducer
+  questionList: changeQuestionListReducer,
+  showAddQuestionModal: showAddQuestionModalReducer
 });
 
 export default rootReducer;

@@ -22,11 +22,11 @@ const searchEngine = {
     });
   },
 
-  // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful`
-  // putReviewReport *** endPoint: `reviews/${review_id}/report`
+  // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
+  // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
   put: (endPoint) => {
     return axios.put(`${url}/${endPoint}`, {}, {
-      headers: { Authorization },
+      headers: { Authorization }
     });
   },
 };

@@ -20,7 +20,7 @@ let RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProduct
     }
   });
   return (
-    <div>
+    <div className='relatedContainer'>
       <div className ='Carousel1'>Carousel #1
         <div className='RItemsList_container' >
           {relatedItems}<br />
