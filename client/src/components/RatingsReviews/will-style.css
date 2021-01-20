@@ -1,24 +1,23 @@
-.reviewsWidgetContainer {
+#rContainer {
+  font-family: Arial;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   width: 100%;
-  font-family: Arial;
 }
 
 .ratingsReviewMain {
   grid-column-start: 2;
   grid-column-end: 3;
-  /* grid-area: 1 / 2 / 2 / 3; */
-}
-
-.ratingsReviewContainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-column-gap: 0px;
+  grid-column-gap: 5%;
+  box-sizing: border-box;
 }
+
+
 
 .starBarContainer {
   display: flex;
@@ -27,3 +26,4 @@
 .starRatingBar {
   flex-grow: 1;
 }
+

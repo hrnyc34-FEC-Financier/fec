@@ -6,7 +6,7 @@ import './will-style.css';
 
 const RatingsReviewsMain = () => {
   return (
-    <div className='ratingsReviewMain ratingsReviewContainer'>
+    <div className='ratingsReviewMain'>
       < ProductRatingsContainer />
       < ReviewsListContainer />
     </div>

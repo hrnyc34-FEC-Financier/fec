@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 
-const StarRatingBar = ({ star, starRatingValue }) => {
+const StarBar = ({ star, starRatingValue }) => {
   return (
     <div className='starBarContainer'>
       <div>{`${star} stars`}</div>
@@ -18,4 +18,4 @@ const StarRatingBar = ({ star, starRatingValue }) => {
   );
 };
 
-export default StarRatingBar;
+export default StarBar;

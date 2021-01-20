@@ -1,7 +1,7 @@
 import React from 'react';
-import StarRatingBar from './StarRatingBar.jsx';
+import StarBar from './StarBar.jsx';
 
-const StarRatingList = ({ productRatings }) => {
+const StarBarList = ({ productRatings }) => {
   const starArr = [];
   let totalReviews = 0;
   for (let i = 0; i < 5; i++) {
@@ -13,11 +13,11 @@ const StarRatingList = ({ productRatings }) => {
     <div>
       {starArr.reverse().map((star, i) => {
         return (
-          <StarRatingBar key={`${5 - i}star`} star={5 - i} starRatingValue={Math.floor((star / totalReviews) * 100)} />
+          <StarBar key={`${5 - i}star`} star={5 - i} starRatingValue={Math.floor((star / totalReviews) * 100)} />
         );
       })}
     </div>
   );
 };
 
-export default StarRatingList;
+export default StarBarList;

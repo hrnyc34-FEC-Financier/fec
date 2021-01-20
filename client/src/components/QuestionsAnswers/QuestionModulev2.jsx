@@ -50,7 +50,7 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
   //   currentModal = <AddAnswerForm productName={currentProduct.name} close={handleClose}/>
   // }
 
-  console.log("searching for:", searchTerm)
+  // console.log("searching for:", searchTerm);
 
   let showMoreQsButton = <button onClick={handleMoreQs}>MORE ANSWERED QUESTIONS</button>;
 
@@ -84,7 +84,9 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
       <button onClick={handleOpen}>ADD A QUESTION +</button>
       <Modal open={open} onClose={handleClose}>
         <Fade in={open}>
-        <AddQuestionForm productName={currentProduct.name} close={handleClose} ref={null}/>
+          <div>
+            <AddQuestionForm productName={currentProduct.name} close={handleClose} ref={null}/>
+          </div>
         </Fade>
       </Modal>
     </div>

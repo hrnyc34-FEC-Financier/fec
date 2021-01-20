@@ -4,6 +4,7 @@ import ReviewTile from './ReviewTile.jsx';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
+import './reviews.css';
 
 const ReviewsList = ({ currentProductId, productRatings, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewImageModal, reviewScroll, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 
@@ -27,16 +28,18 @@ const ReviewsList = ({ currentProductId, productRatings, reviewsList, reviewDisp
 
   return (
     <div>
-      <div className='reviewsListHeader'>
-        {`${calculateTotalReviews(productRatings)} reviews, sorted by `}
-        <span>
-          <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
-        </span>
-      </div>
-      <div className='reviewsList'>
-        {reviewsList.map(reviewInfo => {
-          return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview}/>;
-        })}
+      <div className='reviewsListContainer'>
+        <div className='reviewsListHeader'>
+          {`${calculateTotalReviews(productRatings)} reviews, sorted by `}
+          <span>
+            <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
+          </span>
+        </div>
+        <div className='reviewsList'>
+          {reviewsList.map(reviewInfo => {
+            return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview}/>;
+          })}
+        </div>
       </div>
       <button>MORE REVIEWS</button>
       <button type='button' onClick={handleOpen}>
@@ -48,7 +51,7 @@ const ReviewsList = ({ currentProductId, productRatings, reviewsList, reviewDisp
         aria-labelledby='Write New Review'
       >
         <div>
-          <ReviewModalContainer />
+          <ReviewModalContainer close={handleClose} ref={null}/>
         </div>
       </Modal>
     </div>

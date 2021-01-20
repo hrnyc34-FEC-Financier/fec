@@ -10,15 +10,15 @@ const App = ({ teamName }) => {
   return (
     <div>
       <div id="pdcontainer">
-      <ProductDetailContainer />
+        <ProductDetailContainer />
       </div>
       <div id="container">
-      <RelatedItemsContainer />
-      <QAModuleContainer/>
-      <div className='reviewsWidgetContainer'>
-        < RatingsReviewsMain />
+        <RelatedItemsContainer />
+        <QAModuleContainer/>
       </div>
-    </div>
+      <div id='rContainer'>
+        <RatingsReviewsMain />
+      </div>
     </div>
   );
 };

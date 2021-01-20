@@ -1,5 +1,5 @@
 import React from 'react';
-import Characteristic from './Characteristic.jsx';
+import Characteristic3 from './Characteristic3.jsx';
 
 const CharacteristicsList = ({ productCharacteristics }) => {
   const characteristicsMap = [
@@ -18,7 +18,7 @@ const CharacteristicsList = ({ productCharacteristics }) => {
     //will handle cases where a product's characteristic property is set to null
     if (productCharacteristics.hasOwnProperty(characteristic) && productCharacteristics[characteristic].value !== null) {
       const characteristicValue = Number(productCharacteristics[characteristic].value.slice(0, 3));
-      characteristicsArray.push({ [characteristic]: characteristicValue, characteristicInfo });
+      characteristicsArray.push({ characteristic: [characteristic, characteristicValue], characteristicInfo });
     }
   }
   //Sample characteristicArray: [{Comfort: 3.5, characteristicInfo: {1: 'Uncomfortable, 2: 'Slightly uncomfortable, ...}}, {Quality: 4, ...} ]
@@ -26,7 +26,7 @@ const CharacteristicsList = ({ productCharacteristics }) => {
   //condiftional: if Size, Width, Length, Fit use CenterCharacteristic, else Comfort, Quality use RightCharacteristic
   return (
     characteristicsArray.map((characteristicInfo, i) => {
-      return <Characteristic key={`characteristic${i}`} characteristicInfo={characteristicInfo} />;
+      return <Characteristic3 key={`characteristic${i}`} characteristicInfo={characteristicInfo} />;
     })
   );
 };
