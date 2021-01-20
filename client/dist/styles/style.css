@@ -19,13 +19,20 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
-
 .product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 50px) auto;
+  grid-row-gap: 5px;
+}
+
+/* .product-display-container {
   grid-area: 1 / 2 / 2 / 10;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
-}
+} */
 
 #ratingsContainer {
   grid-column-start: 2;
@@ -76,8 +83,8 @@ h2 {
 }
 
 #searchIcon {
-    padding-top: 12px;
-  }
+  padding-top: 12px;
+}
 
 .question {
   padding: 10px 0 10px 0;
@@ -111,7 +118,7 @@ h2 {
 }
 
 .answerList {
-  padding: 10px 0 0 0 ;
+  padding: 10px 0 0 0;
 }
 
 .answerBody {
@@ -130,7 +137,7 @@ h2 {
 }
 
 .divider {
-  padding: 0 10px 0 10px
+  padding: 0 10px 0 10px;
 }
 
 .answerInfoStyle {
@@ -155,13 +162,12 @@ button {
 
 
 /*Related Items Component CSS START*/
-/* $slide-count: 5;
-   $slide-width: 30rem; */
 .relatedItems{
   border: 2px solid tomato;
   padding-top: 40px;
   padding-bottom: 20px;
 }
+
 .RP_main_container {
   border: 2px solid tomato;
   margin-top: 10rem;
@@ -296,13 +302,7 @@ button .carousel_next {
   text-decoration: underline;
 }
 
-/* .Modal_grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 50px) auto;
-  grid-row-gap: 5px;
-}
-
+/*
 padding: 15px 0px 10px 6px;
 margin: 15px 0px 10px 6px;   // t,r,b,l
 overflow-x: hidden;

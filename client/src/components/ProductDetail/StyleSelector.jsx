@@ -2,7 +2,9 @@ import React from 'react';
 
 const StyleSelector = ({ currentStyleList, currentStyle, styleChange }) => (
   <div className='style-selector'>
-    <div className='style-name'>{currentStyle.name}</div>
+    <div className='style-name answerBody'>
+      <b className='questionBody'>STYLE &gt;</b> {currentStyle.name}
+    </div>
     {currentStyleList.map((style, i) => (
       <button
         onClick={styleChange}

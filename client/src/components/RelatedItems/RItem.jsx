@@ -2,10 +2,19 @@ import React from 'react';
 import RItemList from './RItemList.jsx';
 import YourOutFitList from './YourOutFitList.jsx';
 
-const RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProductStarModal, yourOutfitList, handleRelatedItemClick, handleAddYourOutfitClick, handleDeleteYourOutfitClick, handleItemToCurrentItemClick, handleStarModalClick})=>{
+const RelatedItems = ({
+  currentProduct,
+  relatedProductCarouselList,
+  relatedProductStarModal,
+  yourOutfitList,
+  handleRelatedItemClick,
+  handleAddYourOutfitClick,
+  handleDeleteYourOutfitClick,
+  handleItemToCurrentItemClick,
+  handleStarModalClick})=>{
 
   const relatedItems = Array.isArray(relatedProductCarouselList) &&
-  relatedProductCarouselList.map( item => {
+  relatedProductCarouselList.map((item) => {
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if (imageURL !== null) {
       return <RItemList
@@ -49,12 +58,15 @@ const RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProdu
       <span className='relatedItems_title'>YOUR OUTFIT</span>
 
       <div className ='YrOutfit_main_container'>
-        <div className='paddingOrButton'>
-          <button value={currentProduct.id} onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
-        </div>
+        <button className='carousel_prev'>&lt;</button>
+        <button
+          value={currentProduct.id}
+          onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
+
         <div className ='YrOutfit_container'>
           {yourOutfitItems}
         </div>
+        <button className='carousel_next'>&gt;</button>
       </div>
     </div>
   );

@@ -20,7 +20,11 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
   return (
     <div className='add-cart'>
       <form action=''>
-        <select name='size' onChange={sizeChange}>
+        <select
+          name='size'
+          className='checkout-form-item'
+          onChange={sizeChange}
+        >
           <option value=''>SELECT SIZE</option>
           {currentStyle.hasOwnProperty('skus')
             ? skus.map((sku, i) =>
@@ -33,11 +37,16 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
             : null}
         </select>
         {currentSku === '' ? (
-          <select className='quantity' disabled name='quantity' id=''>
+          <select
+            className='quantity checkout-form-item'
+            disabled
+            name='quantity'
+            id=''
+          >
             <option value=''>-</option>
           </select>
         ) : (
-          <select className='quantity' name='quantity' id=''>
+          <select className='quantity checkout-form-item' name='quantity' id=''>
             {quantities.map((amount) => (
               <option key={amount} value={amount}>
                 {amount}
@@ -45,8 +54,12 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
             ))}
           </select>
         )}
-        <input type='submit' value='ADD TO BAG' />
-        <input type='submit' value='*' />
+        <input
+          type='submit'
+          className='checkout-form-item'
+          value='ADD TO BAG'
+        />
+        <input type='submit' className='checkout-form-item' value='*' />
       </form>
     </div>
   );
