@@ -8,6 +8,11 @@ const AddQuestionForm = ({ productName, close, product_id }) => {
     let nickName = document.getElementById("qNicknameInput").value;
     let email = document.getElementById("qEmailInput").value;
 
+    if (question.length === 0 || email.length === 0 || nickName.length === 0) {
+      alert("All fields mandatory. Please complete form.");
+      return;
+    }
+
     console.log(question, nickName, email);
 
     let dataSubmission = {
