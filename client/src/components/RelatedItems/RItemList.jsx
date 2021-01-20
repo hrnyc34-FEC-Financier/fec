@@ -34,7 +34,7 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
   return (
     <div className='carousel_item' onClick={(e)=>handleItemToCurrentItemClick(product.id)} >
 
-      <img src={image} alt='PRODUCT defaultIMG' width="200" /><br />
+      <img src={image} alt='PRODUCT defaultIMG' width="150" /><br />
       <span className='carousel_item_smallText'>
         {product.category} </span> <br />
       <div className='carousel_item_title'>

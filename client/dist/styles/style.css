@@ -241,10 +241,18 @@ button {
   background-color: white;
 }
 
+.relatedItems_title{
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75)
+}
+
 .carousel_item_title{
   /* border: 2px solid tomato; */
   padding-bottom: 0.2rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -257,18 +265,18 @@ button {
 
 .carousel_item_oriPrice{
   /* border: 2px solid tomato; */
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   color:rgb(2, 2, 124);
 }
 
 .carousel_item_disCountPrice_1{
-  font-size: 13px;
+  font-size: 12px;
   text-decoration: line-through;
   color:rgb(8, 8, 8);
 }
 .carousel_item_disCountPrice_2{
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
   color:rgb(209, 0, 0);
 }

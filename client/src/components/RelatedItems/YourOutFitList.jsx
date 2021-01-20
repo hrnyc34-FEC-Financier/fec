@@ -20,7 +20,7 @@ let YourOutFitList = ({ product, image, handleAddYourOutfitClick, handleDeleteYo
 
   return (
     <div className='carousel_item'>
-      <img src={image} alt='PRODUCT defaultIMG' width="200" /><br />
+      <img src={image} alt='PRODUCT defaultIMG' width="150" /><br />
       <span className='carousel_item_smallText'>
         {product.category} </span> <br />
       <div className='carousel_item_title'>
