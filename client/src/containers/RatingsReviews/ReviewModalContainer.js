@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import ReviewModal from '../../components/RatingsReviews/postReview/ReviewModal.jsx';
 
 const mapStateToProps = (state) => ({
   reviewModal: state.reviewModal,
@@ -20,3 +21,5 @@ const mapStateToProps = (state) => ({
 // };
 
 const ReviewModalContainer = connect(mapStateToProps)(ReviewModal);
+
+export default ReviewModalContainer;

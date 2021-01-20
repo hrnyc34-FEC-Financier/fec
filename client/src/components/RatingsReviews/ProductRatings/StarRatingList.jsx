@@ -13,7 +13,7 @@ const StarRatingList = ({ productRatings }) => {
     <div>
       {starArr.reverse().map((star, i) => {
         return (
-          <StarRatingBar key={5 - i} star={5 - i} starRatingValue={Math.floor((star / totalReviews) * 100)} />
+          <StarRatingBar key={`${5 - i}star`} star={5 - i} starRatingValue={Math.floor((star / totalReviews) * 100)} />
         );
       })}
     </div>

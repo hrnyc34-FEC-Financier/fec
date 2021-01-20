@@ -26,7 +26,7 @@ const CharacteristicsList = ({ productCharacteristics }) => {
   //condiftional: if Size, Width, Length, Fit use CenterCharacteristic, else Comfort, Quality use RightCharacteristic
   return (
     characteristicsArray.map((characteristicInfo, i) => {
-      return <Characteristic key={i} characteristicInfo={characteristicInfo} />;
+      return <Characteristic key={`characteristic${i}`} characteristicInfo={characteristicInfo} />;
     })
   );
 };

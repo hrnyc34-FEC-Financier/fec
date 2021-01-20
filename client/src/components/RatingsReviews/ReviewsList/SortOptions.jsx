@@ -11,7 +11,7 @@ const SortOptions = ({ currentProductId, reviewSort, handleSortSelect }) => {
     <form>
       <select name='sortBy' onChange={e => handleChange(e)} value={reviewSort}>
         {['relevance', 'helpful', 'newest'].map((sortBy, i) => {
-          return <option key={i} value={sortBy}>{sortBy}</option>;
+          return <option key={`reviewSort${i}`} value={sortBy}>{sortBy}</option>;
         })}
       </select>
     </form>
