@@ -32,7 +32,7 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
     starEmptyColor='#767676'/>;
 
   return (
-    <div className='carousel_item'>
+    <div className='carousel_item' onClick={(e)=>handleItemToCurrentItemClick(product.id)} >
 
       <img src={image} alt='PRODUCT defaultIMG' width="200" /><br />
       <span className='carousel_item_smallText'>
@@ -44,7 +44,6 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
       <br />
       {reviewStars}<br />
 
-      <button value={product.id} onClick={(e)=>handleItemToCurrentItemClick(e.target.value)}>current Item</button>
       <button value={relatedProductStarModal} onClick={(e)=>handleStarModalClick(e.target.value)}> StarModal </button>
 
       { modalRender }
