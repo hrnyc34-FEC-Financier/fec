@@ -11,7 +11,7 @@ const StarBar = ({ star, starRatingValue }) => {
           labelSize='0px'
           borderRadius='0'
           bgcolor='rgb(0, 194, 129)'
-          baseBgColor='#767676'
+          baseBgColor='rgb(200, 200, 200)'
           height='10px' />
       </div>
     </div>

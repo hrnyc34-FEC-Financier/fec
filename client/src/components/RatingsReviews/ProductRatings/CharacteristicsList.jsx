@@ -1,5 +1,5 @@
 import React from 'react';
-import Characteristic3 from './Characteristic3.jsx';
+import Characteristic from './Characteristic.jsx';
 
 const CharacteristicsList = ({ productCharacteristics }) => {
   const characteristicsMap = [
@@ -21,12 +21,11 @@ const CharacteristicsList = ({ productCharacteristics }) => {
       characteristicsArray.push({ characteristic: [characteristic, characteristicValue], characteristicInfo });
     }
   }
-  //Sample characteristicArray: [{Comfort: 3.5, characteristicInfo: {1: 'Uncomfortable, 2: 'Slightly uncomfortable, ...}}, {Quality: 4, ...} ]
-  // console.log(characteristicsArray);
-  //condiftional: if Size, Width, Length, Fit use CenterCharacteristic, else Comfort, Quality use RightCharacteristic
+
+  //characteristicArray: [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
   return (
-    characteristicsArray.map((characteristicInfo, i) => {
-      return <Characteristic3 key={`characteristic${i}`} characteristicInfo={characteristicInfo} />;
+    characteristicsArray.map((characteristicData, i) => {
+      return <Characteristic key={`characteristic${i}`} characteristicData={characteristicData} />;
     })
   );
 };
