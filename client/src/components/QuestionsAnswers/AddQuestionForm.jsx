@@ -23,6 +23,7 @@ const AddQuestionForm = ({ productName, close, product_id }) => {
     }
 
     handlePostQuestion(dataSubmission);
+    close();
   }
 
   return (
