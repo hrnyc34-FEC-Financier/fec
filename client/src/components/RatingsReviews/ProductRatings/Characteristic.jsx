@@ -35,7 +35,9 @@ const Characteristic = ({ characteristicData }) => {
             <div className='charBar5Interval'></div>
           </div>
         )}
-        <div className='charBarPointer' style={{left: `${calculatePercent(characteristic[1])}%`}}></div>
+        <div className='charBarPointerContainer'>
+          <div className='charBarPointer' style={{left: `${calculatePercent(characteristic[1])}%`}}></div>
+        </div>
       </div>
 
       <div className='charBarDescriptionContainer'>

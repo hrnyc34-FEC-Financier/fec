@@ -41,6 +41,12 @@
   width: 24%
 }
 
+.charBarPointerContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: -6.5px;
+}
 .charBarPointer {
   position: absolute;
   top: 0;
