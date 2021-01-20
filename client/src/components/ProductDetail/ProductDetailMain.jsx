@@ -15,11 +15,15 @@ const ProductDetailMain = ({
   thumbGallery,
 }) => (
   <div className='product-display-container'>
-    <ProductInfo />
-    <StyleSelector />
-    <AddToCart />
-    {/* <Carousel /> */}
-    <ImageGallery />
+    <div className='image-container'>
+      {/* <Carousel /> */}
+      <ImageGallery />
+    </div>
+    <div className='side-bar-container'>
+      <ProductInfo />
+      <StyleSelector />
+      <AddToCart />
+    </div>
     <ProductOverview />
   </div>
 );
