@@ -163,13 +163,13 @@ button {
 
 /*Related Items Component CSS START*/
 .relatedItems{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   padding-top: 40px;
   padding-bottom: 20px;
 }
 
 .RP_main_container {
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   margin-top: 10rem;
   display: flex;
   flex-direction: row;
@@ -184,7 +184,7 @@ button {
 }
 
 .YrOutfit_main_container {
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   display: flex;
   flex-direction: row;
   margin: 0px 5px 5px 5px;
@@ -198,7 +198,7 @@ button {
 }
 
 .RItems_container{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   flex: 0 1 auto;
   overflow: hidden;
   position: relative;
@@ -217,7 +217,7 @@ button {
 } */
 
 .YrOutfit_container{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   flex: 0 1 auto;
   overflow: hidden;
   position: relative;
@@ -231,7 +231,7 @@ button {
 }
 
 .carousel_item {
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   flex: 0 1 auto;
   position: relative;
   justify-content: center;
@@ -244,21 +244,21 @@ button {
 }
 
 .carousel_item_title{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   padding-bottom: 0.2rem;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
 .carousel_item_smallText{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   padding-top: 0.1rem;
   font-size: 1.0 rem;
   text-transform: uppercase;
 }
 
 .carousel_item_oriPrice{
-  border: 2px solid tomato;
+  /* border: 2px solid tomato; */
   font-size: 13px;
   font-weight: bold;
   color:rgb(2, 2, 124);
