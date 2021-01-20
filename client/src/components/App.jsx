@@ -9,7 +9,9 @@ import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
 const App = ({ teamName }) => {
   return (
     <div>
+      <div id="pdcontainer">
       <ProductDetailContainer />
+      </div>
       <div id="container">
       <RelatedItemsContainer />
       <QAModuleContainer/>

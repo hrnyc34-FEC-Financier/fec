@@ -1,7 +1,8 @@
 import React from "react";
-import Question from "./Question.jsx"
+import Question from "./Question.jsx";
+import Fade from '@material-ui/core/Fade';
 
-const QuestionList = ({ questions, quantity}) => {
+const QuestionList = ({ questions, quantity, productName}) => {
   console.log("questions", questions)
 
   let renderedQuestions  = [];
@@ -18,7 +19,7 @@ const QuestionList = ({ questions, quantity}) => {
     return (
       <div id="questionList">
         {renderedQuestions.map((question) => (
-          <Question question={question} key={question.question_id}/>
+          <Question question={question} key={question.question_id} productName={productName}/>
         ))}
       </div>
     )
