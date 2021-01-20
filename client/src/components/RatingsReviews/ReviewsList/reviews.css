@@ -1,0 +1,31 @@
+.reviewsListContainer {
+  width: 100%;
+}
+
+.reviewsListHeader {
+  display: flex;
+}
+
+.reviewTile {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.reviewTileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reviewTileSummary {
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewTileRecommendContainer {
+  display: flex;
+  align-items: center;
+}

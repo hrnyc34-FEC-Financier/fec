@@ -24,10 +24,9 @@ const searchEngine = {
 
   // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
   // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
-  put: (endPoint, data) => {
-    return axios.put(`${url}/${endPoint}`, {
-      headers: { Authorization },
-      data: data,
+  put: (endPoint) => {
+    return axios.put(`${url}/${endPoint}`, {}, {
+      headers: { Authorization }
     });
   },
 };
