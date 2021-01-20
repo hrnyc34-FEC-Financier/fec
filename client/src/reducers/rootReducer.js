@@ -15,14 +15,14 @@ import changeImageReducer from './productDetails/currentImage.js';
 import changeGalleryReducer from './productDetails/thumbGallery.js';
 import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
+import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
+import changeViewReducer from './productDetails/currentView.js';
 //productDetails: End
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewsDisplayLimiterReducer from './RatingsReviewsReducers/reviewsListReducers/reviewDisplayLimiterReducer.js';
 import reviewFeedbackReducer from './RatingsReviewsReducers/reviewsListReducers/reviewFeedbackReducer.js';
-import reviewHelpfulReducer from './RatingsReviewsReducers/reviewsListReducers/reviewHelpfulReducer.js';
 import reviewImageModalReducer from './RatingsReviewsReducers/reviewsListReducers/reviewImageModalReducer.js';
-import reviewReportedReducer from './RatingsReviewsReducers/reviewsListReducers/reviewReportedReducer.js';
 import reviewScrollReducer from './RatingsReviewsReducers/reviewsListReducers/reviewScrollReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
 //RatingsReviews: productRatings
@@ -46,7 +46,7 @@ import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/
 //RatingsReviews: End
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
-import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js'
+import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js';
 
 const rootReducer = combineReducers({
   relatedProductList: relatedItemListReducer,
@@ -54,7 +54,7 @@ const rootReducer = combineReducers({
   relatedProductStarModal: relatedItemStarModalReducer,
   relatedItemsListDetail: relatedItemsListDetailReducer,
   yourOutfitList: yourOutfitListReducer,
-
+  //productDetails: Start
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
@@ -64,14 +64,14 @@ const rootReducer = combineReducers({
   thumbGallery: changeGalleryReducer,
   currentSize: changeSizeReducer,
   currentImageIndex: changeImageIndexReducer,
+  currentQuantityRange: changeQuantityRangeReducer,
+  view: changeViewReducer,
   //productDetails: End
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
   reviewsDisplayLimiter: reviewsDisplayLimiterReducer,
   reviewFeedback: reviewFeedbackReducer,
-  reviewHelpful: reviewHelpfulReducer,
   reviewImageModal: reviewImageModalReducer,
-  reviewReported: reviewReportedReducer,
   reviewScroll: reviewScrollReducer,
   reviewSort: reviewSortReducer,
   //RatingsReviews: productRatings
@@ -94,7 +94,6 @@ const rootReducer = combineReducers({
   reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
   questionList: changeQuestionListReducer,
-  showAddQuestionModal: showAddQuestionModalReducer
 });
 
 export default rootReducer;

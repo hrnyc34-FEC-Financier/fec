@@ -1,4 +1,4 @@
-const changeViewReducer = (state = null, action) => {
+const changeViewReducer = (state = false, action) => {
   switch (action.type) {
     case 'CHANGE_VIEW':
       return action.view;

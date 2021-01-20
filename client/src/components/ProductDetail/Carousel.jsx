@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageCard from './ImageCard.jsx';
+
 const style = {
   viewPort: {
     position: 'absolute',
@@ -9,6 +10,7 @@ const style = {
     width: '350px',
     height: '200px',
     backgroundColor: 'red',
+    overflow: 'hidden',
   },
   cardContainer: {
     display: 'flex',
@@ -17,30 +19,55 @@ const style = {
   },
 };
 
-const scrollLeft = () => {};
-
 const Carousel = ({
   currentImage,
   thumbGallery,
   selectImage,
   currentImageIndex,
 }) => {
-  let cardContainer;
-  const scrollRight = () => {
-    const nextImage = currentImageIndex + 1;
+  let cardContainer = null;
+  let viewPort = null;
+  const scroll = (direction) => {
+    const nextImage = currentImageIndex + direction;
+    selectImage(nextImage);
+    cardContainer.style.transitionDuration = '0.5s';
+    cardContainer.style.transform = `translate(-${500 * nextImage}px)`;
   };
+
   return (
     <div className='image-gallery'>
-      <button onClick={scrollLeft}>Left</button>
-      <button onClick={scrollRight}>Right</button>
-      <div className='view-port' style={style.viewPort}>
+      <button
+        onClick={() => scroll(-1)}
+        disabled={currentImageIndex > 0 ? false : true}
+      >
+        Left
+      </button>
+      <button
+        onClick={() => scroll(1)}
+        disabled={currentImageIndex < thumbGallery.length - 1 ? false : true}
+      >
+        Right
+      </button>
+
+      <div
+        className='view-port'
+        ref={(element) => {
+          viewPort = element;
+        }}
+      >
         <div
-          ref={(refId) => (cardContainer = refId)}
+          ref={(element) => {
+            cardContainer = element;
+          }}
           className='card-container'
-          style={style.cardContainer}
         >
           {thumbGallery.map((pic, i) => (
-            <ImageCard key={pic.thumbnail_url} number={i} image={pic.url} />
+            <ImageCard
+              key={pic.thumbnail_url}
+              number={i}
+              vpWidth={viewPort.style.width}
+              image={pic.url}
+            />
           ))}
         </div>
       </div>

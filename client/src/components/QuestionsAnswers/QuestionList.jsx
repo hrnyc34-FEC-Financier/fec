@@ -3,7 +3,7 @@ import Question from "./Question.jsx";
 import { CSSTransitionGroup } from 'react-transition-group';
 
 const QuestionList = ({ questions, quantity, productName}) => {
-  console.log("questions", questions)
+  // console.log("questions", questions);
 
   let renderedQuestions  = [];
 
@@ -15,7 +15,7 @@ const QuestionList = ({ questions, quantity, productName}) => {
   };
 
 
-  console.log("rendered q", renderedQuestions)
+  // console.log("rendered q", renderedQuestions);
     return (
       <div id="questionList">
         <CSSTransitionGroup

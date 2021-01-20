@@ -50,7 +50,7 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
   //   currentModal = <AddAnswerForm productName={currentProduct.name} close={handleClose}/>
   // }
 
-  console.log("searching for:", searchTerm)
+  // console.log("searching for:", searchTerm);
 
   let showMoreQsButton = <button onClick={handleMoreQs}>MORE ANSWERED QUESTIONS</button>;
 
@@ -70,13 +70,13 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
     questionList = filtered;
   }
 
-  console.log("filtered results", filtered)
+  // console.log("filtered results", filtered);
 
 
 
-  console.log('current product', currentProduct);
+  // console.log('current product', currentProduct);
   return (
-    <div id="questionModule">
+    <div id='questionModule'>
       <h2>QUESTIONS & ANSWERS</h2>
       <SearchBar handleSearch={handleChangeSearch}/>
       <QuestionList questions={questionList} quantity={questionsQuantity} productName={currentProduct.name}/>
@@ -87,10 +87,11 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
           <div>
         <AddQuestionForm productName={currentProduct.name} close={handleClose} product_id={currentProductId}/>
         </div>
+
         </Fade>
       </Modal>
     </div>
   );
-}
+};
 
 export default QuestionModule2;

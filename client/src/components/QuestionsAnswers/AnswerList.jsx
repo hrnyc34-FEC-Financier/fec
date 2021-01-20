@@ -21,9 +21,9 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
     showHideButton = <div onClick={handleLess} className="showHideAnswers">HIDE ANSWERS</div>
   }
 
-  console.log("rendered answers", renderedAnswers)
+  // console.log("rendered answers", renderedAnswers);
 
-  console.log("answers:", answers)
+  // console.log("answers:", answers);
   if (answers.length === 0) {
     return (<div className="answerList"><span className="noAnswers">No answers yet.</span></div>)
   } else {
@@ -40,6 +40,8 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
       </CSSTransitionGroup>
     </div>
   )}
+
+
 };
 
 export default AnswerList;

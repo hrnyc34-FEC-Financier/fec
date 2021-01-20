@@ -6,9 +6,10 @@ import changeProductId from './currentProductId.js';
 import setSelectedStyle from './selectStyle.js';
 import changeStyleList from './currentStyleList.js';
 import setReviewsList from '../RatingsReviews/setReviewsList.js';
-import setRatings from '../RatingsReviews/setRatings.js';
+import { setRatings } from '../RatingsReviews/setRatings.js';
 import setQuestionList from '../QA/setQuestionList';
 import changeQuestionList from '../QA/questionList.js';
+import addRelatedItems from '../relatedItems/addRelatedItems.js';
 
 const setSelectedProduct = (product_id) => {
   return (dispatch) => {
@@ -19,6 +20,7 @@ const setSelectedProduct = (product_id) => {
         dispatch(changeProductId(data.id));
         dispatch(setReviewsList(product_id));
         dispatch(setRatings(product_id));
+        dispatch( addRelatedItems( product_id ) );
       })
       .then(() => {
         return searchAPI.get(`products/${product_id}/styles`);
