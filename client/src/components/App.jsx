@@ -8,7 +8,7 @@ import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
 const App = ({ teamName }) => {
   return (
     <div>
-    {/* <div className='container'> */}
+      {/* <div className='container'> */}
       <ProductDetailContainer />
       <RelatedItemsContainer />
       <QAModuleContainer />

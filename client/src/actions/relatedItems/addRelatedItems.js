@@ -3,13 +3,12 @@ import relatedItemList from './relatedItemList.js';
 import relatedItemsListDetail from './relatedItemsListDetail.js';
 import relatedItemCarouselList from './relatedItemCarouselList.js';
 
-const searchRelatedItems = (productId) => {
+const addRelatedItems = (productId) => {
   return (dispatch) => {
 
     return searchEngine.get(`products/${productId}/related`)
       //relatedItemList from '/products/:product_id/related'
       .then(res=> {
-        console.log( res.data );
         return dispatch(relatedItemList( res.data ));
       })
 
@@ -21,7 +20,7 @@ const searchRelatedItems = (productId) => {
             .then(res => {
               list.push( res.data );
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log('adding related items list of id failed :', err));
         });
         return Promise.all(carouselList)
           .then(()=>{
@@ -39,7 +38,7 @@ const searchRelatedItems = (productId) => {
               overall.styles = res.data.results;
               list.push( overall );
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log('adding style to related items list  failed :', err));
         });
 
         Promise.all(carouselDetailList)
@@ -48,8 +47,8 @@ const searchRelatedItems = (productId) => {
           });
 
       })
-      .catch(err=>console.log(err));
+      .catch(err=>console.log('adding related carouselList failed :', err));
   };
 };
 
-export default searchRelatedItems;
+export default addRelatedItems;

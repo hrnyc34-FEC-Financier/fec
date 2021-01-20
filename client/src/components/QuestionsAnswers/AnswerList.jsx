@@ -2,7 +2,9 @@ import React from 'react';
 import Answer from './Answer.jsx';
 
 const AnswerList = (props) => {
+
   // console.log("answers:", props.answers)
+
   if (props.answers.length === 0) {
     return (
       <div className='answerList'>
