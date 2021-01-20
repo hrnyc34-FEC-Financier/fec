@@ -75,7 +75,7 @@ const CharacteristicsList = ({ productCharacteristics }) => {
       characteristicsArray.push({ characteristic: [characteristic, characteristicValue], characteristicInfo });
     }
   }
-
+  
   //characteristicArray: [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
   return (
     characteristicsArray.map((characteristicData, i) => {
