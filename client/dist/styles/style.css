@@ -1,7 +1,16 @@
 html {
-  font-size: 12px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(244,244,244);
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding: 0;
+}
+
+/*Overview Component Test CSS Start*/
 
 .product-display-container {
   grid-column-start: 2;
@@ -146,33 +155,127 @@ button {
 
 
 /*Related Items Component CSS START*/
-.RP_main_container{
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 6px;
+/* $slide-count: 5;
+   $slide-width: 30rem; */
+.relatedItems{
+  border: 2px solid tomato;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.RP_main_container {
+  border: 2px solid tomato;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.Carousel1{
-  background-color:rgb(227, 227, 228);
+.YrOutfit_main_container {
+  border: 2px solid tomato;
+  display: flex;
+  flex-direction: row;
+  margin: 0px 5px 5px 5px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 .RItems_container{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 0px;
+  border: 2px solid tomato;
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  align-content: center;
+  padding-bottom: 30px;
 }
 
-.Carousel2{
-  background-color:rgba(227, 227, 228, 0.726);
-}
+/* .paddingOrButton{
+  width: 5%
+} */
 
 .YrOutfit_container{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 2px;
+  border: 2px solid tomato;
+  flex: 0 1 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+  align-content: center;
 }
+
+.carousel_item {
+  border: 2px solid tomato;
+  flex: 0 1 auto;
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 10px;
+  padding: 0rem 1rem 1rem 1rem;
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+  background-color: white;
+}
+
+.carousel_item_title{
+  border: 2px solid tomato;
+  padding-bottom: 0.2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.carousel_item_smallText{
+  border: 2px solid tomato;
+  padding-top: 0.1rem;
+  font-size: 1.0 rem;
+  text-transform: uppercase;
+}
+
+.carousel_item_oriPrice{
+  border: 2px solid tomato;
+  font-size: 13px;
+  font-weight: bold;
+  color:rgb(2, 2, 124);
+}
+
+.carousel_item_disCountPrice_1{
+  font-size: 13px;
+  text-decoration: line-through;
+  color:rgb(8, 8, 8);
+}
+.carousel_item_disCountPrice_2{
+  font-size: 13px;
+  font-weight: bold;
+  color:rgb(209, 0, 0);
+}
+
+/*
+button .carousel_prev {
+
+}
+button .carousel_next {
+
+} */
 
 .Modal {
   position: fixed;
@@ -187,15 +290,30 @@ button {
   box-sizing: border-box;
   transition: all 0.3s ease-out;
 }
+
 .TestBlue{
   color:blue;
   text-decoration: underline;
 }
+
 /* .Modal_grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 50px) auto;
   grid-row-gap: 5px;
+}
+
+padding: 15px 0px 10px 6px;
+margin: 15px 0px 10px 6px;   // t,r,b,l
+overflow-x: hidden;
+border: 1px solid rgba(0,0,0,0.75);
+cursor: pointer;
+display: inline-block;
+
+
+.button:hover {
+  background-color: rgba(0,0,0,0.85);
 } */
+
 
 /*Related Items Component CSS END*/

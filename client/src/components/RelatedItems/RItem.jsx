@@ -18,38 +18,45 @@ const RelatedItems = ({ currentProduct, relatedProductCarouselList, relatedProdu
     }
   });
 
-  const yourOutfitItems = Array.isArray(yourOutfitList) &&
-  yourOutfitList.map( item => {
-    // let id = Number.parseInt(Object.keys(item));
-    // let imageURL = item[id].styles[0].photos[0].thumbnail_url;
-    let imageURL = item.styles[0].photos[0].thumbnail_url;
-    if (imageURL !== null) {
-      return <YourOutFitList
-        key={item.id}
-        product={item}
-        currentProduct={currentProduct}
-        image={imageURL}
-        handleAddYourOutfitClick={handleAddYourOutfitClick}
-        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
-    }
-  });
+  const yourOutfitItems = !yourOutfitList.length ? null /*something replace add button*/ :
+    yourOutfitList.map( item => {
+      let imageURL = item.styles[0].photos[0].thumbnail_url;
+      if (imageURL !== null) {
+        return <YourOutFitList
+          key={item.styles[0].style_id}
+          product={item}
+          currentProduct={currentProduct}
+          image={imageURL}
+          handleAddYourOutfitClick={handleAddYourOutfitClick}
+          handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
+      }
+    });
+
   return (
-    <>
-      <div className ='Carousel1'>RELATED PRODUCTS
+    <div className='relatedItems'>
+      <span className='relatedItems_title'>RELATED PRODUCTS</span>
+      <div className ='RP_main_container'>
+        <button className='carousel_prev'>&lt;</button>
 
         <div className='RItems_container' >
-          {relatedItems}<br />
+          {relatedItems}
         </div>
+
+        <button className='carousel_next'>&gt;</button>
+
       </div>
 
-      <div className ='Carousel2'>YOUR OUTFIT
+      <span className='relatedItems_title'>YOUR OUTFIT</span>
+
+      <div className ='YrOutfit_main_container'>
+        <div className='paddingOrButton'>
+          <button value={currentProduct.id} onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
+        </div>
         <div className ='YrOutfit_container'>
           {yourOutfitItems}
         </div>
-        <button value={currentProduct.id} onClick={(e)=>handleAddYourOutfitClick(e.target.value)}>Add to Outfit</button>
       </div>
-
-    </>
+    </div>
   );
 };
 

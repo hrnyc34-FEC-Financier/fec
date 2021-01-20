@@ -20,7 +20,7 @@ const addRelatedItems = (productId) => {
             .then(res => {
               list.push( res.data );
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log('adding related items list of id failed :', err));
         });
         return Promise.all(carouselList)
           .then(()=>{
@@ -38,7 +38,7 @@ const addRelatedItems = (productId) => {
               overall.styles = res.data.results;
               list.push( overall );
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log('adding style to related items list  failed :', err));
         });
 
         Promise.all(carouselDetailList)
@@ -47,7 +47,7 @@ const addRelatedItems = (productId) => {
           });
 
       })
-      .catch(err=>console.log(err));
+      .catch(err=>console.log('adding related carouselList failed :', err));
   };
 };
 

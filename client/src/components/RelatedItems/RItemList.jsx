@@ -2,7 +2,7 @@ import React from 'react';
 import StarRatings from 'react-star-ratings';
 
 const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemClick, handleStarModalClick, image })=>{
-  // console.log('product id: ', product);
+  // console.log('product sale: ', product.styles[0].sale_price);
 
   let modalRender = relatedProductStarModal && <div className='Modal'>
     <div>
@@ -13,6 +13,16 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
       &#10003;  list 2  &#10003;<br />
     </div></div>;
 
+  let oriPrice = <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
+
+  let disCountPrice = <><span className='carousel_item_disCountPrice_1'> &#36; {product.default_price} </span><span className='carousel_item_disCountPrice_2'> &#36; {product.default_price} </span></>;
+
+  let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{disCountPrice}</>;
+  // for (let item of product.styles) {
+  //   console.log('for loop', item.sale_price);
+  //   console.log('for loop', item.style_id);
+  // }
+
   let reviewStars =
   <StarRatings
     rating={3}
@@ -22,18 +32,21 @@ const RItemList = ({ product, relatedProductStarModal, handleItemToCurrentItemCl
     starEmptyColor='#767676'/>;
 
   return (
-    <div className='RP_RItems_container'>
-      <div>
-        <img src={ image } alt='PRODUCT defaultIMG' width="130" /><br />
-        CATEGORY : {product.category} <br />
-        PRODUCT NAME : {product.name} <br />
-        PRICE : {product.default_price} <br />
-        RATING : {reviewStars}
+    <div className='carousel_item'>
 
+      <img src={image} alt='PRODUCT defaultIMG' width="200" /><br />
+      <span className='carousel_item_smallText'>
+        {product.category} </span> <br />
+      <div className='carousel_item_title'>
+        {product.name}
+      </div><br />
+      {price}
+      <br />
+      {reviewStars}<br />
 
-      </div>
       <button value={product.id} onClick={(e)=>handleItemToCurrentItemClick(e.target.value)}>current Item</button>
       <button value={relatedProductStarModal} onClick={(e)=>handleStarModalClick(e.target.value)}> StarModal </button>
+
       { modalRender }
     </div>
   );

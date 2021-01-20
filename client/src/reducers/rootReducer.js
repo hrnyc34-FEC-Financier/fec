@@ -53,7 +53,7 @@ const rootReducer = combineReducers({
   relatedProductStarModal: relatedItemStarModalReducer,
   relatedItemsListDetail: relatedItemsListDetailReducer,
   yourOutfitList: yourOutfitListReducer,
-
+  //productDetails: Start
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
