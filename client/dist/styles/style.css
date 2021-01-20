@@ -4,9 +4,9 @@ html {
 }
 
 body {
-  background-color: rgb(244,244,244);
+  background-color: rgb(244, 244, 244);
   font-family: Arial, Helvetica, sans-serif;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 
@@ -161,7 +161,7 @@ button {
 /*Question Component Test CSS END*/
 
 /*Related Items Component CSS START*/
-.relatedItems{
+.relatedItems {
   /* border: 2px solid tomato; */
   padding-top: 40px;
   padding-bottom: 20px;
@@ -195,7 +195,7 @@ button {
   transform: translateX(-50%);
 }
 
-.RItems_container{
+.RItems_container {
   /* border: 2px solid tomato; */
   flex: 0 1 auto;
   overflow: hidden;
@@ -214,7 +214,7 @@ button {
   width: 5%
 } */
 
-.YrOutfit_container{
+.YrOutfit_container {
   /* border: 2px solid tomato; */
   flex: 0 1 auto;
   overflow: hidden;
@@ -237,48 +237,48 @@ button {
   margin: 10px;
   padding: 0rem 1rem 1rem 1rem;
   border-radius: 2px;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
-.relatedItems_title{
+.relatedItems_title {
   padding-top: 30px;
   padding-left: 20px;
   font-size: 1.6rem;
   font-weight: bold;
-  color:rgb(75, 75, 75)
+  color: rgb(75, 75, 75);
 }
 
-.carousel_item_title{
+.carousel_item_title {
   /* border: 2px solid tomato; */
   padding-bottom: 0.2rem;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.carousel_item_smallText{
+.carousel_item_smallText {
   /* border: 2px solid tomato; */
   padding-top: 0.1rem;
-  font-size: 1.0 rem;
+  font-size: 1 rem;
   text-transform: uppercase;
 }
 
-.carousel_item_oriPrice{
+.carousel_item_oriPrice {
   /* border: 2px solid tomato; */
   font-size: 12px;
   font-weight: bold;
-  color:rgb(2, 2, 124);
+  color: rgb(2, 2, 124);
 }
 
-.carousel_item_disCountPrice_1{
+.carousel_item_disCountPrice_1 {
   font-size: 12px;
   text-decoration: line-through;
-  color:rgb(8, 8, 8);
+  color: rgb(8, 8, 8);
 }
-.carousel_item_disCountPrice_2{
+.carousel_item_disCountPrice_2 {
   font-size: 12px;
   font-weight: bold;
-  color:rgb(209, 0, 0);
+  color: rgb(209, 0, 0);
 }
 
 /*
@@ -303,8 +303,8 @@ button .carousel_next {
   transition: all 0.3s ease-out;
 }
 
-.TestBlue{
-  color:blue;
+.TestBlue {
+  color: blue;
   text-decoration: underline;
 }
 
@@ -320,6 +320,5 @@ display: inline-block;
 .button:hover {
   background-color: rgba(0,0,0,0.85);
 } */
-
 
 /*Related Items Component CSS END*/
