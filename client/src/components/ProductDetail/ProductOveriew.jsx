@@ -3,13 +3,13 @@ import React from 'react';
 const ProductOverview = ({ currentProduct }) => {
   console.log(currentProduct);
   return (
-    <div className='overview'>
-      <div>{currentProduct.description}</div>
+    <div className='overview-container answerBody'>
+      <div className='description'>{currentProduct.description}</div>
       <div>
-        <ul>
+        <ul className='features'>
           {currentProduct.hasOwnProperty('features')
             ? currentProduct.features.map((feature) => (
-                <li>{`${feature.feature}: ${feature.value}`}</li>
+                <li className='answerBody'>{`${feature.feature}: ${feature.value}`}</li>
               ))
             : null}
         </ul>

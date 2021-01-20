@@ -4,21 +4,19 @@ import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
 import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
 import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
 
-
-
 const App = ({ teamName }) => {
   return (
     <div>
-      <div id="pdcontainer">
-      <ProductDetailContainer />
+      <div>
+        <ProductDetailContainer />
       </div>
       <div id="container">
-      <RelatedItemsContainer />
-      <QAModuleContainer/>
-      <div className='reviewsWidgetContainer'>
-        < RatingsReviewsMain />
+        <RelatedItemsContainer />
+        <QAModuleContainer />
       </div>
-    </div>
+      <div className="reviewsWidgetContainer">
+        <RatingsReviewsMain />
+      </div>
     </div>
   );
 };

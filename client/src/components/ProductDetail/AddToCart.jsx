@@ -57,7 +57,7 @@ const AddToCart = ({ currentStyle, sizeChange, currentSku }) => {
         <input
           type='submit'
           className='checkout-form-item'
-          value='ADD TO BAG'
+          value='ADD TO BAG                    +'
         />
         <input type='submit' className='checkout-form-item' value='*' />
       </form>
