@@ -7,14 +7,22 @@ const RelatedItems = ({
   relatedProductCarouselList,
   relatedProductStarModal,
   yourOutfitList,
-  // handleRelatedItemClick,
   handleAddYourOutfitClick,
   handleDeleteYourOutfitClick,
   handleItemToCurrentItemClick,
-  handleStarModalClick})=>{
+  handleStarModalClick,
+  handleCarouselLeftClick,
+  handleCarouselRightClick,
+  carouselRenderIndex
+})=>{
+  console.log('handleCarouselLeftClick:', handleCarouselLeftClick)
+  console.log('handleCarouselRightClick:', handleCarouselRightClick)
 
-  const relatedItems = Array.isArray(relatedProductCarouselList) &&
-  relatedProductCarouselList.map((item) => {
+
+  const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
+
+  const relatedItems = Array.isArray(slicedRelatedItemList) &&
+  slicedRelatedItemList.map((item) => {
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if (imageURL !== null) {
       return <RItemList
@@ -29,20 +37,20 @@ const RelatedItems = ({
   });
 
   const yourOutfitItems =
-    yourOutfitList.map( item => {
-      let imageURL = item.styles[0].photos[0].thumbnail_url;
-      if ( imageURL !== null ) {
-        return <YourOutFitList
-          key={item.styles[0].style_id}
-          product={item}
-          currentProduct={currentProduct}
-          image={imageURL}
-          handleAddYourOutfitClick={handleAddYourOutfitClick}
-          handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
-      }
-    });
+  yourOutfitList.map( item => {
+    let imageURL = item.styles[0].photos[0].thumbnail_url;
+    if ( imageURL !== null ) {
+      return <YourOutFitList
+        key={item.styles[0].style_id}
+        product={item}
+        currentProduct={currentProduct}
+        image={imageURL}
+        handleAddYourOutfitClick={handleAddYourOutfitClick}
+        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
+    }
+  });
 
-  const leftArrow = <button className='carousel_prev'>
+  const leftArrow = <button className='carousel_prev' onClick={ handleCarouselLeftClick } >
     <svg
       width="16" height="16" fill="currentColor"
       viewBox="0 0 16 16">
@@ -50,7 +58,7 @@ const RelatedItems = ({
     </svg>
   </button>;
 
-  const rightArrow = <button className='carousel_next'>
+  const rightArrow = <button className='carousel_next' onClick={ handleCarouselRightClick }>
     <svg
       width="16" height="16" fill="currentColor"
       viewBox="0 0 16 16">

@@ -5,6 +5,7 @@ import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail
 import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
 import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js';
 import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
+import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
 
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
@@ -53,6 +54,7 @@ const rootReducer = combineReducers({
   relatedProductStarModal: relatedItemStarModalReducer,
   relatedItemsListDetail: relatedItemsListDetailReducer,
   yourOutfitList: yourOutfitListReducer,
+  carouselRenderIndex: carouselRenderIndexReducer,
   //productDetails: Start
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
