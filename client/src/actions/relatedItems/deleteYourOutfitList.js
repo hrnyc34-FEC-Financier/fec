@@ -3,6 +3,7 @@ import deleteYourOutfit from './yourOutfitListDelete.js';
 
 //updating relatedItemCarouselList by adding more detail _'/products/:product_id/styles'
 const deleteYourOutfitList = ( productId ) => {
+console.log('productId:', productId);
 
   return (dispatch) => {
     dispatch( deleteYourOutfit( productId ) );
