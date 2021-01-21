@@ -1,0 +1,84 @@
+.charContainer {
+  width: 100%;
+  font-family: Arial;
+  font-size: 14px;
+  color: #666;
+  box-sizing: border-box;
+}
+
+.charTitle {
+  height: 18px;
+  font-size: 1em;
+  margin-bottom: 0.2em;
+}
+
+.charBarContainer {
+  position: relative;
+  width: 100%;
+  height: 6px;
+}
+
+.charBar {
+  width: 100%;
+  height: 100%;
+}
+
+.charBarIntervalContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.charBar3Interval {
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+  width: 32.3%;
+}
+
+.charBar4Interval {
+  height: 100%;
+  background-color: rgb(200, 200, 200);
+  width: 24%
+}
+
+/* Offsets pointer container to charBarContainer by 1/2 the triangle pointer's length*/
+.charBarPointerContainer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: -5.5px;
+}
+.charBarPointer {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9.5px 5.5px 0 5.5px;
+  border-color: black transparent transparent transparent;
+}
+
+.charBarDescriptionContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  font-size: .8em;
+  margin-bottom: 1.5em
+}
+
+.charBarDescription {
+  width: 33.3%;
+}
+
+.charBarDescription.dFirst {
+  text-align: left;
+}
+
+.charBarDescription.dMiddle {
+  text-align: center;
+}
+
+.charBarDescription.dLast {
+  text-align: right;
+}

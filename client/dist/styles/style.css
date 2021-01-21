@@ -1,0 +1,501 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(244, 244, 244);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*Overview Component Test CSS Start*/
+
+.product-display-container {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+
+/* .product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+} */
+
+#ratingsContainer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/*Question Component Test CSS Start*/
+
+#container {
+  border: 2px solid tomato;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  width: 100%;
+}
+#hello {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: center;
+}
+#questionModule {
+  background-color: white;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  max-height: 100vh;
+
+}
+
+#qaModuleHeader {
+  height: 20px;
+}
+
+.endButton {
+  height: 40px;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+}
+
+h2 {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+#searchBar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+
+#searchInput {
+  border: none;
+  width: 90%;
+  outline: none;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+}
+
+#searchIcon {
+  padding-top: 12px;
+}
+
+#questionList {
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.question {
+  padding: 10px 0 10px 0;
+}
+
+.questionBody {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #666;
+}
+
+.right {
+  float: right;
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.addBold {
+  font-weight: bold;
+}
+
+.addAnswer, .yesHelpfulQ {
+  text-decoration: underline;
+}
+
+.addAnswer:hover, .yesHelpfulQ:hover {
+  cursor: pointer;
+}
+
+.noAnswers {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 0 0 0 27px;
+}
+
+.answer {
+  padding: 0 0 10px 0;
+}
+
+.answerList {
+  padding: 10px 0 0 0;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.answerBody {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.bodyIndent {
+  padding: 0 0 0px 10px;
+}
+
+.answerInfo {
+  padding: 0 0 0 27px;
+}
+
+.yesHelpfulA, .reportLink {
+  text-decoration: underline;
+}
+
+.yesHelpfulA:hover, .reportLink:hover {
+  cursor: pointer;
+}
+
+.showHideAnswers {
+  font-family: Arial;
+  color: #666;
+  font-weight: bold;
+  font-size: 10px;
+  padding: 0 0 0 27px;
+}
+
+.divider {
+  padding: 0 10px 0 10px;
+}
+
+.answerInfoStyle {
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 10px;
+}
+
+.answerPhotosContainer {
+  padding: 0 0 0 27px;
+}
+
+button {
+  margin: 0 15px 0 0;
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Arial;
+  color: #666;
+}
+
+#searchSubmit {
+  border: none;
+  outline: none;
+  float: right;
+}
+
+/*Question Component Test CSS END*/
+
+/*Will CSS*/
+
+.ratingsReviewContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+}
+
+.starBarContainer {
+  display: flex;
+}
+
+.starRatingBar {
+  flex-grow: 1;
+}
+
+
+/*Test Modal CSS*/
+#addQuestionPage {
+    position: absolute;
+    width: 60%;
+    background-color: white;
+    border: '2px solid #000';
+    left: 25%;
+    top: 25%;
+    text-align: center;
+    padding: 15px;
+    border: none;
+    justify-content: center;
+}
+
+#addImagePage {
+  position: absolute;
+  width: 60%;
+  height:80%;
+  background-color: white;
+  border: '2px solid #000';
+  left: 25%;
+  top: 10%;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#addQuestionFormContainer {
+  width: 80%;
+  margin: 0 auto;
+  text-align:left;
+}
+
+#questionInput {
+  text-align: left;
+  padding-left:0;
+  padding-top:0;
+  padding-bottom:0.4em;
+  padding-right: 0.4em;
+  width: 100%;
+  height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#answerInput {
+  text-align: left;
+  padding-left:0;
+  padding-top:0;
+  padding-bottom:0.4em;
+  padding-right: 0.4em;
+  width: 100%;
+  height: 100px;
+}
+
+#answerInput, #aNicknameInput, #aEmailInput {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#aNicknameInput, #aEmailInput {
+  width: 50%
+}
+
+#qNicknameInput {
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#qEmailInput {
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+label {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  font-weight: bold;
+  text-align: left;
+}
+
+#submitButton {
+    margin: 0 15px 0 0;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial;
+    color: #666;
+}
+
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999;
+}
+
+#closeX {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Arial;
+  color: #666;
+}
+
+
+#closeX:hover {
+  cursor: pointer;
+}
+
+#imageUploader {
+  display: none;
+}
+
+#uploadButton {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Arial;
+  color: #666;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+#uploadButton:hover {
+  background-color: #ccc;
+  transition: background-color 1s
+}
+
+#uploadPhotosLabel {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  font-weight: bold;
+  text-align: left;
+}
+
+.answerImage {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px 10px 10px 0;
+}
+
+.formWarning {
+  font-size: 8px;
+  font-family: Arial;
+  color: #ccc;
+}
+
+#modalContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#photoModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: white;
+}
+
+#currentImage {
+  max-height:100%;
+  padding: 10px;
+}
+
+#closeImage {
+  position: relative;
+  top: 2%;
+  left: -2%;
+}
+
+/*Test Animation CSS*/
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 100ms ease-out;
+}
+
+.carousel_item_oriPrice {
+  /* border: 2px solid tomato; */
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(2, 2, 124);
+}
+
+.carousel_item_disCountPrice_1 {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: rgb(8, 8, 8);
+}
+.carousel_item_disCountPrice_2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(209, 0, 0);
+}
+
+/*
+button .carousel_prev {
+
+}
+button .carousel_next {
+
+} */
+
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.TestBlue {
+  color: blue;
+  text-decoration: underline;
+}
+

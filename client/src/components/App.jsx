@@ -1,17 +1,25 @@
-import React from 'react';
-import RelatedItemsContainer from '../containers/RelatedItems.jsx';
+import React, { useState } from 'react';
+import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
+import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
+import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
+// import './RatingsReviews/will-style.css';
+import ProductDetailMain from '../components/ProductDetail/ProductDetailMain.jsx';
 
-let App = ({ teamName }) => {
-
+const App = () => {
   return (
-    <div className = "container">
-      <h1> Hello Team { teamName} ! </h1>
-      <div className = "ProductDetail">ProductDetail</div>
-      <div className = "RelatedItems">RelatedItems
+    <div>
+      <div id='pdcontainer'>
+        <ProductDetailMain />
+      </div>
+      <div id="ri_container">
         <RelatedItemsContainer />
       </div>
-      <div className= "QuestionsAnswers"> QuestionsAnswers</div>
-      <div className= "RatingsReviews"> RatingsReviews</div>
+      <div id="container">
+        <QAModuleContainer/>
+      </div>
+      <div id='rContainer'>
+        <RatingsReviewsMain />
+      </div>
     </div>
   );
 };

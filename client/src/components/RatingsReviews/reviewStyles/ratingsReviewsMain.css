@@ -1,0 +1,18 @@
+#rContainer {
+  font-family: Arial;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+}
+
+.ratingsReviewMain {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: minmax(230px, 230px) auto;
+  grid-column-gap: 2%;
+  box-sizing: border-box;
+}
