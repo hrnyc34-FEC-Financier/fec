@@ -20,6 +20,7 @@ const yourOutfitListReducer = (state = [], action) => {
 
   case 'DELETE_YOUR_OUTFIT_LIST':
     var deleteId = Number.parseInt(action.deletingItemId);
+    console.log('deleteId:', deleteId, state);
 
     for ( let i = 0; i < state.length; i++ ) {
       if ( state[i].id === deleteId ) {

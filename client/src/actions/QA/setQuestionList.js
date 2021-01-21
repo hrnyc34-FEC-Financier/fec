@@ -3,7 +3,7 @@ import changeQuestionList from './questionList.js';
 
 const setQuestionList = (product_id) => {
   return (dispatch) => {
-    return searchAPI.get('qa/questions', {product_id})
+    return searchAPI.get('qa/questions', {product_id, page: 1, count: 100})
       .then((data) => {
         dispatch(changeQuestionList(data.results));
       })

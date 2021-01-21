@@ -36,6 +36,7 @@ body {
 /*Question Component Test CSS Start*/
 
 #container {
+  border: 2px solid tomato;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 100%;
@@ -49,6 +50,16 @@ body {
   background-color: white;
   grid-column-start: 2;
   grid-column-end: 3;
+  max-height: 100vh;
+
+}
+
+#qaModuleHeader {
+  height: 20px;
+}
+
+.endButton {
+  height: 40px;
 }
 
 h1 {
@@ -87,7 +98,11 @@ h2 {
   padding-top: 12px;
 }
 
-
+#questionList {
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  overflow-x: hidden;
+}
 
 .question {
   padding: 10px 0 10px 0;
@@ -106,6 +121,10 @@ h2 {
   color: #666;
   font-weight: normal;
   font-size: 10px;
+}
+
+.addBold {
+  font-weight: bold;
 }
 
 .addAnswer, .yesHelpfulQ {
@@ -130,6 +149,8 @@ h2 {
 
 .answerList {
   padding: 10px 0 0 0;
+  max-height: 50vh;
+  overflow: auto;
 }
 
 .answerBody {
@@ -174,6 +195,10 @@ h2 {
   font-size: 10px;
 }
 
+.answerPhotosContainer {
+  padding: 0 0 0 27px;
+}
+
 button {
   margin: 0 15px 0 0;
   border: 1px solid #ccc;
@@ -193,118 +218,25 @@ button {
 
 /*Question Component Test CSS END*/
 
-/*Related Items Component CSS START*/
-.relatedItems {
-  /* border: 2px solid tomato; */
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
-.RP_main_container {
-  /* border: 2px solid tomato; */
-  margin-top: 10rem;
-  display: flex;
-  flex-direction: row;
-  margin: 0px 5px 5px 5px;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-  position: relative;
-  width: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-}
+/*Will CSS*/
 
-.YrOutfit_main_container {
-  /* border: 2px solid tomato; */
-  display: flex;
-  flex-direction: row;
-  margin: 0px 5px 5px 5px;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-  position: relative;
-  width: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.relatedContainer {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
-.RItems_container{
-  background-color: rgb(244, 244, 244);
+.ratingsReviewContainer {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
   grid-column-gap: 0px;
-  grid-row-gap: 2px;
-  /* border: 2px solid tomato; */
-  flex: 0 1 auto;
-  overflow: hidden;
-  position: relative;
+  grid-row-gap: 0px;
   width: 100%;
+}
+
+.starBarContainer {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: start;
-  align-items: stretch;
-  align-content: center;
-  padding-bottom: 30px;
 }
 
-/* .paddingOrButton{
-  width: 5%
-} */
-
-.YrOutfit_container {
-  /* border: 2px solid tomato; */
-  flex: 0 1 auto;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: start;
-  align-items: stretch;
-  align-content: center;
+.starRatingBar {
+  flex-grow: 1;
 }
 
-.carousel_item {
-  /* border: 2px solid tomato; */
-  flex: 0 1 auto;
-  position: relative;
-  justify-content: center;
-  align-items: flex-end;
-  margin: 10px;
-  padding: 0rem 1rem 1rem 1rem;
-  border-radius: 2px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-  background-color: white;
-}
-
-.relatedItems_title {
-  padding-top: 30px;
-  padding-left: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: rgb(75, 75, 75);
-}
-
-.carousel_item_title {
-  /* border: 2px solid tomato; */
-  padding-bottom: 0.2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.carousel_item_smallText {
-  /* border: 2px solid tomato; */
-  padding-top: 0.1rem;
-  font-size: 1 rem;
-  text-transform: uppercase;
-}
 
 /*Test Modal CSS*/
 #addQuestionPage {
@@ -316,12 +248,30 @@ button {
     top: 25%;
     text-align: center;
     padding: 15px;
-    border: 10px solid #666;
+    border: none;
     justify-content: center;
 }
 
-#addQuestionFormContainer {
+#addImagePage {
+  position: absolute;
   width: 60%;
+  height:80%;
+  background-color: white;
+  border: '2px solid #000';
+  left: 25%;
+  top: 10%;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#addQuestionFormContainer {
+  width: 80%;
   margin: 0 auto;
   text-align:left;
 }
@@ -334,20 +284,50 @@ button {
   padding-right: 0.4em;
   width: 100%;
   height: 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#answerInput {
+  text-align: left;
+  padding-left:0;
+  padding-top:0;
+  padding-bottom:0.4em;
+  padding-right: 0.4em;
+  width: 100%;
+  height: 100px;
+}
+
+#answerInput, #aNicknameInput, #aEmailInput {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
+}
+
+#aNicknameInput, #aEmailInput {
+  width: 50%
 }
 
 #qNicknameInput {
   width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
 }
 
 #qEmailInput {
   width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #666;
 }
 
 label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
   color: #666;
+  font-weight: bold;
   text-align: left;
 }
 
@@ -362,6 +342,12 @@ label {
     color: #666;
 }
 
+::placeholder {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: #999;
+}
+
 #closeX {
   position: absolute;
   top: 2px;
@@ -370,6 +356,102 @@ label {
   font-size: 14px;
   font-family: Arial;
   color: #666;
+}
+
+
+#closeX:hover {
+  cursor: pointer;
+}
+
+#imageUploader {
+  display: none;
+}
+
+#uploadButton {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Arial;
+  color: #666;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+#uploadButton:hover {
+  background-color: #ccc;
+  transition: background-color 1s
+}
+
+#uploadPhotosLabel {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666;
+  font-weight: bold;
+  text-align: left;
+}
+
+.answerImage {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  margin: 10px 10px 10px 0;
+}
+
+.formWarning {
+  font-size: 8px;
+  font-family: Arial;
+  color: #ccc;
+}
+
+#modalContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#photoModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: white;
+}
+
+#currentImage {
+  max-height:100%;
+  padding: 10px;
+}
+
+#closeImage {
+  position: relative;
+  top: 2%;
+  left: -2%;
+}
+
+/*Test Animation CSS*/
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 100ms ease-out;
 }
 
 .carousel_item_oriPrice {
@@ -417,17 +499,3 @@ button .carousel_next {
   text-decoration: underline;
 }
 
-/*
-padding: 15px 0px 10px 6px;
-margin: 15px 0px 10px 6px;   // t,r,b,l
-overflow-x: hidden;
-border: 1px solid rgba(0,0,0,0.75);
-cursor: pointer;
-display: inline-block;
-
-
-.button:hover {
-  background-color: rgba(0,0,0,0.85);
-} */
-
-/*Related Items Component CSS END*/
