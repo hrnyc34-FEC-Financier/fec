@@ -2,9 +2,9 @@ import React from 'react';
 import StarBarList from './StarBarList.jsx';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import CharacteristicsList from './CharacteristicsList.jsx';
-import './ProductRatings.css';
+import '../reviewStyles/productRatings.css';
 
-const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter }) => {
+const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter, handleRatingsFilter}) => {
 
   const calculateProductRecommended = (productRecommended) => {
     const recommended = Number(productRecommended[true]);
@@ -13,18 +13,22 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
   };
 
   return (
-    <div>
+    <div id='productRatingsContainer'>
       <div id='productRatingsTitle'>RATINGS & REVIEWS</div>
-      <div id='ratingNumberContainer'>
-        {productAvgRating}
+      < div id='ratingNumberStarContainer'>
+        <div id='productAvgRatingValue'>
+          {productAvgRating % 1 === 0 ? `${productAvgRating}.0` : productAvgRating}
+        </div>
+        <div id='productStarRatingContainer'>
+          <div id='productStarRating'>
+            <StarRatingReadOnly productAvgStarRating={productAvgStarRating} />
+          </div>
+        </div>
       </div>
-      <div>
-        <StarRatingReadOnly productAvgStarRating={productAvgStarRating} />
-      </div>
-      <div>
+      <div id='productRecommended'>
         {`${calculateProductRecommended(productRecommended)}% of reviews recommend this product`}
       </div>
-      <StarBarList productRatings={productRatings} />
+      <StarBarList productRatings={productRatings} ratingsFilter={ratingsFilter} handleRatingsFilter={handleRatingsFilter} />
       <CharacteristicsList productCharacteristics={productCharacteristics} />
     </div>
   );

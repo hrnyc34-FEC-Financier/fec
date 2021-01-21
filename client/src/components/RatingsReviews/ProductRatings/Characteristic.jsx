@@ -1,5 +1,5 @@
 import React from 'react';
-import './characteristic.css';
+import '../reviewStyles/characteristic.css';
 
 const Characteristic = ({ characteristicData }) => {
   //characteristicInfo = [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
@@ -29,10 +29,10 @@ const Characteristic = ({ characteristicData }) => {
           </div>
         ) : (
           <div className='charBarIntervalContainer'>
-            <div className='charBar5Interval'></div>
-            <div className='charBar5Interval'></div>
-            <div className='charBar5Interval'></div>
-            <div className='charBar5Interval'></div>
+            <div className='charBar4Interval'></div>
+            <div className='charBar4Interval'></div>
+            <div className='charBar4Interval'></div>
+            <div className='charBar4Interval'></div>
           </div>
         )}
         <div className='charBarPointerContainer'>

@@ -1,0 +1,67 @@
+#productRatingsContainer {
+  box-sizing: border-box;
+  font-family: Arial;
+  max-width: 250px;
+  font-size: 14px;
+  color: #666;
+}
+
+#productRatingsTitle {
+  font-size: 16px;
+}
+
+#ratingNumberStarContainer {
+  display: grid;
+  grid-template-columns: fit-content(80px) auto;
+  /* grid-template-columns: 3fr 5fr; */
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#productAvgRatingValue {
+  grid-area: 1 / 1 / 2 / 1;
+  font-size: 4em;
+  /* max-width: 60px; */
+}
+
+#productStarRatingContainer {
+  position: relative;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+#productStarRating {
+  position: absolute;
+  top: 0.8em;
+  left: 0.2em;
+}
+
+#productRecommended {
+  font-size: 0.8em;
+  margin-top: 0.1em;
+  margin-bottom: 1.5em;
+}
+
+#starBarsContainer {
+  margin-bottom: 1.5em;
+}
+
+#starBarContainer {
+  display: flex;
+  align-items: center;
+}
+
+#starBarContainer:hover {
+  cursor: pointer;
+  background-color: rgba(38, 223, 240, 0.712);
+}
+
+#starText {
+  text-decoration: underline;
+  padding-right: 0.4em;
+  margin: 0.2em 0em;
+}
+
+#starBar {
+  flex-grow: 2;
+}

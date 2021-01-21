@@ -6,6 +6,7 @@ import sortSelect from '../../actions/RatingsReviews/sortSelect.js';
 
 const mapStateToProps = (state) => ({
   currentProductId: state.currentProductId,
+  ratingsFilter: state.ratingsFilter,
   productRatings: state.productRatings,
   reviewsList: state.reviewsList,
   reviewDisplayLimiter: state.reviewDisplayLimiter,

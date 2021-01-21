@@ -236,11 +236,6 @@ button {
   transform: translateX(-50%);
 }
 
-.reviewsWidgetContainer {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-
 .relatedContainer {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -318,25 +313,6 @@ button {
   padding-top: 0.1rem;
   font-size: 1 rem;
   text-transform: uppercase;
-}
-
-/*Will CSS*/
-
-.ratingsReviewContainer {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  width: 100%;
-}
-
-.starBarContainer {
-  display: flex;
-}
-
-.starRatingBar {
-  flex-grow: 1;
 }
 
 /*Test Modal CSS*/

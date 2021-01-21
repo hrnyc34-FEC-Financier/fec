@@ -49,35 +49,37 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
       ) : null}
       {reviewInfo.response !== "" ? (
         <div className="reviewTileFeedback">
-          <div>Response:</div>
-          <div>{reviewInfo.response}</div>
+          <div className="reviewTileFeedbackHeader">Response:</div>
+          <div className="reviewTileFeedbackResponse">{reviewInfo.response}</div>
         </div>
       ) : null}
-      <div className="reviewTileFooter">
-        <span>
-          Helpful?{" "}
+      <div className="reviewTileFooterContainer">
+        <div className="reviewTileFooter">
+          <span>
+            Helpful?{" "}
+            <span
+              onClick={() => {
+                if (reviewHelpful.helpfulStatus === false) {
+                  setReviewHelpful({helpfulness: reviewHelpful.helpfulness + 1, helpfulStatus: true});
+                  handleHelpfulReview(reviewInfo.review_id);
+                }
+              }}
+            >
+              Yes ({reviewHelpful.helpfulness})
+            </span>
+          </span>
+          <span className="divider">|</span>
           <span
             onClick={() => {
-              if (reviewHelpful.helpfulStatus === false) {
-                setReviewHelpful({helpfulness: reviewHelpful.helpfulness + 1, helpfulStatus: true});
-                handleHelpfulReview(reviewInfo.review_id);
+              if (reviewReported === false) {
+                setReviewReported(true);
+                handleReportReview(currentProductId, reviewInfo.review_id);
               }
             }}
           >
-            Yes ({reviewHelpful.helpfulness})
+            {reviewReported === false ? 'Report' : 'Reported'}
           </span>
-        </span>
-        <span className="divider">|</span>
-        <span
-          onClick={() => {
-            if (reviewReported === false) {
-              setReviewReported(true);
-              handleReportReview(currentProductId, reviewInfo.review_id);
-            }
-          }}
-        >
-          {reviewReported === false ? 'Report' : 'Reported'}
-        </span>
+        </div>
       </div>
     </div>
   );
