@@ -11,7 +11,6 @@ const AddToCart = ({
 }) => {
   const favorite = (e) => {
     e.preventDefault();
-    console.log(currentProduct.id);
     if (!outfitList.includes(currentProduct.id)) {
       addToOutfitList(currentProduct.id);
     }
