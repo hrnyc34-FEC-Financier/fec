@@ -7,6 +7,8 @@ import handleHelpfulQuestion from "../../actions/QA/handleHelpfulQuestion.js"
 
 const Question = ({question, productName}) => {
 
+  console.log("question", question);
+
   let answers = Object.entries(question.answers);
 
   const [answersQuantity, setAQuant] = useState(2);
@@ -47,7 +49,7 @@ const Question = ({question, productName}) => {
       <Modal open={openA} onClose={handleCloseA}>
         <Fade in={openA}>
           <div>
-            <AddAnswerForm close={handleCloseA} productName={productName} qBody={question.question_body}/>
+            <AddAnswerForm close={handleCloseA} productName={productName} qBody={question.question_body} qID={question.question_id}/>
           </div>
         </Fade>
       </Modal>

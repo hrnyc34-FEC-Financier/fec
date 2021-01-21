@@ -2,7 +2,6 @@ import React from "react";
 import Question from "./Question.jsx";
 
 const QuestionList = ({ questions, quantity, productName}) => {
-  // console.log("questions", questions);
 
   let renderedQuestions  = [];
 

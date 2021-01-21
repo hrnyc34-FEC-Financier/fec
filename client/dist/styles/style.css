@@ -187,6 +187,10 @@ h2 {
   font-size: 10px;
 }
 
+.answerPhotosContainer {
+  padding: 0 0 0 27px;
+}
+
 button {
   margin: 0 15px 0 0;
   border: 1px solid #ccc;
@@ -347,6 +351,24 @@ button {
     justify-content: center;
 }
 
+#addImagePage {
+  position: absolute;
+  width: 60%;
+  height:80%;
+  background-color: white;
+  border: '2px solid #000';
+  left: 25%;
+  top: 10%;
+  text-align: center;
+  padding: 15px;
+  border: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 #addQuestionFormContainer {
   width: 80%;
   margin: 0 auto;
@@ -493,18 +515,22 @@ label {
 
 }
 #photoModal {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: white;
 }
 
 #currentImage {
-  max-height: 60%;
-  max-width: 60%;
+  max-height:100%;
+  padding: 10px;
 }
 
 #closeImage {
-  position: absolute;
+  position: relative;
   top: 2%;
-  left: 98%;
+  left: -2%;
 }
 
 /*Test Animation CSS*/

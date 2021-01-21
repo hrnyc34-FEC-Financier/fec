@@ -48,9 +48,11 @@ const Answer = ({answer, handleQuant, fullLength}) => {
     <div className="answer">
       <span className="questionBody">A:</span> <span className="answerBody bodyIndent">{answer[1].body}</span>
       <br/>
+      <span className="answerPhotosContainer">
       {photos.map((photo) => (
         <img src={photo} className="answerImage" onClick={handleOpen}></img>
       ))}
+      </span>
       <br/>
       <span className="answerInfoStyle">
       <span className="answerInfo">By <span className={addBold}>{answer[1].answerer_name}</span>, {dateString}</span>
@@ -66,10 +68,12 @@ const Answer = ({answer, handleQuant, fullLength}) => {
           handleReportAnswer(answer[0])
           }}}>{reportStatus}</span>
       </span>
-      <Modal open={openI} onClose={handleClose}>
+      <Modal open={openI} onClose={handleClose} onClick={handleClose}>
+        <Fade in={openI}>
           <div id="modalContainer">
             <Image imagesrc={modalImage} close={handleClose}/>
           </div>
+          </Fade>
       </Modal>
     </div>
   )
