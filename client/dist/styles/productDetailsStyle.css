@@ -252,9 +252,9 @@
 }
 
 .iiz__img {
-  /* height: 80vh; */
+  height: 80vh;
   max-width: 100%;
-  height: auto;
+  /* height: auto; */
   display: block;
   pointer-events: none;
   visibility: visible;
