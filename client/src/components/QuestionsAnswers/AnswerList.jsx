@@ -26,11 +26,11 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
   let showHideButton;
   if (quantity < answers.length) {
-    showHideButton = <div onClick={handleMore} className="showHideAnswers">SHOW MORE ANSWERS</div>
+    showHideButton = <div onClick={handleMore} className="showHideAnswers">SEE MORE ANSWERS</div>
   } else if (answers.length === 2) {
     showHideButton = null;
   } else {
-    showHideButton = <div onClick={handleLess} className="showHideAnswers">HIDE ANSWERS</div>
+    showHideButton = <div onClick={handleLess} className="showHideAnswers">COLLAPSE ANSWERS</div>
   }
 
   // console.log("rendered answers", renderedAnswers);

@@ -52,7 +52,7 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
 
   // console.log("searching for:", searchTerm);
 
-  let showMoreQsButton = <button onClick={handleMoreQs}>MORE ANSWERED QUESTIONS</button>;
+  let showMoreQsButton = <button onClick={handleMoreQs} className="endButton">MORE ANSWERED QUESTIONS</button>;
 
   if (questionList.length < 2 || questionList.length <= questionsQuantity) {
     showMoreQsButton = null ;
@@ -77,11 +77,13 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
   // console.log('current product', currentProduct);
   return (
     <div id='questionModule'>
-      <h2>QUESTIONS & ANSWERS</h2>
+      <div id="qaModuleHeader">
+        <h2>QUESTIONS & ANSWERS</h2>
+      </div>
       <SearchBar handleSearch={handleChangeSearch}/>
       <QuestionList questions={questionList} quantity={questionsQuantity} productName={currentProduct.name}/>
       {showMoreQsButton}
-      <button onClick={handleOpen}>ADD A QUESTION +</button>
+      <button className="endButton" onClick={handleOpen}>ADD A QUESTION +</button>
       <Modal open={open} onClose={handleClose}>
         <Fade in={open}>
           <div>

@@ -44,7 +44,14 @@ body {
   grid-column-end: 3;
   max-height: 100vh;
 
+}
 
+#qaModuleHeader {
+  height: 20px;
+}
+
+.endButton {
+  height: 40px;
 }
 
 h1 {
@@ -84,7 +91,7 @@ h2 {
 }
 
 #questionList {
-  max-height: 80vh;
+  max-height: calc(100vh - 100px);
   overflow: auto;
   overflow-x: hidden;
 }
@@ -134,6 +141,8 @@ h2 {
 
 .answerList {
   padding: 10px 0 0 0;
+  max-height: 50vh;
+  overflow: auto;
 }
 
 .answerBody {
@@ -473,6 +482,29 @@ label {
   font-size: 8px;
   font-family: Arial;
   color: #ccc;
+}
+
+#modalContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#photoModal {
+  display: inline-block;
+}
+
+#currentImage {
+  max-height: 60%;
+  max-width: 60%;
+}
+
+#closeImage {
+  position: absolute;
+  top: 2%;
+  left: 98%;
 }
 
 /*Test Animation CSS*/

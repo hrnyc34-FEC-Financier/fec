@@ -41,6 +41,7 @@ const AddAnswerForm = ({ productName, close, qBody }) => {
         <input id="imageUploader" type="file" accept="image/*" onChange={handleImageUpload}></input>
       </form>
       <span id="uploadPhotosLabel">Upload your photos</span>
+      <span className="formWarning">You may upload up to 5 photos</span>
       {uploadButton}
       {images.map((image) => (
         <img className="answerImage" src={image}/>
