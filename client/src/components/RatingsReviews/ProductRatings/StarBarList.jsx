@@ -1,21 +1,43 @@
 import React from 'react';
 import StarBar from './StarBar.jsx';
 
-const StarBarList = ({ productRatings }) => {
+const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , handleResetRatingsFilter }) => {
+
   const starArr = [];
   let totalReviews = 0;
-  for (let i = 0; i < 5; i++) {
-    productRatings.hasOwnProperty(i + 1) ? starArr.push(Number(productRatings[i + 1])) : starArr.push(0);
+
+  for (let i = 5; i >= 1; i--) {
+    productRatings.hasOwnProperty(i) ? starArr.unshift(Number(productRatings[i])) : starArr.unshift(0);
     totalReviews += starArr[i];
   }
 
+  const isFilterMoreThanOne = (ratingsFilter) => {
+    let count = 0;
+    for (let star in ratingsFilter) {
+      if (ratingsFilter[star] === true) {
+        count++;
+      }
+      if (count > 1) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   return (
-    <div>
-      {starArr.reverse().map((star, i) => {
+    <div id='starBarsContainer'>
+      {starArr.map((star, i) => {
         return (
-          <StarBar key={`${5 - i}star`} star={5 - i} starRatingValue={Math.floor((star / totalReviews) * 100)} />
+          <StarBar key={`${5 - i}star`} star={5 - i} starBarValue={Math.floor((star / totalReviews) * 100)} filtered={ratingsFilter[5 - i]} handleRatingsFilter={handleRatingsFilter} />
         );
       })}
+      <div id='resetFilterButtonContainer'>
+        {isFilterMoreThanOne(ratingsFilter) ? (
+          <button id='resetFilterButton' onClick={handleResetRatingsFilter}>
+            Reset Filter
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 };

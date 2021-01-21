@@ -3,7 +3,6 @@ html {
   box-sizing: border-box;
 }
 
-
 body {
   background-color: rgb(244, 244, 244);
   font-family: Arial, Helvetica, sans-serif;
@@ -20,6 +19,14 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
+
+
+/* .product-display-container {
+  grid-area: 1 / 2 / 2 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+} */
 
 #ratingsContainer {
   grid-column-start: 2;
@@ -221,7 +228,12 @@ button {
   transform: translateX(-50%);
 }
 
-.RItems_container {
+.relatedContainer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.RItems_container{
   background-color: rgb(244, 244, 244);
   display: grid;
   grid-template-rows: repeat(2, 1fr);
@@ -292,25 +304,6 @@ button {
   padding-top: 0.1rem;
   font-size: 1 rem;
   text-transform: uppercase;
-}
-
-/*Will CSS*/
-
-.ratingsReviewContainer {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  width: 100%;
-}
-
-.starBarContainer {
-  display: flex;
-}
-
-.starRatingBar {
-  flex-grow: 1;
 }
 
 /*Test Modal CSS*/

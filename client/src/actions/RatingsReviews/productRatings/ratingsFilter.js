@@ -5,4 +5,8 @@ const changeRatingsFilter = (ratingsFilter) => ({
   payload: { ratingsFilter }
 });
 
-export default changeRatingsFilter;
+const resetRatingsFilter = (boolean) => ({
+  type: actions.RESET_RATINGS_FILTER
+});
+
+export {changeRatingsFilter, resetRatingsFilter};
