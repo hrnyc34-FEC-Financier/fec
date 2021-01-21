@@ -39,39 +39,41 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
 
   return (
     <div>
-      <div className='reviewsListContainer'>
-        <div className='reviewsListHeaderContainer'>
-          <span className='reviewsListHeaderText'>{`${calculateTotalReviews(productRatings)} reviews, sorted by`}</span>
-          <span>
-            <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
-          </span>
+      {reviewsList.length === 0 ? null : (
+        <div className='reviewsListContainer'>
+          <div className='reviewsListHeaderContainer'>
+            <span className='reviewsListHeaderText'>{`${filteredReviewsList.length > 0 ? filteredReviewsList.length : reviewsList.length} review${filteredReviewsList.length > 1 ? 's' : ''}, sorted by`}</span>
+            <span>
+              <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
+            </span>
+          </div>
+          <div className='reviewsList'>
+            {filteredReviewsList.length === 0 ? reviewsList.map(reviewInfo => {
+              return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview} />;
+            }) : (
+              filteredReviewsList.map(reviewInfo => {
+                return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview}/>;
+              })
+            )}
+          </div>
+          <button>MORE REVIEWS</button>
         </div>
-        <div className='reviewsList'>
-          {filteredReviewsList.length === 0 ? reviewsList.map(reviewInfo => {
-            return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview} />;
-          }) : (
-            filteredReviewsList.map(reviewInfo => {
-              return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview}/>;
-            })
-          )}
-
-        </div>
-      </div>
-      <button>MORE REVIEWS</button>
-      {/* <button type='button' onClick={handleOpen}>
-        ADD A REVIEW +
-      </button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby='Write New Review'
-      >
-        <div>
-          <ReviewModalContainer close={handleClose} ref={null}/>
-        </div>
-      </Modal> */}
+      )}
     </div>
   );
 };
 
 export default ReviewsList;
+
+// <button type='button' onClick={handleOpen}>
+//   ADD A REVIEW +
+// </button>
+// <Modal
+//   open={open}
+//   onClose={handleClose}
+//   aria-labelledby='Write New Review'
+// >
+//   <div>
+//     <ReviewModalContainer close={handleClose} ref={null}/>
+//   </div>
+// </Modal>

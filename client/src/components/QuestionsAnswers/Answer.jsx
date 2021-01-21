@@ -43,8 +43,6 @@ const Answer = ({answer, handleQuant, fullLength}) => {
     setOpenI(false);
   };
 
-  //console.log("answer", answer)
-
   return (
     <div className="answer">
       <span className="questionBody">A:</span> <span className="answerBody bodyIndent">{answer[1].body}</span>

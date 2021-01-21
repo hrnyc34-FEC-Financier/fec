@@ -216,7 +216,7 @@ button {
   float: right;
 }
 
-/*Question Component Test CSS END*/
+
 /*Will CSS*/
 
 .ratingsReviewContainer {
@@ -354,7 +354,6 @@ label {
   font-family: Arial;
   color: #666;
 }
-
 #closeX:hover {
   cursor: pointer;
 }

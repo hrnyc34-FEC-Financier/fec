@@ -6,6 +6,9 @@ import changeProductAvgRating from './productRatings/productAvgRating.js';
 import changeProductAvgStarRating from './productRatings/productAvgStarRating.js';
 
 const calculateProductAvgRating = (productRatings) => {
+  if (Object.keys(productRatings).length === 0) {
+    return 0;
+  }
   let totalRating = 0;
   let totalReviews = 0;
   for (let star in productRatings) {
