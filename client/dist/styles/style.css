@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: rgb(244, 244, 244);
+  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -36,7 +36,6 @@ body {
 /*Question Component Test CSS Start*/
 
 #container {
-  border: 2px solid tomato;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 100%;
@@ -51,6 +50,7 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   max-height: 100vh;
+  margin: 0 0 20px 0;
 
 }
 
@@ -254,7 +254,6 @@ button {
   position: absolute;
   width: 60%;
   height:80%;
-  background-color: white;
   border: '2px solid #000';
   left: 25%;
   top: 10%;
@@ -265,6 +264,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
 }
 
 
@@ -418,7 +418,6 @@ label {
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: white;
 }
 
 #currentImage {

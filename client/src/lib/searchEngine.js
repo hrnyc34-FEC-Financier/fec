@@ -8,6 +8,7 @@ const searchEngine = {
   //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
   //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
+    console.log("request at ", endPoint);
     return axios.get(`${url}/${endPoint}`, {
       headers: { Authorization },
       params: params,
@@ -16,6 +17,7 @@ const searchEngine = {
 
   //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
   post: (endPoint, data) => {
+    console.log("request at ", endPoint);
     return axios.post(`${url}/${endPoint}`, data,
      {
       headers: { Authorization }
@@ -25,6 +27,7 @@ const searchEngine = {
   // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
   // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
   put: (endPoint) => {
+    console.log("request at ", endPoint);
     return axios.put(`${url}/${endPoint}`, {}, {
       headers: { Authorization }
     });

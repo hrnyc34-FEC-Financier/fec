@@ -44,7 +44,7 @@ const ImageGallery = ({
             }}
           ></div>
         </div>
-        {/* for animations 
+        {/* for animations
         <div
           ref={(element) => {
             cardContainer = element;
@@ -73,7 +73,7 @@ const ImageGallery = ({
       <Modal open={openA} onClose={handleCloseA}>
         <Fade in={openA}>
           <div className='image-modal'>
-            <InnerImageZoom src={currentImage} zoomScale={2.5} sizes='60vh' />
+            <InnerImageZoom src={currentImage} zoomScale={2.5} sizes='10vh' />
           </div>
         </Fade>
       </Modal>
