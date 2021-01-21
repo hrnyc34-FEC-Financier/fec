@@ -11,7 +11,7 @@ const calculateProductAvgRating = (productRatings) => {
   }
   let totalRating = 0;
   let totalReviews = 0;
-  for (let star in productRatings) {a
+  for (let star in productRatings) {
     const numberReviews = Number(productRatings[star]);
     totalRating += Number(star) * numberReviews;
     totalReviews += numberReviews;
