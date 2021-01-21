@@ -6,7 +6,6 @@ const ImageCard = ({ number, image }) => {
       className='image-card'
       style={{
         backgroundImage: `url(${image})`,
-        // width: ``,
       }}
     ></button>
   );
