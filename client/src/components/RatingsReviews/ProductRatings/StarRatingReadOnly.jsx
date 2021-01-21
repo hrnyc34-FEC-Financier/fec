@@ -2,6 +2,7 @@ import React from 'react';
 import StarRatings from 'react-star-ratings';
 
 const StarRatingReadOnly = ({ productAvgStarRating }) => {
+  console.log(productAvgStarRating);
   return (
     <div>
       <StarRatings

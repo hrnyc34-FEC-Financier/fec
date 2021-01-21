@@ -42,7 +42,7 @@ const Answer = ({answer, handleQuant, fullLength}) => {
     setOpenI(false);
   };
 
-  console.log("answer", answer)
+  // console.log("answer", answer)
 
   return (
     <div className="answer">
