@@ -1,73 +1,62 @@
 import React, { useState } from 'react';
 import InnerImageZoom from 'react-inner-image-zoom';
 import ThumbGallery from '../../containers/productDetails/ThumbGalleryContainer.js';
-import ImageCard from './ImageCard.jsx';
+import { Modal } from '@material-ui/core';
+import Fade from '@material-ui/core/Fade';
+import ViewButton from './ViewButton.jsx';
+// import ImageCard from './ImageCard.jsx';
 const ImageGallery = ({
   currentImage,
   thumbGallery,
   selectImage,
   currentImageIndex,
-  view,
-  toggleView,
 }) => {
-  let cardContainer = null;
+  const [openA, setOpenA] = useState(false);
+  // let cardContainer = null;
+  const handleOpenA = () => {
+    setOpenA(true);
+  };
+
+  const handleCloseA = () => {
+    setOpenA(false);
+  };
   const scroll = (direction) => {
     const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
-    cardContainer.style.transitionDuration = '0.5s';
-    cardContainer.style.transform = `translate(-${43.75 * newIndex}vw)`;
+    // cardContainer.style.transitionDuration = '0.5s';
+    // cardContainer.style.transform = `translate(-${43.75 * newIndex}vw)`;
   };
   return (
     <div className='image-gallery'>
       <div className='current-image-container'>
-        {view ? (
-          <div className='expanded-view'>
-            <InnerImageZoom src={currentImage} zoomScale={2.5} sizes='60vh' />
-          </div>
-        ) : (
+        <div
+          onClick={handleOpenA}
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
           <div
+            className='main-image'
             style={{
-              width: '100%',
-              height: '100%',
+              backgroundImage: `url(${currentImage})`,
             }}
-          >
-            <div
-              className='main-image'
-              // style={{
-              //   backgroundImage: `url(${currentImage})`,
-              // }}
-            >
-              <div
-                ref={(element) => {
-                  cardContainer = element;
-                }}
-                className='card-container'
-              >
-                {thumbGallery.map((pic, i) => (
-                  <ImageCard
-                    key={pic.thumbnail_url}
-                    number={i}
-                    image={pic.url}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+          ></div>
+        </div>
+        {/* for animations 
+        <div
+          ref={(element) => {
+            cardContainer = element;
+          }}
+          className='card-container'
+        >
+          {thumbGallery.map((pic, i) => (
+            <ImageCard key={pic.thumbnail_url} number={i} image={pic.url} />
+          ))}
+        </div> */}
       </div>
       <ThumbGallery />
-      <button className='expand-btn btn' onClick={() => toggleView(view)}>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='10'
-          height='10'
-          fill='currentColor'
-          className='bi bi-fullscreen'
-          viewBox='0 0 16 16'
-        >
-          <path d='M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z' />
-        </svg>
-      </button>
+      <ViewButton classList='expand-btn btn' handleClick={handleOpenA} />
       <button
         disabled={currentImageIndex === 0 ? true : false}
         className='left-btn carousel-btn btn'
@@ -110,6 +99,13 @@ const ImageGallery = ({
           />
         </svg>
       </button>
+      <Modal open={openA} onClose={handleCloseA}>
+        <Fade in={openA}>
+          <div className='image-modal'>
+            <InnerImageZoom src={currentImage} zoomScale={2.5} sizes='60vh' />
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 };

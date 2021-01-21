@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import ProductDetailContainer from '../containers/productDetails/ProductDetailContainer.js';
 import RatingsReviewsMain from './RatingsReviews/RatingsReviewsMain.jsx';
 import RelatedItemsContainer from '../containers/RelatedItems/RelatedItems.js';
 import QAModuleContainer from '../containers/QAContainers/QAModuleContainer.js';
 import './RatingsReviews/will-style.css';
-
-const App = ({ teamName }) => {
+import ProductDetailMain from '../components/ProductDetail/ProductDetailMain.jsx';
+const App = () => {
   return (
     <div>
       <div id='pdcontainer'>
-        <ProductDetailContainer />
+        <ProductDetailMain />
       </div>
       <RelatedItemsContainer />
       <div id='container'>

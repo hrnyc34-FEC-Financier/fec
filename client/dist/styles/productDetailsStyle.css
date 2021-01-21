@@ -32,6 +32,13 @@
 .current-image-container {
   grid-area: 1 / 2 / 4 / 5;
 }
+.image-modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .main-image {
   background-size: auto 100%;
   background-repeat: no-repeat;
@@ -44,6 +51,7 @@
 .expand-btn {
   top: 0px;
   right: 0px;
+  color: #222;
 }
 
 .carousel-btn {
@@ -96,16 +104,6 @@
   margin: 0 0 1em 1em;
 }
 
-.view-port {
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  width: 500px;
-  height: 100%;
-  background-color: red;
-  overflow: hidden;
-}
 .card-container {
   display: flex;
   flex-direction: row;
@@ -154,13 +152,14 @@
 .price-container {
   display: flex;
   align-items: center;
-  padding-top: 1em;
+  padding: 1em 0 1em 0;
 }
 .sales-price {
   color: red;
 }
 .on-sale {
   text-decoration: line-through;
+  /* padding-bottom: 1em; */
 }
 
 /*style selector*/
