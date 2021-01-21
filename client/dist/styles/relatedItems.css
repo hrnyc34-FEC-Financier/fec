@@ -49,6 +49,7 @@
   justify-content: center;
   align-items: center;
   width: 80%;
+  /* overflow: scroll; */
 }
 
 .YrOutfit_main_container {
@@ -210,29 +211,21 @@
 
 #comparingPage{
   position: absolute;
-  width: 60%;
+  display:block;
   background-color: white;
-  border: '2px solid #000';
-  left: 25%;
   top: 25%;
-  text-align: center;
-  padding: 15px;
-  border: 10px solid #666;
+  left: 25%;
+  width: 40%;
+  /* height: 50%; */
+  overflow:'scroll';
+  /* text-align: center; */
   justify-content: center;
-}
-
-.Modal {
-  position: fixed;
-  z-index: 500;
-  background-color: white;
-  width: 70%;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px black;
-  padding: 16px;
-  left: 15%;
-  top: 30%;
-  box-sizing: border-box;
-  transition: all 0.3s ease-out;
+  border: 1px solid #666;
+  padding: 15px;
+  text-align: center;
+  /* display:'block'; */
+  /* z-index: 500; */
+  /* transition: all 0.3s ease-out; */
 }
 
 .TestBlue{
@@ -253,5 +246,16 @@ display: inline-block;
   background-color: rgba(0,0,0,0.85);
 } */
 
-
-/*Related Items Component CSS END*/
+.comparingPage_container {
+  border: 1px solid rgb(71, 71, 71, 0.5);
+}
+#comparingPage_content {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 1px;
+  justify-items: stretch;
+  align-items: center;
+  text-align: center;
+  grid-row-gap: 4px;
+  padding: 10px;
+}

@@ -7,7 +7,7 @@ const RelatedItems = ({
   relatedProductCarouselList,
   relatedProductStarModal,
   yourOutfitList,
-  handleRelatedItemClick,
+  // handleRelatedItemClick,
   handleAddYourOutfitClick,
   handleDeleteYourOutfitClick,
   handleItemToCurrentItemClick,
@@ -28,7 +28,7 @@ const RelatedItems = ({
     }
   });
 
-  const yourOutfitItems = !yourOutfitList.length ? null /*something replace add button*/ :
+  const yourOutfitItems =
     yourOutfitList.map( item => {
       let imageURL = item.styles[0].photos[0].thumbnail_url;
       if ( imageURL !== null ) {
@@ -80,7 +80,7 @@ const RelatedItems = ({
           <div className ='YrOutfit_container'>
             <button
               className='carousel_item'
-              onClick={ handleAddYourOutfitClick( currentProduct.id ) }>
+              onClick={ ()=> handleAddYourOutfitClick( currentProduct.id ) }>
               <svg
                 width="25" height="25" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

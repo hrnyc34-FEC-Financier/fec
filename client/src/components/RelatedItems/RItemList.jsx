@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
 import RelatedItemModal from './RelatedItemModal.jsx';
-import { Modal } from '@material-ui/core';
+import { Modal, Backdrop } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 
 const RItemList = ({
@@ -16,13 +16,15 @@ const RItemList = ({
   let modalRender =
   <Modal
     open={relatedProductStarModal}
-    onClose={ handleStarModalClick( product.id, relatedProductStarModal ) }>
+    onClose={ ()=> handleStarModalClick( relatedProductStarModal, product.id ) }>
     <Fade in={relatedProductStarModal}>
       <div>
         <RelatedItemModal
           currentProduct ={currentProduct}
           previewItem={product}
-          close={ handleStarModalClick( product.id, relatedProductStarModal ) }
+          relatedProductStarModal={relatedProductStarModal}
+          handleStarModalClick={handleStarModalClick}
+          close={ ()=> handleStarModalClick( relatedProductStarModal, product.id ) }
           ref={null}/>
       </div>
     </Fade>
@@ -52,7 +54,7 @@ const RItemList = ({
         <img src={ image }
           alt='PRODUCT defaultIMG'
           width="150"
-          onClick={ handleItemToCurrentItemClick(product.id) } /><br /></div>
+          onClick={ ()=> handleItemToCurrentItemClick(product.id) } /><br /></div>
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>
           { product.category } </span> <br />
@@ -65,7 +67,7 @@ const RItemList = ({
       </div>
       <button
         className='modalButton'
-        onClick={ handleStarModalClick(product.id, relatedProductStarModal) }>
+        onClick={ ()=> handleStarModalClick( relatedProductStarModal, product.id ) }>
         <svg
           width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
           <path fillRule="evenodd" d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>

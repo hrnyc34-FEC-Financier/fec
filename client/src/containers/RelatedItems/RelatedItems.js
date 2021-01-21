@@ -20,7 +20,7 @@ const mapStateToProps = ( state ) => ({
 const mapDispatchToProps = ( dispatch ) => ({
   handleRelatedItemClick: ( productId ) => dispatch( addRelatedItems( productId ) ),
   handleItemToCurrentItemClick: ( currentProductId ) => dispatch( currentProduct( currentProductId ) ),
-  handleStarModalClick: ( productId, value ) => {
+  handleStarModalClick: ( value, productId ) => {
     dispatch( comparingModal( value === false ) );
   },
   // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container', productId, value ),
