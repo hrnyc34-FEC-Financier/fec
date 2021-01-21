@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OutOfStock = () => (
+const OutOfStock = ({ favorite }) => (
   <div className='add-cart'>
     <form action=''>
       <select name='size' className='checkout-form-item size-select' disabled>
@@ -14,7 +14,7 @@ const OutOfStock = () => (
       >
         <option value=''>-</option>
       </select>
-      <button className='checkout-form-item'>
+      <button className='checkout-form-item' onClick={favorite}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'

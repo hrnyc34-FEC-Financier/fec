@@ -1,7 +1,6 @@
-import { Divider } from '@material-ui/core';
 import React, { useState } from 'react';
 
-const InStock = ({ currentStyle, sizeChange, currentSku }) => {
+const InStock = ({ currentStyle, sizeChange, currentSku, favorite }) => {
   const [sizeNotSelected, setSizeNotSelected] = useState(false);
 
   const submitToCart = (e) => {
@@ -74,7 +73,7 @@ const InStock = ({ currentStyle, sizeChange, currentSku }) => {
         value='ADD TO BAG                    +'
         onClick={submitToCart}
       />
-      <button className='checkout-form-item'>
+      <button className='checkout-form-item' onClick={favorite}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='16'
