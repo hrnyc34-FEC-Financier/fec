@@ -1,8 +1,7 @@
-import renderingIndexDecrease from './indexDecrease.js';
-
+import renderingIndexMinus from './yourOutfitIndexMinus.js';
 
 const decreaseIndex = ( value ) => {
-
+  // carouselRenderIndex
   return (dispatch) => {
     dispatch( renderingIndexDecrease( value ) );
   };

@@ -13,16 +13,30 @@ const RelatedItems = ({
   handleStarModalClick,
   handleCarouselLeftClick,
   handleCarouselRightClick,
-  carouselRenderIndex
+  carouselRenderIndex,
+  handleYourOutfitLeftClick,
+  handleYourOutfitRightClick,
+  cYourOutfitRenderIndex
 })=>{
-  var a = relatedProductCarouselList.length - carouselRenderIndex > 4;
-  console.log('aaaaaaaa:', a)
 
+  console.log('condition X <= 5 :', carouselRenderIndex, relatedProductCarouselList.length - carouselRenderIndex <= 5 );
+  console.log('condition2 x > 1 :', carouselRenderIndex, carouselRenderIndex > 1 );
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
+  const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
 
-  const relatedItems = Array.isArray(slicedRelatedItemList) &&
-  slicedRelatedItemList.map((item) => {
+  let mappingList = slicedRelatedItemList;
+  if (carouselRenderIndex === 0) {
+    mappingList = relatedProductCarouselList;
+  }
+
+  let mappingYrOutfitList = slicedYourOutfitList;
+  if (cYourOutfitRenderIndex === 0) {
+    mappingYrOutfitList = yourOutfitList;
+  }
+
+  const relatedItems = Array.isArray(mappingList) &&
+  mappingList.map((item) => {
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if (imageURL !== null) {
       return <RItemList
@@ -36,8 +50,8 @@ const RelatedItems = ({
     }
   });
 
-  const yourOutfitItems =
-  yourOutfitList.map( item => {
+  const yourOutfitItems = Array.isArray(mappingYrOutfitList) &&
+  mappingYrOutfitList.map( item => {
     let imageURL = item.styles[0].photos[0].thumbnail_url;
     if ( imageURL !== null ) {
       return <YourOutFitList
@@ -50,20 +64,38 @@ const RelatedItems = ({
     }
   });
 
-  const leftArrow = <button className='carousel_prev' onClick={ handleCarouselLeftClick } >
-    <svg
-      width="16" height="16" fill="currentColor"
-      viewBox="0 0 16 16">
-      <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
-    </svg>
+  const imgLeftArrow = <svg
+    width="16" height="16" fill="currentColor"
+    viewBox="0 0 16 16">
+    <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+  </svg>;
+
+  const imgRightArrow = <svg
+    width="16" height="16" fill="currentColor"
+    viewBox="0 0 16 16">
+    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+  </svg>;
+
+  const imgAddIcon = <svg
+    width="25" height="25" viewBox="0 0 16 16">
+    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+  </svg>;
+
+  const relatedItemLeftArrow = <button className='carousel_prev' onClick={handleCarouselLeftClick } >
+    {imgLeftArrow }
   </button>;
 
-  const rightArrow = <button className='carousel_next' onClick={ handleCarouselRightClick }>
-    <svg
-      width="16" height="16" fill="currentColor"
-      viewBox="0 0 16 16">
-      <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-    </svg>
+  const relatedItemRightArrow = <button className='carousel_next' onClick={ handleCarouselRightClick }>
+    {imgRightArrow}
+  </button>;
+
+  const yourOutfitLeftArrow = <button className='carousel_prev' onClick={ handleYourOutfitLeftClick } >
+    {imgLeftArrow }
+  </button>;
+
+  const yourOutfitRightArrow = <button className='carousel_next' onClick={ handleYourOutfitRightClick }>
+    {imgRightArrow}
   </button>;
 
   return (
@@ -74,30 +106,26 @@ const RelatedItems = ({
         <div className='first_title'>RELATED PRODUCTS</div>
 
         <div className ='RP_main_container'>
-          { carouselRenderIndex === 0 ? null : leftArrow }
+          { carouselRenderIndex === 0 ? null : relatedItemLeftArrow }
           <div className='RItems_container' >
             { relatedItems }
           </div>
-          { relatedProductCarouselList.length - carouselRenderIndex <= 5 ? null : rightArrow }
+          { relatedProductCarouselList.length - carouselRenderIndex <= 5 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }
         </div>
 
         <div className='second_title'>YOUR OUTFIT</div>
 
         <div className ='YrOutfit_main_container'>
-        { carouselRenderIndex === 0 ? null : leftArrow }
+          { carouselRenderIndex === 0 ? null : yourOutfitLeftArrow }
           <div className ='YrOutfit_container'>
             <button
               className='carousel_item'
               onClick={ ()=> handleAddYourOutfitClick( currentProduct.id ) }>
-              <svg
-                width="25" height="25" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-              </svg> Add to Outfit
+              {imgAddIcon} Add to Outfit
             </button>
             { yourOutfitItems }
           </div>
-          { relatedProductCarouselList.length - carouselRenderIndex <= 5 ? null : rightArrow }
+          { relatedProductCarouselList.length - carouselRenderIndex <= 5 || carouselRenderIndex > 5 ? null : yourOutfitRightArrow }
         </div>
 
       </div>
