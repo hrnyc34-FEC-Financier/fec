@@ -5,7 +5,9 @@ import { Modal } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import handleHelpfulQuestion from '../../actions/QA/handleHelpfulQuestion.js';
 
+
 const Question = ({ question, productName }) => {
+
   let answers = Object.entries(question.answers);
 
   const [answersQuantity, setAQuant] = useState(2);
@@ -68,11 +70,9 @@ const Question = ({ question, productName }) => {
       />
       <Modal open={openA} onClose={handleCloseA}>
         <Fade in={openA}>
-          <AddAnswerForm
-            close={handleCloseA}
-            productName={productName}
-            qBody={question.question_body}
-          />
+          <div>
+            <AddAnswerForm close={handleCloseA} productName={productName} qBody={question.question_body} qID={question.question_id}/>
+          </div>
         </Fade>
       </Modal>
     </div>
