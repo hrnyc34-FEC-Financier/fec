@@ -11,7 +11,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
     totalReviews += starArr[5 - i];
   }
 
-  console.log(starArr)
+  // console.log(starArr)
   const isFilterMoreThanOne = (ratingsFilter) => {
     let count = 0;
     for (let star in ratingsFilter) {
@@ -24,7 +24,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
     }
     return false;
   };
-  console.log(totalReviews)
+  // console.log(totalReviews)
   return (
     <div id='starBarsContainer'>
       {starArr.map((star, i) => {

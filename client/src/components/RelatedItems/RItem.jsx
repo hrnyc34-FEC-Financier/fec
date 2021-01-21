@@ -19,9 +19,6 @@ const RelatedItems = ({
   cYourOutfitRenderIndex
 })=>{
 
-  console.log('condition X <= 5 :', carouselRenderIndex, relatedProductCarouselList.length - carouselRenderIndex <= 5 );
-  console.log('condition2 x > 5 :', carouselRenderIndex, carouselRenderIndex > 5 );
-
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
 
