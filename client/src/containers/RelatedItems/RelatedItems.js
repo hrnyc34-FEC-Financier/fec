@@ -23,9 +23,9 @@ const mapDispatchToProps = ( dispatch ) => ({
   handleStarModalClick: ( productId, value ) => {
     dispatch( comparingModal( value === false ) );
   },
+  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container', productId, value ),
   handleAddYourOutfitClick: ( productId ) => dispatch( addYourOutfitList( productId ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
-  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container',productId, value ),
 });
 
 const RelatedItemsContainer = connect(

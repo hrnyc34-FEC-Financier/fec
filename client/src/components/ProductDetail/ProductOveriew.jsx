@@ -8,9 +8,9 @@ const ProductOverview = ({ currentProduct }) => {
       <div>
         <ul className='features'>
           {currentProduct.hasOwnProperty('features')
-            ? currentProduct.features.map((feature) => (
-                <li className='answerBody'>{`${feature.feature}: ${feature.value}`}</li>
-              ))
+            ? currentProduct.features.map((feature, i) => (
+              <li key={i} className='answerBody'>{`${feature.feature}: ${feature.value}`}</li>
+            ))
             : null}
         </ul>
       </div>

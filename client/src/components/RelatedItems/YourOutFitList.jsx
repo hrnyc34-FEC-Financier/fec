@@ -1,10 +1,16 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
 
-let YourOutFitList = ({ product, image, handleAddYourOutfitClick, handleDeleteYourOutfitClick })=>{
+let YourOutFitList = ({
+  product,
+  image,
+  handleAddYourOutfitClick,
+  handleDeleteYourOutfitClick })=>{
 
-  let oriPrice = <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
-  let disCountPrice = <><span className='carousel_item_disCountPrice_1'> &#36; {product.default_price} </span><span className='carousel_item_disCountPrice_2'> &#36; {product.default_price} </span></>;
+  let oriPrice =
+  <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
+  let disCountPrice =
+  <><span className='carousel_item_disCountPrice_1'> &#36; {product.default_price} </span><span className='carousel_item_disCountPrice_2'> &#36; {product.default_price} </span></>;
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{disCountPrice}</>;
 

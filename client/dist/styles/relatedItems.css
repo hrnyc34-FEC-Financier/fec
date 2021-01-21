@@ -1,37 +1,69 @@
-.relatedItems_box{
+.ri_container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  width: 100%;
+}
+
+#relatedItems_box{
   border: 2px solid tomato;
+  grid-column-start: 2;
+  grid-column-end: 3;
   padding-top: 40px;
   padding-bottom: 20px;
 }
 
+.relatedItems_inner_box{
+  border: 2px solid tomato;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* display: grid;
+  grid-template-rows: 1fr 8fr 1fr 8fr; */
+}
+
+.first_title{
+  grid-row-start: 1;
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75)
+}
+.second_title{
+  grid-row-start: 3;
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75)
+}
+
 .RP_main_container {
   border: 2px solid tomato;
-  margin-top: 10rem;
+  grid-row-start: 1;
   display: flex;
-  flex-direction: row;
-  margin: 0px 5px 5px 5px;
-  align-items: center;
   flex: 1;
-  justify-content: center;
+  flex-direction: row;
   position: relative;
-  width: 80%;
   left: 50%;
   transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }
 
 .YrOutfit_main_container {
   border: 2px solid tomato;
+  grid-row-start: 4;
   display: flex;
-  flex-direction: row;
-  margin: 0px 5px 5px 5px;
-  align-items: center;
   flex: 1;
-  justify-content: center;
   position: relative;
-  width: 80%;
-  height:"280px" ;
+  flex-direction: row;
   left: 50%;
   transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height:"280px" ;
 }
 
 .RItems_container{
@@ -39,19 +71,15 @@
   flex: 0 1 auto;
   overflow: hidden;
   position: relative;
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   justify-content: start;
-  align-items: stretch;
-  align-content: center;
+  /* align-items: stretch; */
+  align-content: end;
   padding-bottom: 30px;
-
 }
-
-/* .paddingOrButton{
-  width: 5%
-} */
 
 .YrOutfit_container{
   border: 2px solid tomato;
@@ -120,6 +148,15 @@
   color: white;
 }
 
+#close_X {
+  border: 2px solid tomato;
+  position: absolute;
+  top: 0px;  right: 0px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+}
+
 .carousel_prev{
   border: 2px solid tomato;
   z-index: 2;
@@ -137,15 +174,6 @@
 }
 
 /****** all text files  start here ******/
-
-
-.relatedItems_title{
-  padding-top: 30px;
-  padding-left: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:rgb(75, 75, 75)
-}
 
 .carousel_item_title{
   /* border: 2px solid tomato; */
@@ -180,6 +208,18 @@
 }
 /****** all text files end here ******/
 
+#comparingPage{
+  position: absolute;
+  width: 60%;
+  background-color: white;
+  border: '2px solid #000';
+  left: 25%;
+  top: 25%;
+  text-align: center;
+  padding: 15px;
+  border: 10px solid #666;
+  justify-content: center;
+}
 
 .Modal {
   position: fixed;
