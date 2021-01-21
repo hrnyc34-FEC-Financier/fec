@@ -12,18 +12,7 @@
   grid-column-start: 2;
   grid-column-end: 3;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 5%;
+  grid-template-columns: minmax(230px, 230px) auto;
+  grid-column-gap: 2%;
   box-sizing: border-box;
 }
-
-
-
-.starBarContainer {
-  display: flex;
-}
-
-.starRatingBar {
-  flex-grow: 1;
-}
-
