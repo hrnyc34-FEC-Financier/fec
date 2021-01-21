@@ -41,7 +41,7 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
     <div>
       <div className='reviewsListContainer'>
         <div className='reviewsListHeaderContainer'>
-          <span className='reviewsListHeaderText'>{`${calculateTotalReviews(productRatings)} reviews, sorted by`}</span>
+          <span className='reviewsListHeaderText'>{`${filteredReviewsList.length > 0 ? filteredReviewsList.length : reviewsList.length} review${filteredReviewsList.length > 1 ? 's' : ''}, sorted by`}</span>
           <span>
             <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
           </span>

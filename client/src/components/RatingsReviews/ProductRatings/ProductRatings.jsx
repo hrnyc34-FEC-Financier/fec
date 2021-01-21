@@ -12,19 +12,6 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
     return Math.floor(recommended / total * 100);
   };
 
-  // const isFilterMoreThanOne = (ratingsFilter) => {
-  //   let count = 0;
-  //   for (let star in ratingsFilter) {
-  //     if (ratingsFilter[star] === true) {
-  //       count++;
-  //     }
-  //     if (count > 1) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // };
-
   return (
     <div id='productRatingsContainer'>
       <div id='productRatingsTitle'>RATINGS & REVIEWS</div>
@@ -42,11 +29,6 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
         {`${calculateProductRecommended(productRecommended)}% of reviews recommend this product`}
       </div>
       <StarBarList productRatings={productRatings} ratingsFilter={ratingsFilter} handleRatingsFilter={handleRatingsFilter} handleResetRatingsFilter={handleResetRatingsFilter}/>
-      {/* {isFilterMoreThanOne(ratingsFilter) ? (
-        <button id='resetFilterButton' onClick={handleResetRatingsFilter}>
-          Reset Filter
-        </button>
-      ) : null} */}
       <CharacteristicsList productCharacteristics={productCharacteristics} />
     </div>
   );
