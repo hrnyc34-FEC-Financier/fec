@@ -16,9 +16,9 @@ const searchEngine = {
 
   //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
   post: (endPoint, data) => {
-    return axios.post(`${url}/${endPoint}`, {
-      headers: { Authorization },
-      data: data,
+    return axios.post(`${url}/${endPoint}`, data,
+     {
+      headers: { Authorization }
     });
   },
 
