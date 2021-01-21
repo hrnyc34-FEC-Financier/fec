@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import AddToCart from '../../components/ProductDetail/AddToCart.jsx';
-import changeSize from '../../actions/productDetail/currentSize.js';
+import addToOutfitList from '../../actions/relatedItems/addYourOutfitList';
 
 const mapDispatchToProps = (dispatch) => ({
-  sizeChange: (e) => dispatch(changeSize(e.target.value)),
+  addToOutfitList: (productId) => dispatch(addToOutfitList(productId)),
 });
 
 const mapStateToProps = (state) => ({
-  currentProductId: state.currentProductId,
   currentStyle: state.currentStyle,
-  currentSku: state.currentSize,
+
+  currentProduct: state.currentProduct,
+  outfitList: state.yourOutfitList,
 });
 
 const AddToCartContainer = connect(
