@@ -15,8 +15,8 @@ const RelatedItems = ({
   handleCarouselRightClick,
   carouselRenderIndex
 })=>{
-  console.log('handleCarouselLeftClick:', handleCarouselLeftClick)
-  console.log('handleCarouselRightClick:', handleCarouselRightClick)
+  var a = relatedProductCarouselList.length - carouselRenderIndex > 4;
+  console.log('aaaaaaaa:', a)
 
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
@@ -74,17 +74,17 @@ const RelatedItems = ({
         <div className='first_title'>RELATED PRODUCTS</div>
 
         <div className ='RP_main_container'>
-          { leftArrow }
+          { carouselRenderIndex === 0 ? null : leftArrow }
           <div className='RItems_container' >
             { relatedItems }
           </div>
-          { rightArrow }
+          { relatedProductCarouselList.length - carouselRenderIndex <= 5 ? null : rightArrow }
         </div>
 
         <div className='second_title'>YOUR OUTFIT</div>
 
         <div className ='YrOutfit_main_container'>
-          {leftArrow}
+        { carouselRenderIndex === 0 ? null : leftArrow }
           <div className ='YrOutfit_container'>
             <button
               className='carousel_item'
@@ -97,7 +97,7 @@ const RelatedItems = ({
             </button>
             { yourOutfitItems }
           </div>
-          { rightArrow }
+          { relatedProductCarouselList.length - carouselRenderIndex <= 5 ? null : rightArrow }
         </div>
 
       </div>
