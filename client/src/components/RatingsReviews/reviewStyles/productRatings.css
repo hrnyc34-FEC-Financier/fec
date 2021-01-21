@@ -65,3 +65,13 @@
 #starBar {
   flex-grow: 2;
 }
+
+#resetFilterButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.2em;
+}
+
+#resetFilterButton {
+  padding: 0.4em;
+}

@@ -3,8 +3,6 @@ html {
   box-sizing: border-box;
 }
 
-
-
 body {
   background-color: rgb(244, 244, 244);
   font-family: Arial, Helvetica, sans-serif;
@@ -21,13 +19,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
-.product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 50px) auto;
-  grid-row-gap: 5px;
-}
+
 
 /* .product-display-container {
   grid-area: 1 / 2 / 2 / 10;
@@ -240,7 +232,6 @@ button {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-
 
 .RItems_container{
   background-color: rgb(244, 244, 244);

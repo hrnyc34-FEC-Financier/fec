@@ -102,6 +102,20 @@
   justify-content: flex-end;
 }
 
-.reviewTileFooter {
+.reviewTileFooterHelpful {
+  font-size: 0.8em;
+  margin-right: 0.8em;
+}
 
+.reviewTileFooterHelpfulStatus:hover {
+  cursor: pointer;
+}
+
+.reviewTileFooterReport {
+  font-size: 0.8em;
+  margin-left: 0.8em;
+}
+
+.reviewTileFooterReport:hover {
+  cursor: pointer;
 }

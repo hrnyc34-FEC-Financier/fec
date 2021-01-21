@@ -3,7 +3,7 @@ import changeReviewsList from './reviewsList/reviewsList.js';
 
 const setReviews = (product_id) => {
   return (dispatch) => {
-    return searchAPI.get('reviews', {product_id:11002})
+    return searchAPI.get('reviews', {product_id})
       .then(({ data }) => {
         dispatch(changeReviewsList(data.results));
       })

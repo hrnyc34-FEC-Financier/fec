@@ -55,9 +55,9 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
       ) : null}
       <div className="reviewTileFooterContainer">
         <div className="reviewTileFooter">
-          <span>
+          <span className='reviewTileFooterHelpful'>
             Helpful?{" "}
-            <span
+            <span className='reviewTileFooterHelpfulStatus'
               onClick={() => {
                 if (reviewHelpful.helpfulStatus === false) {
                   setReviewHelpful({helpfulness: reviewHelpful.helpfulness + 1, helpfulStatus: true});
@@ -68,8 +68,8 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
               Yes ({reviewHelpful.helpfulness})
             </span>
           </span>
-          <span className="divider">|</span>
-          <span
+          <span className="reviewTileFooterDivider">|</span>
+          <span className='reviewTileFooterReport'
             onClick={() => {
               if (reviewReported === false) {
                 setReviewReported(true);

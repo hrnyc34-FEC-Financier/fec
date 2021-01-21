@@ -1,11 +1,11 @@
 import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 
-const StarBar = ({ star, starBarValue, ratingsFilter, handleRatingsFilter }) => {
+const StarBar = ({ star, starBarValue, filtered, handleRatingsFilter }) => {
   return (
     <div id='starBarContainer'
       onClick={() => handleRatingsFilter(star)}
-      style={ratingsFilter[star] === true ? {backgroundColor: 'rgba(38, 223, 240, 0.712)'} : {backgroundColor: 'transparent'}}
+      style={filtered === true ? {backgroundColor: 'rgba(38, 223, 240, 0.712)'} : {backgroundColor: 'transparent'}}
     >
       <div id='starText'>{`${star} stars`}</div>
       <div id='starBar'>

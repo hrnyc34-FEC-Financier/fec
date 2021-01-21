@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProductRatings from '../../components/RatingsReviews/ProductRatings/ProductRatings.jsx';
-import changeRatingsFilter from '../../actions/RatingsReviews/productRatings/ratingsFilter.js';
+import { changeRatingsFilter, resetRatingsFilter } from '../../actions/RatingsReviews/productRatings/ratingsFilter.js';
 
 const mapStateToProps = (state) => ({
   currentProductId: state.currentProductId,
@@ -15,6 +15,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleRatingsFilter: (ratingsSelected) => {
     dispatch(changeRatingsFilter(ratingsSelected));
+  },
+  handleResetRatingsFilter: () => {
+    dispatch(resetRatingsFilter());
   }
 });
 
