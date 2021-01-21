@@ -2,6 +2,8 @@ import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 
 const StarBar = ({ star, starBarValue, filtered, handleRatingsFilter }) => {
+  // console.log('star', star);
+  // console.log('starBarValue', starBarValue);
   return (
     <div id='starBarContainer'
       onClick={() => handleRatingsFilter(star)}
