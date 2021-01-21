@@ -3,24 +3,14 @@ import SocialMediaTag from './SocialMediaTag.jsx';
 import OutOfStock from './OutStock.jsx';
 import InStock from '../../containers/productDetails/InStockContainer.js';
 
-const AddToCart = ({ currentStyle }) => {
-  console.log(currentStyle.skus);
-  return (
-    <div className='add-cart'>
-      {currentStyle.skus ? (
-        <div>
-          {currentStyle.skus.null ? (
-            <OutOfStock />
-          ) : (
-            <InStock />
-            // <div>yaya</div>
-          )}
-        </div>
-      ) : null}
+const AddToCart = ({ currentStyle }) => (
+  <div className='add-cart'>
+    {currentStyle.skus ? (
+      <div>{currentStyle.skus.null ? <OutOfStock /> : <InStock />}</div>
+    ) : null}
 
-      <SocialMediaTag />
-    </div>
-  );
-};
+    <SocialMediaTag />
+  </div>
+);
 
 export default AddToCart;

@@ -20,7 +20,7 @@ const StyleSelector = ({ currentStyleList, currentStyle, styleChange }) => (
           width='16'
           height='16'
           fill='currentColor'
-          className='bi bi-check-circle check'
+          className='check'
           style={
             style.style_id !== currentStyle.style_id ? { opacity: '0' } : null
           }

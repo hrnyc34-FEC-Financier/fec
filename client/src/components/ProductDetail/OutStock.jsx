@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OutOfStock = ({ currentStyle, sizeChange, currentSku }) => (
+const OutOfStock = () => (
   <div className='add-cart'>
     <form action=''>
       <select name='size' className='checkout-form-item size-select' disabled>
