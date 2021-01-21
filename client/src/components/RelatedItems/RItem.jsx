@@ -20,7 +20,7 @@ const RelatedItems = ({
 })=>{
 
   console.log('condition X <= 5 :', carouselRenderIndex, relatedProductCarouselList.length - carouselRenderIndex <= 5 );
-  console.log('condition2 x > 1 :', carouselRenderIndex, carouselRenderIndex > 1 );
+  console.log('condition2 x > 5 :', carouselRenderIndex, carouselRenderIndex > 5 );
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
@@ -125,7 +125,7 @@ const RelatedItems = ({
             </button>
             { yourOutfitItems }
           </div>
-          { relatedProductCarouselList.length - carouselRenderIndex <= 5 || carouselRenderIndex > 5 ? null : yourOutfitRightArrow }
+          { yourOutfitList.length - cYourOutfitRenderIndex <= 5 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }
         </div>
 
       </div>
