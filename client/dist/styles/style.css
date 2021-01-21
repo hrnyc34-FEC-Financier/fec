@@ -264,7 +264,6 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  object-fit: cover;
 }
 
 
@@ -423,6 +422,8 @@ label {
 #currentImage {
   max-height:100%;
   padding: 10px;
+  object-fit: cover;
+  background-color: white;
 }
 
 #closeImage {
