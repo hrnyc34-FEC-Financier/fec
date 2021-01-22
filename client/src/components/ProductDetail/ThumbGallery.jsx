@@ -5,17 +5,17 @@ import ArrowButton from './UpDownButton.jsx';
 const ThumbGallery = ({ thumbGallery, selectImage, currentImageIndex }) => {
   let cardContainer = null;
   const [imageIndex, setImageIndex] = useState(currentImageIndex);
-  // let imageIndex = currentImageIndex;
+
   const scroll = (direction) => {
     const nextIndex = imageIndex + direction;
     cardContainer.style.transitionDuration = '0.5s';
     cardContainer.style.transform = `translateY(-${89 * nextIndex}px)`;
     setImageIndex(nextIndex);
   };
+
   return (
     <div>
       {thumbGallery.length > 6 ? (
-        // <div className='thumb-gallery'>
         <div className='thumb-gallery'>
           <ArrowButton
             direction={-1}
