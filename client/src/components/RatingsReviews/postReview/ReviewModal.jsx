@@ -7,24 +7,24 @@ import './reviewModal.css';
 const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit
 
-  const characteristics = createCharacteristicsArray(productCharacteristics);
+  const characteristicsMap = createCharacteristicsArray(productCharacteristics);
   //replacing index 1 of characteristic property from rating to characteristic id
-  for (let characteristic of characteristics) {
+  for (let characteristic of characteristicsMap) {
     characteristic.characteristic[1] = (productCharacteristics[characteristic.characteristic[0]].id);
   }
 
   //handleState
-  const [rating, setRating] = useState(0)
-  const [characteristicsState, setCharacteristicsState] = useState({});
+  const [rating, setRating] = useState(0);
+  const [characteristics, setCharacteristics] = useState({});
   const [recommendState, setRecommendState] = useState({});
   const [summaryState, setSummaryState] = useState('');
   const [bodyState, setBodyState] = useState('');
   const [nameState, setNameState] = useState('');
   const [emailState, setEmailState] = useState('');
-  const [photosState, setPhotosState] = useState([]);
+  const [photosState, setPhotosState] = useState(['']);
 
   const handleCharacteristicsChange = (e) => {
-    setCharacteristicsState({...characteristicsState, [e.target.name]: e.target.value});
+    setCharacteristics({...characteristics, [e.target.name]: e.target.value});
   };
   const handleRecommendChange = (e) => {
     setRecommendState({[e.target.name]: e.target.value})
@@ -56,7 +56,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
   }
 
   // console.log(rating);
-  // console.log(characteristicsState)
+
   return (
     <div id='reviewModal'>
       <h1>Write Your Review</h1>
@@ -74,7 +74,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
         </div>
 
         <div id='radioFormContainer'>
-          {characteristics.map((characteristic, i) => {
+          {characteristicsMap.map((characteristic, i) => {
             return <CharacteristicsRadio key={`characteristicRadio${i}`} characteristic={characteristic} handleCharacteristicsChange={handleCharacteristicsChange} />;
           })}
         </div>
@@ -109,7 +109,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={(e) => {handleSubmitReview(e, currentProduct.id, {rating, characteristicsState, recommendState, summaryState, bodyState, nameState, emailState})}}>
+      <button id='submitButton' onClick={(e) => {handleSubmitReview(currentProduct.id, {rating, characteristics, recommendState, summaryState, bodyState, nameState, emailState})}}>
           Submit
       </button>
     </div>

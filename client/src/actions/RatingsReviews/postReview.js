@@ -1,7 +1,6 @@
 import searchAPI from '../../lib/searchEngine.js';
 
-const postReview = (e, product_id, reviewInfo) => {
-  e.preventDefault();
+const postReview = (product_id, reviewInfo) => {
   const review = {
     product_id: product_id,
     rating: reviewInfo.rating,
@@ -10,7 +9,7 @@ const postReview = (e, product_id, reviewInfo) => {
     recommend: reviewInfo.recommendState,
     name: reviewInfo.nameState,
     email: reviewInfo.emailState,
-    characteristics: reviewInfo.characteristicsState,
+    characteristics: reviewInfo.characteristics,
     photos: []
   };
 

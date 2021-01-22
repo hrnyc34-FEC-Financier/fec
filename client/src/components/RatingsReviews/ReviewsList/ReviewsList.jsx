@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
 import '../reviewStyles/reviewsList.css';
 
-const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewImageModal, reviewScroll, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
+const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 
   // ratingsFilter initial state: {1: false, 2: false, 3: false, 4: false, 5: false}
   const filteredReviewsList = [];
