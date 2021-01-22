@@ -1,10 +1,8 @@
-import Redux from 'redux';
-
 const yourOutfitListReducer = (state = [], action) => {
   switch ( action.type ) {
   case 'ADD_YOUR_OUTFIT_LIST':
     var addId = Number.parseInt(action.addingItem.id);
-    var newState = state;
+    var newState = state.slice;
     if (!state.length) {
       newState = [ action.addingItem ];
     } else {
@@ -17,18 +15,17 @@ const yourOutfitListReducer = (state = [], action) => {
       }
     }
     return newState;
-
   case 'DELETE_YOUR_OUTFIT_LIST':
     var deleteId = Number.parseInt(action.deletingItemId);
-    console.log('deleteId:', deleteId, state);
-
-    for ( let i = 0; i < state.length; i++ ) {
+    var deleteState = state.slice();
+    for ( let i = 0; i < deleteState.length; i++ ) {
       if ( state[i].id === deleteId ) {
-        state.splice(i, 1);
+        deleteState.splice(i, 1);
+        break;
       }
     }
-    console.log('deleteState ', state);
-    return state;
+    return [...deleteState];
+
   default : return state;
   }
 };

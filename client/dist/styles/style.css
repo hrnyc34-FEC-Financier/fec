@@ -20,14 +20,6 @@ body {
   grid-template-rows: repeat(4, 1fr);
 }
 
-
-/* .product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-} */
-
 #ratingsContainer {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -36,7 +28,6 @@ body {
 /*Question Component Test CSS Start*/
 
 #container {
-  border: 2px solid tomato;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   width: 100%;
@@ -218,6 +209,7 @@ button {
 
 /*Question Component Test CSS END*/
 
+
 /*Test Modal CSS*/
 #addQuestionPage {
     position: absolute;
@@ -248,7 +240,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 
 #addQuestionFormContainer {
   width: 80%;
@@ -337,7 +328,6 @@ label {
   font-family: Arial;
   color: #666;
 }
-
 
 #closeX:hover {
   cursor: pointer;
@@ -432,50 +422,5 @@ label {
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 100ms ease-out;
-}
-
-.carousel_item_oriPrice {
-  /* border: 2px solid tomato; */
-  font-size: 12px;
-  font-weight: bold;
-  color: rgb(2, 2, 124);
-}
-
-.carousel_item_disCountPrice_1 {
-  font-size: 12px;
-  text-decoration: line-through;
-  color: rgb(8, 8, 8);
-}
-.carousel_item_disCountPrice_2 {
-  font-size: 12px;
-  font-weight: bold;
-  color: rgb(209, 0, 0);
-}
-
-/*
-button .carousel_prev {
-
-}
-button .carousel_next {
-
-} */
-
-.Modal {
-  position: fixed;
-  z-index: 500;
-  background-color: white;
-  width: 70%;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px black;
-  padding: 16px;
-  left: 15%;
-  top: 30%;
-  box-sizing: border-box;
-  transition: all 0.3s ease-out;
-}
-
-.TestBlue {
-  color: blue;
-  text-decoration: underline;
 }
 
