@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background-color: rgb(244, 244, 244);
+  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -42,6 +42,7 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   max-height: 100vh;
+  margin: 0 0 20px 0;
 
 }
 
@@ -175,6 +176,10 @@ h2 {
   padding: 0 0 0 27px;
 }
 
+.showHideAnswers:hover {
+  cursor: pointer;
+}
+
 .divider {
   padding: 0 10px 0 10px;
 }
@@ -207,7 +212,6 @@ button {
   float: right;
 }
 
-/*Question Component Test CSS END*/
 
 
 /*Test Modal CSS*/
@@ -228,7 +232,6 @@ button {
   position: absolute;
   width: 60%;
   height:80%;
-  background-color: white;
   border: '2px solid #000';
   left: 25%;
   top: 10%;
@@ -391,12 +394,13 @@ label {
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: white;
 }
 
 #currentImage {
   max-height:100%;
   padding: 10px;
+  object-fit: cover;
+  background-color: white;
 }
 
 #closeImage {
@@ -423,4 +427,98 @@ label {
   opacity: 0.01;
   transition: opacity 100ms ease-out;
 }
+
+.carousel_item_oriPrice {
+  /* border: 2px solid tomato; */
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(2, 2, 124);
+}
+
+.carousel_item_disCountPrice_1 {
+  font-size: 12px;
+  text-decoration: line-through;
+  color: rgb(8, 8, 8);
+}
+.carousel_item_disCountPrice_2 {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(209, 0, 0);
+}
+
+/*
+button .carousel_prev {
+
+}
+button .carousel_next {
+
+} */
+
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: white;
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+
+.TestBlue {
+  color: blue;
+  text-decoration: underline;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#headerContainer {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+#header {
+  background-color: #666;
+  margin: 0 0 50px 0;
+  height: 80px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  color: white;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 0 0 0 50px;
+
+}
+
+#headerRight {
+  padding: 0 0 0 70%
+}
+
+#headerInput {
+  margin: 0 20px 0 0;
+  background-color: #666;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+#headerSearch {
+}
+
+/*WILL CSSS */
 

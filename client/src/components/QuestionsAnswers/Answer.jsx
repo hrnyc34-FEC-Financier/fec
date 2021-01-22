@@ -4,6 +4,7 @@ import handleReportAnswer from "../../actions/QA/handleReportAnswer.js";
 import { Modal } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import Image from './Image.jsx';
+import InnerImageZoom from 'react-inner-image-zoom';
 
 
 
@@ -41,8 +42,6 @@ const Answer = ({answer, handleQuant, fullLength}) => {
   const handleClose = () => {
     setOpenI(false);
   };
-
-  // console.log("answer", answer)
 
   return (
     <div className="answer">

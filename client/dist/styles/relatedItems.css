@@ -23,18 +23,19 @@
 .first_title{
   grid-row-start: 1;
   padding-top: 30px;
-  padding-left: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:rgb(75, 75, 75)
+
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
 }
 .second_title{
   grid-row-start: 3;
   padding-top: 30px;
-  padding-left: 20px;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:rgb(75, 75, 75)
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
 }
 
 .RP_main_container {
