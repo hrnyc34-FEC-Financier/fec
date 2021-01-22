@@ -8,10 +8,10 @@ let YourOutFitList = ({
   handleDeleteYourOutfitClick,
   productAvgStarRating })=>{
 
-  console.log('yourOutfitItemItem:', product);
 
   let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
-  console.log('avgStarRating:', product.avgStarRating, starRating);
+  // console.log('yourOutfitItemItem:', product);
+  // console.log('avgStarRating:', product.avgStarRating, starRating);
 
   let oriPrice =
   <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;

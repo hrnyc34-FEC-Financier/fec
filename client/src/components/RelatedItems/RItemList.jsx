@@ -12,10 +12,11 @@ const RItemList = ({
   handleItemToCurrentItemClick,
   handleStarModalClick,
 })=>{
-  console.log('RItemItem:', product);
 
   let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
-  console.log('avgStarRating:', product.avgStarRating, starRating);
+
+  // console.log('RItemItem:', product);
+  // console.log('avgStarRating:', product.avgStarRating, starRating);
 
   let modalRender =
   <Modal
