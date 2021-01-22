@@ -4,7 +4,7 @@ import ReviewTile from './ReviewTile.jsx';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
-import '../reviewStyles/reviewsList.css';
+//import '../reviewStyles/reviewsList.css';
 
 const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewImageModal, reviewScroll, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 

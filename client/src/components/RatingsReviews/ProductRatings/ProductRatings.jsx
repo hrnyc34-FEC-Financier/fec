@@ -2,11 +2,11 @@ import React from 'react';
 import StarBarList from './StarBarList.jsx';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import CharacteristicsList from './CharacteristicsList.jsx';
-import '../reviewStyles/productRatings.css';
+//import '../reviewStyles/productRatings.css';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
-import '../reviewStyles/reviewsList.css';
+//import '../reviewStyles/reviewsList.css';
 
 const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter}) => {
 

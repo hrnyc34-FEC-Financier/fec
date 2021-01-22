@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { characteristicsMap, createCharacteristicsArray } from '../ProductRatings/characteristicsHelpers.js';
 import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
-import './reviewModal.css';
+//import './reviewModal.css';
 
 const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit

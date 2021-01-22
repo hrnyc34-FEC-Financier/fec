@@ -42,7 +42,7 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   max-height: 100vh;
-  margin: 0 0 20px 0;
+  margin: 0 0 40px 0;
 
 }
 
@@ -65,7 +65,7 @@ h2 {
   font-family: Arial;
   color: #666;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #searchBar {
@@ -426,24 +426,6 @@ label {
 .example-leave.example-leave-active {
   opacity: 0.01;
   transition: opacity 100ms ease-out;
-}
-
-.carousel_item_oriPrice {
-  /* border: 2px solid tomato; */
-  font-size: 12px;
-  font-weight: bold;
-  color: rgb(2, 2, 124);
-}
-
-.carousel_item_disCountPrice_1 {
-  font-size: 12px;
-  text-decoration: line-through;
-  color: rgb(8, 8, 8);
-}
-.carousel_item_disCountPrice_2 {
-  font-size: 12px;
-  font-weight: bold;
-  color: rgb(209, 0, 0);
 }
 
 /*

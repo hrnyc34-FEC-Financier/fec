@@ -187,6 +187,7 @@
   padding-bottom: 0.2rem;
   font-size: 1.5rem;
   font-weight: bold;
+  color: rgb(75, 75, 75);
 }
 
 .carousel_item_smallText{
@@ -199,9 +200,8 @@
 
 .carousel_item_oriPrice{
   font-family: Arial;
-  font-size: 13px;
-  font-weight: bold;
-  color:rgb(10, 10, 43);
+  font-size: 14px;
+  color:#666;
 }
 .carousel_item_disCountPrice_1{
   font-family: Arial;
@@ -217,20 +217,18 @@
 }
 
 .first_title{
-  font-family: Arial;
   padding-top: 1rem;
-  padding-left: 1rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:rgb(75, 75, 75);
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
 }
 .second_title{
-  font-family: Arial;
   padding-top: 1rem;
-  padding-left: 1rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color:rgb(75, 75, 75);
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 /****** all text files end here ******/
