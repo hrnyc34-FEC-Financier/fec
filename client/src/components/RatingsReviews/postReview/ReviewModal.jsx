@@ -114,7 +114,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={(e) => {handleSubmitReview(currentProduct.id, {rating, characteristics, recommend, summary, body, name, email})}}>
+      <button id='submitButton' onClick={(e) => handleSubmitReview(currentProduct.id, {rating, characteristics, recommend, summary, body, name, email})}>
           Submit
       </button>
     </div>
