@@ -1,6 +1,6 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import RelatedItemModal from './RelatedItemModal.jsx';
+import RelatedModalContainer from '../../containers/RelatedItems/RelatedModal.js';
 import { Modal, Backdrop } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 
@@ -12,20 +12,19 @@ const RItemList = ({
   handleItemToCurrentItemClick,
   handleStarModalClick,
 })=>{
-  console.log('RItemList:', typeof product.avgStarRating, product.avgStarRating, product.avgStarRating === 0);
+  console.log('RItemItem:', product);
+
+  let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
+  console.log('avgStarRating:', product.avgStarRating, starRating);
 
   let modalRender =
   <Modal
     open={relatedProductStarModal}
-    onClose={ ()=> handleStarModalClick( relatedProductStarModal, product.id ) }>
+    onClose={ ()=> handleStarModalClick( relatedProductStarModal ) }>
     <Fade in={relatedProductStarModal}>
       <div>
-        <RelatedItemModal
-          currentProduct ={currentProduct}
-          previewItem={product}
-          relatedProductStarModal={relatedProductStarModal}
-          handleStarModalClick={handleStarModalClick}
-          close={ ()=> handleStarModalClick( relatedProductStarModal, product.id ) }
+        <RelatedModalContainer
+          close={ ()=> handleStarModalClick( relatedProductStarModal ) }
           ref={null}/>
       </div>
     </Fade>
@@ -39,7 +38,7 @@ const RItemList = ({
 
   let reviewStars =
   <StarRatings
-    rating={product.avgStarRating}
+    rating={starRating}
     starDimension='18px'
     starSpacing='0px'
     starRatedColor='#fb9b1c'

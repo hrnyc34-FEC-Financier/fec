@@ -18,7 +18,7 @@ const RelatedItems = ({
   handleYourOutfitRightClick,
   cYourOutfitRenderIndex,
 })=>{
-  console.log('relatedProductCarouselList:', relatedProductCarouselList);
+  // console.log('relatedProductCarouselList:', relatedProductCarouselList);
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
@@ -38,7 +38,7 @@ const RelatedItems = ({
     let imageURL = item.styles[0].photos[0].url;
     if (imageURL !== null) {
       return <RItemList
-        key={item.id}
+        key={'RI' + item.id}
         product={item}
         currentProduct={currentProduct}
         handleItemToCurrentItemClick={handleItemToCurrentItemClick}
@@ -53,7 +53,7 @@ const RelatedItems = ({
     let imageURL = item.styles[0].photos[0].url;
     if ( imageURL !== null ) {
       return <YourOutFitList
-        key={item.styles[0].style_id}
+        key={'YO' + item.id}
         product={item}
         currentProduct={currentProduct}
         image={imageURL}
@@ -111,7 +111,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { relatedProductCarouselList.length - carouselRenderIndex <= 5 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
+            { relatedProductCarouselList.length - carouselRenderIndex <= 4 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
         </div>
 
       </div>
@@ -134,7 +134,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { yourOutfitList.length - cYourOutfitRenderIndex <= 5 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
+            { yourOutfitList.length - cYourOutfitRenderIndex <= 4 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
         </div>
 
       </div>
