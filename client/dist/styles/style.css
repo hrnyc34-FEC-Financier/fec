@@ -476,3 +476,49 @@ button .carousel_next {
 button:hover {
   cursor: pointer;
 }
+
+#headerContainer {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+
+#header {
+  background-color: #666;
+  margin: 0 0 50px 0;
+  height: 80px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  color: white;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 0 0 0 50px;
+
+}
+
+#headerRight {
+  padding: 0 0 0 70%
+}
+
+#headerInput {
+  margin: 0 20px 0 0;
+  background-color: #666;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+#headerSearch {
+}
+
+/*WILL CSSS */
+
