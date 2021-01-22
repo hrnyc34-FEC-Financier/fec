@@ -4,13 +4,13 @@ const postReview = (product_id, reviewInfo) => {
   const review = {
     product_id: product_id,
     rating: reviewInfo.rating,
-    summary: reviewInfo.summaryState,
-    body: reviewInfo.bodyState,
-    recommend: reviewInfo.recommendState,
-    name: reviewInfo.nameState,
-    email: reviewInfo.emailState,
+    summary: reviewInfo.summary,
+    body: reviewInfo.body,
+    recommend: reviewInfo.recommend,
+    name: reviewInfo.name,
+    email: reviewInfo.email,
     characteristics: reviewInfo.characteristics,
-    photos: []
+    photos: ['asdasd', 'asdasd']
   };
 
   console.log(review)
