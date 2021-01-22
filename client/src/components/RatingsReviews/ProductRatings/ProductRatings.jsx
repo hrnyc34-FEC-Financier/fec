@@ -3,6 +3,10 @@ import StarBarList from './StarBarList.jsx';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import CharacteristicsList from './CharacteristicsList.jsx';
 import '../reviewStyles/productRatings.css';
+import { makeStyles } from '@material-ui/core/Modal';
+import Modal from '@material-ui/core/Modal';
+import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
+import '../reviewStyles/reviewsList.css';
 
 const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter}) => {
 
@@ -22,6 +26,16 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
       }
     }
     return false;
+  };
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   return (
@@ -46,6 +60,18 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
           <CharacteristicsList productCharacteristics={productCharacteristics} />
         </div>
       )}
+      <button type='button' onClick={handleOpen}>
+        ADD A REVIEW +
+      </button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby='Write New Review'
+      >
+        <div>
+          <ReviewModalContainer close={handleClose} ref={null}/>
+        </div>
+      </Modal>
     </div>
   );
 };

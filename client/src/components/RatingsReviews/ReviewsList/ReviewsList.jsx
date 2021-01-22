@@ -8,20 +8,7 @@ import '../reviewStyles/reviewsList.css';
 
 const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewDisplayLimiter, reviewFeedback, reviewImageModal, reviewScroll, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 
-  // const [open, setOpen] = React.useState(false);
-
-  // const handleOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const [ratingsFilterList, setRatingsFilterList] = useState({});
-
   // ratingsFilter initial state: {1: false, 2: false, 3: false, 4: false, 5: false}
-
   const filteredReviewsList = [];
   for (let review of reviewsList) {
     if (ratingsFilter.hasOwnProperty(review.rating) && ratingsFilter[review.rating] === true) {
@@ -65,15 +52,3 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
 
 export default ReviewsList;
 
-// <button type='button' onClick={handleOpen}>
-//   ADD A REVIEW +
-// </button>
-// <Modal
-//   open={open}
-//   onClose={handleClose}
-//   aria-labelledby='Write New Review'
-// >
-//   <div>
-//     <ReviewModalContainer close={handleClose} ref={null}/>
-//   </div>
-// </Modal>
