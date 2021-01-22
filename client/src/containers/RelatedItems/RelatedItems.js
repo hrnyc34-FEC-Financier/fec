@@ -9,6 +9,7 @@ import increaseIndex from './../../actions/relatedItems/increaseIndex.js';
 import decreaseIndex from './../../actions/relatedItems/decreaseIndex.js';
 import increaseYourOutfitIndex from './../../actions/relatedItems/increaseIndexYourOutfit.js';
 import decreaseYourOutfitIndex from './../../actions/relatedItems/decreaseIndexYourOutfit.js';
+import addPreviewItem from './../../actions/relatedItems/addPreviewItem.js';
 
 const mapStateToProps = ( state ) => ({
   // productList: state.productList,
@@ -18,7 +19,7 @@ const mapStateToProps = ( state ) => ({
   relatedProductCarouselList: state.relatedProductCarouselList,
   relatedProductStarModal: state.relatedProductStarModal,
   yourOutfitList: state.yourOutfitList,
-  reviewsList: state.reviewsList,
+  // previewItem: state.previewItem,
   carouselRenderIndex: state.carouselRenderIndex,
   cYourOutfitRenderIndex: state.cYourOutfitRenderIndex,
 });
@@ -28,14 +29,15 @@ const mapDispatchToProps = ( dispatch ) => ({
   handleItemToCurrentItemClick: ( currentProductId ) => dispatch( currentProduct( currentProductId ) ),
   handleStarModalClick: ( value, productId ) => {
     dispatch( comparingModal( value === false ) );
+    dispatch( addPreviewItem( productId ) );
   },
+  // handleStarModalClick: ( value, productId ) => console.log('handleStarModalClick_container', value, productId ),
   handleAddYourOutfitClick: ( productId ) => dispatch( addYourOutfitList( productId ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
   handleCarouselLeftClick: () => dispatch( increaseIndex( true ) ),
   handleCarouselRightClick: () => dispatch( decreaseIndex( true ) ),
   handleYourOutfitLeftClick: () => dispatch( increaseYourOutfitIndex( true ) ),
   handleYourOutfitRightClick: () => dispatch( decreaseYourOutfitIndex( true ) ),
-  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container', productId, value ),
 });
 
 const RelatedItemsContainer = connect(

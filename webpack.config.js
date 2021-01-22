@@ -41,4 +41,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    // fix "process is not defined" error:
+    // (do "npm install process" before running the build)
+    new webpack.DefinePlugin({
+      'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
+    })
+  ]
 };
