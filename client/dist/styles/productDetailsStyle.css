@@ -1,7 +1,7 @@
 .product-display-container {
   display: grid;
   grid-template-columns: 1fr 4fr 2fr 1fr;
-  grid-template-rows: 60vh 1fr;
+  grid-template-rows: 75vh 1fr;
 }
 
 /*****************************/
@@ -92,11 +92,24 @@
 }
 
 .thumb-gallery {
+  /* border: 1px solid black; */
   grid-area: 1 / 1 / 4 / 2;
   position: absolute;
   top: 50%;
   transform: translate(0%, -50%);
   left: 2em;
+}
+.gallery-port {
+  height: 520px;
+  width: 89px;
+  overflow: hidden;
+}
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  height: fit-content;
 }
 
 .thumb-square {
@@ -229,6 +242,15 @@
   position: absolute;
   border: none;
   margin: 0px;
+  background: none;
+}
+
+.up-down-btn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  border: none;
+  margin-left: 0.75em;
   background: none;
 }
 

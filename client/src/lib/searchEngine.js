@@ -17,16 +17,20 @@ const searchEngine = {
   //postReview *** endPoint: 'reviews' *** data: {product_id, rating, summary, body, recommended, name, email, photos, characteristics}
   post: (endPoint, data) => {
     return axios.post(`${url}/${endPoint}`, data, {
-      headers: { Authorization }
+      headers: { Authorization },
     });
   },
 
   // putReviewHelpful *** endPoint: `reviews/${review_id}/helpful` *** data: { helpfulness }
   // putReviewReport *** endPoint: `reviews/${review_id}/report *** data: { reported }
   put: (endPoint) => {
-    return axios.put(`${url}/${endPoint}`, {}, {
-      headers: { Authorization }
-    });
+    return axios.put(
+      `${url}/${endPoint}`,
+      {},
+      {
+        headers: { Authorization },
+      }
+    );
   },
 };
 
