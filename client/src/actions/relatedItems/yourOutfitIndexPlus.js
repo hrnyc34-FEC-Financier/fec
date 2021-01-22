@@ -1,5 +1,5 @@
 const renderingIndexPlus = ( inIndex ) => ({
-  type: 'INCREASE_INDEX_FOR_RENDER',
+  type: 'PLUS_INDEX_FOR_RENDER',
   index: inIndex
 });
 

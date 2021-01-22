@@ -1,10 +1,10 @@
 import renderingIndexPlus from './yourOutfitIndexPlus.js';
 
-const increaseIndex = ( value ) => {
+const increaseYrIndex = ( value ) => {
 
   return (dispatch) => {
-    dispatch( renderingIndexIncrease( value ) );
+    dispatch( renderingIndexPlus( value ) );
   };
 };
 
-export default increaseIndex;
+export default increaseYrIndex;
