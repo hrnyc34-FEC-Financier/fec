@@ -28,12 +28,11 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
     return false;
   };
 
+  //handle modal review
   const [open, setOpen] = React.useState(false);
-
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -60,7 +59,7 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
           <CharacteristicsList productCharacteristics={productCharacteristics} />
         </div>
       )}
-      <button type='button' onClick={handleOpen}>
+      <button type='button' id='addReviewButton' onClick={handleOpen}>
         ADD A REVIEW +
       </button>
       <Modal

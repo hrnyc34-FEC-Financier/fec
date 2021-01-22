@@ -3,6 +3,7 @@ import ReviewModal from '../../components/RatingsReviews/postReview/ReviewModal.
 
 const mapStateToProps = (state) => ({
   currentProduct: state.currentProduct,
+  productCharacteristics: state.productCharacteristics,
   reviewModal: state.reviewModal,
   reviewRating: state.reviewRating,
   reviewCharacteristics: state.reviewCharacteristics,

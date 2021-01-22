@@ -1,7 +1,7 @@
 import React from 'react';
 import StarBar from './StarBar.jsx';
 
-const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , handleResetRatingsFilter }) => {
+const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter }) => {
 
   const starArr = [];
   let totalReviews = 0;
