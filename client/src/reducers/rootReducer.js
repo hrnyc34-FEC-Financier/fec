@@ -23,10 +23,6 @@ import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js
 //productDetails: End
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
-import reviewsDisplayLimiterReducer from './RatingsReviewsReducers/reviewsListReducers/reviewDisplayLimiterReducer.js';
-import reviewFeedbackReducer from './RatingsReviewsReducers/reviewsListReducers/reviewFeedbackReducer.js';
-import reviewImageModalReducer from './RatingsReviewsReducers/reviewsListReducers/reviewImageModalReducer.js';
-import reviewScrollReducer from './RatingsReviewsReducers/reviewsListReducers/reviewScrollReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
 //RatingsReviews: productRatings
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
@@ -35,17 +31,6 @@ import productCharacteristicsReducer from './RatingsReviewsReducers/productRatin
 import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgRatingReducer.js';
 import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
-//RatingsReviews: postReview
-import reviewModalReducer from './RatingsReviewsReducers/postReviewReducers/reviewModalReducer.js';
-import reviewRatingReducer from './RatingsReviewsReducers/postReviewReducers/reviewRatingReducer.js';
-import reviewCharacteristicsReducer from './RatingsReviewsReducers/postReviewReducers/reviewCharacteristicsReducer.js';
-import reviewSummaryReducer from './RatingsReviewsReducers/postReviewReducers/reviewSummaryReducer.js';
-import reviewBodyReducer from './RatingsReviewsReducers/postReviewReducers/reviewBodyReducer.js';
-import reviewPhotosReducer from './RatingsReviewsReducers/postReviewReducers/reviewPhotosReducer.js';
-import reviewRecommendationReducer from './RatingsReviewsReducers/postReviewReducers/reviewRecommendationReducer.js';
-import reviewUserReducer from './RatingsReviewsReducers/postReviewReducers/reviewUserReducer.js';
-import reviewEmailReducer from './RatingsReviewsReducers/postReviewReducers/reviewEmailReducer.js';
-import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/reviewWordCountReducer.js';
 //RatingsReviews: End
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
@@ -73,10 +58,6 @@ const rootReducer = combineReducers({
   //productDetails: End
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
-  reviewsDisplayLimiter: reviewsDisplayLimiterReducer,
-  reviewFeedback: reviewFeedbackReducer,
-  reviewImageModal: reviewImageModalReducer,
-  reviewScroll: reviewScrollReducer,
   reviewSort: reviewSortReducer,
   //RatingsReviews: productRatings
   productRatings: productRatingsReducer,
@@ -85,17 +66,6 @@ const rootReducer = combineReducers({
   productAvgRating: productAvgRatingReducer,
   productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
-  //RatingsReviews: postReview
-  reviewModal: reviewModalReducer,
-  reviewRating: reviewRatingReducer,
-  reviewCharacteristics: reviewCharacteristicsReducer,
-  reviewSummary: reviewSummaryReducer,
-  reviewBody: reviewBodyReducer,
-  reviewPhotos: reviewPhotosReducer,
-  reviewRecommendation: reviewRecommendationReducer,
-  reviewUser: reviewUserReducer,
-  reviewEmail: reviewEmailReducer,
-  reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
   questionList: changeQuestionListReducer,
 });

@@ -9,10 +9,6 @@ const mapStateToProps = (state) => ({
   ratingsFilter: state.ratingsFilter,
   productRatings: state.productRatings,
   reviewsList: state.reviewsList,
-  reviewDisplayLimiter: state.reviewDisplayLimiter,
-  reviewFeedback: state.reviewFeedbackReducer,
-  reviewImageModal: state.reviewImageModal,
-  reviewScroll: state.reviewScroll,
   reviewSort: state.reviewSort
 });
 
