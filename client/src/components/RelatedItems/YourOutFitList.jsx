@@ -8,7 +8,7 @@ let YourOutFitList = ({
   handleDeleteYourOutfitClick,
   productAvgStarRating })=>{
 
-  // console.log('YourOutFitList:', product);
+  console.log('YourOutFitList:', product.avgStarRating);
 
   let oriPrice =
   <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;

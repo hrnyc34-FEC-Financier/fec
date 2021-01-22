@@ -11,9 +11,8 @@ const RItemList = ({
   relatedProductStarModal,
   handleItemToCurrentItemClick,
   handleStarModalClick,
-  productAvgStarRating
 })=>{
-  // console.log('RItemList:', product);
+  console.log('RItemList:', typeof product.avgStarRating, product.avgStarRating, product.avgStarRating === 0);
 
   let modalRender =
   <Modal
