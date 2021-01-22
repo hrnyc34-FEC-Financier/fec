@@ -17,6 +17,7 @@ const RelatedItems = ({
   handleYourOutfitLeftClick,
   handleYourOutfitRightClick,
   cYourOutfitRenderIndex,
+  productAvgStarRating,
 })=>{
   // console.log('relatedProductCarouselList:', relatedProductCarouselList);
 
@@ -44,7 +45,8 @@ const RelatedItems = ({
         handleItemToCurrentItemClick={handleItemToCurrentItemClick}
         handleStarModalClick={handleStarModalClick}
         relatedProductStarModal={relatedProductStarModal}
-        image={imageURL} />;
+        image={imageURL}
+        productAvgStarRating={productAvgStarRating} />;
     }
   });
 
@@ -58,6 +60,7 @@ const RelatedItems = ({
         currentProduct={currentProduct}
         image={imageURL}
         handleAddYourOutfitClick={handleAddYourOutfitClick}
+        handleItemToCurrentItemClick={handleItemToCurrentItemClick}
         handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
     }
   });

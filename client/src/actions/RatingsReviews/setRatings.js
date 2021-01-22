@@ -27,6 +27,7 @@ const setRatings = (product_id) => {
   return (dispatch) => {
     return searchAPI.get('reviews/meta', {product_id})
       .then(({ data }) => {
+        // console.log(data);
         const productAvgRating = calculateProductAvgRating(data.ratings);
         dispatch(changeProductRatings(data.ratings));
         dispatch(changeProductRecommended(data.recommended));

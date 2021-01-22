@@ -6,7 +6,7 @@ import comparingModal from './../../actions/relatedItems/relatedItemStarModal.js
 const mapStateToProps = ( state ) => ({
   currentProduct: state.currentProduct,
   relatedProductStarModal: state.relatedProductStarModal,
-  previewItem: state.previewItem
+  previewItem: state.previewItem,
 });
 
 const mapDispatchToProps = ( dispatch ) => ({

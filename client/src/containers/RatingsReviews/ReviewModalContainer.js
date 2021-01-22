@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleSubmitReview: (e, currentProductId, reviewInfo) => {
-    dispatch(postReview(e, currentProductId, reviewInfo));
+  handleSubmitReview: (currentProductId, reviewInfo) => {
+    dispatch(postReview(currentProductId, reviewInfo));
   }
 });
 

@@ -22,6 +22,7 @@ const mapStateToProps = ( state ) => ({
   // previewItem: state.previewItem,
   carouselRenderIndex: state.carouselRenderIndex,
   cYourOutfitRenderIndex: state.cYourOutfitRenderIndex,
+  productAvgStarRating: state.productAvgStarRating
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
