@@ -20,14 +20,6 @@ body {
   grid-template-rows: repeat(4, 1fr);
 }
 
-
-/* .product-display-container {
-  grid-area: 1 / 2 / 2 / 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-} */
-
 #ratingsContainer {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -221,8 +213,6 @@ button {
 }
 
 
-/*Will CSS*/
-
 .ratingsReviewContainer {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -240,7 +230,6 @@ button {
   flex-grow: 1;
 }
 
-/*Test Modal CSS*/
 #addQuestionPage {
     position: absolute;
     width: 60%;
@@ -269,7 +258,6 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 
 #addQuestionFormContainer {
   width: 80%;
@@ -358,6 +346,7 @@ label {
   font-family: Arial;
   color: #666;
 }
+
 #closeX:hover {
   cursor: pointer;
 }
