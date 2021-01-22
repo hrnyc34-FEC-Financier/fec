@@ -2,7 +2,6 @@ import React from 'react';
 import '../reviewStyles/characteristic.css';
 
 const Characteristic = ({ characteristicData }) => {
-  //characteristicInfo = [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
   const characteristic = characteristicData.characteristic;
   const characteristicInfo = characteristicData.characteristicInfo;
 
@@ -41,9 +40,9 @@ const Characteristic = ({ characteristicData }) => {
       </div>
 
       <div className='charBarDescriptionContainer'>
-        <div className='charBarDescription dFirst'>{characteristicInfo[1]}</div>
-        <div className='charBarDescription dMiddle'>{characteristicInfo[3]}</div>
-        <div className='charBarDescription dLast'>{characteristicInfo[5]}</div>
+        <div className='charBarDescription dFirst'>{characteristicInfo[0]}</div>
+        <div className='charBarDescription dMiddle'>{characteristicInfo[2]}</div>
+        <div className='charBarDescription dLast'>{characteristicInfo[4]}</div>
       </div>
     </div>
   );

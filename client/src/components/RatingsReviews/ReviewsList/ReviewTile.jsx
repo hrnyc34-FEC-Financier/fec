@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import StarRatingReadOnly from '../ProductRatings/StarRatingReadOnly.jsx';
+import { Modal } from '@material-ui/core';
+import Fade from '@material-ui/core/Fade';
+import ImageModal from './ImageModal.jsx';
 
 const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleReportReview }) => {
-  // console.log(reviewInfo);
-
-  const [reviewHelpful, setReviewHelpful] = useState({helpfulness: reviewInfo.helpfulness, helpfulStatus: false});
-  const [reviewReported, setReviewReported] = useState(false);
 
   const convertDate = (ISOStringDate) => {
     const date = new Date(reviewInfo.date);
@@ -15,48 +14,67 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
     return `${month} ${day}, ${year}`;
   };
 
+  const [reviewHelpful, setReviewHelpful] = useState({helpfulness: reviewInfo.helpfulness, helpfulStatus: false});
+  const [reviewReported, setReviewReported] = useState(false);
+
+  //related to the modal image
+  const [modalImage, setModalImage] = useState('');
+  const [openI, setOpenI] = useState(false);
+  const handleOpen = (e) => {
+    setModalImage(e.target.attributes.src.value);
+    setOpenI(true);
+  };
+  const handleClose = () => {
+    setOpenI(false);
+  };
+
   return (
-    <div className="reviewTile">
-      <div className="reviewTileHeader">
-        <div className="reviewTileStarRating">
+    <div className='reviewTile'>
+      <div className='reviewTileHeader'>
+        <div className='reviewTileStarRating'>
           <StarRatingReadOnly productAvgStarRating={reviewInfo.rating} />
         </div>
-        <div className="reviewTileUserDate">
+        <div className='reviewTileUserDate'>
           {`${reviewInfo.reviewer_name}, ${convertDate(reviewInfo.date)}`}
         </div>
       </div>
-      <div className="reviewTileSummary">{reviewInfo.summary}</div>
-      <div className="reviewTileBody">{reviewInfo.body}</div>
+      <div className='reviewTileSummary'>{reviewInfo.summary}</div>
+      <div className='reviewTileBody'>{reviewInfo.body}</div>
+      <div className='reviewTilePhotoContainer'>
+        {reviewInfo.photos.slice(0, 5).map((photo, i) => {
+          return <img key={`reviewTileImage${i}`} src={photo.url} className='reviewTileImage' onClick={handleOpen}></img>;
+        })}
+      </div>
       {reviewInfo.recommend === true ? (
-        <div className="reviewTileRecommendContainer">
-          <div className="reviewTileRecommendIcon">
+        <div className='reviewTileRecommendContainer'>
+          <div className='reviewTileRecommendIcon'>
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-check2-circle"
-              viewBox="0 0 16 16"
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              fill='currentColor'
+              className='bi bi-check2-circle'
+              viewBox='0 0 16 16'
             >
-              <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
-              <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+              <path d='M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z' />
+              <path d='M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z' />
             </svg>
           </div>
-          <div className="reviewTileRecommendText">
+          <div className='reviewTileRecommendText'>
             I recommend this product.
           </div>
         </div>
       ) : null}
-      {reviewInfo.response !== "" ? (
-        <div className="reviewTileFeedback">
-          <div className="reviewTileFeedbackHeader">Response:</div>
-          <div className="reviewTileFeedbackResponse">{reviewInfo.response}</div>
+      {reviewInfo.response !== '' ? (
+        <div className='reviewTileFeedback'>
+          <div className='reviewTileFeedbackHeader'>Response:</div>
+          <div className='reviewTileFeedbackResponse'>{reviewInfo.response}</div>
         </div>
       ) : null}
-      <div className="reviewTileFooterContainer">
-        <div className="reviewTileFooter">
+      <div className='reviewTileFooterContainer'>
+        <div className='reviewTileFooter'>
           <span className='reviewTileFooterHelpful'>
-            Helpful?{" "}
+            Helpful?{' '}
             <span className='reviewTileFooterHelpfulStatus'
               onClick={() => {
                 if (reviewHelpful.helpfulStatus === false) {
@@ -68,7 +86,7 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
               Yes ({reviewHelpful.helpfulness})
             </span>
           </span>
-          <span className="reviewTileFooterDivider">|</span>
+          <span className='reviewTileFooterDivider'>|</span>
           <span className='reviewTileFooterReport'
             onClick={() => {
               if (reviewReported === false) {
@@ -81,6 +99,14 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
           </span>
         </div>
       </div>
+      <div className='reviewTileEndLine'></div>
+      <Modal open={openI} onClose={handleClose} onClick={handleClose}>
+        <Fade in={openI}>
+          <div id='modalContainer'>
+            <ImageModal imageSrc={modalImage} />
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 };
