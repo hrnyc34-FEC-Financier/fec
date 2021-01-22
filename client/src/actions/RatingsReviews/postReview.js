@@ -9,7 +9,7 @@ const postReview = (product_id, reviewInfo) => {
     recommend: reviewInfo.recommendState,
     name: reviewInfo.nameState,
     email: reviewInfo.emailState,
-    characteristics: reviewInfo.characteristicsState,
+    characteristics: reviewInfo.characteristics,
     photos: []
   };
 

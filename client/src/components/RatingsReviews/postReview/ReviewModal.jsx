@@ -4,34 +4,27 @@ import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
 import './reviewModal.css';
 
-const ReviewModal = ({currentProduct, productCharacteristics, handleSubmitReview, close}) => {
+const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit
 
+  const characteristicsMap = createCharacteristicsArray(productCharacteristics);
+  //replacing index 1 of characteristic property from rating to characteristic id
+  for (let characteristic of characteristicsMap) {
+    characteristic.characteristic[1] = (productCharacteristics[characteristic.characteristic[0]].id);
+  }
+
   //handleState
-  const [rating, setRating] = useState(0)
-  const [characteristicsState, setCharacteristicsState] = useState({});
+  const [rating, setRating] = useState(0);
+  const [characteristics, setCharacteristics] = useState({});
   const [recommendState, setRecommendState] = useState({});
   const [summaryState, setSummaryState] = useState('');
   const [bodyState, setBodyState] = useState('');
   const [nameState, setNameState] = useState('');
   const [emailState, setEmailState] = useState('');
-  const [photosState, setPhotosState] = useState([]);
-
-  const createUpdatedCharacteristicsArray = (characteristicsArray) => {
-      //replacing index 1 of characteristic property from rating to characteristic id
-      console.log('productCharacteristics', productCharacteristics)
-      console.log('characteristicsArray', characteristicsArray)
-    for (let i = 0; i < characteristicsArray.length; i++) {
-      console.log(characteristicsArray[i].characteristic)
-      characteristicsArray[i].characteristic[1] = (productCharacteristics[characteristicsArray[i].characteristic[0]].id);
-    }
-    console.log(characteristicsArray);
-    return characteristicsArray;
-  }
-  // const characteristics = createCharacteristicsArray(productCharacteristics);
+  const [photosState, setPhotosState] = useState(['']);
 
   const handleCharacteristicsChange = (e) => {
-    setCharacteristicsState({...characteristicsState, [e.target.name]: e.target.value});
+    setCharacteristics({...characteristics, [e.target.name]: e.target.value});
   };
   const handleRecommendChange = (e) => {
     setRecommendState({[e.target.name]: e.target.value})
@@ -63,7 +56,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleSubmitReview
   }
 
   // console.log(rating);
-  // console.log('characteristics', characteristics)
+
   return (
     <div id='reviewModal'>
       <h1>Write Your Review</h1>
@@ -81,7 +74,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleSubmitReview
         </div>
 
         <div id='radioFormContainer'>
-          {createUpdatedCharacteristicsArray(createCharacteristicsArray(productCharacteristics)).map((characteristic, i) => {
+          {characteristicsMap.map((characteristic, i) => {
             return <CharacteristicsRadio key={`characteristicRadio${i}`} characteristic={characteristic} handleCharacteristicsChange={handleCharacteristicsChange} />;
           })}
         </div>
@@ -116,7 +109,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleSubmitReview
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={() => {handleSubmitReview(currentProduct.id, {rating, characteristicsState, recommendState, summaryState, bodyState, nameState, emailState})}}>
+      <button id='submitButton' onClick={(e) => {handleSubmitReview(currentProduct.id, {rating, characteristics, recommendState, summaryState, bodyState, nameState, emailState})}}>
           Submit
       </button>
     </div>
