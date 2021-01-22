@@ -1,6 +1,7 @@
 import searchAPI from '../../lib/searchEngine.js';
 
-const postReview = (product_id, reviewInfo) => {
+const postReview = (e, product_id, reviewInfo) => {
+  e.preventDefault();
   const review = {
     product_id: product_id,
     rating: reviewInfo.rating,
@@ -13,7 +14,7 @@ const postReview = (product_id, reviewInfo) => {
     photos: []
   };
 
-  // console.log(review)
+  console.log(review)
   return (dispatch) => {
     return searchAPI.post('reviews', review)
       .then(() => {
