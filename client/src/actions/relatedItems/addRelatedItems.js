@@ -45,15 +45,11 @@ const addRelatedItems = (productId) => {
                 .then(({ data }) => {
                   const productAvgRating = calculateProductAvgRating(data.ratings);
                   const starRating = calculateProductAvgStarRating(productAvgRating);
-                  // console.log('starRating:', starRating);
                   overall.avgStarRating = starRating;
-                  list.push( overall );
-                  // return list;
                 })
                 .catch(err=>console.log('adding starRating to related items list  failed :', err));
 
               list.push( overall );
-              // console.log('starRatingAddedList:', list);
             })
             .catch(err => console.log('adding style to related items list  failed :', err));
         });
