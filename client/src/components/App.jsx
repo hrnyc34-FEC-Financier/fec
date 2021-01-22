@@ -12,9 +12,9 @@ const App = () => {
         <ProductDetailMain />
       </div>
       <div id="ri_container">
-        <RelatedItemsContainer />
       </div>
       <div id="container">
+      <RelatedItemsContainer />
         <QAModuleContainer/>
       </div>
       <div id='rContainer'>

@@ -184,6 +184,10 @@ h2 {
   padding: 0 0 0 27px;
 }
 
+.showHideAnswers:hover {
+  cursor: pointer;
+}
+
 .divider {
   padding: 0 10px 0 10px;
 }
@@ -493,4 +497,8 @@ button .carousel_next {
 .TestBlue {
   color: blue;
   text-decoration: underline;
+}
+
+button:hover {
+  cursor: pointer;
 }
