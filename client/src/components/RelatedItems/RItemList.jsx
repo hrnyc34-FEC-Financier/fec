@@ -10,8 +10,10 @@ const RItemList = ({
   currentProduct,
   relatedProductStarModal,
   handleItemToCurrentItemClick,
-  handleStarModalClick
+  handleStarModalClick,
+  productAvgStarRating
 })=>{
+  // console.log('RItemList:', product);
 
   let modalRender =
   <Modal
@@ -35,14 +37,10 @@ const RItemList = ({
   let disCountPrice = <><span className='carousel_item_disCountPrice_1'> &#36; {product.default_price} </span><span className='carousel_item_disCountPrice_2'> &#36; { product.default_price } </span></>;
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{ disCountPrice }</>;
-  // for (let item of product.styles) {
-  //   console.log('for loop', item.sale_price);
-  //   console.log('for loop', item.style_id);
-  // }
 
   let reviewStars =
   <StarRatings
-    rating={3}
+    rating={product.avgStarRating}
     starDimension='18px'
     starSpacing='0px'
     starRatedColor='#fb9b1c'

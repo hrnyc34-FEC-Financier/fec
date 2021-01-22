@@ -2,6 +2,7 @@ import searchEngine from '../../lib/searchEngine.js';
 import relatedItemList from './relatedItemList.js';
 import relatedItemsListDetail from './relatedItemsListDetail.js';
 import relatedItemCarouselList from './relatedItemCarouselList.js';
+import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
 const addRelatedItems = (productId) => {
   return (dispatch) => {
@@ -16,6 +17,7 @@ const addRelatedItems = (productId) => {
       .then(res=> {
         let list = [];
         let carouselList = res.relatedProductList.map( itemId =>{
+
           return searchEngine.get(`products/${itemId}`)
             .then(res => {
               list.push( res.data );
@@ -35,7 +37,20 @@ const addRelatedItems = (productId) => {
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)
             .then(res => {
+              var productId = item.id;
               overall.styles = res.data.results;
+
+              searchEngine.get('reviews/meta', { product_id: productId })
+                .then(({ data }) => {
+                  const productAvgRating = calculateProductAvgRating(data.ratings);
+                  const starRating = calculateProductAvgStarRating(productAvgRating);
+                  console.log('starRating:', starRating);
+                  overall.avgStarRating = starRating;
+                  list.push( overall );
+                  // return list;
+                })
+                .catch(err=>console.log('adding starRating to related items list  failed :', err));
+
               list.push( overall );
             })
             .catch(err => console.log('adding style to related items list  failed :', err));
