@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
 
-const InStock = ({ currentStyle, sizeChange, currentSku, favorite }) => {
+const InStock = ({
+  currentStyle,
+  sizeChange,
+  currentSku,
+  favorite,
+  checkout,
+}) => {
   const [sizeNotSelected, setSizeNotSelected] = useState(false);
+
+  const skus = (() =>
+    currentStyle.hasOwnProperty('skus')
+      ? Object.entries(currentStyle.skus)
+      : [])();
 
   const submitToCart = (e) => {
     e.preventDefault();
@@ -11,14 +22,9 @@ const InStock = ({ currentStyle, sizeChange, currentSku, favorite }) => {
       if (sizeNotSelected) {
         setSizeNotSelected(false);
       }
-      console.log('checkout');
+      checkout(skus[currentSku][0]);
     }
   };
-  const skus = (() =>
-    currentStyle.hasOwnProperty('skus')
-      ? Object.entries(currentStyle.skus)
-      : [])();
-
   const quantities = (() => {
     if (currentSku !== '') {
       const range = Math.min(skus[parseInt(currentSku, 10)][1].quantity, 15);

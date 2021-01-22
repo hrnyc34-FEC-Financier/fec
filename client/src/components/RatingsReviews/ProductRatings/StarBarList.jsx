@@ -1,7 +1,7 @@
 import React from 'react';
 import StarBar from './StarBar.jsx';
 
-const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , handleResetRatingsFilter }) => {
+const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter }) => {
 
   const starArr = [];
   let totalReviews = 0;
@@ -11,7 +11,6 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
     totalReviews += starArr[5 - i];
   }
 
-  // console.log(starArr)
   const isFilterMoreThanOne = (ratingsFilter) => {
     let count = 0;
     for (let star in ratingsFilter) {
@@ -24,7 +23,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
     }
     return false;
   };
-  // console.log(totalReviews)
+
   return (
     <div id='starBarsContainer'>
       {starArr.map((star, i) => {
