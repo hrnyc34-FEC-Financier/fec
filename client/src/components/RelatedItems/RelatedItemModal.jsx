@@ -50,12 +50,15 @@ const RelatedItemModal = ({ currentProduct, previewItem, handleStarModalClick, r
 
     var totalFeature = Object.keys(a).concat(Object.keys(b)).concat(Object.keys(abCheck));
 
-    var contents = totalFeature.map(( item )=> {
+    console.log('mapping id', 'RM' + previewItem.id, relatedProductStarModal);
+
+    var contents = totalFeature.map(( item, i )=> {
       var aChecker = aa[item] ? <>&#10003;</> : null;
       var bChecker = bb[item] ? <>&#10003;</> : null;
-      console.log('mapping id', 'RM' + previewItem.id, relatedProductStarModal);
+
+
       return (
-        <div id="comparingPage_content" key={'RM' + previewItem.id}>
+        <div id="comparingPage_content" key={'RM' + i}>
           <a>{ aChecker }</a>
           <a>{ item }</a>
           <a>{ bChecker }</a></div>
