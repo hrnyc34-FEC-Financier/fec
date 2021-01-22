@@ -6,7 +6,7 @@ const mapDispatchToProps = (dispatch) => ({
   sizeChange: (e) => dispatch(changeSize(e.target.value)),
   checkout: (skuId) => {
     return searchEngine
-      .post('cart', skuId)
+      .post('cart', { sku_id: skuId })
       .then((res) => console.log(res))
       .cath((err) => console.error(err));
   },

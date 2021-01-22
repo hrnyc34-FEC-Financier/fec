@@ -25,6 +25,7 @@ const ImageGallery = ({
     const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
   };
+
   return (
     <div className='image-gallery'>
       <div className='current-image-container'>
@@ -42,17 +43,6 @@ const ImageGallery = ({
             }}
           ></div>
         </div>
-        {/* for animations
-        <div
-          ref={(element) => {
-            cardContainer = element;
-          }}
-          className='card-container'
-        >
-          {thumbGallery.map((pic, i) => (
-            <ImageCard key={pic.thumbnail_url} number={i} image={pic.url} />
-          ))}
-        </div> */}
       </div>
       <ThumbGallery />
       <ViewButton classList='expand-btn btn' handleClick={handleOpenA} />

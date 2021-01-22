@@ -13,12 +13,12 @@ const addYourOutfitList = ( productId ) => {
           .then(res => {
             item.styles = res.data.results;
 
-            searchEngine.get('reviews/meta', { product_id: productId })
+            searchEngine.get('reviews/meta', { product_id : productId })
               .then(({ data }) => {
                 const productAvgRating = calculateProductAvgRating(data.ratings);
                 const starRating = calculateProductAvgStarRating(productAvgRating);
                 item.avgStarRating = starRating;
-                console.log(' item:',  item)
+                console.log('yourOutfit starRating:', starRating)
               })
               .catch(err=>console.log('adding starRating to related items list  failed :', err));
 
