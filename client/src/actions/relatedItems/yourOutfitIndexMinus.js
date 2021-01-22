@@ -1,5 +1,5 @@
 const renderingIndexMinus = ( deIndex ) => ({
-  type: 'DECREASE_INDEX_FOR_RENDER',
+  type: 'MINUS_INDEX_FOR_RENDER',
   index: deIndex
 });
 

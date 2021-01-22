@@ -5,7 +5,13 @@ let YourOutFitList = ({
   product,
   image,
   handleAddYourOutfitClick,
-  handleDeleteYourOutfitClick })=>{
+  handleDeleteYourOutfitClick,
+  productAvgStarRating })=>{
+
+
+  let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
+  // console.log('yourOutfitItemItem:', product);
+  // console.log('avgStarRating:', product.avgStarRating, starRating);
 
   let oriPrice =
   <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
@@ -16,7 +22,7 @@ let YourOutFitList = ({
 
   let reviewStars =
   <StarRatings
-    rating={3}
+    rating={starRating}
     starDimension='15px'
     starSpacing='0px'
     starRatedColor='#fb9b1c'
