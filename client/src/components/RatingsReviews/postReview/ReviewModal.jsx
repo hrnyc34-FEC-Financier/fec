@@ -4,7 +4,7 @@ import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
 import './reviewModal.css';
 
-const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, reviewRating, reviewCharacteristics, reviewSummary, reviewBody, reviewPhotos, reviewRecommendation, reviewUser, reviewEmail, reviewWordCount, handleStarRating, handleSubmitReview, close}) => {
+const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit
 
   const characteristics = createCharacteristicsArray(productCharacteristics);
@@ -14,7 +14,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
   }
 
   //handleState
-  const [ratingState, setRatingState] = useState(0)
+  const [rating, setRating] = useState(0)
   const [characteristicsState, setCharacteristicsState] = useState({});
   const [recommendState, setRecommendState] = useState({});
   const [summaryState, setSummaryState] = useState('');
@@ -55,6 +55,8 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
     }
   }
 
+  // console.log(rating);
+  // console.log(characteristicsState)
   return (
     <div id='reviewModal'>
       <h1>Write Your Review</h1>
@@ -66,8 +68,8 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
             How would you rate this product?
           </div>
           <div id='starRatingAndText'>
-            <StarRatingWrite id='starRating' ratingState={ratingState} setRatingState={setRatingState}/>
-            <div id='starRatingText'>{starRatingMeaning(ratingState)}</div>
+            <StarRatingWrite id='starRating' rating={rating} setRating={setRating}/>
+            <div id='starRatingText'>{starRatingMeaning(rating)}</div>
           </div>
         </div>
 
@@ -107,7 +109,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={() => {handleSubmitReview(currentProduct.id, {ratingState, characteristicsState, recommendState, summaryState, bodyState, nameState, emailState})}}>
+      <button id='submitButton' onClick={() => {handleSubmitReview(currentProduct.id, {rating, characteristicsState, recommendState, summaryState, bodyState, nameState, emailState})}}>
           Submit
       </button>
     </div>

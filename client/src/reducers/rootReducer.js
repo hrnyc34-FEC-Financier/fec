@@ -34,16 +34,16 @@ import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsRedu
 import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
 //RatingsReviews: postReview
-import reviewModalReducer from './RatingsReviewsReducers/postReviewReducers/reviewModalReducer.js';
-import reviewRatingReducer from './RatingsReviewsReducers/postReviewReducers/reviewRatingReducer.js';
-import reviewCharacteristicsReducer from './RatingsReviewsReducers/postReviewReducers/reviewCharacteristicsReducer.js';
-import reviewSummaryReducer from './RatingsReviewsReducers/postReviewReducers/reviewSummaryReducer.js';
-import reviewBodyReducer from './RatingsReviewsReducers/postReviewReducers/reviewBodyReducer.js';
-import reviewPhotosReducer from './RatingsReviewsReducers/postReviewReducers/reviewPhotosReducer.js';
-import reviewRecommendationReducer from './RatingsReviewsReducers/postReviewReducers/reviewRecommendationReducer.js';
-import reviewUserReducer from './RatingsReviewsReducers/postReviewReducers/reviewUserReducer.js';
-import reviewEmailReducer from './RatingsReviewsReducers/postReviewReducers/reviewEmailReducer.js';
-import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/reviewWordCountReducer.js';
+// import reviewModalReducer from './RatingsReviewsReducers/postReviewReducers/reviewModalReducer.js';
+// import reviewRatingReducer from './RatingsReviewsReducers/postReviewReducers/reviewRatingReducer.js';
+// import reviewCharacteristicsReducer from './RatingsReviewsReducers/postReviewReducers/reviewCharacteristicsReducer.js';
+// import reviewSummaryReducer from './RatingsReviewsReducers/postReviewReducers/reviewSummaryReducer.js';
+// import reviewBodyReducer from './RatingsReviewsReducers/postReviewReducers/reviewBodyReducer.js';
+// import reviewPhotosReducer from './RatingsReviewsReducers/postReviewReducers/reviewPhotosReducer.js';
+// import reviewRecommendationReducer from './RatingsReviewsReducers/postReviewReducers/reviewRecommendationReducer.js';
+// import reviewUserReducer from './RatingsReviewsReducers/postReviewReducers/reviewUserReducer.js';
+// import reviewEmailReducer from './RatingsReviewsReducers/postReviewReducers/reviewEmailReducer.js';
+// import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/reviewWordCountReducer.js';
 //RatingsReviews: End
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
@@ -84,16 +84,16 @@ const rootReducer = combineReducers({
   productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
   //RatingsReviews: postReview
-  reviewModal: reviewModalReducer,
-  reviewRating: reviewRatingReducer,
-  reviewCharacteristics: reviewCharacteristicsReducer,
-  reviewSummary: reviewSummaryReducer,
-  reviewBody: reviewBodyReducer,
-  reviewPhotos: reviewPhotosReducer,
-  reviewRecommendation: reviewRecommendationReducer,
-  reviewUser: reviewUserReducer,
-  reviewEmail: reviewEmailReducer,
-  reviewWordCount: reviewWordCountReducer,
+  // reviewModal: reviewModalReducer,
+  // reviewRating: reviewRatingReducer,
+  // reviewCharacteristics: reviewCharacteristicsReducer,
+  // reviewSummary: reviewSummaryReducer,
+  // reviewBody: reviewBodyReducer,
+  // reviewPhotos: reviewPhotosReducer,
+  // reviewRecommendation: reviewRecommendationReducer,
+  // reviewUser: reviewUserReducer,
+  // reviewEmail: reviewEmailReducer,
+  // reviewWordCount: reviewWordCountReducer,
   //RatingsReviews: End
   questionList: changeQuestionListReducer,
 });
