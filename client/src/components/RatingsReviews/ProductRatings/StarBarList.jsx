@@ -7,10 +7,11 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
   let totalReviews = 0;
 
   for (let i = 5; i >= 1; i--) {
-    productRatings.hasOwnProperty(i) ? starArr.unshift(Number(productRatings[i])) : starArr.unshift(0);
-    totalReviews += starArr[i];
+    productRatings.hasOwnProperty(i) ? starArr.push(Number(productRatings[i])) : starArr.push(0);
+    totalReviews += starArr[5 - i];
   }
 
+  // console.log(starArr)
   const isFilterMoreThanOne = (ratingsFilter) => {
     let count = 0;
     for (let star in ratingsFilter) {
@@ -23,7 +24,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
     }
     return false;
   };
-
+  // console.log(totalReviews)
   return (
     <div id='starBarsContainer'>
       {starArr.map((star, i) => {

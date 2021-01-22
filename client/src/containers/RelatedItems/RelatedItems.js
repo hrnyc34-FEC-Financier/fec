@@ -5,6 +5,10 @@ import comparingModal from './../../actions/relatedItems/relatedItemStarModal.js
 import addRelatedItems from './../../actions/relatedItems/addRelatedItems.js';
 import addYourOutfitList from './../../actions/relatedItems/addYourOutfitList.js';
 import deleteYourOutfitList from './../../actions/relatedItems/deleteYourOutfitList.js';
+import increaseIndex from './../../actions/relatedItems/increaseIndex.js';
+import decreaseIndex from './../../actions/relatedItems/decreaseIndex.js';
+import increaseYourOutfitIndex from './../../actions/relatedItems/increaseIndexYourOutfit.js';
+import decreaseYourOutfitIndex from './../../actions/relatedItems/decreaseIndexYourOutfit.js';
 
 const mapStateToProps = ( state ) => ({
   // productList: state.productList,
@@ -15,6 +19,8 @@ const mapStateToProps = ( state ) => ({
   relatedProductStarModal: state.relatedProductStarModal,
   yourOutfitList: state.yourOutfitList,
   reviewsList: state.reviewsList,
+  carouselRenderIndex: state.carouselRenderIndex,
+  cYourOutfitRenderIndex: state.cYourOutfitRenderIndex,
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
@@ -23,9 +29,13 @@ const mapDispatchToProps = ( dispatch ) => ({
   handleStarModalClick: ( value, productId ) => {
     dispatch( comparingModal( value === false ) );
   },
-  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container', productId, value ),
   handleAddYourOutfitClick: ( productId ) => dispatch( addYourOutfitList( productId ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
+  handleCarouselLeftClick: () => dispatch( increaseIndex( true ) ),
+  handleCarouselRightClick: () => dispatch( decreaseIndex( true ) ),
+  handleYourOutfitLeftClick: () => dispatch( increaseYourOutfitIndex( true ) ),
+  handleYourOutfitRightClick: () => dispatch( decreaseYourOutfitIndex( true ) ),
+  // handleStarModalClick: ( productId, value ) => console.log('handleStarModalClick_container', productId, value ),
 });
 
 const RelatedItemsContainer = connect(
