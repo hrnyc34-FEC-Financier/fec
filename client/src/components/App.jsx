@@ -11,9 +11,9 @@ const App = () => {
       <div id='pdcontainer'>
         <ProductDetailMain />
       </div>
-      <div id="ri_container">
+      <>
         <RelatedItemsContainer />
-      </div>
+      </>
       <div id="container">
         <QAModuleContainer/>
       </div>
