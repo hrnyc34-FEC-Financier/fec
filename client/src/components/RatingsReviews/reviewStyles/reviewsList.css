@@ -51,16 +51,21 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  font-size: 10px;
 }
 
 .reviewTileSummary {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
   width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 1em;
+}
+
+.reviewTileUserDate {
+  font-size: 10px;
 }
 
 .reviewTileBody {
