@@ -10,8 +10,8 @@ import ReviewModalContainer from './../../containers/RatingsReviews/ReviewModalC
 const RatingsReviewsMain = () => {
   return (
     <div className='ratingsReviewMain'>
-      < ProductRatingsContainer />
-      < ReviewsListContainer />
+      <ProductRatingsContainer />
+      <ReviewsListContainer />
     </div>
     // <div>
     //   < ReviewModalContainer />
