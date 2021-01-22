@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import relatedItemListReducer from './relatedItems/relatedItemList.js';
-import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
-import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
-import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js';
-import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
-import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
-import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex.js';
-import previewItemReducer from './relatedItems/previewItem.js';
+import relatedItemListReducer from './RelatedItems/relatedItemList.js';
+import relatedItemsListDetailReducer from './RelatedItems/relatedItemsListDetail.js';
+import relatedItemCarouselListReducer from './RelatedItems/relatedItemCarouselList.js';
+import relatedItemStarModalReducer from './RelatedItems/relatedItemStarModal.js';
+import yourOutfitListReducer from './RelatedItems/yourOutfitList.js';
+import carouselRenderIndexReducer from './RelatedItems/carouselRenderIndex.js';
+import cYourOutfitRenderIndexReducer from './RelatedItems/cYourOutfitRenderIndex.js';
+import previewItemReducer from './RelatedItems/previewItem.js';
 
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
