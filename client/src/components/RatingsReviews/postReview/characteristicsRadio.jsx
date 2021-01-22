@@ -1,8 +1,7 @@
 import React from 'react';
 
 const CharacteristicsRadio = ({ characteristic, handleCharacteristicsChange }) => {
-  const characteristicInfo = characteristic.characteristicInfo;
-  return (
+  const characteristicInfo = characteristic.characteristicInfo;  return (
     <form className='radioForm'>
       <div className='radioTitle'>
         {characteristic.characteristic[0]}
