@@ -1,6 +1,6 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
-import RelatedModalContainer from '../../containers/RelatedItems/RelatedModal.js';
+import RelatedModalContainer from '../../containers/RelatedItems/Relatedmodal.js';
 import { Modal, Backdrop } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 
