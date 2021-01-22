@@ -1,18 +1,26 @@
-// import searchAPI from '../../lib/searchEngine.js';
+import searchAPI from '../../lib/searchEngine.js';
 
-// const sendReview = (product_id) => {
-//   return (dispatch) => {
-//     return searchAPI.post('reviews', {product_id, revi})
-//       .then(({ data }) => {
-//         dispatch(productRatings(data.ratings));
-//         dispatch(productRecommended(data.recommended));
-//         dispatch(productCharacteristics(data.characteristics));
-//       })
-//       .catch((err) => console.error('Unable to get Product Rating Data:', err));
-//   };
-// };
+const postReview = (product_id, reviewInfo) => {
+  const review = {
+    rating: reviewInfo.ratingState,
+    summary: reviewInfo.summaryState,
+    body: reviewInfo.bodyState,
+    recommend: reviewInfo.recommendState,
+    name: reviewInfo.nameState,
+    email: reviewInfo.emailState,
+    characteristics: reviewInfo.characteristicsState
+  };
 
-// export default sendReview;
+  return (dispatch) => {
+    return searchAPI.post('reviews', {product_id, reviewInfo})
+      .then(() => {
+        console.log('Posted Review')
+      })
+      .catch((err) => console.error('Unable to post Review:', err));
+  };
+};
+
+export default postReview;
 
 // reviewRating: state.reviewRating,
 // reviewSummary: state.reviewSummary,

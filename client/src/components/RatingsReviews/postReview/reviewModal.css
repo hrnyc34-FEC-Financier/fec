@@ -2,16 +2,27 @@
   box-sizing: border-box;
   margin: 0;
   position: absolute;
-  width: 60%;
+  width: 35%;
   background-color: white;
   border: '2px solid #000';
-  left: 20%;
-  top: 10%;
+  left: 32.5%;
+  top: 10px;
   text-align: center;
   padding: 15px;
   border: 10px solid #666;
   justify-content: center;
   color: #666;
+}
+
+#starRatingContainer {
+  margin-bottom: 1em;
+}
+
+
+#starRatingTitle {
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 1em;
 }
 
 #reviewModalContainer {
@@ -51,6 +62,14 @@
   margin-bottom: 1em;
 }
 
+#nameWarning {
+  margin-bottom: 1em;
+}
+
+#emailWarning {
+  margin-bottom: 2em;
+}
+
 label {
   display: block;
   font-family: Arial, Helvetica, sans-serif;
@@ -59,9 +78,20 @@ label {
   margin-bottom: 0.5em;
 }
 
+textarea, input[type='text'] {
+  font-size: 10px;
+  color: #666;
+  font-family: Arial;
+}
+
+#radioFormContainer {
+  margin-bottom: 2em;
+}
+
 .radioTitle {
   font-weight: bold;
   margin-bottom: 0.5em;
+  font-size: 11px;
 }
 
 .radioContainer {
@@ -76,12 +106,8 @@ label {
 
 .radioButtonDescription {
   margin-top: 1em;
+  font-size: 10px;
 }
-
-
-
-
-
 
 #submitButton {
   margin: 0 15px 0 0;

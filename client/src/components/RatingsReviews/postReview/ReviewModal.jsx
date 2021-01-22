@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { characteristicsMap, createCharacteristicsArray } from '../ProductRatings/characteristicsHelpers.js';
 import CharacteristicsRadio from './characteristicsRadio.jsx';
+import StarRatingWrite from './StarRatingWrite.jsx';
 import './reviewModal.css';
 
-const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, reviewRating, reviewCharacteristics, reviewSummary, reviewBody, reviewPhotos, reviewRecommendation, reviewUser, reviewEmail, reviewWordCount, handleStarRating, close}) => {
+const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, reviewRating, reviewCharacteristics, reviewSummary, reviewBody, reviewPhotos, reviewRecommendation, reviewUser, reviewEmail, reviewWordCount, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit
 
   const characteristics = createCharacteristicsArray(productCharacteristics);
@@ -13,6 +14,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
   }
 
   //handleState
+  const [ratingState, setRatingState] = useState(0)
   const [characteristicsState, setCharacteristicsState] = useState({});
   const [recommendState, setRecommendState] = useState({});
   const [summaryState, setSummaryState] = useState('');
@@ -20,7 +22,6 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
   const [nameState, setNameState] = useState('');
   const [emailState, setEmailState] = useState('');
   const [photosState, setPhotosState] = useState([]);
-  const [ratingState, setRatingState] = useState(0)
 
   const handleCharacteristicsChange = (e) => {
     setCharacteristicsState({...characteristicsState, [e.target.name]: e.target.value});
@@ -40,17 +41,35 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
     }
   }
 
-  // console.log('reviewSummary', summaryState)
-  // console.log('reviewBody', bodyState)
-  // console.log('reviewName', nameState)
-  // console.log('reviewEmail', emailState)
-  // console.log('characteristicsState', characteristicsState);
-  // console.log('recommendState', recommendState);
+  const starRatingMeaning = (ratingState) => {
+    if (ratingState === 1) {
+      return 'Poor';
+    } else if (ratingState === 2) {
+      return 'Fair';
+    } else if (ratingState === 3) {
+      return 'Average';
+    } else if (ratingState === 4) {
+      return 'Good';
+    } else if (ratingState === 5) {
+      return 'Great';
+    }
+  }
+
   return (
     <div id='reviewModal'>
       <h1>Write Your Review</h1>
       <h2>About the {currentProduct.name}</h2>
       <div id='reviewModalContainer'>
+
+        <div id='starRatingContainer'>
+          <div id='starRatingTitle'>
+            How would you rate this product?
+          </div>
+          <div id='starRatingAndText'>
+            <StarRatingWrite id='starRating' ratingState={ratingState} setRatingState={setRatingState}/>
+            <div id='starRatingText'>{starRatingMeaning(ratingState)}</div>
+          </div>
+        </div>
 
         <div id='radioFormContainer'>
           {characteristics.map((characteristic, i) => {
@@ -72,22 +91,27 @@ const ReviewModal = ({currentProduct, productCharacteristics, reviewModal, revie
 
         <form id='reviewModalForm'>
           <label htmlFor='reviewSummary'>Review Summary</label>
-          <textarea id='reviewSummary' onChange={handleTextChange} value={summaryState} maxLength='60' placeholder='Review Summary'></textarea>
+          <textarea id='reviewSummary' onChange={handleTextChange} value={summaryState} maxLength='60' placeholder='Example: Best purchase ever!'></textarea>
 
           <label htmlFor='reviewBody'>Review Body</label>
-          <textarea id='reviewBody' onChange={handleTextChange} value={bodyState} maxLength='1000' placeholder='Review Body'></textarea>
+          <textarea id='reviewBody' onChange={handleTextChange} value={bodyState} maxLength='1000' placeholder='Why did you like the product or not?'></textarea>
 
           <label htmlFor='reviewName'>Nickname</label>
-          <input type='text' id='reviewName' onChange={handleTextChange} value={nameState} maxLength='60'></input>
+          <input type='text' id='reviewName' onChange={handleTextChange} value={nameState} maxLength='60' placeholder='Example: jackson11!'></input>
+
+          <div id='nameWarning'>For privacy reasons, do not use your full name or email address.</div>
 
           <label htmlFor='reviewEmail'>Email Address</label>
-          <input type='text' id='reviewEmail' onChange={handleTextChange} value={emailState} maxLength='60'></input>
+          <input type='text' id='reviewEmail' onChange={handleTextChange} value={emailState} maxLength='60' placeholder='Example: jackson11@email.com'></input>
+
+          <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={close}>Submit</button>
+      <button id='submitButton' onClick={() => {handleSubmitReview(currentProduct.id, {ratingState, characteristicsState, recommendState, summaryState, bodyState, nameState, emailState})}}>
+          Submit
+      </button>
     </div>
   );
 };
 
 export default ReviewModal;
-
