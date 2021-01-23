@@ -28,7 +28,6 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
     setOpenI(false);
   };
 
-  console.log(reviewInfo);
   return (
     <div className='reviewTile'>
       <div className='reviewTileHeader'>
