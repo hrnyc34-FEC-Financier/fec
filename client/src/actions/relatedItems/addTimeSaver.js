@@ -6,32 +6,24 @@ import totalCarouselList from './totalCarouselList.js';
 
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
-const addRelatedItems = (productId) => {
+const addTimeSaver = ( notSavedItemList ) => {
+  console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList );
+
   return (dispatch) => {
 
-    return searchEngine.get(`products/${productId}/related`)
-      //relatedItemList from '/products/:product_id/related'
-      .then(res=> {
-        return dispatch(relatedItemList( res.data ));
+    let list = [];
+    let carouselList = notSavedItemList.map( itemId =>{
+
+      return searchEngine.get(`products/${itemId}`)
+        .then(res => {
+          list.push( res.data );
+        })
+        .catch(err => console.log('adding related items list of id failed :', err));
+    });
+    return Promise.all(carouselList)
+      .then(()=>{
+        return dispatch( relatedItemsListDetail( list ) );
       })
-
-      //relatedItemsListDetail from '/products/:product_id'
-      .then(res=> {
-        let list = [];
-        let carouselList = res.relatedProductList.map( itemId =>{
-
-          return searchEngine.get(`products/${itemId}`)
-            .then(res => {
-              list.push( res.data );
-            })
-            .catch(err => console.log('adding related items list of id failed :', err));
-        });
-        return Promise.all(carouselList)
-          .then(()=>{
-            return dispatch( relatedItemsListDetail( list ) );
-          });
-      })
-
       //relatedItemCarouselList by adding more detail _'/products/:product_id/styles'
       .then(res=>{
         let list = [];
@@ -57,7 +49,6 @@ const addRelatedItems = (productId) => {
 
         Promise.all(carouselDetailList)
           .then(()=>{
-            dispatch( relatedItemCarouselList(list) );
             dispatch( totalCarouselList(list) );
           });
 
@@ -66,4 +57,4 @@ const addRelatedItems = (productId) => {
   };
 };
 
-export default addRelatedItems;
+export default addTimeSaver;

@@ -45,7 +45,7 @@ module.exports = {
     // fix "process is not defined" error:
     // (do "npm install process" before running the build)
     new webpack.DefinePlugin({
-      'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
+      'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
     })
   ]
 };
