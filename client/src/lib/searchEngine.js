@@ -1,6 +1,6 @@
 const axios = require('axios');
-const { API_TOKEN } = require('../../../env/config.js');
-const Authorization = API_TOKEN;
+//const { API_TOKEN } = require('../../../env/config.js');
+const Authorization = process.env.API_KEY;
 // TODO: consider deployment_ e.g. process.env.URL
 const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc';
 
@@ -8,7 +8,6 @@ const searchEngine = {
   //getProductReviews *** endPoint: 'reviews' *** params: {product_id, page, count, sort} *** //product_id required
   //getProductReviewMetaData *** endPoint: `reviews/meta/${product_id}`
   get: (endPoint, params = {}) => {
-    // console.log("request at ", endPoint, process.env.API_KEY);
     return axios.get(`${url}/${endPoint}`, {
       headers: { Authorization },
       params: params,

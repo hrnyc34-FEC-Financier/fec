@@ -2,11 +2,11 @@ import React from 'react';
 import StarBarList from './StarBarList.jsx';
 import StarRatingReadOnly from './StarRatingReadOnly.jsx';
 import CharacteristicsList from './CharacteristicsList.jsx';
-import '../reviewStyles/productRatings.css';
+//import '../reviewStyles/productRatings.css';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
-import '../reviewStyles/reviewsList.css';
+//import '../reviewStyles/reviewsList.css';
 
 const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter}) => {
 
@@ -39,8 +39,8 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
 
   return (
     <div>
-      {isRated(productRatings) === false ? null : (
-        <div id='productRatingsContainer'>
+      {/* {isRated(productRatings) === false ? null : ( */}
+        <div id='productRatingsContainer' style={isRated(productRatings) ? {display: 'block'} : {display: 'none'}}>
           <div id='productRatingsTitle'>RATINGS & REVIEWS</div>
           < div id='ratingNumberStarContainer'>
             <div id='productAvgRatingValue'>
@@ -58,7 +58,7 @@ const ProductRatings = ({ currentProductId, productRatings, productRecommended, 
           <StarBarList productRatings={productRatings} ratingsFilter={ratingsFilter} handleRatingsFilter={handleRatingsFilter} handleResetRatingsFilter={handleResetRatingsFilter}/>
           <CharacteristicsList productCharacteristics={productCharacteristics} />
         </div>
-      )}
+      {/* )} */}
       <button type='button' id='addReviewButton' onClick={handleOpen}>
         ADD A REVIEW +
       </button>
