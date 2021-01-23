@@ -8,7 +8,7 @@ import { calculateProductAvgRating, calculateProductAvgStarRating } from '../Rat
 
 
 const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
-  console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList, wholeData, rList );
+  // console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList, wholeData, rList );
   return (dispatch) => {
 
     let comparingList = [];
