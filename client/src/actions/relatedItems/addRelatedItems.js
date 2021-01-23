@@ -2,8 +2,6 @@ import searchEngine from '../../lib/searchEngine.js';
 import relatedItemList from './relatedItemList.js';
 import relatedItemsListDetail from './relatedItemsListDetail.js';
 import relatedItemCarouselList from './relatedItemCarouselList.js';
-import totalCarouselList from './totalCarouselList.js';
-
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
 const addRelatedItems = (productId) => {
@@ -28,7 +26,7 @@ const addRelatedItems = (productId) => {
         });
         return Promise.all(carouselList)
           .then(()=>{
-            console.log("!!!!! Adding data from Full Cycle !!!!!");
+            console.log(list)
             return dispatch( relatedItemsListDetail( list ) );
           });
       })
@@ -59,7 +57,6 @@ const addRelatedItems = (productId) => {
         Promise.all(carouselDetailList)
           .then(()=>{
             dispatch( relatedItemCarouselList(list) );
-            dispatch( totalCarouselList(list) );
           });
 
       })

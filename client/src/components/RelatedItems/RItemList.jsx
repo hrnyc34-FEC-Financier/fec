@@ -11,29 +11,7 @@ const RItemList = ({
   relatedProductStarModal,
   handleItemToCurrentItemClick,
   handleStarModalClick,
-  saveSpaceList,
-  relatedProductList
 })=>{
-
-  // console.log('saveSpaceList:', saveSpaceList);
-  // console.log('relatedProductList:', relatedProductList);
-
-  let comparingList = [];
-  let updatedNeedList = [];
-  let oldList = Object.keys(saveSpaceList);
-
-  if ( oldList.length !== 0 ) {
-    for ( let i = 0; i < oldList.length; i++ ) {
-      comparingList.push(Number.parseInt( oldList[i] ));
-    }
-    for ( let i = 0; i < relatedProductList.length; i++ ) {
-      var checkingId = Number.parseInt( relatedProductList[i] );
-      if ( !comparingList.includes(checkingId) ) {
-        updatedNeedList.push(checkingId);
-      }
-    }
-  }
-  // console.log('updatedNeedList:', updatedNeedList)
 
   let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
 
@@ -67,15 +45,13 @@ const RItemList = ({
     starRatedColor='#fb9b1c'
     starEmptyColor='#767676'/>;
 
-  // console.log('updatedNeedList:', updatedNeedList);
-
   return (
     <div className='carousel_item' >
       <div className="carousel_item_image">
         <img src={ image }
           alt='PRODUCT defaultIMG'
           width="150"
-          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveSpaceList, relatedProductList) } /><br /></div>
+          onClick={ ()=> handleItemToCurrentItemClick(product.id) } /><br /></div>
 
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>
