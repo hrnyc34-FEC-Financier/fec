@@ -28,8 +28,6 @@ let YourOutFitList = ({
     }
   }
 
-  let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
-
   let oriPrice =
   <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
 
@@ -43,13 +41,14 @@ let YourOutFitList = ({
       <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
     </svg>;
 
-  let reviewStars =
-  <StarRatings
-    rating={starRating}
-    starDimension='15px'
-    starSpacing='0px'
-    starRatedColor='#fb9b1c'
-    starEmptyColor='#767676'/>;
+  let reviewStars = product.avgStarRating !== 0 || undefined ?
+    <StarRatings
+      rating={ product.avgStarRating }
+      starDimension='15px'
+      starSpacing='0px'
+      starRatedColor='#fb9b1c'
+      starEmptyColor='#767676'/>
+    : null;
 
   return (
     <div className='carousel_item'>

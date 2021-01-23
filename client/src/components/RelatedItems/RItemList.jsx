@@ -30,10 +30,7 @@ const RItemList = ({
       }
     }
   }
-  // console.log('updatedNeedList:', updatedNeedList)
-
-  let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
-
+  // console.log('updatedNeedList:', updatedNeedList);
   // console.log('RItemItem:', product);
   // console.log('avgStarRating:', product.avgStarRating, starRating);
 
@@ -56,13 +53,14 @@ const RItemList = ({
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{ disCountPrice }</>;
 
-  let reviewStars =
-  <StarRatings
-    rating={starRating}
-    starDimension='18px'
-    starSpacing='0px'
-    starRatedColor='#fb9b1c'
-    starEmptyColor='#767676'/>;
+  let reviewStars = product.avgStarRating !== 0 || undefined ?
+    <StarRatings
+      rating={ product.avgStarRating }
+      starDimension='15px'
+      starSpacing='0px'
+      starRatedColor='#fb9b1c'
+      starEmptyColor='#767676'/>
+    : null;
 
   return (
     <div className='carousel_item' >

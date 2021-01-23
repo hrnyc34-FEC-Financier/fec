@@ -21,9 +21,20 @@ const addRelatedItems = (productId) => {
 
           return searchEngine.get(`products/${itemId}`)
             .then(res => {
-              list.push( res.data );
+              var productInfo = res.data;
+              list.push( productInfo );
+
+              // searchEngine.get('reviews/meta', { product_id: productId })
+              //   .then(({ data }) => {
+              //     const productAvgRating = calculateProductAvgRating(data.ratings);
+              //     const starRating = calculateProductAvgStarRating(productAvgRating);
+              //     productInfo.avgStarRating = starRating;
+              //   })
+              //   .catch(err=>console.log('adding starRating to related items list  failed :', err));
+
             })
             .catch(err => console.log('adding related items list of id failed :', err));
+
         });
         return Promise.all(carouselList)
           .then(()=>{
