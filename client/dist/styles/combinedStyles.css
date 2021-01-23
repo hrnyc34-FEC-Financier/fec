@@ -212,9 +212,6 @@ button {
   float: right;
 }
 
-
-
-/*Test Modal CSS*/
 #addQuestionPage {
     position: absolute;
     width: 60%;
@@ -409,7 +406,7 @@ label {
   left: -2%;
 }
 
-/*Test Animation CSS*/
+/*Animation CSS*/
 .example-enter {
   opacity: 0.01;
 }

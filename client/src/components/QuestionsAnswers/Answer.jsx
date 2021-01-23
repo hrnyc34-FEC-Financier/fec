@@ -10,6 +10,7 @@ import InnerImageZoom from 'react-inner-image-zoom';
 
 const Answer = ({answer, handleQuant, fullLength}) => {
 
+
   const [answerHelpful, setAnswerHelpful] = useState({helpfulness: answer[1].helpfulness, helpfulStatus: false});
   const [answerReported, setAnswerReported] = useState(false);
   const [modalImage, setModalImage] = useState('');

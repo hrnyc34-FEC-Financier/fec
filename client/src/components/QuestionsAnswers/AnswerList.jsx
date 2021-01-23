@@ -4,6 +4,7 @@ import {CSSTransitionGroup} from 'react-transition-group';
 
 const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
+
   answers.sort(function(a, b){return b[1].helpfulness-a[1].helpfulness})
 
   let sortedAnswers = answers.reduce((acc, element) => {
@@ -42,6 +43,8 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
       {renderedAnswers.map((answer) => {
+        console.log("rendered answer", answer
+        );
         return (<Answer answer={answer} key={answer[0]} fullLength={answers.length}/>)
       })}
       {showHideButton}
