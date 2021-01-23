@@ -2156,6 +2156,8 @@ textarea, input[type='text'] {
   border: none;
 }
 
-
+.sales-price {
+  color: red;
+}
 
 

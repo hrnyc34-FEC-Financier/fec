@@ -6,7 +6,7 @@ const Header = () => {
     var theme = document.getElementsByTagName('link')[0];
 
     if (theme.getAttribute('href') == './styles/combinedStyles.css') {
-        theme.setAttribute('href', './styles/testDarkMode.css');
+        theme.setAttribute('href', './styles/darkMode.css');
     } else {
       theme.setAttribute('href', './styles/combinedStyles.css')
   }
