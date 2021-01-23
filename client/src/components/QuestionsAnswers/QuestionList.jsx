@@ -10,11 +10,8 @@ const QuestionList = ({ questions, quantity, productName}) => {
       if (questions[i]) {
         renderedQuestions.push(questions[i])
       }
-
   };
 
-
-  // console.log("rendered q", renderedQuestions);
     return (
       <div id="questionList">
         <CSSTransitionGroup

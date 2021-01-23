@@ -58,8 +58,6 @@ const AddAnswerForm = ({ productName, close, qBody, qID }) => {
       return;
     }
 
-    // console.log(question, nickName, email);
-
     let dataSubmission = {
       body: answer,
       name: nickName,

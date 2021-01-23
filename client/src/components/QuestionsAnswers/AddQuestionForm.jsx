@@ -41,17 +41,15 @@ const AddQuestionForm = ({ productName, close, product_id }) => {
       return;
     }
 
-    // console.log(question, nickName, email);
+    let dataSubmission = {
+      body: question,
+      name: nickName,
+      email: email,
+      product_id: product_id
+    }
 
-    // let dataSubmission = {
-    //   body: question,
-    //   name: nickName,
-    //   email: email,
-    //   product_id: product_id
-    // }
-
-    // handlePostQuestion(dataSubmission);
-    // close();
+    handlePostQuestion(dataSubmission);
+    close();
   }
 
   return (
