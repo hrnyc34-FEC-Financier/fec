@@ -28,6 +28,7 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
     setOpenI(false);
   };
 
+  console.log(reviewInfo);
   return (
     <div className='reviewTile'>
       <div className='reviewTileHeader'>
@@ -65,12 +66,12 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
           </div>
         </div>
       ) : null}
-      {reviewInfo.response !== '' ? (
+      {reviewInfo.response === null || reviewInfo.response === '' ? null : (
         <div className='reviewTileFeedback'>
           <div className='reviewTileFeedbackHeader'>Response:</div>
           <div className='reviewTileFeedbackResponse'>{reviewInfo.response}</div>
         </div>
-      ) : null}
+      )}
       <div className='reviewTileFooterContainer'>
         <div className='reviewTileFooter'>
           <span className='reviewTileFooterHelpful'>

@@ -1,15 +1,13 @@
 import React from 'react';
 //import '../reviewStyles/characteristic.css';
 
-const Characteristic = ({ characteristicData }) => {
+const CharacteristicBar = ({ characteristicData }) => {
+
   const characteristic = characteristicData.characteristic;
   const characteristicInfo = characteristicData.characteristicInfo;
 
   const checkIfPerfectAt3 = (characteristic) => {
-    if (characteristic !== 'Comfort' && characteristic !== 'Quality') {
-      return true;
-    }
-    return false;
+    return characteristic !== 'Comfort' && characteristic !== 'Quality' ? true : false;
   };
 
   const calculatePercent = (characteristicValue) => {
@@ -48,4 +46,4 @@ const Characteristic = ({ characteristicData }) => {
   );
 };
 
-export default Characteristic;
+export default CharacteristicBar;

@@ -26,7 +26,7 @@ const addRelatedItems = (productId) => {
         });
         return Promise.all(carouselList)
           .then(()=>{
-            console.log(list)
+            // console.log(list);
             return dispatch( relatedItemsListDetail( list ) );
           });
       })

@@ -13,12 +13,15 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+
   handleRatingsFilter: (ratingsSelected) => {
     dispatch(changeRatingsFilter(ratingsSelected));
   },
+
   handleResetRatingsFilter: () => {
     dispatch(resetRatingsFilter());
   }
+
 });
 
 const ProductRatingsContainer = connect(mapStateToProps, mapDispatchToProps)(ProductRatings);

@@ -4,7 +4,6 @@ import changeReviewSort from './reviewsList/reviewSort.js';
 import changeReviewsList from './reviewsList/reviewsList.js';
 
 const sortSelect = (product_id, sort) => {
-  // console.log(sort);
   return (dispatch) => {
     return searchAPI.get('reviews', {product_id, sort})
       .then(({ data }) => {

@@ -1,12 +1,12 @@
 import React from 'react';
-import Characteristic from './Characteristic.jsx';
+import CharacteristicBar from './CharacteristicBar.jsx';
 import { characteristicsMap, createCharacteristicsArray } from './characteristicsHelpers.js';
 
 const CharacteristicsList = ({ productCharacteristics }) => {
   return (
-    //createCharacteristicsArray: [{characteristic: ['comfort, 3.5], characteristicInfo: {1: 'Uncomfortable, ...}}, {...}, ...]
+    //createCharacteristicsArray: [ {characteristic: ['comfort', 3.5], characteristicInfo: {1: 'Uncomfortable, ...} }, ...]
     createCharacteristicsArray(productCharacteristics, 'rating').map((characteristicData, i) => {
-      return <Characteristic key={`characteristic${i}`} characteristicData={characteristicData} />;
+      return <CharacteristicBar key={`characteristic${i}`} characteristicData={characteristicData} />;
     })
   );
 };
