@@ -30,9 +30,9 @@ const mapDispatchToProps = ( dispatch ) => ({
     dispatch( currentProduct( currentProductId ) );
     dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData) );
   },
-  handleStarModalClick: ( value, productId ) => {
+  handleStarModalClick: ( value, productId, productList ) => {
     dispatch( comparingModal( value === false ) );
-    dispatch( addPreviewItem( productId ) );
+    dispatch( addPreviewItem( productId, productList ) );
   },
   handleAddYourOutfitClick: ( currentItem, styleList, starRating ) => dispatch( addYourOutfitList( currentItem, styleList, starRating ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
