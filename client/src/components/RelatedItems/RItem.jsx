@@ -135,9 +135,8 @@ const RelatedItems = ({
           <div className='placeHolderP'><button
             className='placeHolder'
             onClick={ ()=> handleAddYourOutfitClick( currentProduct.id ) }>
-           <br /><br />
+            {imgAddIcon}<br /><br />
             ADD TO OUTFIT
-            +
           </button></div>
 
           <div className ='YrOutfit_container'>
