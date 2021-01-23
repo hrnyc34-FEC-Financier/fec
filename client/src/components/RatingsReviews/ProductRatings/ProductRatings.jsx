@@ -60,7 +60,7 @@ const ProductRatings = ({ productRatings, productRecommended, productCharacteris
         aria-labelledby='Write New Review'
       >
         <div>
-          <ReviewModalContainer close={handleClose} ref={null}/>
+          <ReviewModalContainer handleClose={handleClose} ref={null}/>
         </div>
       </Modal>
     </div>

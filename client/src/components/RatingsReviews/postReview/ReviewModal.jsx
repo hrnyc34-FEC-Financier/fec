@@ -4,7 +4,7 @@ import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
 //import '../review/Styles/reviewModal.css';
 
-const ReviewModal = ({currentProductId, currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
+const ReviewModal = ({currentProductId, currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, handleClose}) => {
 
   const characteristicsArray = createCharacteristicsArray(productCharacteristics, 'id');
 
@@ -104,7 +104,10 @@ const ReviewModal = ({currentProductId, currentProduct, productCharacteristics, 
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={(e) => handleSubmitReview({product_id: currentProductId, rating, characteristics, recommend, summary, body, name, email, photos})}>
+      <button id='submitButton' onClick={(e) => {
+        handleSubmitReview({product_id: currentProductId, rating, characteristics, recommend, summary, body, name, email, photos})
+        handleClose();
+      }}>
           Submit
       </button>
     </div>
