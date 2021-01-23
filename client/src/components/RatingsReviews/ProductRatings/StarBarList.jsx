@@ -11,8 +11,14 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter, handl
     totalReviews += starArr[5 - i];
   }
 
-  const isFilterMoreThanOne = (ratingsFilter) => {
+  const isMoreThanOneFilter = (ratingsFilter) => {
     let count = 0;
+    // Object.values(ratingsFilter).forEach(ratingValue => {
+    //   if (ratingValue === true) {
+    //     count++;
+    //   }
+    // });
+
     for (let star in ratingsFilter) {
       if (ratingsFilter[star] === true) {
         count++;
@@ -32,7 +38,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter, handl
         );
       })}
       <div id='resetFilterButtonContainer'>
-        {isFilterMoreThanOne(ratingsFilter) ? (
+        {isMoreThanOneFilter(ratingsFilter) ? (
           <button id='resetFilterButton' onClick={handleResetRatingsFilter}>
             Reset Filter
           </button>
