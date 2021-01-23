@@ -10,9 +10,10 @@ import decreaseIndex from './../../actions/relatedItems/decreaseIndex.js';
 import increaseYourOutfitIndex from './../../actions/relatedItems/increaseIndexYourOutfit.js';
 import decreaseYourOutfitIndex from './../../actions/relatedItems/decreaseIndexYourOutfit.js';
 import addPreviewItem from './../../actions/relatedItems/addPreviewItem.js';
+import addTimeSaverList from './../../actions/relatedItems/addTimeSaverList.js';
+import getRelatedItemIds from './../../actions/relatedItems/getRelatedItemIds.js';
 
 const mapStateToProps = ( state ) => ({
-  // productList: state.productList,
   currentProduct: state.currentProduct,
   relatedProductList: state.relatedProductList,
   relatedItemsListDetail: state.relatedItemsListDetail,
@@ -22,17 +23,20 @@ const mapStateToProps = ( state ) => ({
   // previewItem: state.previewItem,
   carouselRenderIndex: state.carouselRenderIndex,
   cYourOutfitRenderIndex: state.cYourOutfitRenderIndex,
-  productAvgStarRating: state.productAvgStarRating
+  productAvgStarRating: state.productAvgStarRating,
+  saveSpaceList: state.saveSpaceList,
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
   handleRelatedItemClick: ( productId ) => dispatch( addRelatedItems( productId ) ),
-  handleItemToCurrentItemClick: ( currentProductId ) => dispatch( currentProduct( currentProductId ) ),
+  handleItemToCurrentItemClick: ( currentProductId, updatedNeedArr, wholeData ) => {
+    dispatch( currentProduct( currentProductId ) );
+    dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData) );
+  },
   handleStarModalClick: ( value, productId ) => {
     dispatch( comparingModal( value === false ) );
     dispatch( addPreviewItem( productId ) );
   },
-  // handleStarModalClick: ( value, productId ) => console.log('handleStarModalClick_container', value, productId ),
   handleAddYourOutfitClick: ( productId ) => dispatch( addYourOutfitList( productId ) ),
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
   handleCarouselLeftClick: () => dispatch( increaseIndex( true ) ),
