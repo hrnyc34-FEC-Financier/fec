@@ -7,7 +7,7 @@ const StarBar = ({ star, starBarValue, filtered, handleRatingsFilter }) => {
   }
   return (
     <div id='starBarContainer'
-      onClick={() => { starBarValue > 0 ? handleRatingsFilter(star) : null }}
+      onClick={() => { starBarValue > 0 ? handleRatingsFilter(star) : null; }}
       style={filtered === true ? {backgroundColor: 'rgba(38, 223, 240, 0.712)'} : {backgroundColor: 'transparent'}}
     >
       <div id='starText'>{`${star} stars`}</div>

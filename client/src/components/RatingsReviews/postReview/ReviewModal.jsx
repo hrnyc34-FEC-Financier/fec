@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { characteristicsMap, createCharacteristicsArray } from '../ProductRatings/characteristicsHelpers.js';
 import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
-//import './reviewModal.css';
+//import '../review/Styles/reviewModal.css';
 
 const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
   //local state for reviewBodyWordCount, must be over 50 to be able to submit
 
-  const characteristicsMap = createCharacteristicsArray(productCharacteristics);
+  const characteristicsArray = createCharacteristicsArray(productCharacteristics, 'id');
+  // const characteristicsArray = createCharacteristicsArray(productCharacteristics);
   //replacing index 1 of characteristic property from rating to characteristic id
-  for (let characteristic of characteristicsMap) {
-    characteristic.characteristic[1] = (productCharacteristics[characteristic.characteristic[0]].id);
-  }
+  // for (let characteristic of characteristicsArray) {
+  //   characteristic.characteristic[1] = (productCharacteristics[characteristic.characteristic[0]].id);
+  // }
 
   //handleState
   const [rating, setRating] = useState(0);
@@ -26,14 +27,15 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
   const handleCharacteristicsChange = (e) => {
     setCharacteristics({...characteristics, [e.target.name]: Number(e.target.value)});
   };
+
   const handleRecommendChange = (e) => {
     if (e.target.value === 'true') {
       setRecommend(true);
     } else if (e.target.value === 'false') {
       setRecommend(false);
     }
-
   }
+
   const handleTextChange = (e) => {
     if (e.target.id === 'reviewSummary') {
       setSummary(e.target.value);
@@ -60,8 +62,6 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
     }
   }
 
-  // console.log(rating);
-
   return (
     <div id='reviewModal'>
       <h1>Write Your Review</h1>
@@ -79,7 +79,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
         </div>
 
         <div id='radioFormContainer'>
-          {characteristicsMap.map((characteristic, i) => {
+          {characteristicsArray.map((characteristic, i) => {
             return <CharacteristicsRadio key={`characteristicRadio${i}`} characteristic={characteristic} handleCharacteristicsChange={handleCharacteristicsChange} />;
           })}
         </div>

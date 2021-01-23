@@ -20,10 +20,9 @@ import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
 //productDetails: End
-//RatingsReviews: reviewsList
+//RatingsReviews: Start
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
-//RatingsReviews: productRatings
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
 import productRecommendedReducer from './RatingsReviewsReducers/productRatingsReducers/productRecommendedReducer.js';
 import productCharacteristicsReducer from './RatingsReviewsReducers/productRatingsReducers/productCharacteristicsReducer.js';
@@ -56,10 +55,9 @@ const rootReducer = combineReducers({
   currentImageIndex: changeImageIndexReducer,
   currentQuantityRange: changeQuantityRangeReducer,
   //productDetails: End
-  //RatingsReviews: reviewsList
+  //RatingsReviews: Start
   reviewsList: reviewsListReducer,
   reviewSort: reviewSortReducer,
-  //RatingsReviews: productRatings
   productRatings: productRatingsReducer,
   productRecommended: productRecommendedReducer,
   productCharacteristics: productCharacteristicsReducer,

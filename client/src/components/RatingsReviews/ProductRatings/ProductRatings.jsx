@@ -6,7 +6,6 @@ import CharacteristicsList from './CharacteristicsList.jsx';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
-//import '../reviewStyles/reviewsList.css';
 
 const ProductRatings = ({ currentProductId, productRatings, productRecommended, productCharacteristics, productAvgRating, productAvgStarRating, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter}) => {
 
