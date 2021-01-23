@@ -18,7 +18,10 @@ const RelatedItems = ({
   handleYourOutfitRightClick,
   cYourOutfitRenderIndex,
   productAvgStarRating,
+  saveSpaceList,
+  relatedProductList
 })=>{
+  console.log('relatedProductCarouselList,:', relatedProductCarouselList)
   // console.log('relatedProductCarouselList:', relatedProductCarouselList);
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
@@ -36,7 +39,7 @@ const RelatedItems = ({
 
   const relatedItems = Array.isArray(mappingList) &&
   mappingList.map((item) => {
-    let imageURL = item.styles[0].photos[0].url;
+    let imageURL = !item.styles[0].photos[0].url ? null : item.styles[0].photos[0].url;
     if (imageURL !== null) {
       return <RItemList
         key={'RI' + item.id}
@@ -46,7 +49,9 @@ const RelatedItems = ({
         handleStarModalClick={handleStarModalClick}
         relatedProductStarModal={relatedProductStarModal}
         image={imageURL}
-        productAvgStarRating={productAvgStarRating} />;
+        relatedProductList={relatedProductList}
+        productAvgStarRating={productAvgStarRating}
+        saveSpaceList={saveSpaceList} />;
     }
   });
 
@@ -59,9 +64,11 @@ const RelatedItems = ({
         product={item}
         currentProduct={currentProduct}
         image={imageURL}
+        relatedProductList={relatedProductList}
         handleAddYourOutfitClick={handleAddYourOutfitClick}
         handleItemToCurrentItemClick={handleItemToCurrentItemClick}
-        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick} />;
+        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick}
+        saveSpaceList={saveSpaceList} />;
     }
   });
 
