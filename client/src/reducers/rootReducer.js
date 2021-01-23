@@ -8,7 +8,7 @@ import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
 import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
 import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex.js';
 import previewItemReducer from './relatedItems/previewItem.js';
-import saveSpaceListReducer from './relatedItems/saveSpaceList.js';
+import saveTimeListReducer from './relatedItems/saveTimeList.js';
 
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
@@ -45,7 +45,7 @@ const rootReducer = combineReducers({
   carouselRenderIndex: carouselRenderIndexReducer,
   cYourOutfitRenderIndex: cYourOutfitRenderIndexReducer,
   previewItem: previewItemReducer,
-  saveSpaceList: saveSpaceListReducer,
+  saveTimeList: saveTimeListReducer,
   //productDetails: Start
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,

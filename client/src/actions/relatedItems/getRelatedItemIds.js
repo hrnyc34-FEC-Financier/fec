@@ -1,8 +1,11 @@
+
+// getting product id from Overview whenever current product is changed to update related item list
+// GET RID OF duplicated items from list
+
 import searchEngine from '../../lib/searchEngine.js';
 import relatedItemList from './relatedItemList.js';
 import addTimeSaverList from './addTimeSaverList.js';
 
-// currentProductId, updatedNeedArr, wholeData, rList
 
 const getRelatedItemIds = ( productId, updatedNeedArr, wholeData, relatedList ) => {
 
@@ -12,7 +15,6 @@ const getRelatedItemIds = ( productId, updatedNeedArr, wholeData, relatedList ) 
       .then(res=>{
         dispatch( relatedItemList( res.data ) );
         if (updatedNeedArr) {
-          console.log('getting related Items', res.data);
           dispatch( addTimeSaverList ( updatedNeedArr, wholeData, res.data ) );
         }
       })

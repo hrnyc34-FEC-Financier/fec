@@ -11,7 +11,7 @@ const RItemList = ({
   relatedProductStarModal,
   handleItemToCurrentItemClick,
   handleStarModalClick,
-  saveSpaceList,
+  saveTimeList,
   relatedProductList
 })=>{
 
@@ -20,7 +20,7 @@ const RItemList = ({
 
   let comparingList = [];
   let updatedNeedList = [];
-  let oldList = Object.keys(saveSpaceList);
+  let oldList = Object.keys(saveTimeList);
 
   if ( oldList.length !== 0 ) {
     for ( let i = 0; i < oldList.length; i++ ) {
@@ -74,8 +74,7 @@ const RItemList = ({
       <div className="carousel_item_image">
         <img src={ image }
           alt='PRODUCT defaultIMG'
-          width="150"
-          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveSpaceList, relatedProductList) } /><br /></div>
+          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveTimeList, relatedProductList) } /><br /></div>
 
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>

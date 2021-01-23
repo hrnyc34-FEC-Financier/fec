@@ -10,12 +10,11 @@ const addRelatedItems = (productId) => {
   return (dispatch) => {
 
     return searchEngine.get(`products/${productId}/related`)
-      //relatedItemList from '/products/:product_id/related'
+
       .then(res=> {
         return dispatch(relatedItemList( res.data ));
       })
 
-      //relatedItemsListDetail from '/products/:product_id'
       .then(res=> {
         let list = [];
         let carouselList = res.relatedProductList.map( itemId =>{
@@ -28,12 +27,12 @@ const addRelatedItems = (productId) => {
         });
         return Promise.all(carouselList)
           .then(()=>{
+
             console.log("!!!!! Adding data from Full Cycle !!!!!");
             return dispatch( relatedItemsListDetail( list ) );
           });
       })
 
-      //relatedItemCarouselList by adding more detail _'/products/:product_id/styles'
       .then(res=>{
         let list = [];
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{

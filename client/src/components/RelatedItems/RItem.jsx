@@ -4,25 +4,23 @@ import YourOutFitList from './YourOutFitList.jsx';
 
 const RelatedItems = ({
   currentProduct,
-  relatedProductCarouselList,
+  saveTimeList,
+  relatedProductList,
   relatedProductStarModal,
+  relatedProductCarouselList,
   yourOutfitList,
+  carouselRenderIndex,
+  cYourOutfitRenderIndex,
+  productAvgStarRating,
   handleAddYourOutfitClick,
   handleDeleteYourOutfitClick,
   handleItemToCurrentItemClick,
   handleStarModalClick,
   handleCarouselLeftClick,
   handleCarouselRightClick,
-  carouselRenderIndex,
   handleYourOutfitLeftClick,
   handleYourOutfitRightClick,
-  cYourOutfitRenderIndex,
-  productAvgStarRating,
-  saveSpaceList,
-  relatedProductList
 })=>{
-  console.log('relatedProductCarouselList,:', relatedProductCarouselList)
-  // console.log('relatedProductCarouselList:', relatedProductCarouselList);
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
@@ -44,14 +42,13 @@ const RelatedItems = ({
       return <RItemList
         key={'RI' + item.id}
         product={item}
-        currentProduct={currentProduct}
         handleItemToCurrentItemClick={handleItemToCurrentItemClick}
+        currentProduct={currentProduct}
         handleStarModalClick={handleStarModalClick}
         relatedProductStarModal={relatedProductStarModal}
         image={imageURL}
         relatedProductList={relatedProductList}
-        productAvgStarRating={productAvgStarRating}
-        saveSpaceList={saveSpaceList} />;
+        saveTimeList={saveTimeList} />;
     }
   });
 
@@ -61,14 +58,15 @@ const RelatedItems = ({
     if ( imageURL !== null ) {
       return <YourOutFitList
         key={'YO' + item.id}
-        product={item}
+        handleItemToCurrentItemClick={handleItemToCurrentItemClick}
         currentProduct={currentProduct}
+        product={item}
         image={imageURL}
+        saveTimeList={saveTimeList}
+        productAvgStarRating={productAvgStarRating}
         relatedProductList={relatedProductList}
         handleAddYourOutfitClick={handleAddYourOutfitClick}
-        handleItemToCurrentItemClick={handleItemToCurrentItemClick}
-        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick}
-        saveSpaceList={saveSpaceList} />;
+        handleDeleteYourOutfitClick={handleDeleteYourOutfitClick}/>;
     }
   });
 

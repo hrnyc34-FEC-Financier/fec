@@ -1,3 +1,6 @@
+
+// if utilizing current product info, i can remove this file__update Needed!!
+
 import store from '../../store/store.js';
 import searchEngine from '../../lib/searchEngine.js';
 import addYourOutfit from './yourOutfitListAdd.js';
@@ -18,7 +21,6 @@ const addYourOutfitList = ( productId ) => {
                 const productAvgRating = calculateProductAvgRating(data.ratings);
                 const starRating = calculateProductAvgStarRating(productAvgRating);
                 item.avgStarRating = starRating;
-                console.log('yourOutfit starRating:', starRating)
               })
               .catch(err=>console.log('adding starRating to related items list  failed :', err));
 

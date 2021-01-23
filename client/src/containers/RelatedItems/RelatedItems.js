@@ -14,24 +14,26 @@ import addTimeSaverList from './../../actions/relatedItems/addTimeSaverList.js';
 import getRelatedItemIds from './../../actions/relatedItems/getRelatedItemIds.js';
 
 const mapStateToProps = ( state ) => ({
+  // relatedItemsListDetail: state.relatedItemsListDetail,
+  // previewItem: state.previewItem,
   currentProduct: state.currentProduct,
   relatedProductList: state.relatedProductList,
-  relatedItemsListDetail: state.relatedItemsListDetail,
   relatedProductCarouselList: state.relatedProductCarouselList,
   relatedProductStarModal: state.relatedProductStarModal,
   yourOutfitList: state.yourOutfitList,
-  // previewItem: state.previewItem,
   carouselRenderIndex: state.carouselRenderIndex,
   cYourOutfitRenderIndex: state.cYourOutfitRenderIndex,
   productAvgStarRating: state.productAvgStarRating,
-  saveSpaceList: state.saveSpaceList,
+  saveTimeList: state.saveTimeList,
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
   handleRelatedItemClick: ( productId ) => dispatch( addRelatedItems( productId ) ),
   handleItemToCurrentItemClick: ( currentProductId, updatedNeedArr, wholeData ) => {
     dispatch( currentProduct( currentProductId ) );
-    dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData) );
+    updatedNeedArr === null ?
+      dispatch( getRelatedItemIds( currentProductId, null, wholeData) ) :
+      dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData) );
   },
   handleStarModalClick: ( value, productId ) => {
     dispatch( comparingModal( value === false ) );

@@ -1,6 +1,6 @@
 import Redux from 'redux';
 
-const saveSpaceListReducer = (state = {}, action) => {
+const saveTimeListReducer = (state = {}, action) => {
   switch ( action.type ) {
   case 'MAKE_TOTAL_CAROUSEL_LIST':
     var newState = state;
@@ -12,4 +12,4 @@ const saveSpaceListReducer = (state = {}, action) => {
   }
 };
 
-export default saveSpaceListReducer;
+export default saveTimeListReducer;

@@ -8,7 +8,7 @@ import { calculateProductAvgRating, calculateProductAvgStarRating } from '../Rat
 
 
 const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
-  // console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList, wholeData, rList );
+
   return (dispatch) => {
 
     let comparingList = [];
@@ -29,8 +29,6 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
         }
       }
     }
-
-    console.log('updatedNeedList :', updatedNeedList );
 
     let list = [];
     let carouselList = updatedNeedList.map( itemId =>{
@@ -66,6 +64,7 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
                 .catch(err=>console.log('adding starRating to related items list  failed :', err));
 
               list.push( overall );
+              console.log("!!!!! Adding only addtional data from addTimeSaver !!!!!");
             })
             .catch(err => console.log('adding style to related items list  failed :', err));
         });

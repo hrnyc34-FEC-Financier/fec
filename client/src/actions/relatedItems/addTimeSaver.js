@@ -7,7 +7,7 @@ import totalCarouselList from './totalCarouselList.js';
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
 const addTimeSaver = ( notSavedItemList ) => {
-  console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList );
+  console.log('!!! i am using it?????????? !!!', notSavedItemList );
 
   return (dispatch) => {
 
@@ -24,7 +24,7 @@ const addTimeSaver = ( notSavedItemList ) => {
       .then(()=>{
         return dispatch( relatedItemsListDetail( list ) );
       })
-      //relatedItemCarouselList by adding more detail _'/products/:product_id/styles'
+
       .then(res=>{
         let list = [];
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
