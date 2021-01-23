@@ -10,7 +10,6 @@ import ReactCSSTransitionGroup from 'react-transition-group';
 const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, currentProduct}) => {
 
   const [open, setOpen] = useState(false);
-  // const [modalValue, setModal] = useState('');
   const [questionsQuantity, setQsQuant] = useState(2);
   const [searchTerm, setSearch] = useState('');
 
@@ -23,16 +22,6 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
     setOpen(false);
   };
 
-  // const setModalAnswer = () => {
-  //   setModal('answer');
-  //   setOpen(true);
-  // }
-
-  // const setModalQuestion = () => {
-  //   setModal('question');
-  //   setOpen(true);
-  // }
-
   const handleMoreQs = () => {
     if (questionList.length > questionsQuantity) {
       setQsQuant(questionsQuantity +2);
@@ -43,14 +32,6 @@ const QuestionModule2 = ({currentProductId, questionList, showAddQuestionModal, 
     setSearch(e.target.value)
   };
 
-  // let currentModal;
-  // if (modalValue === 'question') {
-  //   currentModal = <AddQuestionForm productName={currentProduct.name} close={handleClose}/>
-  // } else if (modalValue === 'answer') {
-  //   currentModal = <AddAnswerForm productName={currentProduct.name} close={handleClose}/>
-  // }
-
-  // console.log("searching for:", searchTerm);
 
   let showMoreQsButton = <button onClick={handleMoreQs} className="endButton">MORE ANSWERED QUESTIONS</button>;
 

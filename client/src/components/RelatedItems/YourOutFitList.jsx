@@ -7,7 +7,9 @@ let YourOutFitList = ({
   currentProduct,
   handleAddYourOutfitClick,
   handleDeleteYourOutfitClick,
-  handleItemToCurrentItemClick
+  handleItemToCurrentItemClick,
+  saveSpaceList,
+  relatedProductList
  })=>{
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-//import '../reviewStyles/characteristic.css';
+import '../reviewStyles/characteristic.css';
 
 const CharacteristicBar = ({ characteristicData }) => {
 
