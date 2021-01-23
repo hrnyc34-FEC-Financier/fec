@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+//Related products
 import relatedItemListReducer from './relatedItems/relatedItemList.js';
 import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
 import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
@@ -10,6 +11,7 @@ import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex
 import previewItemReducer from './relatedItems/previewItem.js';
 import saveTimeListReducer from './relatedItems/saveTimeList.js';
 
+//RroductDetails
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -20,7 +22,7 @@ import changeGalleryReducer from './productDetails/thumbGallery.js';
 import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
-//productDetails: End
+
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
@@ -31,12 +33,13 @@ import productCharacteristicsReducer from './RatingsReviewsReducers/productRatin
 import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgRatingReducer.js';
 import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
-//RatingsReviews: End
+
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
 import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js';
 
 const rootReducer = combineReducers({
+  //Related products
   relatedProductList: relatedItemListReducer,
   relatedProductCarouselList: relatedItemCarouselListReducer,
   relatedProductStarModal: relatedItemStarModalReducer,
@@ -46,7 +49,8 @@ const rootReducer = combineReducers({
   cYourOutfitRenderIndex: cYourOutfitRenderIndexReducer,
   previewItem: previewItemReducer,
   saveTimeList: saveTimeListReducer,
-  //productDetails: Start
+
+  //productDetails
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
@@ -57,7 +61,7 @@ const rootReducer = combineReducers({
   currentSize: changeSizeReducer,
   currentImageIndex: changeImageIndexReducer,
   currentQuantityRange: changeQuantityRangeReducer,
-  //productDetails: End
+
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
   reviewSort: reviewSortReducer,
@@ -68,7 +72,8 @@ const rootReducer = combineReducers({
   productAvgRating: productAvgRatingReducer,
   productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
-  //RatingsReviews: End
+
+  //QA
   questionList: changeQuestionListReducer,
 });
 

@@ -4,6 +4,8 @@ import YourOutFitList from './YourOutFitList.jsx';
 
 const RelatedItems = ({
   currentProduct,
+  currentStyleList,
+  productAvgStarRating,
   saveTimeList,
   relatedProductList,
   relatedProductStarModal,
@@ -11,7 +13,6 @@ const RelatedItems = ({
   yourOutfitList,
   carouselRenderIndex,
   cYourOutfitRenderIndex,
-  productAvgStarRating,
   handleAddYourOutfitClick,
   handleDeleteYourOutfitClick,
   handleItemToCurrentItemClick,
@@ -132,7 +133,7 @@ const RelatedItems = ({
             { cYourOutfitRenderIndex === 0 ? null : yourOutfitLeftArrow }</div>
           <div className='placeHolderP'><button
             className='placeHolder'
-            onClick={ ()=> handleAddYourOutfitClick( currentProduct.id ) }>
+            onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }>
             {imgAddIcon}<br /><br />
             ADD TO OUTFIT
           </button></div>

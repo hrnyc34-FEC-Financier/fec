@@ -6,29 +6,14 @@ import searchEngine from '../../lib/searchEngine.js';
 import addYourOutfit from './yourOutfitListAdd.js';
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
-const addYourOutfitList = ( productId ) => {
+const addYourOutfitList = ( currentItem, style, starRating ) => {
 
   return (dispatch) => {
-    return searchEngine.get(`products/${productId}`)
-      .then(res => {
-        let item = res.data;
-        return searchEngine.get(`products/${item.id}/styles`)
-          .then(res => {
-            item.styles = res.data.results;
+    let item = currentItem;
+    item.styles = style;
+    item.avgStarRating = starRating;
 
-            searchEngine.get('reviews/meta', { product_id : productId })
-              .then(({ data }) => {
-                const productAvgRating = calculateProductAvgRating(data.ratings);
-                const starRating = calculateProductAvgStarRating(productAvgRating);
-                item.avgStarRating = starRating;
-              })
-              .catch(err=>console.log('adding starRating to related items list  failed :', err));
-
-
-            dispatch( addYourOutfit( item ) );
-          });
-      })
-      .catch(err => console.log('adding your outfit failed', err));
+    dispatch( addYourOutfit( item ) );
   };
 };
 

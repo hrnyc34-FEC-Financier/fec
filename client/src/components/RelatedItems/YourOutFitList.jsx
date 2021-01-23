@@ -12,6 +12,22 @@ let YourOutFitList = ({
   relatedProductList
 })=>{
 
+  let comparingList = [];
+  let updatedNeedList = [];
+  let oldList = Object.keys(saveTimeList);
+
+  if ( oldList.length !== 0 ) {
+    for ( let i = 0; i < oldList.length; i++ ) {
+      comparingList.push(Number.parseInt( oldList[i] ));
+    }
+    for ( let i = 0; i < relatedProductList.length; i++ ) {
+      var checkingId = Number.parseInt( relatedProductList[i] );
+      if ( !comparingList.includes(checkingId) ) {
+        updatedNeedList.push(checkingId);
+      }
+    }
+  }
+
   let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
 
   let oriPrice =
@@ -40,7 +56,7 @@ let YourOutFitList = ({
       <div className="carousel_item_image">
         <img
           src={image} alt='PRODUCT defaultIMG'
-          onClick={ ()=> handleItemToCurrentItemClick( product.id, null, saveTimeList, relatedProductList) } /><br />
+          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveTimeList ) } /><br />
       </div>
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>

@@ -15,9 +15,6 @@ const RItemList = ({
   relatedProductList
 })=>{
 
-  // console.log('saveSpaceList:', saveSpaceList);
-  // console.log('relatedProductList:', relatedProductList);
-
   let comparingList = [];
   let updatedNeedList = [];
   let oldList = Object.keys(saveTimeList);
@@ -67,14 +64,12 @@ const RItemList = ({
     starRatedColor='#fb9b1c'
     starEmptyColor='#767676'/>;
 
-  // console.log('updatedNeedList:', updatedNeedList);
-
   return (
     <div className='carousel_item' >
       <div className="carousel_item_image">
         <img src={ image }
           alt='PRODUCT defaultIMG'
-          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveTimeList, relatedProductList) } /><br /></div>
+          onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveTimeList ) } /><br /></div>
 
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>

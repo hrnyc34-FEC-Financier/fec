@@ -7,7 +7,7 @@ import totalCarouselList from './totalCarouselList.js';
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
 
-const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
+const addTimeSaverList = ( wholeData, rList ) => {
 
   return (dispatch) => {
 
@@ -47,7 +47,6 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
 
       .then(res=>{
         let list = [];
-        console.log('list:', list);
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)

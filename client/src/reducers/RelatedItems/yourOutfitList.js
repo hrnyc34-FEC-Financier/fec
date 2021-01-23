@@ -1,5 +1,6 @@
 const yourOutfitListReducer = (state = [], action) => {
   switch ( action.type ) {
+
   case 'ADD_YOUR_OUTFIT_LIST':
     var addId = Number.parseInt(action.addingItem.id);
     var newState = state.slice;
@@ -15,6 +16,7 @@ const yourOutfitListReducer = (state = [], action) => {
       }
     }
     return newState;
+
   case 'DELETE_YOUR_OUTFIT_LIST':
     var deleteId = Number.parseInt(action.deletingItemId);
     var deleteState = state.slice();

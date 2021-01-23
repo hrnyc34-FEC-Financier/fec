@@ -1,3 +1,6 @@
+
+// tried to get info from saveTimeList
+
 import store from '../../store/store.js';
 import searchEngine from '../../lib/searchEngine.js';
 import previewItemAdd from './previewItemAdd.js';
