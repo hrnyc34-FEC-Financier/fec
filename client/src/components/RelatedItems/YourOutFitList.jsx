@@ -4,8 +4,16 @@ import StarRatings from 'react-star-ratings';
 let YourOutFitList = ({
   product,
   image,
+  currentProduct,
   handleAddYourOutfitClick,
-  handleDeleteYourOutfitClick })=>{
+  handleDeleteYourOutfitClick,
+  handleItemToCurrentItemClick
+ })=>{
+
+
+  let starRating = product.avgStarRating !== undefined ? product.avgStarRating : 3.5;
+  // console.log('yourOutfitItemItem:', product);
+  console.log('avgStarRating:', product.avgStarRating);
 
   let oriPrice =
   <div className='carousel_item_oriPrice'> &#36; {product.default_price} </div>;
@@ -16,7 +24,7 @@ let YourOutFitList = ({
 
   let reviewStars =
   <StarRatings
-    rating={3}
+    rating={starRating}
     starDimension='15px'
     starSpacing='0px'
     starRatedColor='#fb9b1c'
@@ -25,7 +33,7 @@ let YourOutFitList = ({
   return (
     <div className='carousel_item'>
       <div className="carousel_item_image">
-        <img src={image} alt='PRODUCT defaultIMG' width="150" /><br />
+        <img src={image} alt='PRODUCT defaultIMG' width="150" onClick={()=>handleItemToCurrentItemClick( currentProduct.id )} /><br />
       </div>
       <div className="carousel_item_body">
         <span className='carousel_item_smallText'>

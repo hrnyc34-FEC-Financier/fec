@@ -4,7 +4,7 @@ import ReviewTile from './ReviewTile.jsx';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
-import '../reviewStyles/reviewsList.css';
+//import '../reviewStyles/reviewsList.css';
 
 const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 
@@ -69,7 +69,7 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
       {reviewsList.length === 0 ? null : (
         <div className='reviewsListContainer'>
           <div className='reviewsListHeaderContainer'>
-            <span className='reviewsListHeaderText'>{`${filteredReviewsList.length > 0 ? filteredReviewsList.length : reviewsList.length} review${filteredReviewsList.length > 1 ? 's' : ''}, sorted by`}</span>
+            <span className='reviewsListHeaderText'>{`${filteredReviewsList.length > 0 ? filteredReviewsList.length : reviewsList.length} review${filteredReviewsList.length > 1 || reviewsList.length > 1 ? 's' : ''}, sorted by`}</span>
             <span>
               <SortOptions currentProductId={currentProductId} reviewSort={reviewSort} handleSortSelect={handleSortSelect} />
             </span>
@@ -78,14 +78,6 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
             {renderedReviews.map(reviewInfo => {
               return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview} />;
             })}
-            {/* {filteredReviewsList.length > 0 ? (
-              filteredReviewsList.map(reviewInfo => {
-                return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview} />;
-              })) : (
-              reviewsList.map(reviewInfo => {
-                return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview}/>;
-              })
-            )} */}
           </div>
           {showMoreReviewsButton}
         </div>

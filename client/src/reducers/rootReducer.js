@@ -7,6 +7,7 @@ import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js'
 import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
 import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
 import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex.js';
+import previewItemReducer from './relatedItems/previewItem.js';
 
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
@@ -19,10 +20,9 @@ import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
 //productDetails: End
-//RatingsReviews: reviewsList
+//RatingsReviews: Start
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
-//RatingsReviews: productRatings
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
 import productRecommendedReducer from './RatingsReviewsReducers/productRatingsReducers/productRecommendedReducer.js';
 import productCharacteristicsReducer from './RatingsReviewsReducers/productRatingsReducers/productCharacteristicsReducer.js';
@@ -42,6 +42,7 @@ const rootReducer = combineReducers({
   yourOutfitList: yourOutfitListReducer,
   carouselRenderIndex: carouselRenderIndexReducer,
   cYourOutfitRenderIndex: cYourOutfitRenderIndexReducer,
+  previewItem: previewItemReducer,
   //productDetails: Start
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
@@ -54,10 +55,9 @@ const rootReducer = combineReducers({
   currentImageIndex: changeImageIndexReducer,
   currentQuantityRange: changeQuantityRangeReducer,
   //productDetails: End
-  //RatingsReviews: reviewsList
+  //RatingsReviews: Start
   reviewsList: reviewsListReducer,
   reviewSort: reviewSortReducer,
-  //RatingsReviews: productRatings
   productRatings: productRatingsReducer,
   productRecommended: productRecommendedReducer,
   productCharacteristics: productCharacteristicsReducer,

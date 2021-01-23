@@ -25,6 +25,7 @@ const ImageGallery = ({
     const newIndex = currentImageIndex + direction;
     selectImage(thumbGallery[newIndex].url, newIndex);
   };
+
   return (
     <div className='image-gallery'>
       <div className='current-image-container'>
