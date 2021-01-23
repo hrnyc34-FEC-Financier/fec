@@ -53,14 +53,21 @@ const RItemList = ({
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{ disCountPrice }</>;
 
-  let reviewStars = product.avgStarRating !== 0 || undefined ?
+  console.log('product.avgStarRating:', product.avgStarRating, !product.avgStarRating);
+
+  let reviewStars = product.avgStarRating === 0 || !product.avgStarRating ? null :
     <StarRatings
       rating={ product.avgStarRating }
       starDimension='15px'
       starSpacing='0px'
       starRatedColor='#fb9b1c'
-      starEmptyColor='#767676'/>
-    : null;
+      starEmptyColor='#767676'/>;
+
+
+  let modalIcon =
+    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path fillRule="evenodd" d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
+    </svg>;
 
   return (
     <div className='carousel_item' >
@@ -70,23 +77,21 @@ const RItemList = ({
           onClick={ ()=> handleItemToCurrentItemClick( product.id, updatedNeedList, saveTimeList ) } /><br /></div>
 
       <div className="carousel_item_body">
-        <span className='carousel_item_smallText'>
-          { product.category } </span> <br />
-        <div className='carousel_item_title'>
-          { product.name }
-        </div><br />
-        {price}
-        <br />
-        { reviewStars }<br />
-        <button
-          className='modalButton'
-          onClick={ ()=> handleStarModalClick( relatedProductStarModal, product.id, saveTimeList ) }>
-          <svg
-            width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path fillRule="evenodd" d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
-          </svg>
-        </button>
-        { modalRender }
+        <div>
+          <span className='carousel_item_smallText'>
+            { product.category } </span> <br />
+          <div className='carousel_item_title'>
+            { product.name }
+          </div><br />
+          {price}<br />
+          { reviewStars }<br />
+          <button
+            className='modalButton'
+            onClick={ ()=> handleStarModalClick( relatedProductStarModal, product.id, saveTimeList ) }>
+            {modalIcon}
+          </button>
+          { modalRender }
+        </div>
       </div>
     </div>
 
