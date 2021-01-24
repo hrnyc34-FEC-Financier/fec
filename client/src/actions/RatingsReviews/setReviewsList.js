@@ -3,7 +3,7 @@ import changeReviewsList from './reviewsList/reviewsList.js';
 
 const setReviews = (product_id) => {
   return (dispatch) => {
-    return searchAPI.get('reviews', {product_id})
+    return searchAPI.get('reviews', {product_id, count: 25})
       .then(({ data }) => {
         dispatch(changeReviewsList(data.results));
       })
@@ -12,3 +12,10 @@ const setReviews = (product_id) => {
 };
 
 export default setReviews;
+
+// API Query Parameters
+// parameter       type     description
+// page            int      default 1. Selects the page of results to return
+// count           int      default 5. Specifies how many results per page to return
+// sort            text     changes sort order based on 'newest', 'helpful', 'relevant'
+// product_id      int      specifies the product for which to retrieve reviews
