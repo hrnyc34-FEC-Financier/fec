@@ -21,7 +21,7 @@ const addRelatedItems = (productId) => {
 
           return searchEngine.get(`products/${itemId}`)
             .then(res => {
-              var productInfo = res.data;
+              let productInfo = res.data;
               list.push( productInfo );
 
               // searchEngine.get('reviews/meta', { product_id: productId })

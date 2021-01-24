@@ -1898,7 +1898,7 @@ textarea, input[type='text'] {
 
 .carousel_item:hover {
   cursor: pointer;
-  border: 1px solid rgb(67, 67, 67);
+  border: 1px solid rgba(182, 182, 182, 0.534);
 }
 
 .carousel_item_image > img {
@@ -1925,7 +1925,7 @@ textarea, input[type='text'] {
   z-index: 3;
   border : none;
   background-color: transparent;
-  color:rgb(91, 91, 91);
+  color: rgb(130, 130, 130);
 }
 
 .addButton{
@@ -1933,7 +1933,7 @@ textarea, input[type='text'] {
   z-index: 2;
   border : none;
   background-color: transparent;
-  color:rgb(91, 91, 91);
+  color: rgb(130, 130, 130);
   font-weight: bold;
 }
 .deleteButton{
@@ -1943,12 +1943,21 @@ textarea, input[type='text'] {
   z-index: 2;
   border : none;
   background-color: transparent;
-  color:rgb(211, 211, 211);
+  color: rgb(190, 190, 190);
 }
 
-.card-add:hover, .modalButton:hover, .addButton:hover, .deleteButton:hover, .carousel_prev:hover, .carousel_next:hover {
+.card-add:hover, .modalButton:hover, .addButton:hover, .deleteButton:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.card-add{
+ font-size: 20x !important;
+}
+
+.carousel_prev:hover, .carousel_next:hover {
+  cursor: pointer;
+  transform: scale(1.4);
 }
 
 .carousel_prev{
@@ -1981,8 +1990,19 @@ textarea, input[type='text'] {
 .placeHolderP{
   position: relative;
   display: flex;
+  align-items:center;
+  justify-content:center;
   margin-right: 8px;
+  overflow: hidden;
   box-shadow: 3px 2px 20px 0px #d2d2d269;
+}
+
+.placeHolderP > img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+  z-index: 2;
 }
 
 .placeHolder {
@@ -1992,6 +2012,7 @@ textarea, input[type='text'] {
   transform: translate(-50%, -50%);
   border : none;
   background-color: transparent;
+  z-index: 3;
 }
 
 .carousel_item_title{
@@ -2046,7 +2067,6 @@ textarea, input[type='text'] {
   font-size: 14px;
 }
 
-/****** all text files end here ******/
 .comparingPage{
   position: absolute;
   display: grid;

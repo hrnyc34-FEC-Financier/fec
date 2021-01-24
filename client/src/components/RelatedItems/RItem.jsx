@@ -4,6 +4,7 @@ import YourOutFitList from './YourOutFitList.jsx';
 
 const RelatedItems = ({
   currentProduct,
+  currentImage,
   currentStyleList,
   productAvgStarRating,
   saveTimeList,
@@ -83,12 +84,6 @@ const RelatedItems = ({
     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
   </svg>;
 
-  const imgAddIcon = <svg className = "card-add"
-    width="30" height="30" viewBox="0 0 16 16">
-    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-  </svg>;
-
   const relatedItemLeftArrow = <button className='carousel_prev' id='centerAlign' onClick={handleCarouselLeftClick } >
     {imgLeftArrow }
   </button>;
@@ -131,12 +126,14 @@ const RelatedItems = ({
         <div className ='YrOutfit_main_container'>
           <div className='centerAlignP'>
             { cYourOutfitRenderIndex === 0 ? null : yourOutfitLeftArrow }</div>
-          <div className='placeHolderP'><button
-            className='placeHolder'
-            onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }>
-            {imgAddIcon}<br /><br />
-            ADD TO OUTFIT
-          </button></div>
+          <div className='placeHolderP'>
+            <img src={ currentImage } />
+            <button
+              className='placeHolder'
+              onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }>
+              <br /><br />
+            ADD TO OUTFIT <b className = "card-add">  &nbsp; + </b>
+            </button></div>
 
           <div className ='YrOutfit_container'>
             { yourOutfitItems }

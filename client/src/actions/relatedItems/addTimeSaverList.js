@@ -18,12 +18,12 @@ const addTimeSaverList = ( wholeData, rList ) => {
 
     if ( oldList.length !== 0 ) {
       for ( let i = 0; i < oldList.length; i++ ) {
-        var newId = Number.parseInt( oldList[i] );
+        let newId = Number.parseInt( oldList[i] );
         comparingList.push(Number.parseInt( oldList[i] ));
         existingList.push(wholeData[newId]);
       }
       for ( let i = 0; i < rList.length; i++ ) {
-        var checkingId = Number.parseInt( rList[i] );
+        let checkingId = Number.parseInt( rList[i] );
         if ( !comparingList.includes(checkingId) ) {
           updatedNeedList.push(checkingId);
         }
@@ -74,9 +74,9 @@ const addTimeSaverList = ( wholeData, rList ) => {
             if (updatedNeedList.length) {
               dispatch( relatedItemCarouselList([...list, ...existingList]) );
             } else {
-              var result = [];
+              let result = [];
               for ( let i = 0; i < rList.length; i++ ) {
-                var dataId = Number.parseInt(rList[i]);
+                let dataId = Number.parseInt(rList[i]);
                 result.push( wholeData[dataId]);
               }
               dispatch( relatedItemCarouselList(result) );

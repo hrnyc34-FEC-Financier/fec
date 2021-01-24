@@ -1303,7 +1303,6 @@ button:hover {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: 0 0 0 50px;
-
 }
 
 #headerRight {
@@ -1947,7 +1946,7 @@ textarea {
   z-index: 3;
   border : none;
   background-color: transparent;
-  color:rgb(91, 91, 91);
+  color: rgb(130, 130, 130);
 }
 
 .addButton{
@@ -1955,7 +1954,7 @@ textarea {
   z-index: 2;
   border : none;
   background-color: transparent;
-  color:rgb(91, 91, 91);
+  color: rgb(253, 253, 253);
   font-weight: bold;
 }
 .deleteButton{
@@ -1965,12 +1964,21 @@ textarea {
   z-index: 2;
   border : none;
   background-color: transparent;
-  color:rgb(211, 211, 211);
+  color: rgb(190, 190, 190);
 }
 
-.card-add:hover, .modalButton:hover, .addButton:hover, .deleteButton:hover, .carousel_prev:hover, .carousel_next:hover {
+.card-add:hover, .modalButton:hover, .addButton:hover, .deleteButton:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.card-add{
+ font-size: 20x !important;
+}
+
+.carousel_prev:hover, .carousel_next:hover {
+  cursor: pointer;
+  transform: scale(1.4);
 }
 
 .carousel_prev{
@@ -2003,9 +2011,21 @@ textarea {
 .placeHolderP{
   position: relative;
   display: flex;
+  align-items:center;
+  justify-content:center;
   margin-right: 8px;
+  overflow: hidden;
   /* border: 1px solid #ccc; */
   border: solid 1px #ccc
+}
+
+.placeHolderP > img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0.3;
+  vertical-align: middle;
+  z-index: 2;
 }
 
 .placeHolder {
@@ -2015,6 +2035,7 @@ textarea {
   transform: translate(-50%, -50%);
   border : none;
   background-color: transparent;
+  z-index: 3;
 }
 
 .carousel_item_title{

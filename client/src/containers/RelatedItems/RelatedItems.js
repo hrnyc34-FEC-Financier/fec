@@ -13,6 +13,7 @@ import getRelatedItemIds from './../../actions/relatedItems/getRelatedItemIds.js
 
 const mapStateToProps = ( state ) => ({
   currentProduct: state.currentProduct,
+  currentImage: state.currentImage,
   currentStyleList: state.currentStyleList,
   productAvgStarRating: state.productAvgStarRating,
 

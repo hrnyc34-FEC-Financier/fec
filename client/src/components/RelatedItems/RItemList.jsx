@@ -24,7 +24,7 @@ const RItemList = ({
       comparingList.push(Number.parseInt( oldList[i] ));
     }
     for ( let i = 0; i < relatedProductList.length; i++ ) {
-      var checkingId = Number.parseInt( relatedProductList[i] );
+      let checkingId = Number.parseInt( relatedProductList[i] );
       if ( !comparingList.includes(checkingId) ) {
         updatedNeedList.push(checkingId);
       }
@@ -53,7 +53,7 @@ const RItemList = ({
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{ disCountPrice }</>;
 
-  console.log('product.avgStarRating:', product.avgStarRating, !product.avgStarRating);
+  // console.log('product.avgStarRating:', product.avgStarRating, !product.avgStarRating);
 
   let reviewStars = product.avgStarRating === 0 || !product.avgStarRating ? null :
     <StarRatings
