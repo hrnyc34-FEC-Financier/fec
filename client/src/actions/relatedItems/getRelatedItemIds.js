@@ -12,7 +12,6 @@ const getRelatedItemIds = ( productId, updatedNeedArr, wholeData, relatedList ) 
       .then(res=>{
         dispatch( relatedItemList( res.data ) );
         if (updatedNeedArr) {
-          console.log('getting related Items', res.data);
           dispatch( addTimeSaverList ( updatedNeedArr, wholeData, res.data ) );
         }
       })

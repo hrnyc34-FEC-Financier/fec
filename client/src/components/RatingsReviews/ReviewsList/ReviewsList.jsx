@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import NoReviewsImage from './NoReviewsImage.jsx';
 import SortOptions from './SortOptions.jsx';
 import ReviewTile from './ReviewTile.jsx';
 import ReviewModalContainer from '../../../containers/RatingsReviews/ReviewModalContainer.js';
 import { makeStyles } from '@material-ui/core/Modal';
 import Modal from '@material-ui/core/Modal';
-import '../reviewStyles/reviewsList.css';
+// import '../reviewStyles/reviewsList.css';
 
 const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsList, reviewSort, handleHelpfulReview, handleReportReview, handleSortSelect }) => {
 
@@ -15,14 +16,6 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
       filteredReviewsList.push(review);
     }
   }
-
-  const calculateTotalReviews = (productRatings) => {
-    let totalReviews = 0;
-    for (let star in productRatings) {
-      totalReviews += Number(productRatings[star]);
-    }
-    return totalReviews;
-  };
 
   const [reviewsQuantity, setReviewsQuantity] = useState(2);
 
@@ -38,35 +31,52 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
     }
   };
 
-  let showMoreReviewsButton = <button onClick={handleMoreReviews}>MORE REVIEWS</button>;
+  const handleLessReviews = () => {
+    setReviewsQuantity(2);
+  };
 
-  if (filteredReviewsList.length > 0) {
-    if (filteredReviewsList.length < 2 || filteredReviewsList.length <= reviewsQuantity) {
-      showMoreReviewsButton = null;
-    }
-  } else {
-    if (reviewsList.length < 2 || reviewsList.length <= reviewsQuantity) {
-      showMoreReviewsButton = null;
-    }
+  let showMoreReviewsButton = <button className='reviewsListButton' onClick={handleMoreReviews}>MORE REVIEWS</button>;
+  let showLessReviewsButton = <button className='reviewsListButton' onClick={handleLessReviews}>COLLAPSE REVIEWS</button>;
+
+  if (filteredReviewsList.length > 0 && (filteredReviewsList.length < 2 || filteredReviewsList.length <= reviewsQuantity)) {
+    showMoreReviewsButton = null;
+  } else if (reviewsList.length < 2 || reviewsList.length <= reviewsQuantity) {
+    showMoreReviewsButton = null;
   }
 
-  const renderedReviews = [];
+  const renderedReviewsList = [];
 
   for (let i = 0; i < reviewsQuantity; i++) {
     if (filteredReviewsList.length > 0) {
       if (filteredReviewsList[i] !== undefined) {
-        renderedReviews.push(filteredReviewsList[i]);
+        renderedReviewsList.push(filteredReviewsList[i]);
       }
     } else {
       if (reviewsList[i] !== undefined) {
-        renderedReviews.push(reviewsList[i]);
+        renderedReviewsList.push(reviewsList[i]);
       }
     }
   }
 
+  if (renderedReviewsList.length < reviewsList.length || renderedReviewsList.length < filteredReviewsList.length) {
+    showLessReviewsButton = null;
+  }
+
   return (
     <div>
-      {reviewsList.length === 0 ? null : (
+      {reviewsList.length === 0 ? (
+        <div className='reviewsListContainer'>
+          <div className='noReviewsTextContainer'>
+            <div className='noReviewsText'>
+              <div>This product currently has 0 reviews.</div>
+              <div>Please feel free to add a review.</div>
+            </div>
+            <div className='noReviewsImage'>
+              <NoReviewsImage />
+            </div>
+          </div>
+        </div>
+      ) : (
         <div className='reviewsListContainer'>
           <div className='reviewsListHeaderContainer'>
             <span className='reviewsListHeaderText'>{`${filteredReviewsList.length > 0 ? filteredReviewsList.length : reviewsList.length} review${filteredReviewsList.length > 1 || reviewsList.length > 1 ? 's' : ''}, sorted by`}</span>
@@ -75,11 +85,12 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
             </span>
           </div>
           <div className='reviewsList'>
-            {renderedReviews.map(reviewInfo => {
+            {renderedReviewsList.map(reviewInfo => {
               return <ReviewTile key={`reviewTile${reviewInfo.review_id}`} currentProductId={currentProductId} reviewInfo={reviewInfo} handleHelpfulReview={handleHelpfulReview} handleReportReview={handleReportReview} />;
             })}
           </div>
           {showMoreReviewsButton}
+          {showLessReviewsButton}
         </div>
       )}
     </div>

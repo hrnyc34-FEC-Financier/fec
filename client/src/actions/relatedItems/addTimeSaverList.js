@@ -30,8 +30,6 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
       }
     }
 
-    console.log('updatedNeedList :', updatedNeedList );
-
     let list = [];
     let carouselList = updatedNeedList.map( itemId =>{
 
@@ -49,7 +47,6 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
 
       .then(res=>{
         let list = [];
-        console.log('list:', list);
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)

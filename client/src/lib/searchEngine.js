@@ -8,7 +8,6 @@ const url = 'https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc';
 const searchEngine = {
 
   get: (endPoint, params = {}) => {
-    console.log("GET", endPoint)
     return axios.get(`${url}/${endPoint}`, {
       headers: { Authorization },
       params: params,

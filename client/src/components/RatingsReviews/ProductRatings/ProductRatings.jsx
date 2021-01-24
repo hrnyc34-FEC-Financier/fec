@@ -13,9 +13,9 @@ const ProductRatings = ({ productRatings, productRecommended, productCharacteris
     if (Object.keys(productRecommended).length === 0) {
       return 0;
     }
-    const recommended = Number(productRecommended[true]);
-    const total = recommended + Number(productRecommended[false]);
-    return Math.floor(recommended / total * 100);
+    const recommendedTrue = Number(productRecommended[true]);
+    const totalRecommended = recommendedTrue + Number(productRecommended[false]);
+    return isNaN(totalRecommended) ? 0 : Math.floor(recommendedTrue / totalRecommended * 100);
   };
 
   const isRated = (productRatings) => {

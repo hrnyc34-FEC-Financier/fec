@@ -2031,6 +2031,10 @@ textarea, input[type='text'] {
   align-items: end;
 }
 
+.reviewsListButton {
+  margin-bottom: 1em;
+}
+
 .reviewTile {
   width: 100%;
   margin-bottom: 1.5em;
@@ -2151,6 +2155,29 @@ textarea, input[type='text'] {
   border: '2px solid #000';
   padding: 15px;
   border: none;
+}
+
+.noReviewsTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.noReviewsText {
+  font-size: 18px;
+  text-align: center;
+  align-items: center;
+}
+
+.noReviewsImage {
+  position: absolute;
+  margin: auto;
+  opacity: 0.08;
+  color: red;
 }
 
 .sales-price {

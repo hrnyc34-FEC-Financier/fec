@@ -9,7 +9,6 @@ import handleHelpfulQuestion from '../../actions/QA/handleHelpfulQuestion.js';
 const Question = ({ question, productName }) => {
 
   let answers = Object.entries(question.answers);
-  console.log("answers from question", answers)
 
   const [answersQuantity, setAQuant] = useState(2);
   const [openA, setOpenA] = useState(false);

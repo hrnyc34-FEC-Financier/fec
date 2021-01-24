@@ -21,8 +21,6 @@ const RelatedItems = ({
   saveSpaceList,
   relatedProductList
 })=>{
-  console.log('relatedProductCarouselList,:', relatedProductCarouselList)
-  // console.log('relatedProductCarouselList:', relatedProductCarouselList);
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
