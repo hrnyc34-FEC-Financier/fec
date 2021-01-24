@@ -4,37 +4,27 @@ import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
 //import '../review/Styles/reviewModal.css';
 
-const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, close}) => {
-  //local state for reviewBodyWordCount, must be over 50 to be able to submit
+const ReviewModal = ({currentProductId, currentProduct, productCharacteristics, handleStarRating, handleSubmitReview, handleClose}) => {
 
   const characteristicsArray = createCharacteristicsArray(productCharacteristics, 'id');
-  // const characteristicsArray = createCharacteristicsArray(productCharacteristics);
-  //replacing index 1 of characteristic property from rating to characteristic id
-  // for (let characteristic of characteristicsArray) {
-  //   characteristic.characteristic[1] = (productCharacteristics[characteristic.characteristic[0]].id);
-  // }
 
   //handleState
   const [rating, setRating] = useState(0);
   const [characteristics, setCharacteristics] = useState({});
-  const [recommend, setRecommend] = useState(false);
+  const [recommend, setRecommend] = useState('');
   const [summary, setSummary] = useState('');
   const [body, setBody] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [photos, setPhotos] = useState(['']);
+  const [photos, setPhotos] = useState([]);
 
   const handleCharacteristicsChange = (e) => {
     setCharacteristics({...characteristics, [e.target.name]: Number(e.target.value)});
   };
 
   const handleRecommendChange = (e) => {
-    if (e.target.value === 'true') {
-      setRecommend(true);
-    } else if (e.target.value === 'false') {
-      setRecommend(false);
-    }
-  }
+    e.target.value === 'true' ? setRecommend(true) : setRecommend(false);
+  };
 
   const handleTextChange = (e) => {
     if (e.target.id === 'reviewSummary') {
@@ -46,7 +36,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
     } else if (e.target.id === 'reviewEmail') {
       setEmail(e.target.value);
     }
-  }
+  };
 
   const starRatingMeaning = (ratingState) => {
     if (ratingState === 1) {
@@ -60,7 +50,7 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
     } else if (ratingState === 5) {
       return 'Great';
     }
-  }
+  };
 
   return (
     <div id='reviewModal'>
@@ -114,7 +104,10 @@ const ReviewModal = ({currentProduct, productCharacteristics, handleStarRating, 
           <div id='emailWarning'>For authentication reasons, you will not be emailed.</div>
         </form>
       </div>
-      <button id='submitButton' onClick={(e) => {handleSubmitReview(currentProduct.id, {rating, characteristics, recommend, summary, body, name, email})}}>
+      <button id='submitButton' onClick={(e) => {
+        handleSubmitReview({product_id: currentProductId, rating, characteristics, recommend, summary, body, name, email, photos})
+        handleClose();
+      }}>
           Submit
       </button>
     </div>

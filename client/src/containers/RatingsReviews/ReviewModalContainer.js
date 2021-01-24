@@ -3,14 +3,17 @@ import ReviewModal from '../../components/RatingsReviews/postReview/ReviewModal.
 import postReview from '../../actions/RatingsReviews/postReview.js';
 
 const mapStateToProps = (state) => ({
+  currentProductId: state.currentProductId,
   currentProduct: state.currentProduct,
   productCharacteristics: state.productCharacteristics,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handleSubmitReview: (currentProductId, reviewInfo) => {
-    dispatch(postReview(currentProductId, reviewInfo));
+
+  handleSubmitReview: (review) => {
+    dispatch(postReview(review));
   }
+
 });
 
 const ReviewModalContainer = connect(mapStateToProps, mapDispatchToProps)(ReviewModal);

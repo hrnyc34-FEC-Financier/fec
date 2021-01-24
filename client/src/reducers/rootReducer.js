@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+//Related products
 import relatedItemListReducer from './relatedItems/relatedItemList.js';
 import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
 import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
@@ -8,8 +9,9 @@ import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
 import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
 import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex.js';
 import previewItemReducer from './relatedItems/previewItem.js';
-import saveSpaceListReducer from './relatedItems/saveSpaceList.js';
+import saveTimeListReducer from './relatedItems/saveTimeList.js';
 
+//ProductDetails
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -20,8 +22,8 @@ import changeGalleryReducer from './productDetails/thumbGallery.js';
 import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
-//productDetails: End
-//RatingsReviews: Start
+
+//RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
@@ -30,12 +32,13 @@ import productCharacteristicsReducer from './RatingsReviewsReducers/productRatin
 import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgRatingReducer.js';
 import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
-//RatingsReviews: End
+
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
 import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js';
 
 const rootReducer = combineReducers({
+  //Related products
   relatedProductList: relatedItemListReducer,
   relatedProductCarouselList: relatedItemCarouselListReducer,
   relatedProductStarModal: relatedItemStarModalReducer,
@@ -44,8 +47,9 @@ const rootReducer = combineReducers({
   carouselRenderIndex: carouselRenderIndexReducer,
   cYourOutfitRenderIndex: cYourOutfitRenderIndexReducer,
   previewItem: previewItemReducer,
-  saveSpaceList: saveSpaceListReducer,
-  //productDetails: Start
+  saveTimeList: saveTimeListReducer,
+
+  //productDetails
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
@@ -56,8 +60,8 @@ const rootReducer = combineReducers({
   currentSize: changeSizeReducer,
   currentImageIndex: changeImageIndexReducer,
   currentQuantityRange: changeQuantityRangeReducer,
-  //productDetails: End
-  //RatingsReviews: Start
+
+  //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
   reviewSort: reviewSortReducer,
   productRatings: productRatingsReducer,
@@ -66,7 +70,8 @@ const rootReducer = combineReducers({
   productAvgRating: productAvgRatingReducer,
   productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
-  //RatingsReviews: End
+
+  //QA
   questionList: changeQuestionListReducer,
 });
 

@@ -7,8 +7,8 @@ import totalCarouselList from './totalCarouselList.js';
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
 
-const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
-  // console.log('!!! notSavedItemList came in updating saveTime !!!', notSavedItemList, wholeData, rList );
+const addTimeSaverList = ( wholeData, rList ) => {
+
   return (dispatch) => {
 
     let comparingList = [];
@@ -18,19 +18,17 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
 
     if ( oldList.length !== 0 ) {
       for ( let i = 0; i < oldList.length; i++ ) {
-        var newId = Number.parseInt( oldList[i] );
+        let newId = Number.parseInt( oldList[i] );
         comparingList.push(Number.parseInt( oldList[i] ));
         existingList.push(wholeData[newId]);
       }
       for ( let i = 0; i < rList.length; i++ ) {
-        var checkingId = Number.parseInt( rList[i] );
+        let checkingId = Number.parseInt( rList[i] );
         if ( !comparingList.includes(checkingId) ) {
           updatedNeedList.push(checkingId);
         }
       }
     }
-
-    console.log('updatedNeedList :', updatedNeedList );
 
     let list = [];
     let carouselList = updatedNeedList.map( itemId =>{
@@ -49,7 +47,6 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
 
       .then(res=>{
         let list = [];
-        console.log('list:', list);
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)
@@ -66,6 +63,7 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
                 .catch(err=>console.log('adding starRating to related items list  failed :', err));
 
               list.push( overall );
+              console.log("!!!!! Adding only addtional data from addTimeSaver !!!!!");
             })
             .catch(err => console.log('adding style to related items list  failed :', err));
         });
@@ -76,9 +74,9 @@ const addTimeSaverList = ( notSavedItemList, wholeData, rList ) => {
             if (updatedNeedList.length) {
               dispatch( relatedItemCarouselList([...list, ...existingList]) );
             } else {
-              var result = [];
+              let result = [];
               for ( let i = 0; i < rList.length; i++ ) {
-                var dataId = Number.parseInt(rList[i]);
+                let dataId = Number.parseInt(rList[i]);
                 result.push( wholeData[dataId]);
               }
               dispatch( relatedItemCarouselList(result) );

@@ -2,14 +2,13 @@ import React from 'react';
 import ProgressBar from '@ramonak/react-progress-bar';
 
 const StarBar = ({ star, starBarValue, filtered, handleRatingsFilter }) => {
-  if (starBarValue === NaN) {
-    starBarValue = 0;
-  }
+
+  starBarValue = starBarValue === NaN ? 0 : starBarValue;
+
   return (
     <div id='starBarContainer'
-      onClick={() => { starBarValue > 0 ? handleRatingsFilter(star) : null; }}
-      style={filtered === true ? {backgroundColor: 'rgba(38, 223, 240, 0.712)'} : {backgroundColor: 'transparent'}}
-    >
+      onClick={() => { starBarValue > 0 ? handleRatingsFilter(star) : undefined; }}
+      style={filtered === true ? {backgroundColor: 'rgba(38, 223, 240, 0.712)'} : {backgroundColor: 'transparent'}}>
       <div id='starText'>{`${star} stars`}</div>
       <div id='starBar'>
         <ProgressBar
