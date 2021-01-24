@@ -2,8 +2,8 @@ import Redux from 'redux';
 
 const cYourOutfitRenderIndexReducer = (state = 0, action) => {
   switch ( action.type ) {
+
   case 'PLUS_INDEX_FOR_RENDER':
-    console.log('action.index', action.index);
     let increment = action.index && state - 1;
     if (increment < 0) {
       return 0;
@@ -11,7 +11,6 @@ const cYourOutfitRenderIndexReducer = (state = 0, action) => {
     return increment;
 
   case 'MINUS_INDEX_FOR_RENDER':
-    console.log('action.index', action.index);
     let decrement = action.index && state + 1;
     return decrement;
 
