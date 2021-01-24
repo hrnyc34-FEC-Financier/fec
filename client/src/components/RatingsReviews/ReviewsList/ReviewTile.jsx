@@ -24,9 +24,7 @@ const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleR
     setModalImage(e.target.attributes.src.value);
     setOpenI(true);
   };
-  const handleClose = () => {
-    setOpenI(false);
-  };
+  const handleClose = () => setOpenI(false);
 
   return (
     <div className='reviewTile'>

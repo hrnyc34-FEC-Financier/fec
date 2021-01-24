@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { characteristicsMap, createCharacteristicsArray } from '../ProductRatings/characteristicsHelpers.js';
+import createCharacteristicsArray from '../ProductRatings/characteristicsHelpers.js';
 import CharacteristicsRadio from './characteristicsRadio.jsx';
 import StarRatingWrite from './StarRatingWrite.jsx';
 //import '../review/Styles/reviewModal.css';

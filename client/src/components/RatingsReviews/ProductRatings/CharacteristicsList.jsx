@@ -1,6 +1,6 @@
 import React from 'react';
 import CharacteristicBar from './CharacteristicBar.jsx';
-import { characteristicsMap, createCharacteristicsArray } from './characteristicsHelpers.js';
+import createCharacteristicsArray from './characteristicsHelpers.js';
 
 const CharacteristicsList = ({ productCharacteristics }) => {
   return (
