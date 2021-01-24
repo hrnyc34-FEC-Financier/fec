@@ -1,6 +1,5 @@
 import renderingIndexDecrease from './indexDecrease.js';
 
-
 const decreaseIndex = ( value ) => {
 
   return (dispatch) => {

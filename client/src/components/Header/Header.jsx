@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
 
   let handleCssChange = () => {
-    var theme = document.getElementsByTagName('link')[0];
+    let theme = document.getElementsByTagName('link')[0];
 
     if (theme.getAttribute('href') == './styles/combinedStyles.css') {
         theme.setAttribute('href', './styles/darkMode.css');
