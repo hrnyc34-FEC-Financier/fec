@@ -17,11 +17,7 @@ const getRelatedItemIds = ( productId, updatedNeedArr, wholeData ) => {
       .then(res=>{
         dispatch( relatedItemList( res.data ) );
         if (updatedNeedArr) {
-<<<<<<< HEAD
-          dispatch( addTimeSaverList ( updatedNeedArr, wholeData, res.data ) );
-=======
           dispatch( addTimeSaverList ( wholeData, res.data ) );
->>>>>>> master
         }
       })
       .catch(err=>console.log('adding getRelatedItemIds from current item failed :', err));
