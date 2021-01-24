@@ -1721,6 +1721,10 @@ textarea, input[type='text'] {
   margin: 0 0.5em 1em 0.5em;
 }
 
+.reviewTileImage:hover {
+  cursor: pointer;
+}
+
 .reviewTileRecommendContainer {
   display: flex;
   align-items: center;
