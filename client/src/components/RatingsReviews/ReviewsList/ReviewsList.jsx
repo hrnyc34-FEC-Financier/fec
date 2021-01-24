@@ -58,7 +58,7 @@ const ReviewsList = ({ currentProductId, ratingsFilter, productRatings, reviewsL
     }
   }
 
-  if (renderedReviewsList.length < reviewsList.length || renderedReviewsList.length < filteredReviewsList.length) {
+  if ((renderedReviewsList.length < reviewsList.length || renderedReviewsList.length < filteredReviewsList.length) || renderedReviewsList.length <= 2) {
     showLessReviewsButton = null;
   }
 
