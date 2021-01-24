@@ -43,8 +43,6 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
       {renderedAnswers.map((answer) => {
-        console.log("rendered answer", answer
-        );
         return (<Answer answer={answer} key={answer[0]} fullLength={answers.length}/>)
       })}
       {showHideButton}

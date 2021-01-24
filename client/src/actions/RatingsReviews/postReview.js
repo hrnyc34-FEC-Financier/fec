@@ -1,4 +1,5 @@
 import searchAPI from '../../lib/searchEngine.js';
+import changeReviewsList from './reviewsList/reviewsList.js';
 import { setRatings } from './setRatings.js';
 
 const postReview = (review) => {

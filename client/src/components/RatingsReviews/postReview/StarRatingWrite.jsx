@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRatings from 'react-star-ratings';
 
-const StarRatingWrite = ({ rating, setRating}) => {
+const StarRatingWrite = ({ rating, setRating }) => {
   return (
     <StarRatings
       rating={rating}
