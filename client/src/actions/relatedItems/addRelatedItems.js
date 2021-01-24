@@ -39,7 +39,8 @@ const addRelatedItems = (productId) => {
         return Promise.all(carouselList)
           .then(()=>{
 
-            console.log("!!!!! Adding data from Full Cycle !!!!!");
+            console.log('!!!!! Adding data from Full Cycle !!!!!');
+
             return dispatch( relatedItemsListDetail( list ) );
           });
       })

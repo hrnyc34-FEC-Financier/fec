@@ -11,7 +11,7 @@ import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex
 import previewItemReducer from './relatedItems/previewItem.js';
 import saveTimeListReducer from './relatedItems/saveTimeList.js';
 
-//RroductDetails
+//ProductDetails
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -26,7 +26,6 @@ import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
-//RatingsReviews: productRatings
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
 import productRecommendedReducer from './RatingsReviewsReducers/productRatingsReducers/productRecommendedReducer.js';
 import productCharacteristicsReducer from './RatingsReviewsReducers/productRatingsReducers/productCharacteristicsReducer.js';
@@ -65,7 +64,6 @@ const rootReducer = combineReducers({
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
   reviewSort: reviewSortReducer,
-  //RatingsReviews: productRatings
   productRatings: productRatingsReducer,
   productRecommended: productRecommendedReducer,
   productCharacteristics: productCharacteristicsReducer,

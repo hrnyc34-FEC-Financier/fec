@@ -4,7 +4,6 @@ import {CSSTransitionGroup} from 'react-transition-group';
 
 const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
 
-  // let sortedAnswers = answers.sort(function(a, b){return b[1].helpfulness-a[1].helpfulness});
 
   answers.sort(function(a, b){return b[1].helpfulness-a[1].helpfulness})
 
@@ -33,7 +32,6 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
     showHideButton = <div onClick={handleLess} className="showHideAnswers">COLLAPSE ANSWERS</div>
   }
 
-  // console.log("rendered answers", renderedAnswers);
 
   if (answers.length === 0) {
     return (<div className="answerList"><span className="noAnswers">No answers yet.</span></div>)
@@ -45,6 +43,8 @@ const AnswerList = ({answers, quantity, handleMore, handleLess}) => {
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
       {renderedAnswers.map((answer) => {
+        console.log("rendered answer", answer
+        );
         return (<Answer answer={answer} key={answer[0]} fullLength={answers.length}/>)
       })}
       {showHideButton}

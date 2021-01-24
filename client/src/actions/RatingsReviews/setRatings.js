@@ -1,7 +1,7 @@
 import searchAPI from '../../lib/searchEngine.js';
-import changeProductCharacteristics from './productRatings/productCharacteristics.js';
 import changeProductRatings from './productRatings/productRatings.js';
 import changeProductRecommended from './productRatings/productRecommended.js';
+import changeProductCharacteristics from './productRatings/productCharacteristics.js';
 import changeProductAvgRating from './productRatings/productAvgRating.js';
 import changeProductAvgStarRating from './productRatings/productAvgStarRating.js';
 
@@ -27,7 +27,6 @@ const setRatings = (product_id) => {
   return (dispatch) => {
     return searchAPI.get('reviews/meta', {product_id})
       .then(({ data }) => {
-        // console.log(data);
         const productAvgRating = calculateProductAvgRating(data.ratings);
         dispatch(changeProductRatings(data.ratings));
         dispatch(changeProductRecommended(data.recommended));
