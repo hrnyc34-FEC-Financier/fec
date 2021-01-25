@@ -1,5 +1,5 @@
 import searchAPI from '../../lib/searchEngine.js';
-import changeReviewsList from './reviewsList/reviewsList.js';
+import setReviews from './reviewsList/reviewsList.js';
 import { setRatings } from './setRatings.js';
 
 const postReview = (review) => {
@@ -7,10 +7,7 @@ const postReview = (review) => {
   return (dispatch) => {
     return searchAPI.post('reviews', review)
       .then(() => {
-        return searchAPI.get('reviews', {product_id});
-      })
-      .then(({ data }) => {
-        dispatch(changeReviewsList(data.results));
+        setReviews(product_id)
       })
       .then(() => {
         setRatings(product_id);
