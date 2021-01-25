@@ -1,20 +1,19 @@
+
+// if utilizing current product info, i can remove this file__update Needed!!
+
 import store from '../../store/store.js';
 import searchEngine from '../../lib/searchEngine.js';
 import addYourOutfit from './yourOutfitListAdd.js';
+import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
-const addYourOutfitList = ( productId ) => {
+const addYourOutfitList = ( currentItem, style, starRating ) => {
 
   return (dispatch) => {
-    return searchEngine.get(`products/${productId}`)
-      .then(res => {
-        let item = res.data;
-        return searchEngine.get(`products/${item.id}/styles`)
-          .then(res => {
-            item.styles = res.data.results;
-            dispatch( addYourOutfit( item ) );
-          });
-      })
-      .catch(err => console.log('adding your outfit failed', err));
+    let item = currentItem;
+    item.styles = style;
+    item.avgStarRating = starRating;
+
+    dispatch( addYourOutfit( item ) );
   };
 };
 

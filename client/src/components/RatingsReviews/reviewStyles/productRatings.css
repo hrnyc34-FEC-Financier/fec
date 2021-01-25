@@ -7,7 +7,10 @@
 }
 
 #productRatingsTitle {
-  font-size: 16px;
+  font-family: Arial;
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
 }
 
 #ratingNumberStarContainer {
@@ -74,4 +77,8 @@
 
 #resetFilterButton {
   padding: 0.4em;
+}
+
+#addReviewButton {
+  margin-bottom: 1em;
 }

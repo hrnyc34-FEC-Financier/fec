@@ -1,0 +1,327 @@
+.ri_container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  margin-top: 6rem;
+  }
+
+.leftBlank {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.relatedItems_box {
+  grid-area: 1 / 2 / 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 1fr;
+  margin-bottom: 2rem;
+}
+
+.yourOutfit_box {
+  grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30px 1fr;
+  margin-bottom: 2rem;
+}
+
+.rightBlank {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.RP_main_container {
+  border: 0.5px solid rgba(160, 160, 160, 0.481);
+  display: grid;
+  grid-template-columns: 32px auto 32px;
+  grid-template-rows: 400px;
+  align-content: center;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+
+.YrOutfit_main_container {
+  border: 0.5px solid rgba(160, 160, 160, 0.481);
+  display: grid;
+  grid-template-columns: 32px 200px auto 32px;
+  grid-template-rows: 400px;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+
+/* main divider */
+
+.RItems_container{
+  display: flex;
+  flex: 0 1 auto;
+  width : 100%;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: start;
+  align-content: end;
+  grid-column-gap: 8px;
+  position: relative;
+  min-width: 570px;
+}
+
+.YrOutfit_container{
+  display: flex;
+  flex: 0 1 auto;
+  width : 100%;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: start;
+  grid-column-gap: 8px;
+  position: relative;
+  align-content: end;
+  min-width: 570px;
+}
+
+/****** CARD  start here ******/
+.carousel_item {
+  flex: 0 0 auto;
+  display: inline-block;
+  width: 190px;
+  min-width: 190px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2.5fr 1fr;
+  justify-items: start;
+  overflow: hidden;
+  align-items: flex-end;
+  position: relative;
+  flex-grow: 0;
+}
+
+.carousel_item:hover {
+  cursor: pointer;
+  border: 1px solid rgb(67, 67, 67);
+}
+
+.carousel_item_image > img {
+  background-color: black;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.carousel_item_body{
+  padding: 1rem 1rem 1rem 1rem;
+  display: block;
+  /* align-items: start; */
+  /* justify-items: start;
+  align-items: start */
+  /* top: 8px;
+  left: 16px; */
+}
+
+.modalButton {
+  position:absolute;
+  top:5px; right:-5px;
+  z-index: 3;
+  border : none;
+  background-color: transparent;
+  color:rgb(91, 91, 91);
+}
+
+.addButton{
+  position:absolute;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  color:rgb(91, 91, 91);
+  font-weight: bold;
+}
+.deleteButton{
+  background-color: transparent;
+  position:absolute;
+  top:5px; right:-5px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  color:rgb(211, 211, 211);
+}
+
+.card-add:hover, .modalButton:hover, .addButton:hover, .deleteButton:hover, .carousel_prev:hover, .carousel_next:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.carousel_prev{
+  z-index: 2;
+  right: 0px;
+  border : none;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.carousel_next{
+  z-index: 2;
+  left: 0px;
+  border : none;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.centerAlignP{
+  position: relative;
+}
+
+#centerAlign {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.placeHolderP{
+  position: relative;
+  display: flex;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+}
+
+.placeHolder {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border : none;
+  background-color: transparent;
+}
+
+/****** all text files  start here ******/
+.carousel_item_title{
+  font-family: Arial;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.carousel_item_smallText{
+  font-family: Arial;
+  color: #666;
+  padding-top: 0.1rem;
+  font-size: 1.0 rem;
+  text-transform: uppercase;
+}
+
+.carousel_item_oriPrice{
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
+  color:rgb(10, 10, 43);
+}
+.carousel_item_disCountPrice_1{
+  font-family: Arial;
+  color: #666;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+.carousel_item_disCountPrice_2{
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color:rgb(209, 0, 0);
+}
+
+.first_title{
+  font-family: Arial;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75);
+}
+.second_title{
+  font-family: Arial;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:rgb(75, 75, 75);
+}
+
+/****** all text files end here ******/
+.comparingPage{
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 20px 30px auto;
+  background-color: white;
+  top: 25%;
+  left: 25%;
+  width: 30%;
+  overflow:'scroll';
+  justify-content: center;
+  border: 1px solid #666;
+  padding: 15px;
+  text-align: center;
+}
+
+.comparingModalTitle{
+  grid-area: 1 / 1 / 2 / 2;
+  font-family: Arial;
+  color: #666;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#close_X {
+  font-family: Arial;
+  color: #666;
+  position: absolute;
+  top: 0px;  right: 0px;
+  z-index: 2;
+  border : none;
+  background-color: transparent;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.currentItemTitle{
+  grid-area: 2 / 1 / 3 / 2;
+  font-family: Arial;
+  color: #666;
+  font-size: 1.7rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.previewItemTitle{
+  grid-area: 2 / 2 / 3 / 3;
+  font-family: Arial;
+  color: #666;
+  font-size: 1.7rem;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.comparingPage_container {
+  border: 1px solid rgba(71, 71, 71, 0.434);
+  grid-area: 3 / 1 / 4 / 3;
+  overflow:'scroll';
+}
+
+#comparingPage_content {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 1px;
+  justify-items: stretch;
+  align-items: center;
+  text-align: center;
+  grid-row-gap: 8px;
+  padding: 10px;
+  font-size: 1.2em;
+  font-family: Arial;
+  color: #666;
+  border: 0.5px solid rgba(160, 160, 160, 0.071);
+}

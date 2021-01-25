@@ -1,27 +1,20 @@
 import { connect } from 'react-redux';
 import ReviewModal from '../../components/RatingsReviews/postReview/ReviewModal.jsx';
+import postReview from '../../actions/RatingsReviews/postReview.js';
 
 const mapStateToProps = (state) => ({
+  currentProductId: state.currentProductId,
   currentProduct: state.currentProduct,
-  reviewModal: state.reviewModal,
-  reviewRating: state.reviewRating,
-  reviewCharacteristics: state.reviewCharacteristics,
-  reviewSummary: state.reviewSummary,
-  reviewBody: state.reviewBody,
-  reviewPhotos: state.reviewPhotos,
-  reviewRecommendation: state.reviewRecommendation,
-  reviewUser: state.reviewUser,
-  reviewEmail: state.reviewEmail,
-  reviewWordCount: state.reviewWordCount
+  productCharacteristics: state.productCharacteristics,
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleStarRating: (dispatch) => {
+const mapDispatchToProps = (dispatch) => ({
 
-    }
-  };
-};
+  handleSubmitReview: (review) => {
+    dispatch(postReview(review));
+  }
+
+});
 
 const ReviewModalContainer = connect(mapStateToProps, mapDispatchToProps)(ReviewModal);
 

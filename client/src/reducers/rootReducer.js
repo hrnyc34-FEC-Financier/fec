@@ -1,11 +1,17 @@
 import { combineReducers } from 'redux';
 
+//Related products
 import relatedItemListReducer from './relatedItems/relatedItemList.js';
 import relatedItemsListDetailReducer from './relatedItems/relatedItemsListDetail.js';
 import relatedItemCarouselListReducer from './relatedItems/relatedItemCarouselList.js';
 import relatedItemStarModalReducer from './relatedItems/relatedItemStarModal.js';
 import yourOutfitListReducer from './relatedItems/yourOutfitList.js';
+import carouselRenderIndexReducer from './relatedItems/carouselRenderIndex.js';
+import cYourOutfitRenderIndexReducer from './relatedItems/cYourOutfitRenderIndex.js';
+import previewItemReducer from './relatedItems/previewItem.js';
+import saveTimeListReducer from './relatedItems/saveTimeList.js';
 
+//ProductDetails
 import changeProductReducer from './productDetails/currentProduct.js';
 import changeProductIdReducer from './productDetails/currentProductId.js';
 import setProductListReducer from './productDetails/productList.js';
@@ -16,44 +22,34 @@ import changeGalleryReducer from './productDetails/thumbGallery.js';
 import changeSizeReducer from './productDetails/currentSize.js';
 import changeImageIndexReducer from './productDetails/currentImageIndex.js';
 import changeQuantityRangeReducer from './productDetails/currentQuantityRange.js';
-//productDetails: End
+
 //RatingsReviews: reviewsList
 import reviewsListReducer from './RatingsReviewsReducers/reviewsListReducers/reviewsListReducer.js';
-import reviewsDisplayLimiterReducer from './RatingsReviewsReducers/reviewsListReducers/reviewDisplayLimiterReducer.js';
-import reviewFeedbackReducer from './RatingsReviewsReducers/reviewsListReducers/reviewFeedbackReducer.js';
-import reviewImageModalReducer from './RatingsReviewsReducers/reviewsListReducers/reviewImageModalReducer.js';
-import reviewScrollReducer from './RatingsReviewsReducers/reviewsListReducers/reviewScrollReducer.js';
 import reviewSortReducer from './RatingsReviewsReducers/reviewsListReducers/reviewSortReducer.js';
-//RatingsReviews: productRatings
 import productRatingsReducer from './RatingsReviewsReducers/productRatingsReducers/productRatingsReducer.js';
 import productRecommendedReducer from './RatingsReviewsReducers/productRatingsReducers/productRecommendedReducer.js';
 import productCharacteristicsReducer from './RatingsReviewsReducers/productRatingsReducers/productCharacteristicsReducer.js';
 import productAvgRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgRatingReducer.js';
 import productAvgStarRatingReducer from './RatingsReviewsReducers/productRatingsReducers/productAvgStarRatingReducer.js';
 import ratingsFilterReducer from './RatingsReviewsReducers/productRatingsReducers/ratingsFilterReducer.js';
-//RatingsReviews: postReview
-import reviewModalReducer from './RatingsReviewsReducers/postReviewReducers/reviewModalReducer.js';
-import reviewRatingReducer from './RatingsReviewsReducers/postReviewReducers/reviewRatingReducer.js';
-import reviewCharacteristicsReducer from './RatingsReviewsReducers/postReviewReducers/reviewCharacteristicsReducer.js';
-import reviewSummaryReducer from './RatingsReviewsReducers/postReviewReducers/reviewSummaryReducer.js';
-import reviewBodyReducer from './RatingsReviewsReducers/postReviewReducers/reviewBodyReducer.js';
-import reviewPhotosReducer from './RatingsReviewsReducers/postReviewReducers/reviewPhotosReducer.js';
-import reviewRecommendationReducer from './RatingsReviewsReducers/postReviewReducers/reviewRecommendationReducer.js';
-import reviewUserReducer from './RatingsReviewsReducers/postReviewReducers/reviewUserReducer.js';
-import reviewEmailReducer from './RatingsReviewsReducers/postReviewReducers/reviewEmailReducer.js';
-import reviewWordCountReducer from './RatingsReviewsReducers/postReviewReducers/reviewWordCountReducer.js';
-//RatingsReviews: End
+
 //QA
 import changeQuestionListReducer from './QA/questionListReducer.js';
 import showAddQuestionModalReducer from './QA/showAddQuestionModalReducer.js';
 
 const rootReducer = combineReducers({
+  //Related products
   relatedProductList: relatedItemListReducer,
   relatedProductCarouselList: relatedItemCarouselListReducer,
   relatedProductStarModal: relatedItemStarModalReducer,
   relatedItemsListDetail: relatedItemsListDetailReducer,
   yourOutfitList: yourOutfitListReducer,
-  //productDetails: Start
+  carouselRenderIndex: carouselRenderIndexReducer,
+  cYourOutfitRenderIndex: cYourOutfitRenderIndexReducer,
+  previewItem: previewItemReducer,
+  saveTimeList: saveTimeListReducer,
+
+  //productDetails
   productList: setProductListReducer,
   currentProductId: changeProductIdReducer,
   currentProduct: changeProductReducer,
@@ -64,33 +60,18 @@ const rootReducer = combineReducers({
   currentSize: changeSizeReducer,
   currentImageIndex: changeImageIndexReducer,
   currentQuantityRange: changeQuantityRangeReducer,
-  //productDetails: End
+
   //RatingsReviews: reviewsList
   reviewsList: reviewsListReducer,
-  reviewsDisplayLimiter: reviewsDisplayLimiterReducer,
-  reviewFeedback: reviewFeedbackReducer,
-  reviewImageModal: reviewImageModalReducer,
-  reviewScroll: reviewScrollReducer,
   reviewSort: reviewSortReducer,
-  //RatingsReviews: productRatings
   productRatings: productRatingsReducer,
   productRecommended: productRecommendedReducer,
   productCharacteristics: productCharacteristicsReducer,
   productAvgRating: productAvgRatingReducer,
   productAvgStarRating: productAvgStarRatingReducer,
   ratingsFilter: ratingsFilterReducer,
-  //RatingsReviews: postReview
-  reviewModal: reviewModalReducer,
-  reviewRating: reviewRatingReducer,
-  reviewCharacteristics: reviewCharacteristicsReducer,
-  reviewSummary: reviewSummaryReducer,
-  reviewBody: reviewBodyReducer,
-  reviewPhotos: reviewPhotosReducer,
-  reviewRecommendation: reviewRecommendationReducer,
-  reviewUser: reviewUserReducer,
-  reviewEmail: reviewEmailReducer,
-  reviewWordCount: reviewWordCountReducer,
-  //RatingsReviews: End
+
+  //QA
   questionList: changeQuestionListReducer,
 });
 

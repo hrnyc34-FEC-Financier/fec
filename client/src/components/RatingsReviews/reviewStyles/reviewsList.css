@@ -41,6 +41,10 @@
   align-items: end;
 }
 
+.reviewsListButton {
+  margin-bottom: 1em;
+}
+
 .reviewTile {
   width: 100%;
   margin-bottom: 1.5em;
@@ -67,10 +71,30 @@
   margin-bottom: 1em;
 }
 
+.reviewTilePhotoContainer {
+  display: flex;
+}
+
+.reviewTileImage {
+  object-fit: cover;
+  height: 80px;
+  width: 120px;
+  border: 1px solid black;
+  margin: 0 0.5em 1em 0.5em;
+}
+
+.reviewTileImage:hover {
+  cursor: pointer;
+}
+
 .reviewTileRecommendContainer {
   display: flex;
   align-items: center;
   margin-bottom: 1em;
+}
+
+.bi-check2-circle {
+  color: green;
 }
 
 .reviewTileRecommendText {
@@ -80,10 +104,11 @@
 .reviewTileFeedback {
   background-color: #C8C8C8;
   color: rgb(71, 71, 71);
-  margin: 1.6em auto;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  margin: 0 1em 1em 1em;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
   padding-left: 1em;
+  padding-right: 1em;
   width: 90%;
 }
 
@@ -93,13 +118,14 @@
 }
 
 .reviewTileFeedbackResponse {
-  margin-top: 1em;
+  margin-top: 0.7em;
   padding-left: 2em;
 }
 
 .reviewTileFooterContainer {
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 1em;
 }
 
 .reviewTileFooterHelpful {
@@ -118,4 +144,47 @@
 
 .reviewTileFooterReport:hover {
   cursor: pointer;
+}
+
+.reviewTileEndLine {
+  border-bottom: 1.5px solid #666;
+}
+
+.modalImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  object-fit: cover;
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  border: '2px solid #000';
+  padding: 15px;
+  border: none;
+}
+
+.noReviewsTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.noReviewsText {
+  font-size: 18px;
+  text-align: center;
+  align-items: center;
+}
+
+.noReviewsImage {
+  position: absolute;
+  margin: auto;
+  opacity: 0.08;
+  color: red;
 }

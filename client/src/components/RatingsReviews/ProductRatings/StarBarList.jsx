@@ -1,18 +1,24 @@
 import React from 'react';
 import StarBar from './StarBar.jsx';
 
-const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , handleResetRatingsFilter }) => {
+const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter, handleResetRatingsFilter }) => {
 
   const starArr = [];
   let totalReviews = 0;
 
   for (let i = 5; i >= 1; i--) {
-    productRatings.hasOwnProperty(i) ? starArr.unshift(Number(productRatings[i])) : starArr.unshift(0);
-    totalReviews += starArr[i];
+    productRatings.hasOwnProperty(i) ? starArr.push(Number(productRatings[i])) : starArr.push(0);
+    totalReviews += starArr[5 - i];
   }
 
-  const isFilterMoreThanOne = (ratingsFilter) => {
+  const isMoreThanOneFilter = (ratingsFilter) => {
     let count = 0;
+    // Object.values(ratingsFilter).forEach(ratingValue => {
+    //   if (ratingValue === true) {
+    //     count++;
+    //   }
+    // });
+
     for (let star in ratingsFilter) {
       if (ratingsFilter[star] === true) {
         count++;
@@ -32,7 +38,7 @@ const StarBarList = ({ productRatings, ratingsFilter, handleRatingsFilter , hand
         );
       })}
       <div id='resetFilterButtonContainer'>
-        {isFilterMoreThanOne(ratingsFilter) ? (
+        {isMoreThanOneFilter(ratingsFilter) ? (
           <button id='resetFilterButton' onClick={handleResetRatingsFilter}>
             Reset Filter
           </button>
