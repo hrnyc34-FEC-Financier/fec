@@ -14,6 +14,9 @@ const cYourOutfitRenderIndexReducer = (state = 0, action) => {
     let decrement = action.index && state + 1;
     return decrement;
 
+  case 'RESET_CAROUSEL':
+    return action.reset;
+
   default : return state;
   }
 };

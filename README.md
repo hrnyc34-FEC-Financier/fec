@@ -1,4 +1,6 @@
-# Guidelines
+# System Design Capstone
+
+# Guidelines to start
   **Installation**
   1. npm install
   2. npm run build-prod

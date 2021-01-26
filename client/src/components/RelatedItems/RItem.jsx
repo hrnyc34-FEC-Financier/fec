@@ -140,7 +140,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { yourOutfitList.length - cYourOutfitRenderIndex <= 4 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
+            { yourOutfitList.length - cYourOutfitRenderIndex <= 3 || cYourOutfitRenderIndex > 4 ? null : yourOutfitRightArrow }</div>
         </div>
 
       </div>

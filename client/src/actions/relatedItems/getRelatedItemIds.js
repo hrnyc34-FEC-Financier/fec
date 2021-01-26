@@ -10,14 +10,27 @@ import addTimeSaverList from './addTimeSaverList.js';
 
 
 const getRelatedItemIds = ( productId, updatedNeedArr, wholeData ) => {
+  console.log('productId,:', productId);
 
   return (dispatch) => {
 
     return searchEngine.get(`products/${productId}/related`)
       .then(res=>{
-        dispatch( relatedItemList( res.data ) );
+        let relatedItemsList = res.data.sort();
+        for ( let i = 0; i < relatedItemsList.length; i++ ) {
+          if ( relatedItemsList[i] === productId ) {
+            relatedItemsList.splice(i, 1);
+          }
+          if (relatedItemsList[i] === relatedItemsList[i + 1]) {
+            relatedItemsList.splice(i, 1);
+          }
+        }
+        console.log('relatedItemsList:', res.data);
+        console.log('relatedItemsList!!!!!:', relatedItemsList);
+
+        dispatch( relatedItemList( relatedItemsList ) );
         if (updatedNeedArr) {
-          dispatch( addTimeSaverList ( wholeData, res.data ) );
+          dispatch( addTimeSaverList ( wholeData, relatedItemsList ) );
         }
       })
       .catch(err=>console.log('adding getRelatedItemIds from current item failed :', err));
