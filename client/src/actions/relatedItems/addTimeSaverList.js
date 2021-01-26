@@ -14,18 +14,19 @@ const addTimeSaverList = ( wholeData, rList ) => {
     let comparingList = [];
     let updatedNeedList = [];
     let oldList = Object.keys(wholeData);
-    let existingList = [];
+    let relatedNotAdded = [];
 
     if ( oldList.length !== 0 ) {
       for ( let i = 0; i < oldList.length; i++ ) {
         let newId = Number.parseInt( oldList[i] );
-        comparingList.push(Number.parseInt( oldList[i] ));
-        existingList.push(wholeData[newId]);
+        comparingList.push( newId );
       }
       for ( let i = 0; i < rList.length; i++ ) {
-        let checkingId = Number.parseInt( rList[i] );
+        let checkingId = rList[i];
         if ( !comparingList.includes(checkingId) ) {
           updatedNeedList.push(checkingId);
+        } else {
+          relatedNotAdded.push(wholeData[checkingId]);
         }
       }
     }
@@ -47,6 +48,7 @@ const addTimeSaverList = ( wholeData, rList ) => {
 
       .then(res=>{
         let list = [];
+
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)
@@ -72,11 +74,11 @@ const addTimeSaverList = ( wholeData, rList ) => {
           .then(()=>{
             dispatch( totalCarouselList(list) );
             if (updatedNeedList.length) {
-              dispatch( relatedItemCarouselList([...list, ...existingList]) );
+              dispatch( relatedItemCarouselList([...list, ...relatedNotAdded]) );
             } else {
               let result = [];
               for ( let i = 0; i < rList.length; i++ ) {
-                let dataId = Number.parseInt(rList[i]);
+                let dataId = rList[i];
                 result.push( wholeData[dataId]);
               }
               dispatch( relatedItemCarouselList(result) );
