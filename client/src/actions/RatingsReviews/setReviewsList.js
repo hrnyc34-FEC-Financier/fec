@@ -1,9 +1,9 @@
 import searchAPI from '../../lib/searchEngine.js';
 import changeReviewsList from './reviewsList/reviewsList.js';
 
-const setReviews = (product_id) => {
+const setReviews = (product_id, count = 25) => {
   return (dispatch) => {
-    return searchAPI.get('reviews', {product_id, count: 25})
+    return searchAPI.get('reviews', {product_id, count})
       .then(({ data }) => {
         dispatch(changeReviewsList(data.results));
       })
