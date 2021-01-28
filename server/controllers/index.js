@@ -1,5 +1,5 @@
+exports.productReview = require('./productReview.js');
 exports.reviews = require('./reviews.js');
-exports.review = require('./review.js');
 exports.rating = require('./rating.js');
 
 // exports.characteristicsReviews = require('./characteristicsReviews.js');

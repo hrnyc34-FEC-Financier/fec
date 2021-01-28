@@ -1,4 +1,4 @@
-const { readAll } = require('../../db/collections/reviewPhotos.js');
+const { readAll } = require('../../db/collections/rating.js');
 
 module.exports = {
   get: (res, req)=>{

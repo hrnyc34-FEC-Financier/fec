@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "build-prod": "webpack --mode production",
     "build-dev": "webpack -w --mode development",
-    "start": "node server/index.js"
+    "start": "nodemon server/index.js"
   },
   "keywords": [],
   "author": "Claire Sujin Kim",

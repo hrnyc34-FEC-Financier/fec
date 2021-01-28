@@ -1,20 +1,20 @@
-const mongoose = require( 'mongoose' );
-const db = require( '../../db' );
-const database = 'review';
+var mongoose = require('mongoose');
+var db = require('../../db');
+const table = 'photos';
 
-db.on( 'error', console.error.bind( console, 'connection error:') );
-db.once( 'open', () =>{ console.log( `connected to mongoDB : "${ database }"!` ); });
+console.log(`connected to collection : "${table}"!`);
 
-let photosSchema = mongoose.Schema({
-  review_id: { type: Number },
-  url: { type: String },
+var photosSchema = mongoose.Schema({
+  id: {type: Number, unique: true},
+  review_id: Number,
+  url: String
 });
 
-let reviewsPhotos = mongoose.model('reviewsPhotos', photosSchema);
+var Photos = mongoose.model('Photos', photosSchema);
 
 const dbMethods = {
-  readAll: ()=>{
-    return reviewsPhotos.find().exec();
+  readAll: ( id )=>{
+    return Photos.find({ review_id: id }).exec();
   }
 };
 
