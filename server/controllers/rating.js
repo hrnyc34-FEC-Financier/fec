@@ -1,4 +1,4 @@
-const { read, updateOne } = require('../../db/collections/rating.js');
+const { readOne, updateOne } = require('../../db/collections/rating.js');
 
 module.exports = {
 

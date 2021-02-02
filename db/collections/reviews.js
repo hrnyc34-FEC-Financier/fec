@@ -16,7 +16,7 @@ var resultSchema = mongoose.Schema({
   reviewer_email: String,
   summary: String,
   body: String,
-  photos: [String],
+  photos: [],
   Length: Number,
   Fit: Number,
   Comfort: Number,
@@ -36,7 +36,6 @@ const dbMethods = {
       return Result.aggregate()
         .match({ product_id: id, reported: false }).sort('-helpfulness').sort('-date').exec();
     } else {
-      console.log('yayyyyyyy')
       return Result.aggregate().match({ product_id: id }).sort('-' + sortingWay).exec();
     }
   },
@@ -50,41 +49,56 @@ const dbMethods = {
       }, {
         'reported': true
       },
-        { new: true }).exec();
+      { new: true }).exec();
     } else if (helpful === true) {
       return Result.updateOne({
         review_id: id
       }, {
         '$inc': { helpfulness: 1 }
       },
-        { new: true }).exec();
+      { new: true }).exec();
     }
   },
   create: (one) => {
-    // return Result.create({
-    //   product_id: one.product_id,
-    //   review_id: one.review_id,
-    //   rating: one.rating,
-    //   helpfulness: one.helpfulness,
-    //   recommend: one.recommend,
-    //   reported: one.reported,
-    //   response: one.response,
-    //   reviewer_name: one.reviewer_name,
-    //   reviewer_email: one.reviewer_email,
-    //   summary: one.summary,
-    //   body: one.body,
-    //   photos: one.photos,
-    //   Length: one.Length,
-    //   Fit: one.Fit,
-    //   Comfort: one.Comfort,
-    //   Quality: one.Quality,
-    //   Size: one.Size,
-    //   Width: one.Width,
-    // date: one.product_id,
-    // });
+    let productId = one.product_id;
+    let reviewId = 0;
+    if (!one.product_id) {
+      return Result.find({}).sort({ product_id: -1 }).limit(1)
+        .then((result) => {
+          productId = result[0].product_id + 1;
+        })
+        .catch(err => console.log(err));
+    }
+    return Result.find({}).sort({ review_id: -1 }).limit(1)
+      .then(result => {
+        reviewId = result[0].review_id + 1;
+        return Result.create({
+          product_id: productId,
+          review_id: reviewId,
+          rating: one.rating,
+          helpfulness: one.helpfulness,
+          recommend: one.recommend,
+          reported: one.reported,
+          response: one.response,
+          reviewer_name: one.reviewer_name,
+          reviewer_email: one.reviewer_email,
+          summary: one.summary,
+          body: one.body,
+          photos: one.photos,
+          Length: one.Length,
+          Fit: one.Fit,
+          Comfort: one.characteristics.Comfort,
+          Quality: one.characteristics.Quality,
+        });
+      })
+      .then(() => {
+        return Result.find({ product_id: productId }).exec()
+          .then(result => {
+            return { product: result[0].product_id, results: result };
+          });
+      })
+      .catch(err => console.log('create new review post : ', err));
   }
 };
 
 module.exports = dbMethods;
-
-

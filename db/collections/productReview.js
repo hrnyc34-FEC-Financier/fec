@@ -16,7 +16,6 @@ const dbMethods = {
     // sorted reviews of current product in a productreviews collection
     return ProductReviews.findOne({ 'product': id }).exec()
       .then(result => {
-        // var test = {results:[{helpfulness:2, date:1},{helpfulness:2, date:1},{helpfulness:1, date: 0521},{helpfulness:2, date:0523},{helpfulness:3, date:0522},{helpfulness:2, date:0527}]};
         let dateArray = result.results.sort((a, b) => {
           return b.date - a.date;
         });

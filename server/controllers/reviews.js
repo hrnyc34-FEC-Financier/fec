@@ -1,5 +1,5 @@
 const { readAll, readOne, update, create } = require('../../db/collections/reviews.js');
-const { pReadOne, pReadAll, pUpdateOne } = require('../../db/collections/productReview.js');
+const { pUpdateOne } = require('../../db/collections/productReview.js');
 
 module.exports = {
   get: (req, res) => {
@@ -17,23 +17,36 @@ module.exports = {
     //     console.log(err);
     //   });
   },
-  // post: (req, res) => {
-  //   create(req.body)
-  //     .then(() => res.sendStatus(201))
-  //     .catch((err) => {
-  //       res.sendStatus(404);
-  //       console.error(err);
-  //     });
-  // },
-  put: (req, res) => {
-    // console.log('put_url', req.url);
-    // url:  /2263215/helpful
-    console.log('put_path', req.route.path);
-    // path: /:review_id/helpful ||   '/:review_id/report'
+  post: (req, res) => {
+    console.log('req.body in reviews:', req.body);
+    // Status: 201 CREATED
 
     /*
+    handleSubmitReview({product_id: currentProductId, rating, characteristics, recommend, summary, body, name, email, photos})
+
+    return searchAPI.post('reviews', review) */
+
+    return create(req.body)
+      .then(result => {
+        return pUpdateOne(result)
+          .then(()=> {
+            res.sendStatus(201);
+          })
+          .catch(err => console.log(err));
+      })
+      .catch((err) => {
+        res.sendStatus(404);
+        console.error(err);
+      });
+  },
+
+  put: (req, res) => {
+    /*
+     path: /:review_id/helpful,'/:review_id/report'
      Status: 204 NO CONTENT
     */
+    console.log('put_path', req.route.path);
+
     let helpful = req.route.path === '/:review_id/helpful';
     let report = req.route.path === '/:review_id/report';
     return update(req.params.review_id, helpful, report)
@@ -55,12 +68,14 @@ module.exports = {
         res.sendStatus(404);
         console.error(err);
       });
-
-    // saveOne({ name: req.params.review_id, helpfulness: req.params.helpful, reported: req.params.report })
-    //   .then(() => res.sendStatus(201))
-    //   .catch((err) => {
-    //     res.sendStatus(404);
-    //     console.error(err);
-    //   });
   }
 };
+
+
+// API Query Parameters
+//// product_id	      int               Required ID of the product to post the review for
+//// rating	int	      Integer (1-5)     indicating the review rating
+//// recommend	      bool	            Value indicating if the reviewer recommends the product
+//// photos	          [text]           	Array of text urls that link to images to be shown
+//// characteristics	object	          Object of keys representing characteristic_id and values
+////                                    representing the review value for that characteristic. { "14": 5, "15": 5...}
