@@ -12,19 +12,22 @@ var productReviewSchema = mongoose.Schema({
 var ProductReviews = mongoose.model('ProductReviews', productReviewSchema);
 
 const dbMethods = {
-  pReadAll: (id, reviewNum, sortingWay) => {
-    // sorted reviews of current product in a productreviews collection
+  pReadAll: (id, sortingWay = 'newest') => {
+    console.log('sorted reviews by', sortingWay, ', product id : ', id);
+    /* sorted reviews of current product in a productreviews collection
+    sort order based on ['relevance', 'helpful', 'newest'] */
+
     return ProductReviews.findOne({ 'product': id }).exec()
       .then(result => {
         let dateArray = result.results.sort((a, b) => {
           return b.date - a.date;
         });
 
-        if (sortingWay === 'relevant') {
+        if (sortingWay === 'relevance') {
           return dateArray.sort((a, b) => {
             return b.helpfulness - a.helpfulness;
           });
-        } else if (sortingWay === 'helpfulness') {
+        } else if (sortingWay === 'helpful') {
           return result.results.sort((a, b) => {
             return b.helpfulness - a.helpfulness;
           });
@@ -34,23 +37,28 @@ const dbMethods = {
       })
       .catch(err => console.log(err, 'error'));
   },
+
   // initial page load reviews of current product
   pReadOne: (id) => {
+    console.log('initial page reviews_product id :', id);
+
     return ProductReviews.find({ product: id }).exec();
   },
+
   pUpdateOne: (one) => {
+    console.log('updating in productReview by product_id:', one.product_id);
     return ProductReviews.updateMany(
       {
-        product: one.product
+        product: one.product_id
       },
       {
-        product: one.product,
+        product: one.product_id,
         results: one.results
-      }).exec();
+      },
+      {
+        upsert: true
+      });
   },
-  // pDeleteOne: (id) => {
-  //   return ProductReviews.deleteOne({ product: id });
-  // }
 };
 
 module.exports = dbMethods;

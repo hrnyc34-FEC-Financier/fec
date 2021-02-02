@@ -26,24 +26,25 @@ var ratingSchema = mongoose.Schema({
 var Ratings = mongoose.model('Ratings', ratingSchema);
 
 const dbMethods = {
-  readOne: ( id, reviewNum )=>{
+  rReadOne: ( id, reviewNum )=>{
+    console.log( 'rReadOne in rating _product_id : ', id );
+
     return Ratings.find({ product_id: id }).exec();
   },
-  updateOne: ( one, rate, recommend, char, charValue ) => {
-  //   var oldRate = one.ratings[rate];
-  //   var oldRecommend = one.recommended[recommend];
-  //   var newChar = (one.characteristics[char] + charValue) / 2;
-  //   return Ratings.update({
-  //     product_id: one.product_id
-  //   }, {
-  //     product_id: one.product_id,
-  //     ratings: {$inc: {rate: oldRate}},
-  //     recommended: {$inc: {recommend: oldRecommend}},
-  //     characteristics: {char: newChar},
-  //   });
-  }
+  rUpdateOne: ( one ) => {
+    console.log('replacing rating data updated by productId:', one.product_id);
+
+    return Ratings.updateMany({
+      product_id: one.product_id
+    }, {
+      product_id: one.product_id,
+      ratings: one.ratings,
+      recommended: one.recommended,
+      characteristics: one.characteristics,
+    },{
+      upsert: true
+    }).exec();
+  },
 };
 
 module.exports = dbMethods;
-
-

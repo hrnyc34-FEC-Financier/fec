@@ -1,29 +1,23 @@
-const { readOne, updateOne } = require('../../db/collections/rating.js');
+const { rReadOne } = require('../../db/collections/rating.js');
 
 module.exports = {
-
-  // API Query Parameters
-  // product_id      int        specifies the product for which to retrieve meta data
-
-  // Status: 200 OK
   get: (req, res) => {
-    console.log('get_working');
-    return readOne( 391884 )
+  /* API Query Parameters
+  product_id      int        specifies the product for which to retrieve meta data
+
+  return searchAPI.get('reviews/meta', {product_id})
+  Status: 200 OK */
+
+    return rReadOne(req.body.product_id)
       .then(result => {
-        console.log('rating_result:', result);
-        return res.json(result);
+        return res.json(result[0]);
       })
+      .then(()=> res.sendStatus(200))
       .catch(err => {
-        res.sendStatus(200);
+        res.sendStatus(404);
         console.log(err);
       });
   },
   post: (req, res) => {
-    create(req.body)
-      .then(() => res.sendStatus(201))
-      .catch((err) => {
-        res.sendStatus(404);
-        console.error(err);
-      });
   }
 };
