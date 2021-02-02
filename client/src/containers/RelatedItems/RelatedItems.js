@@ -37,7 +37,11 @@ const mapDispatchToProps = ( dispatch ) => ({
     dispatch( comparingModal( value === false ) );
     dispatch( addPreviewItem( productId, productList ) );
   },
-  handleAddYourOutfitClick: ( currentItem, styleList, starRating ) => dispatch( addYourOutfitList( currentItem, styleList, starRating ) ),
+  handleAddYourOutfitClick: ( currentItem, styleList, starRating, outfitList ) => {
+    if (!outfitList.includes(currentItem)) {
+      dispatch( addYourOutfitList( currentItem, styleList, starRating) );
+    }
+  },
   handleDeleteYourOutfitClick: ( productId ) => dispatch( deleteYourOutfitList( productId ) ),
   handleCarouselLeftClick: () => dispatch( increaseIndex( true ) ),
   handleCarouselRightClick: () => dispatch( decreaseIndex( true ) ),

@@ -6,7 +6,7 @@ console.log(`connected to collection : "${table}"!`);
 
 var ratingSchema = mongoose.Schema({
   product_id: { type: Number, unique: true },
-  rating: {
+  ratings: {
     1: { type: Number },
     2: { type: Number },
     3: { type: Number },
@@ -21,25 +21,26 @@ var ratingSchema = mongoose.Schema({
     Length: { value: Number },
     Quality: { value: Number },
   },
-
 });
 
 var Ratings = mongoose.model('Ratings', ratingSchema);
 
 const dbMethods = {
-  readAll: ( id, sortingWay, reviewNum, relevant )=>{
-    if ( !relevant ) {
-      return Ratings.find( { product_id: id } ).sort(`'-${$sortingWay}'`).limit(reviewNum).exec();
-    }
-    return Ratings.find( { product_id: id } ).sort(`'-${$sortingWay}'`).sort('-date').limit(reviewNum).exec();
+  readOne: ( id, reviewNum )=>{
+    return Ratings.find({ product_id: id }).exec();
   },
-  readOne: ( id )=>{
-    return Ratings.findOne( { product_id: id } ).exec();
-  },
-  create: ( one ) => {
-    return Ratings.create({
-      // schema...not sure yet
-    });
+  updateOne: ( one, rate, recommend, char, charValue ) => {
+  //   var oldRate = one.ratings[rate];
+  //   var oldRecommend = one.recommended[recommend];
+  //   var newChar = (one.characteristics[char] + charValue) / 2;
+  //   return Ratings.update({
+  //     product_id: one.product_id
+  //   }, {
+  //     product_id: one.product_id,
+  //     ratings: {$inc: {rate: oldRate}},
+  //     recommended: {$inc: {recommend: oldRecommend}},
+  //     characteristics: {char: newChar},
+  //   });
   }
 };
 

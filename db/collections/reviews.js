@@ -1,42 +1,87 @@
 var mongoose = require('mongoose');
 var db = require('../../db');
-const table = 'result_ProductReview : Reviews';
+const table = 'result_ProductReview : results';
 
 console.log(`connected to collection : "${table}"!`);
 
-var reviewsSchema = mongoose.Schema({
+var resultSchema = mongoose.Schema({
   product_id: Number,
   review_id: { type: Number, unique: true },
-  rating: { type: Number, required: true, max: 5 },
-  summary: String,
+  rating: { type: Number, required: true },
+  helpfulness: Number,
   recommend: { type: Boolean, default: false },
-  response: { type: String, default: null },
-  body: String,
-  date: { type: Date, default: Date.now },
+  reported: { type: Boolean, default: false },
+  response: { type: String, default: '' },
   reviewer_name: String,
   reviewer_email: String,
-  helpfulness: Number,
-  reported: { type: Boolean, default: false },
-  characteristics: [ String ],
-  photos: [ String ]
+  summary: String,
+  body: String,
+  photos: [String],
+  Length: Number,
+  Fit: Number,
+  Comfort: Number,
+  Quality: Number,
+  Size: Number,
+  Width: Number,
+  date: { type: Date, default: Date.now },
 });
 
-var Reviews = mongoose.model('Reviews', reviewsSchema);
+var Result = mongoose.model('Result', resultSchema);
 
 const dbMethods = {
-  readAll: ( id, sortingWay, reviewNum, relevant )=>{
-    if ( !relevant ) {
-      return Review.find( { product_id: id } ).sort(`'-${$sortingWay}'`).limit(reviewNum).exec();
+  // sorted reviews of current product in a results collection
+  readAll: (id, sortingWay = 'helpfulness') => {
+    console.log('reviews is working', id, sortingWay);
+    if (sortingWay === 'relevant') {
+      return Result.aggregate()
+        .match({ product_id: id, reported: false }).sort('-helpfulness').sort('-date').exec();
+    } else {
+      console.log('yayyyyyyy')
+      return Result.aggregate().match({ product_id: id }).sort('-' + sortingWay).exec();
     }
-    return Review.find( { product_id: id } ).sort(`'-${$sortingWay}'`).sort('-date').limit(reviewNum).exec();
   },
-  readOne: ( id )=>{
-    return Review.findOne( { product_id: id } ).exec();
+  readOne: (id) => {
+    return Result.find({ review_id: id }).exec();
   },
-  create: ( one ) => {
-    return Review.create({
-      // schema...not sure yet
-    });
+  update: (id, helpful, report) => {
+    if (report === true) {
+      return Result.findOneAndUpdate({
+        review_id: id
+      }, {
+        'reported': true
+      },
+        { new: true }).exec();
+    } else if (helpful === true) {
+      return Result.updateOne({
+        review_id: id
+      }, {
+        '$inc': { helpfulness: 1 }
+      },
+        { new: true }).exec();
+    }
+  },
+  create: (one) => {
+    // return Result.create({
+    //   product_id: one.product_id,
+    //   review_id: one.review_id,
+    //   rating: one.rating,
+    //   helpfulness: one.helpfulness,
+    //   recommend: one.recommend,
+    //   reported: one.reported,
+    //   response: one.response,
+    //   reviewer_name: one.reviewer_name,
+    //   reviewer_email: one.reviewer_email,
+    //   summary: one.summary,
+    //   body: one.body,
+    //   photos: one.photos,
+    //   Length: one.Length,
+    //   Fit: one.Fit,
+    //   Comfort: one.Comfort,
+    //   Quality: one.Quality,
+    //   Size: one.Size,
+    //   Width: one.Width,
+    // date: one.product_id,
+    // });
   }
 };
 

@@ -65,7 +65,7 @@ const addTimeSaverList = ( wholeData, rList ) => {
                 .catch(err=>console.log('adding starRating to related items list  failed :', err));
 
               list.push( overall );
-              console.log("!!!!! Adding only addtional data from addTimeSaver !!!!!");
+              // console.log("!!!!! Adding only addtional data from addTimeSaver !!!!!");
             })
             .catch(err => console.log('adding style to related items list  failed :', err));
         });
