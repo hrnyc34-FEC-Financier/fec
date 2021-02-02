@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "build-prod": "webpack --mode production",
     "build-dev": "webpack -w --mode development",
-    "start": "node server/index.js"
+    "start": "nodemon server/index.js"
   },
   "keywords": [],
   "author": "Claire Sujin Kim",
@@ -38,6 +38,8 @@
     "fontsource-roboto": "^4.0.0",
     "immer": "^8.0.0",
     "jest": "^26.6.3",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.13",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "path": "^0.12.7",

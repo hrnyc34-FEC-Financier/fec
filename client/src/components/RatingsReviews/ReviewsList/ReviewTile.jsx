@@ -5,6 +5,7 @@ import Fade from '@material-ui/core/Fade';
 import ImageModal from './ImageModal.jsx';
 
 const ReviewTile = ({ currentProductId, reviewInfo, handleHelpfulReview, handleReportReview }) => {
+console.log('reviewInfo:', reviewInfo);
 
   const convertDate = (ISOStringDate) => {
     const date = new Date(reviewInfo.date);

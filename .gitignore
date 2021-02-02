@@ -8,6 +8,7 @@ client/dist/*
 env/config.js
 
 ## ETC ##
+db/csv/*
 !client/dist/index.html
 !client/dist/styles/
 .cache/

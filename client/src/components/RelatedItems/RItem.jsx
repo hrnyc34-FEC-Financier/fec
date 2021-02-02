@@ -23,6 +23,8 @@ const RelatedItems = ({
   handleYourOutfitLeftClick,
   handleYourOutfitRightClick,
 })=>{
+  // console.log('relatedProductCarouselList:', relatedProductCarouselList);
+  // console.log('relatedProductList:', relatedProductList);
 
   const slicedRelatedItemList = relatedProductCarouselList.slice(carouselRenderIndex + 1);
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
@@ -130,7 +132,8 @@ const RelatedItems = ({
             <img src={ currentImage } />
             <button
               className='placeHolder'
-              onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }>
+              onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating, yourOutfitList ) }>
+
               <br /><br />
             ADD TO OUTFIT <b className = "card-add">  &nbsp; + </b>
             </button></div>

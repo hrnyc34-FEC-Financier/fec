@@ -7,6 +7,8 @@ const sortSelect = (product_id, sort) => {
   return (dispatch) => {
     return searchAPI.get('reviews', {product_id, sort, count: 25})
       .then(({ data }) => {
+        console.log('review_data:', data);
+
         dispatch(changeReviewSort(sort));
         dispatch(changeReviewsList(data.results));
       })
