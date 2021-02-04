@@ -105,6 +105,7 @@ const ReviewModal = ({currentProductId, currentProduct, productCharacteristics, 
         </form>
       </div>
       <button id='submitButton' onClick={(e) => {
+        console.log('characteristics',characteristics)
         handleSubmitReview({product_id: currentProductId, rating, characteristics, recommend, summary, body, name, email, photos})
         handleClose();
       }}>
