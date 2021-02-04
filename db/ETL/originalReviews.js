@@ -224,7 +224,7 @@
 
 
 // create a productreviews collection sorted by product_Id
-db.results.aggregate([{
+db.reviews.aggregate([{
   {
     $group: {
       _id: '$product_id',
@@ -242,7 +242,7 @@ db.results.aggregate([{
 
 
   // create a rating collection
-  db.results.aggregate([
+  db.reviews.aggregate([
     {
       $group: {
         _id: '$product_id',
