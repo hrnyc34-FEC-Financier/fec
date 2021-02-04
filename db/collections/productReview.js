@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var db = require('../../db');
-const table = 'productReview';
+const table = 'SortedReviews';
 
 console.log(`connected to collection : "${table}"!`);
 
@@ -9,15 +9,13 @@ var productReviewSchema = mongoose.Schema({
   results: { type: Array }
 });
 
-var ProductReviews = mongoose.model('ProductReviews', productReviewSchema);
+var SortedReviews = mongoose.model('SortedReviews', productReviewSchema);
 
 const dbMethods = {
   pReadAll: (id, sortingWay = 'newest') => {
     console.log('sorted reviews by', sortingWay, ', product id : ', id);
-    /* sorted reviews of current product in productReviews
-    sort order based on ['relevance', 'helpful', 'newest'] */
 
-    return ProductReviews.findOne({ 'product': id }).exec()
+    return SortedReviews.findOne({ 'product': id }).exec()
       .then(result => {
         let dateArray = result.results.sort((a, b) => {
           return b.date - a.date;
@@ -42,12 +40,13 @@ const dbMethods = {
   pReadOne: (id) => {
     console.log('pReadOne_initial reviews in productReview Model by product# :', id);
 
-    return ProductReviews.find({ product: id }).exec();
+    return SortedReviews.find({ product: id }).exec();
   },
 
   pUpdateOne: (one) => {
     console.log('pUpdateOne in productReview Model by product_id:', one.product_id);
-    return ProductReviews.updateMany(
+
+    return SortedReviews.updateMany(
       {
         product: one.product_id
       },

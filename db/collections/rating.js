@@ -16,10 +16,10 @@ var ratingSchema = mongoose.Schema({
     true: { type: Number },
     false: { type: Number } },
   characteristics: {
-    Comfort: { value: Number },
-    Fit: { value: Number },
-    Length: { value: Number },
-    Quality: { value: Number },
+    Comfort: { id: Number, value: Number },
+    Fit: { id: Number, value: Number },
+    Length: { id: Number, value: Number },
+    Quality: { id: Number, value: Number },
   },
 });
 
@@ -31,7 +31,7 @@ const dbMethods = {
 
     return Ratings.find({ product_id: id }).exec();
   },
-  rUpdateOne: ( one ) => {
+  rUpdateAll: ( one ) => {
     console.log('rUpdateOne in rating Model_ by productId:', one.product_id);
 
     return Ratings.updateMany({
