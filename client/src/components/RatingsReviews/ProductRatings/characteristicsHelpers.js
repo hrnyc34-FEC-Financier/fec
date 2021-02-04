@@ -1,5 +1,5 @@
 const createCharacteristicsArray = (productCharacteristics, inputRatingOrId) => {
-  console.log('productCharacteristics:', productCharacteristics);
+
   //productCharacteristics { Size: { id: 14, value: '4.000' }, Width: { id: 15, value: null}, ... }
   //inputRatingOrId = 'rating' or 'id'
   const characteristicsMap = [
