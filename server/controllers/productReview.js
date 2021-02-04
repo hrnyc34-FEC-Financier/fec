@@ -11,14 +11,19 @@ module.exports = {
     return searchAPI.get('reviews',{product_id, sort, count: 25})
     Status: 200 OK
     */
+    var productId = 391884;
+    // var productId = req.query.product_id;
+    var page = req.query.page || 1;
+    var count = req.query.count || 5;
+    var sort = req.query.sort || undefined;
 
-    var page = req.body.page || 1;
-    var count = req.body.count || 5;
-    var sort = req.body.sort || undefined;
+    console.log('query in productReview', req.query);
+    console.log('productId:', productId);
 
     if (sort === undefined) {
+      console.log('productReview_ sort is:', sort);
 
-      return pReadOne(req.body.product_id)
+      return pReadOne( productId )
         .then(result => {
           let newResult = result[0].results;
           if (newResult.length <= count) {
@@ -32,19 +37,16 @@ module.exports = {
           if (page !== 1) {
             return res.json(newResult.slice((page - 1) * count, page * count));
           }
-          return res.json({ results: newResult.slice(0, count) })
-            .then(() => {
-              res.sendStatus(200);
-            });
+          return res.json({ results: newResult.slice(0, count) });
         })
         .catch(err => {
-          res.sendStatus(404);
+          // res.sendStatus(404);
           console.log(err);
         });
 
     } else {
-
-      return pReadAll(req.body.product_id, req.body.sort)
+      console.log('productReview_ sorting by:', sort);
+      return pReadAll( productId, sort )
         .then(result => {
           let newResult = result;
           if (newResult.length <= count) {

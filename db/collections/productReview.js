@@ -14,7 +14,7 @@ var ProductReviews = mongoose.model('ProductReviews', productReviewSchema);
 const dbMethods = {
   pReadAll: (id, sortingWay = 'newest') => {
     console.log('sorted reviews by', sortingWay, ', product id : ', id);
-    /* sorted reviews of current product in a productreviews collection
+    /* sorted reviews of current product in productReviews
     sort order based on ['relevance', 'helpful', 'newest'] */
 
     return ProductReviews.findOne({ 'product': id }).exec()
@@ -40,13 +40,13 @@ const dbMethods = {
 
   // initial page load reviews of current product
   pReadOne: (id) => {
-    console.log('initial page reviews_product id :', id);
+    console.log('pReadOne_initial reviews in productReview Model by product# :', id);
 
     return ProductReviews.find({ product: id }).exec();
   },
 
   pUpdateOne: (one) => {
-    console.log('updating in productReview by product_id:', one.product_id);
+    console.log('pUpdateOne in productReview Model by product_id:', one.product_id);
     return ProductReviews.updateMany(
       {
         product: one.product_id

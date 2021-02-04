@@ -19,18 +19,20 @@ module.exports = {
 
       return searchAPI.post('reviews', review)
       Status: 201 CREATED   */
-    let productId = req.body.product_id;
+
+    let productId = 391884;
+    // let productId = req.body.product_id;
 
     return create(req.body)
       .then(result => {
-        console.log('result:', result.product_id);
+        console.log('after Create in review controller:', result.product_id);
         productId = result.product_id;
         return pUpdateOne(result)
           .then(result=> {
-            console.log('after updating productreview_ product id : ', result);
+            console.log('after pUpdateOne_review controller');
             return updateRating( productId )
               .then(result=> {
-                console.log('after updateRating:', result);
+                console.log('after updateRating_review controller : ', result[0]);
                 return rUpdateOne(result[0])
                   .then(() => {
                     res.sendStatus(201);
@@ -52,11 +54,13 @@ module.exports = {
              /:review_id/report
      Status: 204 NO CONTENT
     */
+    let reviewId = 2263229;
+    // let reviewId = req.params.review_id;
     let helpful = req.route.path === '/:review_id/helpful';
     let report = req.route.path === '/:review_id/report';
     let productId = '';
 
-    return update(req.params.review_id, helpful, report)
+    return update(reviewId, helpful, report)
       .then(() => {
         readOne(req.params.review_id)
           .then(result => {

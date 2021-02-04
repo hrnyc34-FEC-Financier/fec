@@ -1,4 +1,5 @@
 const createCharacteristicsArray = (productCharacteristics, inputRatingOrId) => {
+  console.log('productCharacteristics:', productCharacteristics);
   //productCharacteristics { Size: { id: 14, value: '4.000' }, Width: { id: 15, value: null}, ... }
   //inputRatingOrId = 'rating' or 'id'
   const characteristicsMap = [
@@ -17,7 +18,7 @@ const createCharacteristicsArray = (productCharacteristics, inputRatingOrId) => 
     if (inputRatingOrId === 'rating') {
       //will handle cases where a product's characteristic value property is set to null
       if (productCharacteristics.hasOwnProperty(characteristic) && productCharacteristics[characteristic].value !== null) {
-        const characteristicValue = Number(productCharacteristics[characteristic].value.slice(0, 3));
+        const characteristicValue = Number(productCharacteristics[characteristic].value);
         characteristicsArray.push({ characteristic: [characteristic, characteristicValue], characteristicInfo });
         // [{characteristic: [characteristic, characteristicValue], characteristicInfo: ['A size too small', '1/2 a size too small, ...]}]
       }
