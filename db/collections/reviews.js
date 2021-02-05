@@ -49,6 +49,7 @@ const dbMethods = {
   },
 
   update: (id, helpful, report) => {
+
     if (report === true) {
       console.log('update in reviews Model for reported', report);
 

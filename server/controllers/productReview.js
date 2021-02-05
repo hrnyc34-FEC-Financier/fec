@@ -16,14 +16,17 @@ module.exports = {
         .then(result => {
           console.log('after pReadOne (step 1) for initial reviews ', result[0]);
           let newResult = result[0].results;
+          let notReported = [];
           if (newResult.length <= count) {
             count = newResult.length;
           }
           for (let i = 0; i < newResult.length; i++) {
-            if (newResult[i].reported === true) {
-              newResult.splice(i, 1);
+            if (!newResult[i].reported) {
+              console.log('newResult[i]:', newResult[i].reported, newResult[i]);
+              notReported.push(newResult[i]);
             }
           }
+          newResult = notReported;
           if (page !== 1) {
             return res.json(newResult.slice((page - 1) * count, page * count));
           }
@@ -39,14 +42,17 @@ module.exports = {
         .then(result => {
           console.log('after pReadAll (step 1) _ sorting by:', sort);
           let newResult = result;
+          let notReported = [];
           if (newResult.length <= count) {
             count = newResult.length;
           }
           for (let i = 0; i < newResult.length; i++) {
-            if (newResult[i].reported) {
-              newResult.splice(i, 1);
+            if (!newResult[i].reported) {
+              console.log('newResult[i]:', newResult[i].reported, newResult[i]);
+              notReported.push(newResult[i]);
             }
           }
+          newResult = notReported;
           if (page !== 1) {
             return res.json({ results: newResult.slice((page - 1) * count, page * count) });
           }
