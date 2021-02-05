@@ -1,19 +1,17 @@
-import searchAPI from '../../lib/searchEngine.js';
-import changeReviewsList from './reviewsList/reviewsList.js';
+// import searchAPI from '../../lib/searchEngine.js';
+// import changeReviewsList from './reviewsList/reviewsList.js';
 
-const setReviews = (product_id, count = 25) => {
-  return (dispatch) => {
-    return searchAPI.get('reviews', {product_id, count})
-      .then(({ data }) => {
-        dispatch(changeReviewsList(data.results));
-      })
-      .catch(err => console.error('Unable to get Reviews Data', err));
-  };
-};
+// const setReviews = (product_id, count = 25) => {
+//   return (dispatch) => {
+//     return searchAPI.get('reviews', {product_id, count})
+//       .then(({ data }) => {
+//         dispatch(changeReviewsList(data.results));
+//       })
+//       .catch(err => console.error('Unable to get Reviews Data', err));
+//   };
+// };
 
-export default setReviews;
-
-
+// export default setReviews;
 
 // API Query Parameters
 // parameter       type     description
@@ -24,34 +22,17 @@ export default setReviews;
 
 
 
+import axios from 'axios';
+import changeReviewsList from './reviewsList/reviewsList.js';
 
+const setReviews = (product_id, count = 25) => {
+  return (dispatch) => {
+    return axios.get('reviews', {params:{product_id, count}})
+      .then(({ data }) => {
+        dispatch(changeReviewsList(data.results));
+      })
+      .catch(err => console.error('Unable to get Reviews Data', err));
+  };
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import axios from 'axios';
-// // import searchAPI from '../../lib/searchEngine.js';
-// import changeReviewsList from './reviewsList/reviewsList.js';
-
-// const setReviews = (product_id, count = 25) => {
-//   return (dispatch) => {
-//     return axios.get('reviews', {params:{product_id, count}})
-//       .then(({ data }) => {
-//         dispatch(changeReviewsList(data.results));
-//       })
-//       .catch(err => console.error('Unable to get Reviews Data', err));
-//   };
-// };
-
-// export default setReviews;
+export default setReviews;
