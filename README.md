@@ -2,16 +2,17 @@
 Developed by Aharon Kolatch, Cody Jue, Will Chang and Claire Sujin Kim
 
 ## Intro
+```bash
 We developed this project as a group over the course of 9 days during the Hack Reactor program.
 We were all worked on our own individual widget for the site.
-
+```
 - **Aharon** - Product Overview
 - **Claire** - Related Items and Comparison	
 - **Aharon** - Questions and Answers
 - **Will** - Ratings and Reviews
 
-We were given a business document which outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
-That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
+_We were given a business document which outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
+That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#)._
 
 ## Technologies
 For this project, we used the following languages and frameworks in our implementation
@@ -22,14 +23,6 @@ For this project, we used the following languages and frameworks in our implemen
 ```
 ## Deployment
 We deployed our site on AWS, which can be viewed **here**
-
-## Installation Guidelines
-  1. clone this repo to your local machine
-  2. run ```npm install``` in the 'root' directory
-  2. run ```npm run build-prod```
-  3. run ```npm run build-dev```
-  4. run ```npm start```
-  5. find the site on ***localhost:3333***
   
 # Components
 **Product Overview**
@@ -61,6 +54,13 @@ The Ratings & Reviews module was implemented to allow viewing and submission of 
 3. Sorting
 4. Rating,Product Breakdown
 
+# Installation Guidelines
+  1. clone this repo to your local machine
+  2. run ```npm install``` in the 'root' directory
+  2. run ```npm run build-prod```
+  3. run ```npm run build-dev```
+  4. run ```npm start```
+  5. find the site on ***localhost:3333***
 ## **Useful resource**
 - **esLint** : https://eslint.org/docs/user-guide/command-line-interface
 - **Enzyme** : https://www.npmjs.com/package/enzyme
