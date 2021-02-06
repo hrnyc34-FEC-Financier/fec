@@ -15,15 +15,21 @@ Each of us was assigned to one piece of the API:
 
 # Reviews API
 
-- Engineer : **Claire Sujin Kim**
-
 > Table of Contents
 
+- [Engineer](#Engineer)
 - [Overview](#overview)
 - [Technologies](#Technologies)
 - [Installation guide](#installation)
   
   _The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md)._ 
+  
+## Engineer : Claire Sujin Kim
+
+## Overview 
+Building up database locally and integrate the existing front-end with the local database.
+Working with a legacy codebase you’ve never seen before
+Focusing on the Back End side of optimizing your system
 
 ## Technologies
 For this project, I used the following languages and frameworks in our implementation:
@@ -32,11 +38,6 @@ For this project, I used the following languages and frameworks in our implement
 - MongoDB
 - Mongoose ODM
 - Docker
-
-## Overview 
-Building up database locally and integrate the existing front-end with the local database.
-Working with a legacy codebase you’ve never seen before
-Focusing on the Back End side of optimizing your system
 
 ## Installation
   1. clone this repo to your local machine
