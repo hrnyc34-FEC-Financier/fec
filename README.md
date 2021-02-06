@@ -1,5 +1,29 @@
-# Guidelines
-  **Installation**
+# Front End Capstone Project
+Developed by Aharon Kolatch, Cody Jue, Will Chang and Claire Sujin Kim
+
+## Intro
+We developed this project as a group over the course of 9 days during the Hack Reactor program.
+We were all worked on our own individual widget for the site.
+
+```bash
+Aharon - Product Overview
+Claire - Related Items and Comparison	
+Aharon - Questions and Answers
+Will - Ratings and Reviews
+```
+We were given a business document which outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
+That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
+
+## Technologies
+```javascript
+// For this project, we used the following languages and frameworks in our implementation
+Javascript
+React
+Redux
+npm
+```
+
+## Installation Guidelines
   1. npm install
   2. npm run build-prod
   3. npm run build-dev
@@ -26,6 +50,5 @@
 
 ## **Useful resource**
 - **esLint** :https://eslint.org/docs/user-guide/command-line-interface
--
 
-_Have a great day guys!_
+_Have a great day!_
