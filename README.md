@@ -17,7 +17,7 @@ Each of us was assigned to one piece of the API:
 
 - Engineer : **Claire Sujin Kim**
 
-  : The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md).
+  _The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md)._
 
 ## Technologies
 For this project, I used the following languages and frameworks in our implementation:
