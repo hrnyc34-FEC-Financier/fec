@@ -26,6 +26,7 @@ Each of us was assigned to one piece of the API:
 ## Engineer 
   ### Claire Sujin Kim
 
+
 ## Overview 
 Building up database locally and integrate the existing front-end with the local database.
 Working with a legacy codebase you’ve never seen before
