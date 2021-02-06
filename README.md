@@ -19,6 +19,12 @@ Each of us was assigned to one piece of the API:
 
   _The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md)._
 
+> Table of Contents
+
+- [Overview](#overview)
+- [Technologies](#Technologies)
+- [Installation](#installation)
+
 ## Technologies
 For this project, I used the following languages and frameworks in our implementation:
 - Node.js
@@ -26,12 +32,6 @@ For this project, I used the following languages and frameworks in our implement
 - MongoDB
 - Mongoose ODM
 - Docker
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-
 
 ## Overview 
 Building up database locally and integrate the existing front-end with the local database.
