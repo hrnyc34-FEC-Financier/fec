@@ -1,6 +1,6 @@
 # Front End Capstone Project
 
-## Project introduction
+## Introduction
 ```
 We developed this project as a group over the course of 9 days during the Hack Reactor program.
 We were all worked on our own individual widget for the site.
