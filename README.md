@@ -1,7 +1,7 @@
 # Front End Capstone Project
 Developed by Aharon Kolatch, Cody Jue, Will Chang and Claire Sujin Kim
 
-## Intro
+> Intro
 ```
 We developed this project as a group over the course of 9 days during the Hack Reactor program.
 We were all worked on our own individual widget for the site.
@@ -14,17 +14,17 @@ We were all worked on our own individual widget for the site.
 _We were given a business document which outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
 That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#)._
 
-## Technologies
+> Technologies
 For this project, we used the following languages and frameworks in our implementation
 ```bash
 - Javascript
 - React
 - Redux
 ```
-## Deployment
+> Deployment
 We deployed our site on AWS, which can be viewed **here**
   
-# Components
+## Components
 **Product Overview**
 This feature gives client the ability to filter through all styles available for a product. Client can click through a gallery of images for a given style. Client can add products by quantity and size. This was the top-most module on the Product Detail page. The functionality contained within this module can be divided into several pieces:
 1. Image gallery
