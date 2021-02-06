@@ -24,7 +24,7 @@ Each of us was assigned to one piece of the API:
   
   _The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md)._ 
   
-## ** Engineer : Claire Sujin Kim **
+## [ Engineer : Claire Sujin Kim ]
 
 ## Overview 
 Building up database locally and integrate the existing front-end with the local database.
