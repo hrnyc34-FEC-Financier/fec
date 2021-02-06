@@ -6,10 +6,10 @@ We developed this project as a group over the course of 9 days during the Hack R
 We were all worked on our own individual widget for the site.
 
 ```bash
-Aharon - Product Overview
-Claire - Related Items and Comparison	
-Aharon - Questions and Answers
-Will - Ratings and Reviews
+**Aharon** - Product Overview
+**Claire** - Related Items and Comparison	
+**Aharon** - Questions and Answers
+**Will** - Ratings and Reviews
 ```
 We were given a business document which outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
 That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
