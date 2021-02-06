@@ -23,7 +23,8 @@ Each of us was assigned to one piece of the API:
 - [Installation guide](#installation)
   
   
-## Engineer : Claire Sujin Kim
+## Engineer 
+  ### Claire Sujin Kim
   _The functionality of the review API is outlined [here](https://gist.github.com/trentgoing/d69849d6c16b82d279ffc4ecd127f49f#file-reviews-md)._ 
 
 ## Overview 
