@@ -1,16 +1,15 @@
-# ReviewAPI
-
-## Introduction
+```
+Introduction
 
 Over the course of 12 days during our time at Hack Reactor, cohort 34, Team tres-leches composed of the astounding team of 3 developers, **Claire Sujin Kim, Raymond Hunce, Tina Tkatchenko**, was tasked to create a working backend of each of their respective parts to an API of an E-commerce site. 
 
 Each of us was assigned to one piece of the API:
 
 1. Products - Tina
-2. Q & A - Raymond.  
-3. **Reviews - Claire** 
-
-> tres Leches [team repository](https://github.com/hrnyc34-SDC-tresLeches)
+2. Q & A - Raymond  
+3. Reviews - Claire
+```
+> found [tres Leches team repository](https://github.com/hrnyc34-SDC-tresLeches)
 
 # Reviews API
 
