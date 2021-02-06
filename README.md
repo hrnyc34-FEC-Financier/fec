@@ -27,8 +27,6 @@ For this project, I used the following languages and frameworks in our implement
 - Mongoose ODM
 - Docker
 
-## ** NOTE THIS README IS UNDER CONSTRUCTION**
-
 ## Table of Contents
 
 - [Overview](#overview)
