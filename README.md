@@ -7,8 +7,8 @@ We developed this project as a group over the course of 9 days during the Hack R
 We were all worked on our own individual widget for the site.
 ```
 
-* built up based on given a business document outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
-That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
+_built up based on given a business document outlined a strict set of requirements that guided our implementation, funcitonality, and styling.
+That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#)._
 
 ## Team members
 
