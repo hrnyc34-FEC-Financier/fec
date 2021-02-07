@@ -1,6 +1,6 @@
+# System Design Capstone
 ```
 [ Introduction ]
-
 Over the course of 12 days during our time at Hack Reactor, cohort 34, Team tres-leches composed 
 of the astounding team of 3 developers, Claire Sujin Kim, Raymond Hunce, Tina Tkatchenko, 
 was tasked to create a working backend of each of their respective parts to an API of an E-commerce site. 
@@ -25,7 +25,7 @@ Each of us was assigned to one piece of the API:
   
 ## Engineer 
   ### Claire Sujin Kim
-
+  Front-end build can be found in its [repository](https://github.com/hrnyc34-FEC-Financier/fec/tree/claire-dev)
 
 ## Overview 
 Building up database locally and integrate the existing front-end with the local database.
