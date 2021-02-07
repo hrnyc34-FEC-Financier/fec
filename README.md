@@ -8,8 +8,8 @@ We were all worked on our own individual widget for the site.
 
 built up based on given a business document outlined a strict set of requirements that guided 
 our implementation, funcitonality, and styling.
-That document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
 ```
+business document [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
 
 ## Team members
 
