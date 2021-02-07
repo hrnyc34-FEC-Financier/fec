@@ -2,14 +2,14 @@
 > Table of Contents
 
 - [Introduction](#Introduction)
-- [Team members](#Team members)
+- [Team members](#Team-members)
 - [Technologies](#Technologies)
-- [Components guide](#Components guide)
-  - [1. Product Overview](#1. Product Overview)
-  - [2. Related Items and Comparison](#2. Related Items and Comparison)
-  - [3. Questions & Answers](#3. Questions & Answers)
-  - [4. Ratings and Reviews](#4. Ratings and Reviews)
-- [Installation Guidelines](#Installation Guidelines)
+- [Components guide](#Components-guide)
+  - [1. Product Overview](#1.Product-Overview)
+  - [2. Related Items and Comparison](#2.-Related Items-and-Comparison)
+  - [3. Questions & Answers](#3.-Questions-&-Answers)
+  - [4. Ratings and Reviews](#4.-Ratings-and-Reviews)
+- [Installation Guidelines](#Installation-Guidelines)
 - [Resource](#Resource)
 
 ## Introduction
