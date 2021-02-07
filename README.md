@@ -18,7 +18,7 @@ our implementation, funcitonality, and styling.
 ```
 - **Aharon** - Product Overview
 - **Claire** - Related Items and Comparison	
-- **Aharon** - Questions and Answers
+- **Cody** - Questions and Answers
 - **Will** - Ratings and Reviews
 
 ## Technologies
