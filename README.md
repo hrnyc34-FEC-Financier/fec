@@ -1,4 +1,4 @@
-# Front End Capstone Project
+# Front End Capstone
 
 ## Introduction
 ```
