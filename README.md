@@ -1,31 +1,79 @@
-# Guidelines
-  **Installation**
-  1. npm install
-  2. npm run build-prod
-  3. npm run build-dev
-  4. npm start
+# Front End Capstone
+> Table of Contents
 
-## Check out
-  **Upgrading from Enzyme 2.x or React < 16**
-    - To get started with enzyme, you can simply install it via npm. You will need to install enzyme along with an Adapter corresponding to the version of react
+- [Introduction](#Introduction)
+- [Technologies](#Technologies)
+- [Components guide](#Components)
+- [Installation Guidelines](#Installation-Guidelines)
+- [Resource](#Resource)
 
-**We are going to use "react": "^17.0.1"**
+## Introduction
+> Developed by Aharon Kolatch, Cody Jue, Will Chang and Claire Sujin Kim
+```
+We developed this project as a group over the course of 9 days during the Hack Reactor program.
+We were all worked on our own individual widget for the site.
 
-    import Enzyme from 'enzyme';
-    import Adapter from 'enzyme-adapter-react-16';
+built up based on given a business document outlined a strict set of requirements that guided
+our implementation, functionality, and styling.
+```
+- **Aharon** - Product Overview
+- **Claire** - Related Items and Comparison
+- **Cody** - Questions and Answers
+- **Will** - Ratings and Reviews
 
-    Enzyme.configure({ adapter: new Adapter() });
+## Technologies
+For this project, we used the following languages and frameworks in our implementation
+```bash
+- Javascript
+- React
+- Redux
+```
+> Deployment
+We deployed our site on AWS, which can be viewed **here**
+
+## Components
+business document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
+
+#### 1. Product Overview
+This feature gives client the ability to filter through all styles available for a product. Client can click through a gallery of images for a given style. Client can add products by quantity and size. This was the top-most module on the Product Detail page. The functionality contained within this module can be divided into several pieces:
+* Image gallery
+* Product information
+* Style selector
+* Add to cart
+
+#### 2. Related Items and Comparison
+The Related Products module was implemented to provide clients with a carousel of related products from the Product Overview. The carousel allows clients to navigate to related products and compare the given characteristics of each product.
+The Your Outfit List module below the Related Products carousel allows clients to select a current item and add it to their own list to group together as an outfit.
+* Carousel with related Product Cards
+* Navigating to the related products
+* Comparison Modal
+* Carousel to add to Outfit
+
+#### 3. Questions & Answers
+The Questions & Answers module was implemented to allow asking and answering of questions for a product selected. The functionality contained within this module can be divided into several pieces:
+* View questions
+* Search for a question
+* Asking a question
+* Answering a question
+
+#### 4. Ratings and Reviews
+The Ratings & Reviews module was implemented to allow viewing and submission of reviews for a product selected. The functionality contained within this module can be divided into several pieces:
+* Write new review
+* Reviews List
+* Sorting
+* Rating,Product Breakdown
+
+## Installation Guidelines
+  1. clone this repo to your local machine
+  2. run ```npm install``` in the 'root' directory
+  3. run ```npm run build-dev```
+  4. run ```npm start```
+  5. find the site on ***localhost:3333***
+
+## Resource
+- **esLint** : https://eslint.org/docs/user-guide/command-line-interface
+- **Enzyme** : https://www.npmjs.com/package/enzyme
 
 
-    *** more info: https://www.npmjs.com/package/enzyme
 
-  **babel compiler**
-  Instruction says you should install it globally.
-  if installing in local folder doesn't work, try to install
-  "npm install --global create-babelrc"
-
-## **Useful resource**
-- **esLint** :https://eslint.org/docs/user-guide/command-line-interface
--
-
-_Have a great day guys!_
+_Have a great day!_
