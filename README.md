@@ -52,7 +52,7 @@ The Your Outfit List module below the Related Products carousel allows clients t
 * Comparison Modal
 * Carousel to add to Outfit
 ![relatedItems](img/relatedItems.png)
-![relatedItems](img/relatedItem.gif)
+![relatedItems](img/relatedItemNew.gif)
 
 #### 3. Questions & Answers
 The Questions & Answers module was implemented to allow asking and answering of questions for a product selected. The functionality contained within this module can be divided into several pieces:
