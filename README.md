@@ -21,6 +21,9 @@ our implementation, funcitonality, and styling.
 - **Cody** - Questions and Answers
 - **Will** - Ratings and Reviews
 
+![catwalk](img/fec1.gif)
+![catwalk_nightMode](img/fec2.gif)
+
 ## Technologies
 For this project, we used the following languages and frameworks in our implementation
 ```bash
@@ -40,7 +43,7 @@ This feature gives client the ability to filter through all styles available for
 * Product information
 * Style selector
 * Add to cart
-
+![overView](img/fec_main.png)
 #### 2. Related Items and Comparison
 The Related Products module was implemented to provide clients with a carousel of related products from the Product Overview. The carousel allows clients to navigate to related products and compare the given characteristics of each product.
 The Your Outfit List module below the Related Products carousel allows clients to select a current item and add it to their own list to group together as an outfit.
@@ -48,21 +51,21 @@ The Your Outfit List module below the Related Products carousel allows clients t
 * Navigating to the related products
 * Comparison Modal
 * Carousel to add to Outfit
-
+![relatedItems](img/fec_relatedItems.png)
 #### 3. Questions & Answers
 The Questions & Answers module was implemented to allow asking and answering of questions for a product selected. The functionality contained within this module can be divided into several pieces:
 * View questions
 * Search for a question
 * Asking a question
 * Answering a question
-
+![QnA](img/QnA.png)
 #### 4. Ratings and Reviews
 The Ratings & Reviews module was implemented to allow viewing and submission of reviews for a product selected. The functionality contained within this module can be divided into several pieces:
 * Write new review
 * Reviews List
 * Sorting
 * Rating,Product Breakdown
-
+![reviews](img/Review.png)
 ## Installation Guidelines
   1. clone this repo to your local machine
   2. run ```npm install``` in the 'root' directory
