@@ -74,7 +74,7 @@ const addTimeSaverList = ( wholeData, rList ) => {
           .then(()=>{
             dispatch( totalCarouselList( list ) );
             if ( updatedNeedList.length ) {
-              dispatch( relatedItemCarouselList([...list, ...relatedNotAdded]) );
+              dispatch( relatedItemCarouselList( [...list, ...relatedNotAdded] ) );
             } else {
               let result = [];
               for ( let i = 0; i < rList.length; i++ ) {

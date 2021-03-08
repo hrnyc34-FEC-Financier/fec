@@ -23,15 +23,6 @@ const addRelatedItems = ( productId ) => {
             .then(res => {
               let productInfo = res.data;
               list.push( productInfo );
-
-              // searchEngine.get('reviews/meta', { product_id: productId })
-              //   .then(({ data }) => {
-              //     const productAvgRating = calculateProductAvgRating(data.ratings);
-              //     const starRating = calculateProductAvgStarRating(productAvgRating);
-              //     productInfo.avgStarRating = starRating;
-              //   })
-              //   .catch(err=>console.log('adding starRating to related items list  failed :', err));
-
             })
             .catch( err => console.log('adding related items list of id failed :', err ));
 
