@@ -6,7 +6,7 @@ const addPreviewItem = ( productId, productList ) => {
 
   let previewItem = productList[productId + ''];
 
-  return (dispatch) => {
+  return ( dispatch ) => {
 
     dispatch( previewItemAdd( previewItem ) );
 

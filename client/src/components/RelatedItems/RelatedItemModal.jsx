@@ -58,12 +58,9 @@ const RelatedItemModal = ({
 
     var totalFeature = Object.keys(a).concat(Object.keys(b)).concat(Object.keys(abCheck));
 
-    // console.log('mapping id', 'RM' + previewItem.id, relatedProductStarModal);
-
     var contents = totalFeature.map(( item, i )=> {
       var aChecker = aa[item] ? <>&#10003;</> : null;
       var bChecker = bb[item] ? <>&#10003;</> : null;
-
 
       return (
         <div id="comparingPage_content" key={'RM' + i}>
@@ -84,8 +81,6 @@ const RelatedItemModal = ({
         <div className="comparingPage_container">
           { contents }
         </div>
-
-
       </div>
     );
   } else {

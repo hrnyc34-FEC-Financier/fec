@@ -2,7 +2,7 @@ import renderingIndexPlus from './yourOutfitIndexPlus.js';
 
 const increaseYrIndex = ( value ) => {
 
-  return (dispatch) => {
+  return ( dispatch ) => {
     dispatch( renderingIndexPlus( value ) );
   };
 };
