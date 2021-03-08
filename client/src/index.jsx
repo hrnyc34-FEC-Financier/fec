@@ -6,9 +6,9 @@ import App from './components/App.jsx';
 import setInitialProductList from './actions/productDetail/InitialProductList.js';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={ store }>
     <App teamName='Financier' />
   </Provider>,
   document.getElementById('app'),
-  () => setInitialProductList()(store.dispatch)
+  () => setInitialProductList()( store.dispatch )
 );

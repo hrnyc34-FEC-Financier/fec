@@ -7,9 +7,8 @@ import addTimeSaverList from './addTimeSaverList.js';
 
 
 const getRelatedItemIds = ( productId, updatedNeedArr, wholeData ) => {
-  console.log('productId,:', productId);
 
-  return (dispatch) => {
+  return ( dispatch ) => {
 
     return searchEngine.get(`products/${productId}/related`)
       .then(res=>{
@@ -22,15 +21,13 @@ const getRelatedItemIds = ( productId, updatedNeedArr, wholeData ) => {
             relatedItemsList.splice(i, 1);
           }
         }
-        // console.log('relatedItemsList:', res.data);
-        // console.log('relatedItemsList!!!!!:', relatedItemsList);
 
         dispatch( relatedItemList( relatedItemsList ) );
-        if (updatedNeedArr) {
+        if ( updatedNeedArr ) {
           dispatch( addTimeSaverList ( wholeData, relatedItemsList ) );
         }
       })
-      .catch(err=>console.log('adding getRelatedItemIds from current item failed :', err));
+      .catch( err => console.log('adding getRelatedItemIds from current item failed :', err ));
   };
 };
 
