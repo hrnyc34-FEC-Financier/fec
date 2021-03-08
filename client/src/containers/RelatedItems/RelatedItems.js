@@ -10,6 +10,7 @@ import increaseYourOutfitIndex from './../../actions/relatedItems/increaseIndexY
 import decreaseYourOutfitIndex from './../../actions/relatedItems/decreaseIndexYourOutfit.js';
 import addPreviewItem from './../../actions/relatedItems/addPreviewItem.js';
 import getRelatedItemIds from './../../actions/relatedItems/getRelatedItemIds.js';
+import resetCarousel from './../../actions/relatedItems/resetCarousel.js';
 
 const mapStateToProps = ( state ) => ({
   currentProduct: state.currentProduct,
@@ -27,9 +28,10 @@ const mapStateToProps = ( state ) => ({
 });
 
 const mapDispatchToProps = ( dispatch ) => ({
-  handleItemToCurrentItemClick: ( currentProductId, updatedNeedArr, wholeData) => {
+  handleItemToCurrentItemClick: ( currentProductId, updatedNeedArr, wholeData ) => {
     dispatch( currentProduct( currentProductId ) );
-    dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData) );
+    dispatch( getRelatedItemIds( currentProductId, updatedNeedArr, wholeData ) );
+    dispatch( resetCarousel( 0 ) );
   },
   handleStarModalClick: ( value, productId, productList ) => {
     dispatch( comparingModal( value === false ) );
