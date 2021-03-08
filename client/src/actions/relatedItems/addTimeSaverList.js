@@ -9,11 +9,11 @@ import { calculateProductAvgRating, calculateProductAvgStarRating } from '../Rat
 
 const addTimeSaverList = ( wholeData, rList ) => {
 
-  return (dispatch) => {
+  return ( dispatch ) => {
 
     let comparingList = [];
     let updatedNeedList = [];
-    let oldList = Object.keys(wholeData);
+    let oldList = Object.keys( wholeData );
     let relatedNotAdded = [];
 
     if ( oldList.length !== 0 ) {
@@ -23,10 +23,10 @@ const addTimeSaverList = ( wholeData, rList ) => {
       }
       for ( let i = 0; i < rList.length; i++ ) {
         let checkingId = rList[i];
-        if ( !comparingList.includes(checkingId) ) {
-          updatedNeedList.push(checkingId);
+        if ( !comparingList.includes( checkingId ) ) {
+          updatedNeedList.push( checkingId );
         } else {
-          relatedNotAdded.push(wholeData[checkingId]);
+          relatedNotAdded.push( wholeData[checkingId] );
         }
       }
     }
@@ -35,13 +35,13 @@ const addTimeSaverList = ( wholeData, rList ) => {
     let carouselList = updatedNeedList.map( itemId =>{
 
       return searchEngine.get(`products/${itemId}`)
-        .then(res => {
+        .then( res => {
           list.push( res.data );
         })
-        .catch(err => console.log('adding related items list of id failed :', err));
+        .catch( err => console.log('adding related items list of id failed :', err ));
     });
 
-    return Promise.all(carouselList)
+    return Promise.all( carouselList )
       .then(()=>{
         return dispatch( relatedItemsListDetail( list ) );
       })
@@ -62,31 +62,31 @@ const addTimeSaverList = ( wholeData, rList ) => {
                   const starRating = calculateProductAvgStarRating(productAvgRating);
                   overall.avgStarRating = starRating;
                 })
-                .catch(err=>console.log('adding starRating to related items list  failed :', err));
+                .catch( err => console.log('adding starRating to related items list  failed :', err));
 
               list.push( overall );
-              console.log("!!!!! Adding only addtional data from addTimeSaver !!!!!");
+
             })
-            .catch(err => console.log('adding style to related items list  failed :', err));
+            .catch( err => console.log('adding style to related items list  failed :', err ));
         });
 
-        Promise.all(carouselDetailList)
+        Promise.all( carouselDetailList )
           .then(()=>{
-            dispatch( totalCarouselList(list) );
-            if (updatedNeedList.length) {
+            dispatch( totalCarouselList( list ) );
+            if ( updatedNeedList.length ) {
               dispatch( relatedItemCarouselList([...list, ...relatedNotAdded]) );
             } else {
               let result = [];
               for ( let i = 0; i < rList.length; i++ ) {
                 let dataId = rList[i];
-                result.push( wholeData[dataId]);
+                result.push( wholeData[dataId] );
               }
-              dispatch( relatedItemCarouselList(result) );
+              dispatch( relatedItemCarouselList( result ) );
             }
           });
 
       })
-      .catch(err=>console.log('adding related carouselList failed :', err));
+      .catch( err => console.log( 'adding related carouselList failed :', err ));
 
   };
 };

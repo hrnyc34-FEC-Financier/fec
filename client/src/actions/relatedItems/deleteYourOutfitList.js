@@ -3,7 +3,7 @@ import deleteYourOutfit from './yourOutfitListDelete.js';
 
 const deleteYourOutfitList = ( productId ) => {
 
-  return (dispatch) => {
+  return ( dispatch ) => {
     dispatch( deleteYourOutfit( productId ) );
   };
 };
