@@ -1,6 +1,3 @@
-
-// THIS FILE for getting current product id clicked from Overview to update related item list
-
 import searchEngine from '../../lib/searchEngine.js';
 import relatedItemList from './relatedItemList.js';
 import addTimeSaverList from './addTimeSaverList.js';
