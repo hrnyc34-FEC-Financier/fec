@@ -40,8 +40,12 @@ const RelatedItems = ({
   const relatedItems = Array.isArray(mappingList) &&
   mappingList.map(item => {
     let imageURL = !item.styles[0].photos[0].url ? null : item.styles[0].photos[0].url;
+<<<<<<< HEAD
 
     if ( imageURL !== null ) {
+=======
+    if (imageURL !== null) {
+>>>>>>> master
       return <RItemList
         key={'RI' + item.id}
         product={item}
@@ -128,7 +132,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { relatedProductCarouselList.length - carouselRenderIndex < 5 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
+            { relatedProductCarouselList.length - carouselRenderIndex <= 4 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
         </div>
 
       </div>
@@ -153,7 +157,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { yourOutfitList.length - cYourOutfitRenderIndex < 5 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
+            { yourOutfitList.length - cYourOutfitRenderIndex <= 4 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
         </div>
 
       </div>
