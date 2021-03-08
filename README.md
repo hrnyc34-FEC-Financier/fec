@@ -21,7 +21,7 @@ our implementation, functionality, and styling.
 - **Cody** - Questions and Answers
 - **Will** - Ratings and Reviews
 
-![catwalk](img/fec1.gif)
+![catwalk](img/fec.gif)
 
 ## Technologies
 For this project, we used the following languages and frameworks in our implementation
@@ -42,7 +42,7 @@ This feature gives client the ability to filter through all styles available for
 * Product information
 * Style selector
 * Add to cart
-![overView](img/fec_main.png)
+![overView](img/overview.png)
 
 #### 2. Related Items and Comparison
 The Related Products module was implemented to provide clients with a carousel of related products from the Product Overview. The carousel allows clients to navigate to related products and compare the given characteristics of each product.
@@ -51,7 +51,7 @@ The Your Outfit List module below the Related Products carousel allows clients t
 * Navigating to the related products
 * Comparison Modal
 * Carousel to add to Outfit
-![relatedItems](img/fec_relatedItems.png)
+![relatedItems](img/relatedItems.png)
 ![relatedItems](img/relatedItem.gif)
 
 #### 3. Questions & Answers
