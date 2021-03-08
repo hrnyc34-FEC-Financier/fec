@@ -14,7 +14,7 @@ We developed this project as a group over the course of 9 days during the Hack R
 We were all worked on our own individual widget for the site.
 
 built up based on given a business document outlined a strict set of requirements that guided
-our implementation, funcitonality, and styling.
+our implementation, functionality, and styling.
 ```
 - **Aharon** - Product Overview
 - **Claire** - Related Items and Comparison
