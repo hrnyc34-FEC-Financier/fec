@@ -13,13 +13,16 @@ const addTimeSaverList = ( wholeData, rList ) => {
 
     let comparingList = [];
     let updatedNeedList = [];
+
     let oldList = Object.keys( wholeData );
     let relatedNotAdded = [];
+
 
     if ( oldList.length !== 0 ) {
       for ( let i = 0; i < oldList.length; i++ ) {
         let newId = Number.parseInt( oldList[i] );
-        comparingList.push( newId );
+        comparingList.push(Number.parseInt( oldList[i] ));
+        existingList.push(wholeData[newId]);
       }
       for ( let i = 0; i < rList.length; i++ ) {
         let checkingId = rList[i];
@@ -48,7 +51,6 @@ const addTimeSaverList = ( wholeData, rList ) => {
 
       .then(res=>{
         let list = [];
-
         let carouselDetailList = res.relatedItemsListDetail.map( item =>{
           let overall = item;
           return searchEngine.get(`products/${item.id}/styles`)
