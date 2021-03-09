@@ -21,7 +21,7 @@ our implementation, functionality, and styling.
 - **Cody** - Questions and Answers
 - **Will** - Ratings and Reviews
 
-![catwalk](img/fec.gif)
+![catwalk](img/fecNew.gif)
 
 ## Technologies
 For this project, we used the following languages and frameworks in our implementation
@@ -50,7 +50,7 @@ The Your Outfit List module below the Related Products carousel allows clients t
 * Navigating to the related products
 * Comparison Modal
 * Carousel to add to Outfit
-![relatedItems](img/relatedItems.png)
+![relatedItems](img/relatedItemsNew.png)
 ![relatedItems](img/relatedItemNew.gif)
 
 #### 3. Questions & Answers
