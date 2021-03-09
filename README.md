@@ -34,7 +34,6 @@ For this project, we used the following languages and frameworks in our implemen
 We deployed our site on AWS, which can be viewed **here**
 
 ## Components
-business document can be found [here](https://docs.google.com/document/d/1KAqduzY8ae3DYrSoCL1i23qHe95zJRYFulqMk-sGLWY/edit#).
 
 #### 1. Product Overview
 This feature gives client the ability to filter through all styles available for a product. Client can click through a gallery of images for a given style. Client can add products by quantity and size. This was the top-most module on the Product Detail page. The functionality contained within this module can be divided into several pieces:
