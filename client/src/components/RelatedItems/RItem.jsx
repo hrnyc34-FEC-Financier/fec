@@ -28,19 +28,20 @@ const RelatedItems = ({
   const slicedYourOutfitList = yourOutfitList.slice(cYourOutfitRenderIndex + 1);
 
   let mappingList = slicedRelatedItemList;
-  if (carouselRenderIndex === 0) {
+  if ( carouselRenderIndex === 0 ) {
     mappingList = relatedProductCarouselList;
   }
 
   let mappingYrOutfitList = slicedYourOutfitList;
-  if (cYourOutfitRenderIndex === 0) {
+  if ( cYourOutfitRenderIndex === 0 ) {
     mappingYrOutfitList = yourOutfitList;
   }
 
   const relatedItems = Array.isArray(mappingList) &&
-  mappingList.map((item) => {
+  mappingList.map(item => {
     let imageURL = !item.styles[0].photos[0].url ? null : item.styles[0].photos[0].url;
-    if (imageURL !== null) {
+
+    if ( imageURL !== null ) {
       return <RItemList
         key={'RI' + item.id}
         product={item}
@@ -54,7 +55,7 @@ const RelatedItems = ({
     }
   });
 
-  const yourOutfitItems = Array.isArray(mappingYrOutfitList) &&
+  const yourOutfitItems = Array.isArray( mappingYrOutfitList ) &&
   mappingYrOutfitList.map( item => {
     let imageURL = item.styles[0].photos[0].url;
     if ( imageURL !== null ) {
@@ -72,31 +73,43 @@ const RelatedItems = ({
     }
   });
 
-  const imgLeftArrow = <svg className = "carousel_prev"
-    width="25" height="25" fill="currentColor"
-    viewBox="0 0 20 20">
+  const imgLeftArrow = <svg
+    className = "carousel_prev"
+    width="25" height="25" fill="currentColor" viewBox="0 0 20 20">
     <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
   </svg>;
 
-  const imgRightArrow = <svg className = "carousel_next"
-    width="25" height="25" fill="currentColor"
-    viewBox="0 0 20 20">
+  const imgRightArrow = <svg
+    className = "carousel_next"
+    width="25" height="25" fill="currentColor" viewBox="0 0 20 20">
     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
   </svg>;
 
-  const relatedItemLeftArrow = <button className='carousel_prev' id='centerAlign' onClick={handleCarouselLeftClick } >
+  const relatedItemLeftArrow = <button
+    className='carousel_prev'
+    id='centerAlign'
+    onClick={handleCarouselLeftClick } >
     {imgLeftArrow }
   </button>;
 
-  const relatedItemRightArrow = <button className='carousel_next' id='centerAlign' onClick={ handleCarouselRightClick }>
+  const relatedItemRightArrow = <button
+    className='carousel_next'
+    id='centerAlign'
+    onClick={ handleCarouselRightClick }>
     {imgRightArrow}
   </button>;
 
-  const yourOutfitLeftArrow = <button className='carousel_prev' id='centerAlign' onClick={ handleYourOutfitLeftClick } >
+  const yourOutfitLeftArrow = <button
+    className='carousel_prev'
+    id='centerAlign'
+    onClick={ handleYourOutfitLeftClick } >
     {imgLeftArrow }
   </button>;
 
-  const yourOutfitRightArrow = <button className='carousel_next' id='centerAlign' onClick={ handleYourOutfitRightClick }>
+  const yourOutfitRightArrow = <button
+    className='carousel_next'
+    id='centerAlign'
+    onClick={ handleYourOutfitRightClick }>
     {imgRightArrow}
   </button>;
 
@@ -115,7 +128,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { relatedProductCarouselList.length - carouselRenderIndex <= 4 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
+            { relatedProductCarouselList.length - carouselRenderIndex < 5 || carouselRenderIndex > 5 ? null : relatedItemRightArrow }</div>
         </div>
 
       </div>
@@ -130,9 +143,9 @@ const RelatedItems = ({
             <img src={ currentImage } />
             <button
               className='placeHolder'
-              onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }>
-              <br /><br />
-            ADD TO OUTFIT <b className = "card-add">  &nbsp; + </b>
+              onClick={ ()=> handleAddYourOutfitClick( currentProduct, currentStyleList, productAvgStarRating ) }> <br /><br />
+            ADD TO OUTFIT
+              <b className = "card-add">  &nbsp; + </b>
             </button></div>
 
           <div className ='YrOutfit_container'>
@@ -140,7 +153,7 @@ const RelatedItems = ({
           </div>
 
           <div className='centerAlignP'>
-            { yourOutfitList.length - cYourOutfitRenderIndex <= 4 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
+            { yourOutfitList.length - cYourOutfitRenderIndex < 5 || cYourOutfitRenderIndex > 5 ? null : yourOutfitRightArrow }</div>
         </div>
 
       </div>

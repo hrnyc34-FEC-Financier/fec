@@ -2,7 +2,7 @@ import renderingIndexIncrease from './indexIncrease.js';
 
 const increaseIndex = ( value ) => {
 
-  return (dispatch) => {
+  return ( dispatch ) => {
     dispatch( renderingIndexIncrease( value ) );
   };
 };

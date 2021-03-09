@@ -2,7 +2,7 @@ import renderingIndexMinus from './yourOutfitIndexMinus.js';
 
 const decreaseYrIndex = ( value ) => {
 
-  return (dispatch) => {
+  return ( dispatch ) => {
     dispatch( renderingIndexMinus( value ) );
   };
 };

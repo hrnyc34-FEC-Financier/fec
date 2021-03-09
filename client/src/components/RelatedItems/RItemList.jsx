@@ -17,7 +17,7 @@ const RItemList = ({
 
   let comparingList = [];
   let updatedNeedList = [];
-  let oldList = Object.keys(saveTimeList);
+  let oldList = Object.keys( saveTimeList );
 
   if ( oldList.length !== 0 ) {
     for ( let i = 0; i < oldList.length; i++ ) {
@@ -25,31 +25,30 @@ const RItemList = ({
     }
     for ( let i = 0; i < relatedProductList.length; i++ ) {
       let checkingId = Number.parseInt( relatedProductList[i] );
-      if ( !comparingList.includes(checkingId) ) {
-        updatedNeedList.push(checkingId);
+      if ( !comparingList.includes( checkingId ) ) {
+        updatedNeedList.push( checkingId );
       }
     }
   }
-  // console.log('updatedNeedList:', updatedNeedList);
-  // console.log('RItemItem:', product);
-  // console.log('avgStarRating:', product.avgStarRating, starRating);
 
   let modalRender =
   <Modal
-    open={relatedProductStarModal}
+    open={ relatedProductStarModal }
     onClose={ ()=> handleStarModalClick( relatedProductStarModal ) }>
-    <Fade in={relatedProductStarModal}>
+    <Fade in={ relatedProductStarModal }>
       <div>
         <RelatedModalContainer
           close={ ()=> handleStarModalClick( relatedProductStarModal ) }
-          ref={null}/>
+          ref={ null }/>
       </div>
     </Fade>
   </Modal>;
 
   let oriPrice = <div className='carousel_item_oriPrice'> &#36; { product.default_price } </div>;
 
-  let disCountPrice = <><span className='carousel_item_disCountPrice_1'> &#36; {product.default_price} </span><span className='carousel_item_disCountPrice_2'> &#36; { product.default_price } </span></>;
+  let disCountPrice = <>
+    <span className='carousel_item_disCountPrice_1'> &#36; { product.default_price } </span>
+    <span className='carousel_item_disCountPrice_2'> &#36; { product.default_price } </span></>;
 
   let price = product.styles[0].sale_price === null ? <>{ oriPrice }</> : <>{ disCountPrice }</>;
 
@@ -79,7 +78,8 @@ const RItemList = ({
       <div className="carousel_item_body">
         <div>
           <span className='carousel_item_smallText'>
-            { product.category } </span> <br />
+            { product.category }
+          </span> <br />
           <div className='carousel_item_title'>
             { product.name }
           </div><br />
