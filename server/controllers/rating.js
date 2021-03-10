@@ -11,7 +11,7 @@ module.exports = {
 
     return rReadOne( productId )
       .then(result => {
-        console.log('after rReadOne in rating:', result[0].product_id);
+        // console.log('after rReadOne in rating:', result[0].product_id);
         return res.json(result[0]);
       })
       // .then(()=> res.sendStatus(200))

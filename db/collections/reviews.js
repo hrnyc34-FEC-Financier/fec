@@ -31,7 +31,7 @@ var Reviews = mongoose.model('Reviews', reviewSchema);
 const dbMethods = {
 
   readAll: (id, sortingWay = 'newest') => {
-    console.log('readAll in reviews Model by product id :', id, 'sorted by', sortingWay);
+    // console.log('readAll in reviews Model by product id :', id, 'sorted by', sortingWay);
 
     if (sortingWay === 'relevance') {
       return Reviews.aggregate().match({ product_id: id, reported: false }).sort('-helpfulness').sort('-date').exec();
@@ -43,7 +43,7 @@ const dbMethods = {
   },
 
   readOne: (id) => {
-    console.log('readOne in reviews Model by review id :', id);
+    // console.log('readOne in reviews Model by review id :', id);
 
     return Reviews.find({ review_id: id }).exec();
   },
@@ -51,13 +51,13 @@ const dbMethods = {
   update: (id, helpful, report) => {
 
     if (report === true) {
-      console.log('update in reviews Model for reported', report);
+      // console.log('update in reviews Model for reported', report);
 
       return Reviews.updateMany(
         { review_id: id }, { 'reported': true }, { upsert: true }).exec();
 
     } else if (helpful === true) {
-      console.log('update in reviews Model for _helpfulness + 1', helpful);
+      // console.log('update in reviews Model for _helpfulness + 1', helpful);
 
       return Reviews.updateOne(
         { review_id: id }, { '$inc': { helpfulness: 1 } }, { new: true }).exec();
@@ -100,7 +100,7 @@ const dbMethods = {
             .then(() => {
               return Reviews.find({ product_id: productId }).exec()
                 .then(result => {
-                  console.log('after find()_(step2) for sortedreviews in review Model : ', result[0].product_id);
+                  // console.log('after find()_(step2) for sortedreviews in review Model : ', result[0].product_id);
                   return { product_id: result[0].product_id, results: result };
                 });
             });
@@ -109,7 +109,7 @@ const dbMethods = {
     }
     return Reviews.find({}).sort({ review_id: -1 }).limit(1)
       .then(result => {
-        console.log('create w/ existing productId in reviews');
+        // console.log('create w/ existing productId in reviews');
         reviewId = result[0].review_id + 1;
         let helpful = 0;
         let recommend = one.recommend || false;
@@ -136,7 +136,7 @@ const dbMethods = {
       .then(() => {
         return Reviews.find({ product_id: productId }).exec()
           .then(result => {
-            console.log('after find()_(step2) for sortedreviews in review model : ', result[0].product_id);
+            // console.log('after find()_(step2) for sortedreviews in review model : ', result[0].product_id);
             return { product_id: result[0].product_id, results: result };
           });
       })
@@ -144,7 +144,7 @@ const dbMethods = {
   },
 
   updateRating: (id) => {
-    console.log('updateRating in reviews Model by product_id : ', id);
+    // console.log('updateRating in reviews Model by product_id : ', id);
     return Reviews.aggregate().match({ product_id: id }).group({
       _id: '$product_id',
       1: { $sum: { $cond: {

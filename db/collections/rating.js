@@ -27,12 +27,12 @@ var Ratings = mongoose.model('Ratings', ratingSchema);
 
 const dbMethods = {
   rReadOne: ( id, reviewNum )=>{
-    console.log( 'rReadOne in rating Model _ by product_id : ', id );
+    // console.log( 'rReadOne in rating Model _ by product_id : ', id );
 
     return Ratings.find({ product_id: id }).exec();
   },
   rUpdateAll: ( one ) => {
-    console.log('rUpdateOne in rating Model_ by productId:', one.product_id);
+    // console.log('rUpdateOne in rating Model_ by productId:', one.product_id);
 
     return Ratings.updateMany({
       product_id: one.product_id
