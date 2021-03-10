@@ -24,9 +24,12 @@ Each of us was assigned to one piece of the API:
   
 ## Engineer 
   ### Claire Sujin Kim
-  Front-end build can be found in its [repository](https://github.com/hrnyc34-FEC-Financier/fec/tree/claire-dev)
+
+Instead of performing that aggregation on every page hit, I put the aggregated list into a new collection. You can query the cached results in that collection directly getting info by product id or review id in new cached collections will be far faster than performing that aggregation all the time.
 
 ![catwalk_review_system design_concept](img/SDC2.png)
+
+  Front-end build can be found in its [repository](https://github.com/hrnyc34-FEC-Financier/fec/tree/claire-dev)
 
 ## Overview 
 Building up a server and database to support retail website, integrated a legacy codebase you’ve never seen before with the existing front-end, and Focusing on the Back End side of optimizing your system
