@@ -22,6 +22,7 @@ Each of us was assigned to one piece of the API:
 - [Technologies](#Technologies)
 - [Installation guide](#installation)
   
+  
 ## Engineer 
   ### Claire Sujin Kim
 
