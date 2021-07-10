@@ -11,19 +11,19 @@ const RelatedItemModal = ({
       <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
     </svg>;
 
-  if (!!previewItem.id) {
+  if ( !!previewItem.id ) {
     let a = {};
     let b = {};
     let aa = {};
     let bb = {};
     let abCheck = {};
 
-    for (let i = 0; i < currentProduct.features.length; i++) {
+    for ( let i = 0; i < currentProduct.features.length; i++ ) {
       let key = currentProduct.features[i].feature + ': ' +  currentProduct.features[i].value;
       a[key] = true;
     }
 
-    for (let j = 0; j < previewItem.features.length; j++) {
+    for ( let j = 0; j < previewItem.features.length; j++ ) {
       let key = previewItem.features[j].feature + ': ' + previewItem.features[j].value;
       b[key] = true;
     }
@@ -32,16 +32,16 @@ const RelatedItemModal = ({
     let aKey = Object.keys(a);
     let bKey = Object.keys(b);
 
-    if (aKey.length >= bKey.length) {
-      for (var i = 0; i < bKey.length; i++) {
-        if (aKey.includes(bKey[i])) {
+    if ( aKey.length >= bKey.length ) {
+      for ( var i = 0; i < bKey.length; i++ ) {
+        if ( aKey.includes(bKey[i]) ) {
           let foundKey = bKey[i];
           abCheck[foundKey] = true;
         }
       }
     } else {
-      for (let i = 0; i < aKey.length; i++) {
-        if (bKey.includes(aKey[i])) {
+      for ( let i = 0; i < aKey.length; i++ ) {
+        if ( bKey.includes(aKey[i]) ) {
           let foundKey = aKey[i];
           abCheck[foundKey] = true;
         }
@@ -49,26 +49,26 @@ const RelatedItemModal = ({
     }
 
     let foundKey = Object.keys(abCheck);
-    if (foundKey.length) {
-      for (const key of foundKey) {
+    if ( foundKey.length ) {
+      for ( const key of foundKey ) {
         delete a[key];
         delete b[key];
       }
     }
 
-    let totalFeature = Object.keys(a)
-      .concat(Object.keys(b))
-      .concat(Object.keys(abCheck));
+    let totalFeature = Object.keys( a )
+      .concat( Object.keys( b ) )
+      .concat( Object.keys( abCheck ) );
 
     let contents = totalFeature.map((item) => {
       let aChecker = aa[item] ? <>&#10003;</> : null;
       let bChecker = bb[item] ? <>&#10003;</> : null;
 
       return (
-        <div id='comparingPage_content' key={'RM' + i}>
-          <a>{aChecker}</a>
-          <a>{item}</a>
-          <a>{bChecker}</a>
+        <div id='comparingPage_content' key={ 'RM' + i }>
+          <a>{ aChecker }</a>
+          <a>{ item }</a>
+          <a>{ bChecker }</a>
         </div>
       );
     });
@@ -78,17 +78,17 @@ const RelatedItemModal = ({
         <span className='comparingModalTitle'>COMPARING</span>
         <span
           id='close_X'
-          onClick={() => handleStarModalClick(relatedProductStarModal)}
+          onClick={() => handleStarModalClick( relatedProductStarModal )}
         >
-          {closingIcon}{' '}
+          { closingIcon }{' '}
         </span>
         <br />
         <br />
-        <span className='currentItemTitle'>{currentProduct.name}</span>
-        <span className='previewItemTitle'>{previewItem.name}</span>
+        <span className='currentItemTitle'>{ currentProduct.name }</span>
+        <span className='previewItemTitle'>{ previewItem.name }</span>
         <br />
 
-        <div className='comparingPage_container'>{contents}</div>
+        <div className='comparingPage_container'>{ contents }</div>
       </div>
     );
   } else {

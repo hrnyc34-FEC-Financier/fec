@@ -5,23 +5,24 @@ import relatedItemCarouselList from './relatedItemCarouselList.js';
 import totalCarouselList from './totalCarouselList.js';
 import { calculateProductAvgRating, calculateProductAvgStarRating } from '../RatingsReviews/setRatings.js';
 
-const addRelatedItems = (productId) => {
-  return (dispatch) => {
+const addRelatedItems = ( productId ) => {
+  return ( dispatch ) => {
     return searchEngine
-      .get(`products/${productId}/related`)
-      .then((res) => dispatch(relatedItemList(res.data)))
+      .get(`products/${ productId }/related`)
+      .then((res) => dispatch( relatedItemList( res.data ) ))
       .then((res) => {
         let list = [];
         let carouselList = res.relatedProductList.map((itemId) => {
           return searchEngine
-            .get(`products/${itemId}`)
+            .get( `products/${itemId}` )
             .then((res) => {
               let productInfo = res.data;
-              list.push(productInfo);
+              list.push( productInfo );
             })
-            .catch((err) => console.log('adding related items list of id failed :', err));
+            .catch((err) => console.log( 'adding related items list of id failed :', err ));
         });
-        return Promise.all(carouselList).then(() => dispatch(relatedItemsListDetail(list)));
+        return Promise.all( carouselList )
+          .then(() => dispatch( relatedItemsListDetail( list ) ));
       })
 
       .then((res) => {
@@ -29,31 +30,32 @@ const addRelatedItems = (productId) => {
         let carouselDetailList = res.relatedItemsListDetail.map((item) => {
           let overall = item;
           return searchEngine
-            .get(`products/${item.id}/styles`)
+            .get( `products/${item.id}/styles` )
             .then((res) => {
               var productId = item.id;
               overall.styles = res.data.results;
 
               searchEngine
-                .get('reviews/meta', { product_id: productId })
+                .get( 'reviews/meta', { product_id: productId } )
                 .then(({ data }) => {
                   const productAvgRating = calculateProductAvgRating( data.ratings );
                   const starRating = calculateProductAvgStarRating( productAvgRating );
                   overall.avgStarRating = starRating;
                 })
-                .catch((err) =>console.log('adding starRating to related items list  failed :', err));
+                .catch((err) => console.log( 'adding starRating to related items list  failed :', err ));
 
               list.push(overall);
             })
-            .catch((err) => console.log('adding style to related items list  failed :', err));
+            .catch((err) => console.log( 'adding style to related items list  failed :', err ));
         });
 
-        Promise.all(carouselDetailList).then(() => {
-          dispatch(relatedItemCarouselList(list));
-          dispatch(totalCarouselList(list));
-        });
+        Promise.all( carouselDetailList )
+          .then(() => {
+            dispatch( relatedItemCarouselList( list ) );
+            dispatch( totalCarouselList( list ) );
+          });
       })
-      .catch((err) => console.log('adding related carouselList failed :', err));
+      .catch((err) => console.log( 'adding related carouselList failed :', err ));
   };
 };
 

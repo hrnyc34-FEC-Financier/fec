@@ -27,19 +27,19 @@ const RelatedItems = ({
   const slicedYourOutfitList = yourOutfitList.slice( cYourOutfitRenderIndex + 1 );
 
   let mappingList = slicedRelatedItemList;
-  if (carouselRenderIndex === 0) mappingList = relatedProductCarouselList;
+  if ( carouselRenderIndex === 0 ) mappingList = relatedProductCarouselList;
 
   let mappingYrOutfitList = slicedYourOutfitList;
-  if (cYourOutfitRenderIndex === 0) mappingYrOutfitList = yourOutfitList;
+  if ( cYourOutfitRenderIndex === 0 ) mappingYrOutfitList = yourOutfitList;
 
   const relatedItems =
-    Array.isArray(mappingList) &&
+    Array.isArray( mappingList ) &&
     mappingList.map((item) => {
       let imageURL = !item.styles[0].photos[0].url
         ? null
         : item.styles[0].photos[0].url;
 
-      if (imageURL !== null) {
+      if ( imageURL !== null ) {
         return (
           <RItemList
             key={'RI' + item.id}
@@ -57,10 +57,10 @@ const RelatedItems = ({
     });
 
   const yourOutfitItems =
-    Array.isArray(mappingYrOutfitList) &&
+    Array.isArray( mappingYrOutfitList ) &&
     mappingYrOutfitList.map((item) => {
       let imageURL = item.styles[0].photos[0].url;
-      if (imageURL !== null) {
+      if ( imageURL !== null ) {
         return (
           <YourOutFitList
             key={'YO' + item.id}
@@ -108,7 +108,7 @@ const RelatedItems = ({
       id='centerAlign'
       onClick={handleCarouselLeftClick}
     >
-      {imgLeftArrow}
+      { imgLeftArrow }
     </button>
   );
 
@@ -118,7 +118,7 @@ const RelatedItems = ({
       id='centerAlign'
       onClick={handleCarouselRightClick}
     >
-      {imgRightArrow}
+      { imgRightArrow }
     </button>
   );
 
@@ -126,9 +126,9 @@ const RelatedItems = ({
     <button
       className='carousel_prev'
       id='centerAlign'
-      onClick={handleYourOutfitLeftClick}
+      onClick={ handleYourOutfitLeftClick }
     >
-      {imgLeftArrow}
+      { imgLeftArrow }
     </button>
   );
 
@@ -136,9 +136,9 @@ const RelatedItems = ({
     <button
       className='carousel_next'
       id='centerAlign'
-      onClick={handleYourOutfitRightClick}
+      onClick={ handleYourOutfitRightClick }
     >
-      {imgRightArrow}
+      { imgRightArrow }
     </button>
   );
 

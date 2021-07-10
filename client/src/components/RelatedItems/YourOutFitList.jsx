@@ -13,22 +13,22 @@ let YourOutFitList = ({
 }) => {
   let comparingList = [];
   let updatedNeedList = [];
-  let oldList = Object.keys(saveTimeList);
+  let oldList = Object.keys( saveTimeList );
 
   if (oldList.length !== 0) {
-    for (let i = 0; i < oldList.length; i++) {
+    for ( let i = 0; i < oldList.length; i++ ) {
       comparingList.push(Number.parseInt(oldList[i]));
     }
-    for (let i = 0; i < relatedProductList.length; i++) {
-      let checkingId = Number.parseInt(relatedProductList[i]);
-      if (!comparingList.includes(checkingId)) updatedNeedList.push(checkingId);
+    for ( let i = 0; i < relatedProductList.length; i++ ) {
+      let checkingId = Number.parseInt( relatedProductList[i] );
+      if ( !comparingList.includes( checkingId ) ) updatedNeedList.push( checkingId );
     }
   }
 
   let oriPrice = (
     <div className='carousel_item_oriPrice'>
       {' '}
-      &#36; {product.default_price}{' '}
+      &#36; { product.default_price }{' '}
     </div>
   );
 
@@ -36,16 +36,16 @@ let YourOutFitList = ({
     <>
       <span className='carousel_item_disCountPrice_1'>
         {' '}
-        &#36; {product.default_price}{' '}
+        &#36; { product.default_price }{' '}
       </span>
       <span className='carousel_item_disCountPrice_2'>
         {' '}
-        &#36; {product.default_price}{' '}
+        &#36; { product.default_price }{' '}
       </span>
     </>
   );
 
-  let price = product.styles[0].sale_price === null ? ( <>{oriPrice}</> ) : ( <>{disCountPrice}</> );
+  let price = product.styles[0].sale_price === null ? ( <>{ oriPrice }</> ) : ( <>{ disCountPrice }</> );
 
   const deleteIcon = (
     <svg width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
@@ -68,7 +68,7 @@ let YourOutFitList = ({
     <div className='carousel_item'>
       <div className='carousel_item_image'>
         <img
-          src={image}
+          src={ image }
           alt='PRODUCT defaultIMG'
           onClick={() =>
             handleItemToCurrentItemClick(
@@ -81,18 +81,18 @@ let YourOutFitList = ({
         <br />
       </div>
       <div className='carousel_item_body'>
-        <span className='carousel_item_smallText'>{product.category} </span>{' '}
+        <span className='carousel_item_smallText'>{ product.category } </span>{' '}
         <br />
-        <div className='carousel_item_title'>{product.name}</div>
+        <div className='carousel_item_title'>{ product.name }</div>
         <br />
-        {price} <br />
-        {reviewStars}
+        { price } <br />
+        { reviewStars }
       </div>
       <button
         className='deleteButton'
-        onClick={() => handleDeleteYourOutfitClick(product.id)}
+        onClick={() => handleDeleteYourOutfitClick( product.id )}
       >
-        {deleteIcon}
+        { deleteIcon }
       </button>
     </div>
   );

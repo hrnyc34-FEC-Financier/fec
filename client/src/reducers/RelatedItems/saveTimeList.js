@@ -5,7 +5,7 @@ const saveTimeListReducer = (state = {}, action) => {
 
   case 'MAKE_TOTAL_CAROUSEL_LIST':
     let newState = state;
-    for (let i = 0; i < action.totalList.length; i++) {
+    for ( let i = 0; i < action.totalList.length; i++ ) {
       newState[ action.totalList[i].id ] = action.totalList[i];
     }
     return newState;

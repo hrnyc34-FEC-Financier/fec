@@ -1,11 +1,11 @@
 import Redux from 'redux';
 
 const carouselRenderIndexReducer = (state = 0, action) => {
-  switch (action.type) {
+  switch ( action.type ) {
 
     case 'PLUS_INDEX_FOR_RENDER':
       let increment = action.index && state - 1;
-      if (increment < 0) return 0;
+      if ( increment < 0 ) return 0;
       return increment;
 
     case 'MINUS_INDEX_FOR_RENDER':
