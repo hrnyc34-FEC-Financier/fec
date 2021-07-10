@@ -1,6 +1,6 @@
-const renderingIndexMinus = ( deIndex ) => ({
+const renderingIndexMinus = (deIndex) => ({
   type: 'MINUS_INDEX_FOR_RENDER',
-  index: deIndex
+  index: deIndex,
 });
 
 export default renderingIndexMinus;

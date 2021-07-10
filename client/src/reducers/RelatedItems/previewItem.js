@@ -1,12 +1,13 @@
 import Redux from 'redux';
 
 const previewItemReducer = (state = {}, action) => {
-  switch ( action.type ) {
+  switch (action.type) {
 
-  case 'ADD_PREVIEW_ITEM':
-    return action.previewItem;
+    case 'ADD_PREVIEW_ITEM':
+      return action.previewItem;
 
-  default : return state;
+    default:
+      return state;
   }
 };
 
